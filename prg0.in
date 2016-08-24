@@ -1,0 +1,72 @@
+set(hyper_res).
+set(prolog_style_variables).
+clear(back_sub).
+
+op(900, xfx, ||).
+op(900, xfx, &&).
+make_evaluable(_-_, $DIFF(_,_)).
+make_evaluable(_+_, $SUM(_,_)).
+make_evaluable(_<_, $LT(_,_)).
+make_evaluable(_<=_, $LE(_,_)).
+make_evaluable(_>_, $GT(_,_)).
+make_evaluable(_>=_, $GE(_,_)).
+make_evaluable(_==_, $EQ(_,_)).
+make_evaluable(_&&_, $AND(_,_)).
+make_evaluable(_||_, $OR(_,_)).
+make_evaluable(_*_, $PROD(_,_)).
+
+list(usable).
+PICK(0).
+PICK(1).
+PICK(2).
+PICK(3).
+PICK(4).
+PICK(5).
+PICK(6).
+
+-achievable(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM)))
+| -PICK(YHLS)
+| -PICK(YHS)
+| -PICK(YLS)
+| -PICK(YS)
+| -$LE(YHLS,XHLS)
+| -$LE(YHS,XHS)
+| -$LE(YLS,XLS)
+| -$LE(YS,XS)
+| -$GT(YHLS+YHS+YLS+YS,0)
+| -$LE(YHLS+YHS+YLS+YS,6)
+| -PICK(ZHLS)
+| -PICK(ZHS)
+| -PICK(ZLS)
+| -$LE(ZHLS+YHLS,XHLS)
+| -$LE(ZHS+YHS,XHS)
+| -$LE(ZLS+YLS,XLS)
+| -$GE(XREM,0)
+| -$EQ(YHLS+YHS+YLS+YS,ZHLS+ZHS+ZLS)
+| -$LE(ZHLS+ZHS+YHLS+YLS,$DIV(3,XREM-1))
+| -$LE(ZHLS+ZLS+YHLS+YHS,$DIV(3,XREM-1))
+| -$LE($PROD(2,$DIFF(XHLS,(YHLS+ZHLS))+$DIFF(XHS,(YHS+ZHS))+$DIFF(XLS,(YLS+ZLS))),$DIV(3,XREM-1))
+| RECORD(parent(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM))),
+left(state(hls(0),hs(ZHLS+ZHS),ls(YHLS+YLS),s($DIFF(XHLS,(YHLS+ZHLS))+$DIFF(XHS,ZHS)+$DIFF(XLS,YLS)+XS),rem(XREM-1))),
+right(state(hls(0),hs(YHLS+YHS),ls(ZHLS+ZLS),s($DIFF(XHLS,(ZHLS+YHLS))+$DIFF(XHS,YHS)+$DIFF(XLS,ZLS)+XS),rem(XREM-1))),
+balance(state(hls($DIFF(XHLS,(YHLS+ZHLS))),hs($DIFF(XHS,(YHS+ZHS))),ls($DIFF(XLS,(YLS+ZLS))),s(XS+YHLS+ZHLS+YHS+ZHS+YLS+ZLS),rem(XREM-1)))).
+
+-solvable(state(hls(0),hs(1),ls(0),s(11),rem(0))).
+-solvable(state(hls(0),hs(0),ls(1),s(11),rem(0))).
+-solvable(state(hls(0),hs(0),ls(0),s(12),rem(0))).
+-achievable(state(hls(0),hs(1),ls(0),s(11),rem(0))).
+-achievable(state(hls(0),hs(0),ls(1),s(11),rem(0))).
+
+-RECORD(parent(XP),left(XL),right(XR),balance(XBAL))| achievable(XL).
+-RECORD(parent(XP),left(XL),right(XR),balance(XBAL))| achievable(XR).
+-RECORD(parent(XP),left(XL),right(XR),balance(XBAL))| achievable(XBAL).
+
+-RECORD(parent(XP),left(XL),right(XR),balance(XBAL)) | -solvable(XL) | -solvable(XR) 
+| -solvable(XBAL) | solvable(XP).
+
+-solvable(state(hls(12),hs(0),ls(0),s(0),rem(3))).
+end_of_list.
+
+list(sos).
+achievable(state(hls(12),hs(0),ls(0),s(0),rem(3))).
+end_of_list.

@@ -1,0 +1,9 @@
+set(hyper_res).
+
+list(usable).
+        -P(x) | M(x).
+end_of_list.
+
+list(sos).
+        P(s).
+end_of_list.

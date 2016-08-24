@@ -1,0 +1,17 @@
+%set(demod_inf).
+%set(para_into).
+set(para_from).
+
+list(sos).
+	D1(x,y,j(x,n(y))).
+	D2(x,y,z,m(j(x,n(y)),n(m(x,z)))).
+	j(x,y) = s(s(x,x),s(y,y)).
+	m(x,y) = s(s(x,y),s(x,y)).
+	n(x) = s(x,x).
+	s(s(x,x),s(x,x)) = x.
+end_of_list.
+
+list(passive).
+	-D2(x1,x2,x3,x4,x5).
+end_of_list.
+

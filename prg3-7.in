@@ -1,0 +1,31 @@
+set(demod_inf). 
+set(hyper_res).
+set(very_verbose).
+
+list(sos).
+        n([D,G,R,N,D,G,R,N]).
+end_of_list.
+
+list(demodulators).
+
+        [R|y] = repeat(y).
+        [N|y] = name(y).
+        [G|x] = generate([x]).
+        [D|x] = destroy([x]).
+
+        name([]) = N.
+        repeat(N) = RN.
+        repeat([x|y]) = [x,y,x,y].
+
+        generate([x]) = G*x. 
+        name([x]) = N*x.
+        [name(x*y)] = [N*x*y].
+
+        destroy([G*x]) = D*G*x. 
+        generate([x,x]) = [x,x].
+
+        repeat(name(x)) = [x,x].
+
+        [[x,x]] =[x,x].
+
+end_of_list.

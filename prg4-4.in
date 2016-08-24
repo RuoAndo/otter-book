@@ -1,0 +1,10 @@
+set(para_into).
+
+list(usable).
+        father(ichiro)=taro.
+        mother(taro)=hanako.
+end_of_list.
+
+list(sos).
+        Grandmother(mother(father(x)),x).
+end_of_list.

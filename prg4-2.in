@@ -1,0 +1,11 @@
+set(para_into).
+assign(max_given,1).
+set(very_verbose).
+
+list(usable).
+	(a=b) | (c=d).
+end_of_list.
+
+list(sos).
+	P(a) | Q(b, f(c, g(d))).
+end_of_list.

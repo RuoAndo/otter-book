@@ -1,0 +1,29 @@
+set(hyper_res). 
+assign(max_given,7).
+set(print_lists_at_end).
+
+op(900,xfx,||).                                                                               
+op(900,xfx,&&).                                                                              
+
+make_evaluable(_&&_,$AND(_,_)).                                                               
+make_evaluable(_||_,$OR(_,_)).                                                                
+
+list(usable).
+%グループA:
+       -P(T(x)) | -P(Says(x,y)) | P(y).
+       -P(L(x)) | -P(Says(x,y)) | -P(y).
+
+%グループB:
+       P(T(x)) | P(L(x)).
+       -P(T(x)) | -P(L(x)).
+       
+%グループC:
+       -P(and(y,z)) | P(y).　 - C-1
+       -P(and(y,z)) | P(z). - C-2
+       -P(y) | -P(z) | P(and(y,z)). - C-3
+
+end_of_list.
+
+list(sos).
+        P(Says(A,and(L(A),L(B)))).
+end_of_list.

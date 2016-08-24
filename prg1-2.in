@@ -1,0 +1,10 @@
+set(hyper_res).
+
+list(usable).
+        -Greek(x) | Person(x).% 節１
+        -Person(x) | Mortal(x).% 節２
+end_of_list.
+
+list(sos).
+        Greek(socrates).% 節３
+end_of_list.

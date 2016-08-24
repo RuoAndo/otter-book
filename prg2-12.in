@@ -1,0 +1,20 @@
+set(hyper_res).
+set(factor).
+assign(max_given,15).
+set(print_lists_at_end).
+
+list(usable).
+       -P(T(x)) | -P(Says(x,y)) | P(y).
+       -P(L(x)) | -P(Says(x,y)) | -P(y).
+       P(T(x)) | P(L(x)).
+       -P(T(x)) | -P(L(x)).
+
+%グループB
+       P(y) | P(impl(y,z)).
+       -P(z) | P(impl(y,z)).
+       -P(impl(y,z)) | -P(y) | P(z).
+end_of_list.
+
+list(sos).
+       P(Says(A,impl(L(B),L(A)))).
+end_of_list.

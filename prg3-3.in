@@ -1,0 +1,16 @@
+set(hyper_res).
+
+list(sos).
+        n([G,N,A,T]).
+end_of_list.
+
+list(usable).
+        -n([G|x]) | n(G*x).
+        -n(G*[N|x]) | n(GN*x).
+
+	-n(GN*x) | generate(x).
+end_of_list.
+
+list(passive).
+	-generate(x).
+end_of_list.

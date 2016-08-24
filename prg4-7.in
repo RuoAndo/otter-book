@@ -1,0 +1,17 @@
+set(knuth_bendix).
+
+list(usable).
+	x=x.
+	x+y=y+x.
+	x*y=y*x.
+	(x*y)+z=x+y+z.
+	(x*y)*z=x*y*z.
+	x+ (x*y)=x.
+	x* (x+y)=x.
+end_of_list.
+
+list(sos).
+	x+ (y*z)= (x+y)* (x+z).
+	a* (b+c)!= (a*b)+ (a*c).
+end_of_list.
+

@@ -1,0 +1,19 @@
+set(hyper_res).
+set(demod_inf).
+set(very_verbose).
+
+list(usable).
+end_of_list.
+	
+list(sos).
+        P([1,2,3,4,5,6,7,8,9],[]).
+end_of_list.
+
+list(demodulators).
+	P([x|y],[]) = P(y,[x]).
+	P([x|y],z) = P(y,[x,z]).
+
+	[x,[]] = [x].
+	[x,[y]] = [x,y].
+	[x,[y|z]] = [x,y,z].
+end_of_list.

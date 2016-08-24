@@ -1,0 +1,32 @@
+% G: generate 
+% R: repeat
+% N: name
+
+set(hyper_res).
+
+list(sos).
+
+        %　x = CQx. CQx = x. 
+        n([G,R,N,G,N,G,R,N],[]).
+        n([G,N,G,R,N,G,N,G,R,N],[]).
+
+end_of_list.
+
+list(usable).
+
+        -n([G|x],[]) | n(G*x,[]).
+        -n(G*[N|x],[]) | n(GN*x,[]).
+        -n(G*[R|x],[]) | n(G*R*x,[]).
+        -n(G*R*[N|x],[]) | n(GRN*x,[]).
+
+        -n(GN*x,[]) | m([],(x)).
+        -n(GRN*x,[]) | m([],([x,x])).
+
+end_of_list.
+
+list(demodulators).
+        %CRQ*[x] = [x,x].
+    	[[x]*[y]] = [x,y].
+    	[x]*[y] = [x,y].
+    	[[x],[y]] = [x,y].    
+end_of_list.

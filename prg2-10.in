@@ -1,0 +1,25 @@
+set(hyper_res). 
+ 
+list(usable).
+%グループA:
+         -P(T(x)) | -P(Says(x,y)) | P(y).
+         -P(L(x)) | -P(Says(x,y)) | Q(y).
+ 
+%グループB；
+         P(T(x)) | P(L(x)) | P(N(x)). %- B-1
+ 
+         -P(T(x)) | -P(L(x)). %- B-2  
+         -P(T(x)) | -P(N(x)). %- B-3  
+         -P(L(x)) | -P(N(x)). %- B-4  
+ 
+%グループC:
+         -P(n(T(x))) | P(L(x)) | P(N(x)). %- C-1
+         -P(n(L(x))) | P(T(x)) | P(N(x)). %- C-2
+         -Q(n(y)) | P(y). %- C-3
+ 
+end_of_list.
+ 
+list(sos).
+         P(Says(A,n(L(B)))).
+         P(Says(B,n(T(A)))).
+end_of_list.

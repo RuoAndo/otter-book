@@ -1,0 +1,30 @@
+set(hyper_res).
+assign(max_proofs,2).
+set(print_lists_at_end).
+
+list(usable).
+%グループA:        
+        -P(T(x)) | -P(Says(x,y)) | P(y).
+        -P(L(x)) | -P(Says(x,y)) | -P(y).
+        
+%グループB:
+        P(T(x)) | P(L(x)).
+        -P(T(x)) | -P(L(x)).
+        -P(n(L(x))) | P(T(x)).
+
+%グループC:
+        -P(y) | P(or(y,z)).
+        -P(z) | P(or(y,z)).
+        -P(or(y,z)) | P(y) | P(z).
+end_of_list.
+
+list(sos).
+%グループD:
+        P(Says(A,or(n(L(B)),L(A)))).
+end_of_list.
+
+list(passive).
+%グループE：
+        -P(T(A)).
+        -P(T(B)).
+end_of_list.

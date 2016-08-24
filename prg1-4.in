@@ -1,0 +1,33 @@
+set(hyper_res).
+
+list(usable).
+%グループA：
+        LABEL(a,apples).
+        LABEL(b,oranges).
+        LABEL(c,bananas).
+
+%グループB:
+        CONTAINS(a,apples) | CONTAINS(a,bananas) | CONTAINS(a,oranges).
+        CONTAINS(b,apples) | CONTAINS(b,bananas) | CONTAINS(b,oranges).
+        CONTAINS(c,apples) | CONTAINS(c,bananas) | CONTAINS(c,oranges).
+
+%グループC：
+        -CONTAINS(a,apples) | -CONTAINS(b,apples).
+        -CONTAINS(b,apples) | -CONTAINS(c,apples).
+        -CONTAINS(c,apples) | -CONTAINS(a,apples).
+   
+        -CONTAINS(a,bananas) | -CONTAINS(b,bananas).
+        -CONTAINS(b,bananas) | -CONTAINS(c,bananas).
+        -CONTAINS(c,bananas) | -CONTAINS(a,bananas).
+    
+        -CONTAINS(a,oranges) | -CONTAINS(b,oranges).
+        -CONTAINS(b,oranges) | -CONTAINS(c,oranges).
+        -CONTAINS(c,oranges) | -CONTAINS(a,oranges).
+
+%グループD:
+        -LABEL(x,y) | -CONTAINS(x,y).
+end_of_list.
+
+list(sos).
+        CONTAINS(b,apples).
+end_of_list.

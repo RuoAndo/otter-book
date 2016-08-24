@@ -1,0 +1,23 @@
+set(hyper_res).
+set(demod_inf).
+
+list(sos).
+        n([G,N,G,R,N,A,T,G,N]).
+end_of_list.
+
+list(demodulators).
+        [G|x] = G*x.
+        G*[N|x]= GN*x.
+        
+        G*[R|x] = G*R*x.
+        G*R*[N|x] = GRN*x.
+
+	GN *[] = GN.
+
+        GN*x = x.
+        GRN*x = generate(x*x).
+end_of_list.
+
+list(passive).
+	-generate(x).
+end_of_list.
