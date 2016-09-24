@@ -1,0 +1,121 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on www20363ui.sakura.ne.jp,
+Mon Jul 25 11:13:21 2016
+The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 2594.
+
+set(demod_inf).
+set(hyper_res).
+set(very_verbose).
+
+list(sos).
+1 [] q([G,R,N,G,R,N]).
+end_of_list.
+
+list(demodulators).
+2 [] [R|y]=repeat(y).
+3 [] [N|y]=name(y).
+4 [] [G|x]=create(x).
+5 [] name([])=N.
+6 [] repeat(N)=[RN].
+7 [] create([RN])=[GRN].
+8 [] create(repeat(name([x])))=[x*x].
+9 [] create(name([x]))=[GN*x].
+10 [] [(x*y)*z]=[x*y*z].
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=14) 1 [] q([G,R,N,G,R,N]).
+
+  0 [1] q([G,R,N,G,R,N]).
+   demod term: G.
+   demod term: R.
+   demod term: N.
+   demod term: G.
+   demod term: R.
+   demod term: N.
+   demod term: [].
+   demod term: [N].
+   --> result: name([])   demod<3>
+   demod term: name([]).
+   --> result: N   demod<5>
+   demod term: N.
+   demod term: [R|N].
+   --> result: repeat(N)   demod<2>
+   demod term: repeat(N).
+   --> result: [RN]   demod<6>
+   demod term: RN.
+   demod term: [].
+   demod term: [RN].
+   demod term: [G,RN].
+   --> result: create([RN])   demod<4>
+   demod term: create([RN]).
+   --> result: [GRN]   demod<7>
+   demod term: GRN.
+   demod term: [].
+   demod term: [GRN].
+   demod term: [N,GRN].
+   --> result: name([GRN])   demod<3>
+   demod term: name([GRN]).
+   demod term: [R|name([GRN])].
+   --> result: repeat(name([GRN]))   demod<2>
+   demod term: repeat(name([GRN])).
+   demod term: [G|repeat(name([GRN]))].
+   --> result: create(repeat(name([GRN])))   demod<4>
+   demod term: create(repeat(name([GRN]))).
+   --> result: [GRN*GRN]   demod<8>
+   demod term: GRN*GRN.
+   demod term: [].
+   demod term: [GRN*GRN].
+   demod term: q([GRN*GRN]).
+  after demodulation: 0 [1,demod,3,5,2,6,4,7,3,2,4,8] q([GRN*GRN]).
+** KEPT (pick-wt=6): 11 [1,demod,3,5,2,6,4,7,3,2,4,8] q([GRN*GRN]).
+
+given clause #2: (wt=6) 11 [1,demod,3,5,2,6,4,7,3,2,4,8] q([GRN*GRN]).
+
+  0 [11] q([GRN*GRN]).
+   demod term: GRN.
+   demod term: GRN.
+   demod term: GRN*GRN.
+   demod term: [].
+   demod term: [GRN*GRN].
+   demod term: q([GRN*GRN]).
+  after demodulation: 0 [11] q([GRN*GRN]).
+  Subsumed by 11.
+
+Search stopped because sos empty.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  2
+clauses generated              2
+  hyper_res generated          0
+  demod_inf generated          2
+demod & eval rewrites         10
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed       1
+  (subsumed by sos)            0
+unit deletions                 0
+factor simplifications         0
+clauses kept                   1
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                    2
+sos size                       0
+demodulators size              9
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+Process 2594 finished Mon Jul 25 11:13:21 2016

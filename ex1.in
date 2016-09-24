@@ -7,8 +7,8 @@ list(usable).
          -P(T(x)) | -P(N(x)).
          -P(L(x)) | -P(N(x)).
 
-	 	   -P(T(x)) | P(L(x)) | P(N(x)).
-		   	     -P(L(x)) | P(T(x)) | P(N(x)).
+	 -P(T(x)) | P(L(x)) | P(N(x)).
+	 -P(L(x)) | P(T(x)) | P(N(x)).
 end_of_list.
 
 list(sos).

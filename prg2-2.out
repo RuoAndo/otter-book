@@ -1,0 +1,49 @@
+given clause #568: (wt=18) 589 [hyper,306,6] P(or(x,or(or(or(y,or(Says(A,or(L(A),L(B))),z)),u),v))).
+** KEPT (pick-wt=20): 1155 [hyper,589,6] P(or(x,or(y,or(or(or(z,or(Says(A,or(L(A),L(B))),u)),v),w)))).
+** KEPT (pick-wt=20): 1156 [hyper,589,5] P(or(or(x,or(or(or(y,or(Says(A,or(L(A),L(B))),z)),u),v)),w)).
+
+given clause #569: (wt=18) 590 [hyper,306,5] P(or(or(or(or(x,or(Says(A,or(L(A),L(B))),y)),z),u),v)).
+** KEPT (pick-wt=20): 1157 [hyper,590,6] P(or(x,or(or(or(or(y,or(Says(A,or(L(A),L(B))),z)),u),v),w))).
+** KEPT (pick-wt=20): 1158 [hyper,590,5] P(or(or(or(or(or(x,or(Says(A,or(L(A),L(B))),y)),z),u),v),w)).^C** KEPT (pick-wt=20): 1158 [hyper,590,5] P(or(or(or(or(or(x,or(Says(A,or(L(A),L(B))),y)),z),u),v),w)).
+
+--- Begin interaction (level 0) ---
+
+
+--- Begin interaction (level 0) ---
+
+Type `help.' for the list of commands.
+> kill.
+
+killed level 0 search during interaction.
+killed level 0 search during interaction.
+ ok.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                569
+clauses generated           1726
+  hyper_res generated       1726
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed     576
+  (subsumed by sos)            3
+unit deletions                 0
+factor simplifications         0
+clauses kept                1150
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed         18
+usable size                  572
+sos size                     568
+demodulators size              0
+passive size                   0
+hot size                       0
+Kbytes malloced            11718
+
+----------- times (seconds) -----------
+user CPU time          0.04          (0 hr, 0 min, 0 sec)
+system CPU time        0.01          (0 hr, 0 min, 0 sec)
+wall-clock time       62             (0 hr, 1 min, 2 sec)

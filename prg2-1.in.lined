@@ -1,0 +1,10 @@
+  1: set(hyper_res).
+  2: 
+  3: formula_list(usable).
+  4: 	all x y (Father(x,y) -> (Male(x) & Younger(y,x))).
+  5: end_of_list.
+  6: 
+  7: formula_list(sos).
+  8: 	Father(jim, anne).
+  9: end_of_list.
+ 10: 

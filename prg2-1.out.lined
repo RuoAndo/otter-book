@@ -1,0 +1,73 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Sun Jul 24 19:35:30 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 21841.
+  5: 
+  6: set(hyper_res).
+  7: 
+  8: formula_list(usable).
+  9: all x y (Father(x,y)->Male(x)&Younger(y,x)).
+ 10: end_of_list.
+ 11: 
+ 12: -------> usable clausifies to:
+ 13: 
+ 14: list(usable).
+ 15: 1 [] -Father(x,y)|Male(x).
+ 16: 2 [] -Father(x,y)|Younger(y,x).
+ 17: end_of_list.
+ 18: 
+ 19: formula_list(sos).
+ 20: Father(jim,anne).
+ 21: end_of_list.
+ 22: 
+ 23: -------> sos clausifies to:
+ 24: 
+ 25: list(sos).
+ 26: 3 [] Father(jim,anne).
+ 27: end_of_list.
+ 28: 
+ 29: ======= end of input processing =======
+ 30: 
+ 31: =========== start of search ===========
+ 32: 
+ 33: given clause #1: (wt=3) 3 [] Father(jim,anne).
+ 34: ** KEPT (pick-wt=3): 4 [hyper,3,2] Younger(anne,jim).
+ 35: ** KEPT (pick-wt=2): 5 [hyper,3,1] Male(jim).
+ 36: 
+ 37: given clause #2: (wt=2) 5 [hyper,3,1] Male(jim).
+ 38: 
+ 39: given clause #3: (wt=3) 4 [hyper,3,2] Younger(anne,jim).
+ 40: 
+ 41: Search stopped because sos empty.
+ 42: 
+ 43: ============ end of search ============
+ 44: 
+ 45: -------------- statistics -------------
+ 46: clauses given                  3
+ 47: clauses generated              2
+ 48:   hyper_res generated          2
+ 49: demod & eval rewrites          0
+ 50: clauses wt,lit,sk delete       0
+ 51: tautologies deleted            0
+ 52: clauses forward subsumed       0
+ 53:   (subsumed by sos)            0
+ 54: unit deletions                 0
+ 55: factor simplifications         0
+ 56: clauses kept                   2
+ 57: new demodulators               0
+ 58: empty clauses                  0
+ 59: clauses back demodulated       0
+ 60: clauses back subsumed          0
+ 61: usable size                    5
+ 62: sos size                       0
+ 63: demodulators size              0
+ 64: passive size                   0
+ 65: hot size                       0
+ 66: Kbytes malloced              976
+ 67: 
+ 68: ----------- times (seconds) -----------
+ 69: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+ 70: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+ 71: wall-clock time        0             (0 hr, 0 min, 0 sec)
+ 72: 
+ 73: Process 21841 finished Sun Jul 24 19:35:30 2016

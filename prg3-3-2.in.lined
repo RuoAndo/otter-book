@@ -1,0 +1,16 @@
+  1: set(hyper_res).
+  2: set(demod_inf).
+  3: 
+  4: list(sos).
+  5: 	 n([G,N,A,T]).
+  6: end_of_list.
+  7: 
+  8: list(demodulators).
+  9: 	[G|x] = [G*x].
+ 10: 	G*[N|x] = [GN*x].
+ 11: 	[GN*x] = generate(x).
+ 12: end_of_list.
+ 13: 
+ 14: list(passive).
+ 15: 	-n([generate(x)]).
+ 16: end_of_list.

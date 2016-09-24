@@ -1,0 +1,166 @@
+Only in source-balancer/: GPATH
+Only in source-balancer/: GRTAGS
+Only in source-balancer/: GSYMS
+Only in source-balancer/: GTAGS
+diff -u source/Makefile source-balancer/Makefile
+--- source/Makefile	2016-09-24 10:34:18.000000000 +0900
++++ source-balancer/Makefile	2016-09-24 10:28:20.000000000 +0900
+@@ -57,7 +57,7 @@
+ #
+ # optimized
+ 
+-CFLAGS = -O $(DFLAGS)
++CFLAGS = -g -pg $(DFLAGS)
+ 
+ #
+ # check for strict ANSI conformance with Solaris cc:
+@@ -95,7 +95,7 @@
+ all: otter install clean
+ 
+ otter: main.o libotter.a
+-	$(CC) $(CFLAGS) main.o libotter.a -o otter
++	$(CC) $(CFLAGS) main.o libotter.a -o otter 
+ 
+ libotter.a: $(OBJECTS)
+ 	$(AR) rs libotter.a $(OBJECTS)
+Only in source-balancer/: Makefile~
+Only in source-balancer/: a.out
+diff -u source/demod.c source-balancer/demod.c
+--- source/demod.c	2016-09-24 10:34:18.000000000 +0900
++++ source-balancer/demod.c	2016-09-24 10:28:20.000000000 +0900
+@@ -15,6 +15,31 @@
+  *
+  *************/
+ 
++int poww(int n,int m)
++{ 
++  int i,powa;
++
++  if(m==0) 
++    { 
++      return 1;
++      exit;
++    }
++  else
++    {
++
++
++  powa=1;
++
++  for(i=0;i<m;i++)
++    {
++      powa=powa * n;
++    }
++  return powa;
++  exit;
++    }
++
++}
++
+ static struct term *contract_lin(struct term *t,
+ 				 int *demods,
+ 				 struct context *c,
+@@ -183,6 +208,9 @@
+     case DIFF_SYM:
+     case DIV_SYM:
+     case MOD_SYM:  op_type = 1; break; /* int x int -> int */
++    case POWER_SYM:
++
++
+     case EQ_SYM:
+     case NE_SYM:
+     case LT_SYM:
+@@ -247,17 +275,20 @@
+       s2 = sn_to_str(tb->sym_num);
+       if (str_long(s1, &i1) == 0 || str_long(s2, &i2) == 0)
+ 	return(NULL);
+-	
++
++      /*	
+       if ((op_code == DIV_SYM || op_code == MOD_SYM) && i2 == 0) {
+ 	print_term_nl(stdout, t);
+ 	abend("integer divide by 0.");
+       }
++      */
+       switch (op_code) {
+       case SUM_SYM:   i3 = i1 + i2; break;
+       case PROD_SYM:  i3 = i1 * i2; break;
+       case DIFF_SYM:  i3 = i1 - i2; break;
+-      case DIV_SYM:   i3 = i1 / i2; break;
++      case DIV_SYM:   i3 = poww(i1,i2); break;
+       case MOD_SYM:   i3 = i1 % i2; break;
++      case POWER_SYM: i3 = poww(i1,i2); break;
+       }
+       zap_term_special(t);
+       t1 = get_term();
+@@ -418,7 +449,7 @@
+       case FSUM_SYM:   d3 = d1 + d2; break;
+       case FPROD_SYM:  d3 = d1 * d2; break;
+       case FDIFF_SYM:  d3 = d1 - d2; break;
+-      case FDIV_SYM:   d3 = d1 / d2; break;
++      case FDIV_SYM:   d3 = poww(d1,d2); break;
+       }
+       zap_term_special(t);
+       t1 = get_term();
+Only in source-balancer/: demod.c~
+Common subdirectories: source/formed and source-balancer/formed
+diff -u source/header.h source-balancer/header.h
+--- source/header.h	2016-09-24 10:34:18.000000000 +0900
++++ source-balancer/header.h	2016-09-24 10:28:20.000000000 +0900
+@@ -12,6 +12,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
++// #include <math.h>
+ 
+ /*********** INCLUDES FOR TIMES AND DATES ************/
+ 
+@@ -108,7 +109,8 @@
+ #define PROD_SYM         1002
+ #define DIFF_SYM         1003
+ #define DIV_SYM          1004
+-#define MOD_SYM          1005
++#define MOD_SYM          1056
++#define POWER_SYM        1005
+ 
+ #define EQ_SYM           1006
+ #define NE_SYM           1007
+Only in source-balancer/: header.h~
+diff -u source/io.c source-balancer/io.c
+--- source/io.c	2016-09-24 10:34:18.000000000 +0900
++++ source-balancer/io.c	2016-09-24 10:28:20.000000000 +0900
+@@ -1424,6 +1424,8 @@
+   p = insert_sym("$DIFF", 2); p->eval_code = DIFF_SYM;
+   p = insert_sym("$DIV", 2);  p->eval_code = DIV_SYM;
+   p = insert_sym("$MOD", 2);  p->eval_code = MOD_SYM;
++  p = insert_sym("$POWER", 2);  p->eval_code = POWER_SYM;
++  
+ 
+   p = insert_sym("$EQ", 2);   p->eval_code = EQ_SYM;
+   p = insert_sym("$NE", 2);   p->eval_code = NE_SYM;
+Only in source-balancer/: io.c~
+Only in source-balancer/: libotter.a
+diff -u source/misc.c source-balancer/misc.c
+--- source/misc.c	2016-09-24 10:34:18.000000000 +0900
++++ source-balancer/misc.c	2016-09-24 10:28:20.000000000 +0900
+@@ -1,5 +1,5 @@
+ /*
+- *  misc.c -- Miscellaneous routines.
++ *  Misc.c -- Miscellaneous routines.
+  *
+  */
+ 
+@@ -1176,9 +1176,9 @@
+ void print_stats(FILE *fp)
+ {
+   if (splitting())
+-    fprintf(fp, "\n------- statistics (process %d) -------\n", my_process_id());
++    fprintf(fp, "\n------- statistics test! (process %d) -------\n", my_process_id());
+   else
+-    fprintf(fp, "\n-------------- statistics -------------\n");
++    fprintf(fp, "\n-------------- statistics test ! -------------\n");
+ 
+ #if 0
+   fprintf(fp, "clauses input            %7ld\n", Stats[CL_INPUT]);
+Only in source-balancer/: misc.c~
+Only in source-balancer/: powtest.c~

@@ -1,0 +1,104 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Mon Jul 25 05:10:47 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 29763.
+  5: 
+  6: set(hyper_res).
+  7: set(print_lists_at_end).
+  8: assign(max_proofs,2).
+  9: 
+ 10: list(usable).
+ 11: 1 [] -L.
+ 12: 2 [] -M.
+ 13: end_of_list.
+ 14: 
+ 15: list(sos).
+ 16: 3 [] L.
+ 17: 4 [] M.
+ 18: end_of_list.
+ 19: 
+ 20: ======= end of input processing =======
+ 21: 
+ 22: =========== start of search ===========
+ 23: 
+ 24: given clause #1: (wt=1) 3 [] L.
+ 25: ** KEPT (pick-wt=0): 5 [hyper,3,1] $F.
+ 26: 
+ 27: -----> EMPTY CLAUSE at   0.00 sec ----> 5 [hyper,3,1] $F.
+ 28: 
+ 29: Length of proof is 0.  Level of proof is 0.
+ 30: 
+ 31: ---------------- PROOF ----------------
+ 32: 
+ 33: 1 [] -L.
+ 34: 3 [] L.
+ 35: 5 [hyper,3,1] $F.
+ 36: 
+ 37: ------------ end of proof -------------
+ 38: 
+ 39: 
+ 40: given clause #2: (wt=1) 4 [] M.
+ 41: ** KEPT (pick-wt=0): 6 [hyper,4,2] $F.
+ 42: 
+ 43: -----> EMPTY CLAUSE at   0.00 sec ----> 6 [hyper,4,2] $F.
+ 44: 
+ 45: Length of proof is 0.  Level of proof is 0.
+ 46: 
+ 47: ---------------- PROOF ----------------
+ 48: 
+ 49: 2 [] -M.
+ 50: 4 [] M.
+ 51: 6 [hyper,4,2] $F.
+ 52: 
+ 53: ------------ end of proof -------------
+ 54: 
+ 55: 
+ 56: Search stopped by max_proofs option.
+ 57: 
+ 58: ============ end of search ============
+ 59: 
+ 60: list(usable).
+ 61: 1 [] -L.
+ 62: 2 [] -M.
+ 63: 3 [] L.
+ 64: 4 [] M.
+ 65: end_of_list.
+ 66: 
+ 67: list(sos).
+ 68: end_of_list.
+ 69: 
+ 70: list(demodulators).
+ 71: end_of_list.
+ 72: 
+ 73: 
+ 74: -------------- statistics -------------
+ 75: clauses given                  2
+ 76: clauses generated              2
+ 77:   hyper_res generated          2
+ 78: demod & eval rewrites          0
+ 79: clauses wt,lit,sk delete       0
+ 80: tautologies deleted            0
+ 81: clauses forward subsumed       0
+ 82:   (subsumed by sos)            0
+ 83: unit deletions                 0
+ 84: factor simplifications         0
+ 85: clauses kept                   0
+ 86: new demodulators               0
+ 87: empty clauses                  2
+ 88: clauses back demodulated       0
+ 89: clauses back subsumed          0
+ 90: usable size                    4
+ 91: sos size                       0
+ 92: demodulators size              0
+ 93: passive size                   0
+ 94: hot size                       0
+ 95: Kbytes malloced              976
+ 96: 
+ 97: ----------- times (seconds) -----------
+ 98: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+ 99: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+100: wall-clock time        0             (0 hr, 0 min, 0 sec)
+101: 
+102: That finishes the proof of the theorem.
+103: 
+104: Process 29763 finished Mon Jul 25 05:10:47 2016

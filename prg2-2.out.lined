@@ -1,0 +1,49 @@
+  1: given clause #568: (wt=18) 589 [hyper,306,6] P(or(x,or(or(or(y,or(Says(A,or(L(A),L(B))),z)),u),v))).
+  2: ** KEPT (pick-wt=20): 1155 [hyper,589,6] P(or(x,or(y,or(or(or(z,or(Says(A,or(L(A),L(B))),u)),v),w)))).
+  3: ** KEPT (pick-wt=20): 1156 [hyper,589,5] P(or(or(x,or(or(or(y,or(Says(A,or(L(A),L(B))),z)),u),v)),w)).
+  4: 
+  5: given clause #569: (wt=18) 590 [hyper,306,5] P(or(or(or(or(x,or(Says(A,or(L(A),L(B))),y)),z),u),v)).
+  6: ** KEPT (pick-wt=20): 1157 [hyper,590,6] P(or(x,or(or(or(or(y,or(Says(A,or(L(A),L(B))),z)),u),v),w))).
+  7: ** KEPT (pick-wt=20): 1158 [hyper,590,5] P(or(or(or(or(or(x,or(Says(A,or(L(A),L(B))),y)),z),u),v),w)).^C** KEPT (pick-wt=20): 1158 [hyper,590,5] P(or(or(or(or(or(x,or(Says(A,or(L(A),L(B))),y)),z),u),v),w)).
+  8: 
+  9: --- Begin interaction (level 0) ---
+ 10: 
+ 11: 
+ 12: --- Begin interaction (level 0) ---
+ 13: 
+ 14: Type `help.' for the list of commands.
+ 15: > kill.
+ 16: 
+ 17: killed level 0 search during interaction.
+ 18: killed level 0 search during interaction.
+ 19:  ok.
+ 20: 
+ 21: ============ end of search ============
+ 22: 
+ 23: -------------- statistics -------------
+ 24: clauses given                569
+ 25: clauses generated           1726
+ 26:   hyper_res generated       1726
+ 27: demod & eval rewrites          0
+ 28: clauses wt,lit,sk delete       0
+ 29: tautologies deleted            0
+ 30: clauses forward subsumed     576
+ 31:   (subsumed by sos)            3
+ 32: unit deletions                 0
+ 33: factor simplifications         0
+ 34: clauses kept                1150
+ 35: new demodulators               0
+ 36: empty clauses                  0
+ 37: clauses back demodulated       0
+ 38: clauses back subsumed         18
+ 39: usable size                  572
+ 40: sos size                     568
+ 41: demodulators size              0
+ 42: passive size                   0
+ 43: hot size                       0
+ 44: Kbytes malloced            11718
+ 45: 
+ 46: ----------- times (seconds) -----------
+ 47: user CPU time          0.04          (0 hr, 0 min, 0 sec)
+ 48: system CPU time        0.01          (0 hr, 0 min, 0 sec)
+ 49: wall-clock time       62             (0 hr, 1 min, 2 sec)

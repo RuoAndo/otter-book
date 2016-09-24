@@ -1,0 +1,13 @@
+  1: set(hyper_res).
+  2: set(print_lists_at_end).
+  3: assign(max_proofs,2).
+  4: 
+  5: list(usable).
+  6:         -L.
+  7:         -M.     
+  8: end_of_list.
+  9: 
+ 10: list(sos).
+ 11:         L.
+ 12:         M.
+ 13: end_of_list.

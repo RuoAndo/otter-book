@@ -1,0 +1,40 @@
+  1: set(hyper_res).
+  2: set(demod_inf).
+  3: 
+  4: op(900,xfx,||).
+  5: op(900,xfx,&&).
+  6: 
+  7: make_evaluable(_&&_,$AND(_,_)).
+  8: make_evaluable(_||_,$OR(_,_)).
+  9: 
+ 10: list(usable).
+ 11: 	-vampire(x) | -sane(x) | -says(x,P(y)) | lie(P(y)).
+ 12:         -vampire(x) | -mad(x) | -says(x,P(y)) | true(P(y)).
+ 13: 	-human(x) | -sane(x) | -says(x,P(y)) | true(P(y)).
+ 14: 	-human(x) |  -mad(x) | -says(x,P(y)) | lie(P(y)).
+ 15:  
+ 16:         -vampire(x) | human(not(x)).        
+ 17:         -human(x) | vampire(not(x)).        
+ 18:         
+ 19:         -says(x,P(z)) | -says(y,P(z)) | sane(x) | mad(not(x)).
+ 20:         -says(x,P(z)) | -says(y,P(z)) | mad(x) | mad(not(x)).
+ 21:         -true(P($OR(mad(x),mad(y)))) | mad(x) | mad(not(x)).
+ 22:         -true(P($OR(mad(x),mad(y)))) | sane(x) | sane(not(x)).
+ 23: 
+ 24:         -mad(x) | -true(P(y)) | vampire(x).
+ 25:         -sane(x) | -true(P(y)) | human(x).
+ 26: 
+ 27: end_of_list.
+ 28: 
+ 29: list(sos).
+ 30:         says(A, P(human(A))).
+ 31:         says(B, P(human(B))).
+ 32:         says(A, mad(B)).
+ 33:         human(A) | vampire(A).
+ 34:         human(B) | vampire(B).
+ 35: end_of_list.
+ 36: 
+ 37: list(demodulators).
+ 38:         not(A) = B.
+ 39:         not(B) = A.
+ 40: end_of_list.

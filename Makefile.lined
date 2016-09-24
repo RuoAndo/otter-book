@@ -1,0 +1,119 @@
+  1: #############################################################################
+  2: #
+  3: #  Makefile for building Otter 3.3.  There is no configuration script
+  4: #  or higher-level make.  Edit this file to configure compilation of
+  5: #  Otter.  There are three things you may need to change:
+  6: #
+  7: #    DFLAGS  - to control conditional compilation to enable/disable things
+  8: #    CC      - to specify the C compiler (usually cc or gcc)
+  9: #    CFLAGS  - to specify optimization, debugging, and profiling
+ 10: #    XFLAGS  - this can be given on the call to make (see ../Makefile)
+ 11: #
+ 12: #  This should work as is for recent versions of Linux.
+ 13: #
+ 14: #############################################################################
+ 15: 
+ 16: #############################################################################
+ 17: #
+ 18: #  The DFLAGS symbol, defined after this section of comments, controls
+ 19: #  conditional compilation; it enables or disables various features.
+ 20: #
+ 21: #  Enable features:
+ 22: #
+ 23: #    -DTP_NAMES will get username, hostname.
+ 24: #        Don't use if you get errors about gethostname, getuid, getpwuid.
+ 25: #    -DTP_SIGNAL will cause some signals to be caught.
+ 26: #        Don't use if you get errors about signal, SIGINT, SIGSEGV.
+ 27: #    -DTP_FORK will allow interactive forks and case splitting.
+ 28: #        Don't use if you get errors about fork, wait.
+ 29: #    -DTP_RUSAGE for calls to getrusage() (user time, system time).
+ 30: #        Don't use if you get errors about rusage, getrusage, RUSAGE_SELF.
+ 31: #
+ 32: #  Disable features:
+ 33: #
+ 34: #    -DTP_ABSOLUTELY_NO_CLOCKS disables all of the timing.
+ 35: #        Use this as a last resort for timing or clock errrors.
+ 36: #
+ 37: #  To get the full set of features:
+ 38: #
+ 39: #  DFLAGS = -DTP_NAMES -DTP_SIGNAL -DTP_FORK -DTP_RUSAGE
+ 40: #
+ 41: ###############
+ 42: 
+ 43: # OK, here is where to define the DFLAGS:
+ 44: 
+ 45: DFLAGS = -DTP_NAMES -DTP_SIGNAL -DTP_FORK -DTP_RUSAGE $(XFLAGS)
+ 46: 
+ 47: #############################################################################
+ 48: #
+ 49: # Specify the C compiler.  I recommend gcc (GNU C Compiler) if you have it.
+ 50: # In many Linux environments, cc is just a symlink to gcc.
+ 51: 
+ 52: CC = gcc
+ 53: 
+ 54: #############################################################################
+ 55: #
+ 56: # Specify the compiler flags; include DFLAGS (above) -- Pick one of these
+ 57: #
+ 58: # optimized
+ 59: 
+ 60: CFLAGS = -O $(DFLAGS)
+ 61: 
+ 62: #
+ 63: # check for strict ANSI conformance with Solaris cc:
+ 64: #
+ 65: # CFLAGS = -Xc $(DFLAGS)
+ 66: #
+ 67: # various checks for gcc:
+ 68: #
+ 69: # CFLAGS = -Wall $(DFLAGS)
+ 70: # CFLAGS = -ansi -pedantic -Wall $(DFLAGS)
+ 71: # CFLAGS = -Wtraditional -Wpointer-arith -Wcast-qual -Wcast-align $(DFLAGS)
+ 72: # CFLAGS = -Wconversion -Wstrict-prototypes -Wmissing-prototypes\
+ 73: #      -Wmissing-declarations -Wredundant-decls -Wnested-externs  $(DFLAGS)
+ 74: #
+ 75: # save symbols for debuggers
+ 76: # CFLAGS = -g $(DFLAGS)
+ 77: #
+ 78: # optimized, debugging
+ 79: # CFLAGS = -O -g $(DFLAGS)
+ 80: #
+ 81: # gprof profiling
+ 82: # CFLAGS = -pg -O $(DFLAGS)
+ 83: #
+ 84: #############################################################################
+ 85: 
+ 86: OBJECTS = av.o io.o share.o fpa.o clocks.o unify.o demod.o weight.o\
+ 87: 	imd.o is.o clause.o options.o resolve.o index.o paramod.o\
+ 88: 	formula.o process.o misc.o lrpo.o linkur.o linkhyp.o foreign.o\
+ 89: 	geometry.o hot.o nonport.o check.o hints.o hints2.o attrib.o\
+ 90: 	case.o lisp.o ivy.o pickdiff.o overbeek.o multijust.o lists.o\
+ 91: 	fpa2.o
+ 92: 
+ 93: #############################################################################
+ 94: 
+ 95: all: otter install clean
+ 96: 
+ 97: otter: main.o libotter.a
+ 98: 	$(CC) $(CFLAGS) main.o libotter.a -o otter
+ 99: 
+100: libotter.a: $(OBJECTS)
+101: 	$(AR) rs libotter.a $(OBJECTS)
+102: 
+103: main.o $(OBJECTS): header.h types.h macros.h cos.h proto.h foreign.h\
+104: 	lisp.h fpa2.h
+105: 
+106: install:
+107: 	/bin/mv otter ../bin
+108: 
+109: clean:
+110: 	/bin/rm -f *.o
+111: 
+112: realclean:
+113: 	/bin/rm -f *.o *.a otter *~
+114: 
+115: prototypes:
+116: 	/bin/csh make-prototypes main.c $(OBJECTS)
+117: 
+118: #############################################################################
+119: 

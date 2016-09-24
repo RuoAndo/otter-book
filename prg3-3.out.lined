@@ -1,0 +1,88 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Mon Aug 22 13:12:56 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 21220.
+  5: 
+  6: set(hyper_res).
+  7: 
+  8: list(sos).
+  9: 1 [] n([G,N,A,T]).
+ 10: end_of_list.
+ 11: 
+ 12: list(usable).
+ 13: 2 [] -n([G|x])|n(G*x).
+ 14: 3 [] -n(G*[N|x])|n(GN*x).
+ 15: 4 [] -n(GN*x)|generate(x).
+ 16: end_of_list.
+ 17: 
+ 18: list(passive).
+ 19: 5 [] -generate(x).
+ 20: end_of_list.
+ 21: 
+ 22: ======= end of input processing =======
+ 23: 
+ 24: =========== start of search ===========
+ 25: 
+ 26: given clause #1: (wt=10) 1 [] n([G,N,A,T]).
+ 27: ** KEPT (pick-wt=10): 6 [hyper,1,2] n(G*[N,A,T]).
+ 28: 
+ 29: given clause #2: (wt=10) 6 [hyper,1,2] n(G*[N,A,T]).
+ 30: ** KEPT (pick-wt=8): 7 [hyper,6,3] n(GN*[A,T]).
+ 31: 
+ 32: given clause #3: (wt=8) 7 [hyper,6,3] n(GN*[A,T]).
+ 33: ** KEPT (pick-wt=6): 8 [hyper,7,4] generate([A,T]).
+ 34: 
+ 35: ----> UNIT CONFLICT at   0.00 sec ----> 9 [binary,8.1,5.1] $F.
+ 36: 
+ 37: Length of proof is 3.  Level of proof is 3.
+ 38: 
+ 39: ---------------- PROOF ----------------
+ 40: 
+ 41: 1 [] n([G,N,A,T]).
+ 42: 2 [] -n([G|x])|n(G*x).
+ 43: 3 [] -n(G*[N|x])|n(GN*x).
+ 44: 4 [] -n(GN*x)|generate(x).
+ 45: 5 [] -generate(x).
+ 46: 6 [hyper,1,2] n(G*[N,A,T]).
+ 47: 7 [hyper,6,3] n(GN*[A,T]).
+ 48: 8 [hyper,7,4] generate([A,T]).
+ 49: 9 [binary,8.1,5.1] $F.
+ 50: 
+ 51: ------------ end of proof -------------
+ 52: 
+ 53: 
+ 54: Search stopped by max_proofs option.
+ 55: 
+ 56: ============ end of search ============
+ 57: 
+ 58: -------------- statistics -------------
+ 59: clauses given                  3
+ 60: clauses generated              3
+ 61:   hyper_res generated          3
+ 62: demod & eval rewrites          0
+ 63: clauses wt,lit,sk delete       0
+ 64: tautologies deleted            0
+ 65: clauses forward subsumed       0
+ 66:   (subsumed by sos)            0
+ 67: unit deletions                 0
+ 68: factor simplifications         0
+ 69: clauses kept                   3
+ 70: new demodulators               0
+ 71: empty clauses                  1
+ 72: clauses back demodulated       0
+ 73: clauses back subsumed          0
+ 74: usable size                    6
+ 75: sos size                       1
+ 76: demodulators size              0
+ 77: passive size                   1
+ 78: hot size                       0
+ 79: Kbytes malloced              976
+ 80: 
+ 81: ----------- times (seconds) -----------
+ 82: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+ 83: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+ 84: wall-clock time        0             (0 hr, 0 min, 0 sec)
+ 85: 
+ 86: That finishes the proof of the theorem.
+ 87: 
+ 88: Process 21220 finished Mon Aug 22 13:12:56 2016

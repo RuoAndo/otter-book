@@ -1,0 +1,27 @@
+  1: set(hyper_res).
+  2: set(order_history).
+  3: assign(max_proofs,2).
+  4: 
+  5: list(usable).
+  6:         -Achievable(xb,xb,xg,xc) | Achievable(opp(xb), opp(xb), xg, xc).
+  7:         -Achievable(xb,xw,xb,xc) | Achievable(opp(xb), xw, opp(xb), xc).
+  8:         -Achievable(xb,xw,xg,xb) | Achievable(opp(xb), xw, xg, opp(xb)).
+  9:         -Achievable(xb,xw,xg,xc) | Achievable(opp(xb), xw, xg, xc).
+ 10: end_of_list.
+ 11: 
+ 12: list(sos).
+ 13:         Achievable(bw,bw,bw,bw).
+ 14: end_of_list.
+ 15: 
+ 16: list(passive).
+ 17:         -Achievable(be,be,be,be).
+ 18:         Achievable(bw,be,be,xc).
+ 19:         Achievable(be,bw,bw,xc).
+ 20:         Achievable(bw,xw,be,be).
+ 21:         Achievable(be,xw,bw,bw).
+ 22: end_of_list.
+ 23: 
+ 24: list(demodulators).
+ 25:         opp(bw)=be.
+ 26:         opp(be)=bw.
+ 27: end_of_list.

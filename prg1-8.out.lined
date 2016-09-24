@@ -1,0 +1,145 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Thu Sep 22 11:17:53 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 2662.
+  5: 
+  6: set(hyper_res).
+  7: set(prolog_style_variables).
+  8: op(900,xfx,||).
+  9: op(900,xfx,&&).
+ 10: make_evaluable(_-_,$DIFF(_,_)).
+ 11: make_evaluable(_+_,$SUM(_,_)).
+ 12: make_evaluable(_<_,$LT(_,_)).
+ 13: make_evaluable(_<=_,$LE(_,_)).
+ 14: make_evaluable(_>_,$GT(_,_)).
+ 15: make_evaluable(_>=_,$GE(_,_)).
+ 16: make_evaluable(_==_,$EQ(_,_)).
+ 17: make_evaluable(_&&_,$AND(_,_)).
+ 18: make_evaluable(_||_,$OR(_,_)).
+ 19: 
+ 20: list(usable).
+ 21: 1 [] -state(MBS,CBS,BP)| -pick(M)| -pick(C)| -(M<=MBS)| -(C<=CBS)| -(M+C>0)| -(M+C<=2)| -(C>=M||C==0)| -(CBS-C>=MBS-M||CBS-C==0)| -((3-CBS)+C>= (3-MBS)+M|| (3-CBS)+C==0)|state((3-MBS)+M,(3-CBS)+C,otherside(BP)).
+ 22: 2 [] pick(0).
+ 23: 3 [] pick(1).
+ 24: 4 [] pick(2).
+ 25: 5 [] -state(3,3,east).
+ 26: end_of_list.
+ 27: 
+ 28: list(sos).
+ 29: 6 [] state(3,3,west).
+ 30: end_of_list.
+ 31: 
+ 32: list(demodulators).
+ 33: 7 [] otherside(west)=east.
+ 34: 8 [] otherside(east)=west.
+ 35: end_of_list.
+ 36: 
+ 37: ======= end of input processing =======
+ 38: 
+ 39: =========== start of search ===========
+ 40: 
+ 41: given clause #1: (wt=4) 6 [] state(3,3,west).
+ 42: ** KEPT (pick-wt=4): 9 [hyper,6,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(2,0,east).
+ 43: ** KEPT (pick-wt=4): 10 [hyper,6,1,3,3,eval,eval,eval,eval,eval,eval,eval,demod,7] state(1,1,east).
+ 44: ** KEPT (pick-wt=4): 11 [hyper,6,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(1,0,east).
+ 45: 
+ 46: given clause #2: (wt=4) 9 [hyper,6,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(2,0,east).
+ 47: ** KEPT (pick-wt=4): 12 [hyper,9,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(2,3,west).
+ 48: 
+ 49: given clause #3: (wt=4) 10 [hyper,6,1,3,3,eval,eval,eval,eval,eval,eval,eval,demod,7] state(1,1,east).
+ 50: 
+ 51: given clause #4: (wt=4) 11 [hyper,6,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(1,0,east).
+ 52: 
+ 53: given clause #5: (wt=4) 12 [hyper,9,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(2,3,west).
+ 54: ** KEPT (pick-wt=4): 13 [hyper,12,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(3,0,east).
+ 55: 
+ 56: given clause #6: (wt=4) 13 [hyper,12,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(3,0,east).
+ 57: ** KEPT (pick-wt=4): 14 [hyper,13,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(1,3,west).
+ 58: 
+ 59: given clause #7: (wt=4) 14 [hyper,13,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(1,3,west).
+ 60: ** KEPT (pick-wt=4): 15 [hyper,14,1,2,4,eval,eval,eval,eval,eval,eval,eval,demod,7] state(2,2,east).
+ 61: 
+ 62: given clause #8: (wt=4) 15 [hyper,14,1,2,4,eval,eval,eval,eval,eval,eval,eval,demod,7] state(2,2,east).
+ 63: ** KEPT (pick-wt=4): 16 [hyper,15,1,3,3,eval,eval,eval,eval,eval,eval,eval,demod,8] state(2,2,west).
+ 64: 
+ 65: given clause #9: (wt=4) 16 [hyper,15,1,3,3,eval,eval,eval,eval,eval,eval,eval,demod,8] state(2,2,west).
+ 66: ** KEPT (pick-wt=4): 17 [hyper,16,1,2,4,eval,eval,eval,eval,eval,eval,eval,demod,7] state(1,3,east).
+ 67: 
+ 68: given clause #10: (wt=4) 17 [hyper,16,1,2,4,eval,eval,eval,eval,eval,eval,eval,demod,7] state(1,3,east).
+ 69: ** KEPT (pick-wt=4): 18 [hyper,17,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(3,0,west).
+ 70: 
+ 71: given clause #11: (wt=4) 18 [hyper,17,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(3,0,west).
+ 72: ** KEPT (pick-wt=4): 19 [hyper,18,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(2,3,east).
+ 73: 
+ 74: given clause #12: (wt=4) 19 [hyper,18,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(2,3,east).
+ 75: ** KEPT (pick-wt=4): 20 [hyper,19,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(2,0,west).
+ 76: ** KEPT (pick-wt=4): 21 [hyper,19,1,2,3,eval,eval,eval,eval,eval,eval,eval,demod,8] state(1,1,west).
+ 77: 
+ 78: given clause #13: (wt=4) 20 [hyper,19,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(2,0,west).
+ 79: ** KEPT (pick-wt=4): 22 [hyper,20,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(3,3,east).
+ 80: 
+ 81: ----> UNIT CONFLICT at   0.00 sec ----> 23 [binary,22.1,5.1] $F.
+ 82: 
+ 83: Length of proof is 11.  Level of proof is 11.
+ 84: 
+ 85: ---------------- PROOF ----------------
+ 86: 
+ 87: 1 [] -state(MBS,CBS,BP)| -pick(M)| -pick(C)| -(M<=MBS)| -(C<=CBS)| -(M+C>0)| -(M+C<=2)| -(C>=M||C==0)| -(CBS-C>=MBS-M||CBS-C==0)| -((3-CBS)+C>= (3-MBS)+M|| (3-CBS)+C==0)|state((3-MBS)+M,(3-CBS)+C,otherside(BP)).
+ 88: 2 [] pick(0).
+ 89: 3 [] pick(1).
+ 90: 4 [] pick(2).
+ 91: 5 [] -state(3,3,east).
+ 92: 6 [] state(3,3,west).
+ 93: 7 [] otherside(west)=east.
+ 94: 8 [] otherside(east)=west.
+ 95: 9 [hyper,6,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(2,0,east).
+ 96: 12 [hyper,9,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(2,3,west).
+ 97: 13 [hyper,12,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(3,0,east).
+ 98: 14 [hyper,13,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(1,3,west).
+ 99: 15 [hyper,14,1,2,4,eval,eval,eval,eval,eval,eval,eval,demod,7] state(2,2,east).
+100: 16 [hyper,15,1,3,3,eval,eval,eval,eval,eval,eval,eval,demod,8] state(2,2,west).
+101: 17 [hyper,16,1,2,4,eval,eval,eval,eval,eval,eval,eval,demod,7] state(1,3,east).
+102: 18 [hyper,17,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(3,0,west).
+103: 19 [hyper,18,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(2,3,east).
+104: 20 [hyper,19,1,3,2,eval,eval,eval,eval,eval,eval,eval,demod,8] state(2,0,west).
+105: 22 [hyper,20,1,4,2,eval,eval,eval,eval,eval,eval,eval,demod,7] state(3,3,east).
+106: 23 [binary,22.1,5.1] $F.
+107: 
+108: ------------ end of proof -------------
+109: 
+110: 
+111: Search stopped by max_proofs option.
+112: 
+113: ============ end of search ============
+114: 
+115: -------------- statistics -------------
+116: clauses given                 13
+117: clauses generated             27
+118:   hyper_res generated         27
+119: demod & eval rewrites        135
+120: clauses wt,lit,sk delete       0
+121: tautologies deleted            0
+122: clauses forward subsumed      13
+123:   (subsumed by sos)            1
+124: unit deletions                 0
+125: factor simplifications         0
+126: clauses kept                  14
+127: new demodulators               0
+128: empty clauses                  1
+129: clauses back demodulated       0
+130: clauses back subsumed          0
+131: usable size                   18
+132: sos size                       2
+133: demodulators size              2
+134: passive size                   0
+135: hot size                       0
+136: Kbytes malloced              976
+137: 
+138: ----------- times (seconds) -----------
+139: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+140: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+141: wall-clock time        0             (0 hr, 0 min, 0 sec)
+142: 
+143: That finishes the proof of the theorem.
+144: 
+145: Process 2662 finished Thu Sep 22 11:17:53 2016

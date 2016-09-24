@@ -1,0 +1,7 @@
+  1: list(usable).
+  2:         -P | M.
+  3: end_of_list.
+  4: 
+  5: list(sos)
+  6:         P.
+  7: end_of_list.

@@ -1,0 +1,165 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on www20363ui.sakura.ne.jp,
+Mon Jul 25 11:56:54 2016
+The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 3475.
+
+set(demod_inf).
+set(hyper_res).
+set(very_verbose).
+
+list(sos).
+1 [] n([D,G,R,N,D,G,R,N]).
+end_of_list.
+
+list(demodulators).
+2 [] [R|y]=repeat(y).
+3 [] [N|y]=name(y).
+4 [] [G|x]=generate([x]).
+5 [] [D|x]=destroy([x]).
+6 [] name([])=N.
+7 [] repeat(N)=RN.
+8 [] repeat([x|y])=[x,y,x,y].
+9 [] generate([x])=G*x.
+10 [] name([x])=N*x.
+11 [] [name(x*y)]=[N*x*y].
+12 [] destroy([G*x])=D*G*x.
+13 [] generate([x,x])=[x,x].
+14 [] repeat(name(x))=[x,x].
+15 [] [[x,x]]=[x,x].
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=18) 1 [] n([D,G,R,N,D,G,R,N]).
+
+  0 [1] n([D,G,R,N,D,G,R,N]).
+   demod term: D.
+   demod term: G.
+   demod term: R.
+   demod term: N.
+   demod term: D.
+   demod term: G.
+   demod term: R.
+   demod term: N.
+   demod term: [].
+   demod term: [N].
+   --> result: name([])   demod<3>
+   demod term: name([]).
+   --> result: N   demod<6>
+   demod term: N.
+   demod term: [R|N].
+   --> result: repeat(N)   demod<2>
+   demod term: repeat(N).
+   --> result: RN   demod<7>
+   demod term: RN.
+   demod term: [G|RN].
+   --> result: generate([RN])   demod<4>
+   demod term: [].
+   demod term: [RN].
+   demod term: generate([RN]).
+   --> result: G*RN   demod<9>
+   demod term: G.
+   demod term: G*RN.
+   demod term: [D|G*RN].
+   --> result: destroy([G*RN])   demod<5>
+   demod term: [].
+   demod term: [G*RN].
+   demod term: destroy([G*RN]).
+   --> result: D*G*RN   demod<12>
+   demod term: D.
+   demod term: G.
+   demod term: G*RN.
+   demod term: D*G*RN.
+   demod term: [N|D*G*RN].
+   --> result: name(D*G*RN)   demod<3>
+   demod term: name(D*G*RN).
+   demod term: [R|name(D*G*RN)].
+   --> result: repeat(name(D*G*RN))   demod<2>
+   demod term: repeat(name(D*G*RN)).
+   --> result: [D*G*RN,D*G*RN]   demod<14>
+   demod term: [].
+   demod term: [D*G*RN].
+   demod term: [D*G*RN,D*G*RN].
+   demod term: [G,D*G*RN,D*G*RN].
+   --> result: generate([[D*G*RN,D*G*RN]])   demod<4>
+   demod term: [].
+   demod term: [[D*G*RN,D*G*RN]].
+   --> result: [D*G*RN,D*G*RN]   demod<15>
+   demod term: [].
+   demod term: [D*G*RN].
+   demod term: [D*G*RN,D*G*RN].
+   demod term: generate([D*G*RN,D*G*RN]).
+   --> result: [D*G*RN,D*G*RN]   demod<13>
+   demod term: [].
+   demod term: [D*G*RN].
+   demod term: [D*G*RN,D*G*RN].
+   demod term: [D,D*G*RN,D*G*RN].
+   --> result: destroy([[D*G*RN,D*G*RN]])   demod<5>
+   demod term: [].
+   demod term: [[D*G*RN,D*G*RN]].
+   --> result: [D*G*RN,D*G*RN]   demod<15>
+   demod term: [].
+   demod term: [D*G*RN].
+   demod term: [D*G*RN,D*G*RN].
+   demod term: destroy([D*G*RN,D*G*RN]).
+   demod term: n(destroy([D*G*RN,D*G*RN])).
+  after demodulation: 0 [1,demod,3,6,2,7,4,9,5,12,3,2,14,4,15,13,5,15] n(destroy([D*G*RN,D*G*RN])).
+** KEPT (pick-wt=15): 16 [1,demod,3,6,2,7,4,9,5,12,3,2,14,4,15,13,5,15] n(destroy([D*G*RN,D*G*RN])).
+
+given clause #2: (wt=15) 16 [1,demod,3,6,2,7,4,9,5,12,3,2,14,4,15,13,5,15] n(destroy([D*G*RN,D*G*RN])).
+
+  0 [16] n(destroy([D*G*RN,D*G*RN])).
+   demod term: D.
+   demod term: G.
+   demod term: RN.
+   demod term: G*RN.
+   demod term: D*G*RN.
+   demod term: D.
+   demod term: G.
+   demod term: RN.
+   demod term: G*RN.
+   demod term: D*G*RN.
+   demod term: [].
+   demod term: [D*G*RN].
+   demod term: [D*G*RN,D*G*RN].
+   demod term: destroy([D*G*RN,D*G*RN]).
+   demod term: n(destroy([D*G*RN,D*G*RN])).
+  after demodulation: 0 [16] n(destroy([D*G*RN,D*G*RN])).
+  Subsumed by 16.
+
+Search stopped because sos empty.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  2
+clauses generated              2
+  hyper_res generated          0
+  demod_inf generated          2
+demod & eval rewrites         16
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed       1
+  (subsumed by sos)            0
+unit deletions                 0
+factor simplifications         0
+clauses kept                   1
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                    2
+sos size                       0
+demodulators size             14
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+Process 3475 finished Mon Jul 25 11:56:54 2016

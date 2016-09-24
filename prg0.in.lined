@@ -1,0 +1,70 @@
+  1: set(hyper_res).
+  2: set(prolog_style_variables).
+  3: %clear(back_sub).
+  4: assign(max_proofs, -1).
+  5: 
+  6: op(900, xfx, ||).
+  7: op(900, xfx, &&).
+  8: make_evaluable(_-_, $DIFF(_,_)).
+  9: make_evaluable(_+_, $SUM(_,_)).
+ 10: make_evaluable(_<_, $LT(_,_)).
+ 11: make_evaluable(_<=_, $LE(_,_)).
+ 12: make_evaluable(_>_, $GT(_,_)).
+ 13: make_evaluable(_>=_, $GE(_,_)).
+ 14: make_evaluable(_==_, $EQ(_,_)).
+ 15: make_evaluable(_&&_, $AND(_,_)).
+ 16: make_evaluable(_||_, $OR(_,_)).
+ 17: make_evaluable(_*_, $PROD(_,_)).
+ 18: 
+ 19: list(usable).
+ 20: PICK(0).
+ 21: PICK(1).
+ 22: PICK(2).
+ 23: PICK(3).
+ 24: PICK(4).
+ 25: PICK(5).
+ 26: PICK(6).
+ 27: 
+ 28: -solvable(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM)))
+ 29: | -PICK(YHLS)
+ 30: | -PICK(YHS)
+ 31: | -PICK(YLS)
+ 32: | -PICK(YS)
+ 33: | -$LE(YHLS,XHLS)
+ 34: | -$LE(YHS,XHS)
+ 35: | -$LE(YLS,XLS)
+ 36: | -$LE(YS,XS)
+ 37: | -$GT(YHLS+YHS+YLS+YS,0)
+ 38: | -$LE(YHLS+YHS+YLS+YS,6)
+ 39: | -PICK(ZHLS)
+ 40: | -PICK(ZHS)
+ 41: | -PICK(ZLS)
+ 42: | -$LE(ZHLS+YHLS,XHLS)
+ 43: | -$LE(ZHS+YHS,XHS)
+ 44: | -$LE(ZLS+YLS,XLS)
+ 45: | -$GE(XREM,0)
+ 46: | -$EQ(YHLS+YHS+YLS+YS,ZHLS+ZHS+ZLS)
+ 47: | -$LE(ZHLS+ZHS+YHLS+YLS,$DIV(3,XREM-1))
+ 48: | -$LE(ZHLS+ZLS+YHLS+YHS,$DIV(3,XREM-1))
+ 49: | -$LE($PROD(2,$DIFF(XHLS,(YHLS+ZHLS))+$DIFF(XHS,(YHS+ZHS))+$DIFF(XLS,(YLS+ZLS))),$DIV(3,XREM-1))
+ 50: | RECORD(parent(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM))),
+ 51: left(state(hls(0),hs(ZHLS+ZHS),ls(YHLS+YLS),s($DIFF(XHLS,(YHLS+ZHLS))+$DIFF(XHS,ZHS)+$DIFF(XLS,YLS)+XS),rem(XREM-1))),
+ 52: right(state(hls(0),hs(YHLS+YHS),ls(ZHLS+ZLS),s($DIFF(XHLS,(ZHLS+YHLS))+$DIFF(XHS,YHS)+$DIFF(XLS,ZLS)+XS),rem(XREM-1))),
+ 53: balance(state(hls($DIFF(XHLS,(YHLS+ZHLS))),hs($DIFF(XHS,(YHS+ZHS))),ls($DIFF(XLS,(YLS+ZLS))),s(XS+YHLS+ZHLS+YHS+ZHS+YLS+ZLS),rem(XREM-1)))).
+ 54: 
+ 55: -solvable(state(hls(0),hs(1),ls(0),s(10),rem(0))).
+ 56: -solvable(state(hls(0),hs(0),ls(1),s(10),rem(0))).
+ 57: -solvable(state(hls(0),hs(0),ls(0),s(10),rem(0))).
+ 58: 
+ 59: -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))| solvable(XL).
+ 60: -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))| solvable(XR).
+ 61: -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))| solvable(XBAL).
+ 62: 
+ 63: -RECORD(parent(XP),left(XL),right(XR),balance(XBAL)) | -solvable(XL) | -solvable(XR) 
+ 64: | -solvable(XBAL) | solvable(XP).
+ 65: 
+ 66: end_of_list.
+ 67: 
+ 68: list(sos).
+ 69: solvable(state(hls(11),hs(0),ls(0),s(0),rem(3))).
+ 70: end_of_list.

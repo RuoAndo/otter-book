@@ -1,0 +1,127 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Tue Aug  9 09:31:07 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 12823.
+  5: 
+  6: set(hyper_res).
+  7: set(order_history).
+  8: assign(max_proofs,2).
+  9: 
+ 10: list(usable).
+ 11: 1 [] -Achievable(xb,xb,xg,xc)|Achievable(opp(xb),opp(xb),xg,xc).
+ 12: 2 [] -Achievable(xb,xw,xb,xc)|Achievable(opp(xb),xw,opp(xb),xc).
+ 13: 3 [] -Achievable(xb,xw,xg,xb)|Achievable(opp(xb),xw,xg,opp(xb)).
+ 14: 4 [] -Achievable(xb,xw,xg,xc)|Achievable(opp(xb),xw,xg,xc).
+ 15: end_of_list.
+ 16: 
+ 17: list(sos).
+ 18: 5 [] Achievable(bw,bw,bw,bw).
+ 19: end_of_list.
+ 20: 
+ 21: list(passive).
+ 22: 6 [] -Achievable(be,be,be,be).
+ 23: 7 [] Achievable(bw,be,be,xc).
+ 24: 8 [] Achievable(be,bw,bw,xc).
+ 25: 9 [] Achievable(bw,xw,be,be).
+ 26: 10 [] Achievable(be,xw,bw,bw).
+ 27: end_of_list.
+ 28: 
+ 29: list(demodulators).
+ 30: 11 [] opp(bw)=be.
+ 31: 12 [] opp(be)=bw.
+ 32: end_of_list.
+ 33: 
+ 34: ======= end of input processing =======
+ 35: 
+ 36: =========== start of search ===========
+ 37: 
+ 38: given clause #1: (wt=5) 5 [] Achievable(bw,bw,bw,bw).
+ 39: ** KEPT (pick-wt=5): 13 [hyper,2,5,demod,11,11] Achievable(be,bw,be,bw).
+ 40: 
+ 41: given clause #2: (wt=5) 13 [hyper,2,5,demod,11,11] Achievable(be,bw,be,bw).
+ 42: ** KEPT (pick-wt=5): 14 [hyper,4,13,demod,12] Achievable(bw,bw,be,bw).
+ 43: 
+ 44: given clause #3: (wt=5) 14 [hyper,4,13,demod,12] Achievable(bw,bw,be,bw).
+ 45: ** KEPT (pick-wt=5): 15 [hyper,3,14,demod,11,11] Achievable(be,bw,be,be).
+ 46: ** KEPT (pick-wt=5): 16 [hyper,1,14,demod,11,11] Achievable(be,be,be,bw).
+ 47: 
+ 48: given clause #4: (wt=5) 15 [hyper,3,14,demod,11,11] Achievable(be,bw,be,be).
+ 49: ** KEPT (pick-wt=5): 17 [hyper,2,15,demod,12,12] Achievable(bw,bw,bw,be).
+ 50: 
+ 51: given clause #5: (wt=5) 16 [hyper,1,14,demod,11,11] Achievable(be,be,be,bw).
+ 52: ** KEPT (pick-wt=5): 18 [hyper,2,16,demod,12,12] Achievable(bw,be,bw,bw).
+ 53: 
+ 54: given clause #6: (wt=5) 17 [hyper,2,15,demod,12,12] Achievable(bw,bw,bw,be).
+ 55: ** KEPT (pick-wt=5): 19 [hyper,1,17,demod,11,11] Achievable(be,be,bw,be).
+ 56: 
+ 57: given clause #7: (wt=5) 18 [hyper,2,16,demod,12,12] Achievable(bw,be,bw,bw).
+ 58: 
+ 59: given clause #8: (wt=5) 19 [hyper,1,17,demod,11,11] Achievable(be,be,bw,be).
+ 60: ** KEPT (pick-wt=5): 20 [hyper,4,19,demod,12] Achievable(bw,be,bw,be).
+ 61: 
+ 62: given clause #9: (wt=5) 20 [hyper,4,19,demod,12] Achievable(bw,be,bw,be).
+ 63: ** KEPT (pick-wt=5): 21 [hyper,2,20,demod,11,11] Achievable(be,be,be,be).
+ 64: 
+ 65: ----> UNIT CONFLICT at   0.00 sec ----> 22 [binary,21.1,6.1] $F.
+ 66: 
+ 67: Length of proof is 7.  Level of proof is 7.
+ 68: 
+ 69: ---------------- PROOF ----------------
+ 70: 
+ 71: 1 [] -Achievable(xb,xb,xg,xc)|Achievable(opp(xb),opp(xb),xg,xc).
+ 72: 2 [] -Achievable(xb,xw,xb,xc)|Achievable(opp(xb),xw,opp(xb),xc).
+ 73: 3 [] -Achievable(xb,xw,xg,xb)|Achievable(opp(xb),xw,xg,opp(xb)).
+ 74: 4 [] -Achievable(xb,xw,xg,xc)|Achievable(opp(xb),xw,xg,xc).
+ 75: 5 [] Achievable(bw,bw,bw,bw).
+ 76: 6 [] -Achievable(be,be,be,be).
+ 77: 11 [] opp(bw)=be.
+ 78: 12 [] opp(be)=bw.
+ 79: 13 [hyper,2,5,demod,11,11] Achievable(be,bw,be,bw).
+ 80: 14 [hyper,4,13,demod,12] Achievable(bw,bw,be,bw).
+ 81: 15 [hyper,3,14,demod,11,11] Achievable(be,bw,be,be).
+ 82: 17 [hyper,2,15,demod,12,12] Achievable(bw,bw,bw,be).
+ 83: 19 [hyper,1,17,demod,11,11] Achievable(be,be,bw,be).
+ 84: 20 [hyper,4,19,demod,12] Achievable(bw,be,bw,be).
+ 85: 21 [hyper,2,20,demod,11,11] Achievable(be,be,be,be).
+ 86: 22 [binary,21.1,6.1] $F.
+ 87: 
+ 88: ------------ end of proof -------------
+ 89: 
+ 90: 
+ 91: given clause #10: (wt=5) 21 [hyper,2,20,demod,11,11] Achievable(be,be,be,be).
+ 92: 
+ 93: Search stopped because sos empty.
+ 94: 
+ 95: ============ end of search ============
+ 96: 
+ 97: -------------- statistics -------------
+ 98: clauses given                 10
+ 99: clauses generated             30
+100:   hyper_res generated         30
+101: demod & eval rewrites         50
+102: clauses wt,lit,sk delete       0
+103: tautologies deleted            0
+104: clauses forward subsumed      21
+105:   (subsumed by sos)            1
+106: unit deletions                 0
+107: factor simplifications         0
+108: clauses kept                   9
+109: new demodulators               0
+110: empty clauses                  1
+111: clauses back demodulated       0
+112: clauses back subsumed          0
+113: usable size                   14
+114: sos size                       0
+115: demodulators size              2
+116: passive size                   5
+117: hot size                       0
+118: Kbytes malloced              976
+119: 
+120: ----------- times (seconds) -----------
+121: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+122: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+123: wall-clock time        0             (0 hr, 0 min, 0 sec)
+124: 
+125: That finishes the proof of the theorem.
+126: 
+127: Process 12823 finished Tue Aug  9 09:31:07 2016

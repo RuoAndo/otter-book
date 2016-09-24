@@ -1,0 +1,85 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Sun Jul 24 12:23:19 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 15126.
+  5: 
+  6: set(hyper_res).
+  7: 
+  8: list(usable).
+  9: 1 [] LABEL(a,apples).
+ 10: 2 [] LABEL(b,oranges).
+ 11: 3 [] LABEL(c,bananas).
+ 12: 4 [] CONTAINS(a,apples)|CONTAINS(a,bananas)|CONTAINS(a,oranges).
+ 13: 5 [] CONTAINS(b,apples)|CONTAINS(b,bananas)|CONTAINS(b,oranges).
+ 14: 6 [] CONTAINS(c,apples)|CONTAINS(c,bananas)|CONTAINS(c,oranges).
+ 15: 7 [] -CONTAINS(a,apples)| -CONTAINS(b,apples).
+ 16: 8 [] -CONTAINS(b,apples)| -CONTAINS(c,apples).
+ 17: 9 [] -CONTAINS(c,apples)| -CONTAINS(a,apples).
+ 18: 10 [] -CONTAINS(a,bananas)| -CONTAINS(b,bananas).
+ 19: 11 [] -CONTAINS(b,bananas)| -CONTAINS(c,bananas).
+ 20: 12 [] -CONTAINS(c,bananas)| -CONTAINS(a,bananas).
+ 21: 13 [] -CONTAINS(a,oranges)| -CONTAINS(b,oranges).
+ 22: 14 [] -CONTAINS(b,oranges)| -CONTAINS(c,oranges).
+ 23: 15 [] -CONTAINS(c,oranges)| -CONTAINS(a,oranges).
+ 24: 16 [] -LABEL(x,y)| -CONTAINS(x,y).
+ 25: end_of_list.
+ 26: 
+ 27: list(sos).
+ 28: 17 [] CONTAINS(b,apples).
+ 29: end_of_list.
+ 30: 
+ 31: ======= end of input processing =======
+ 32: 
+ 33: =========== start of search ===========
+ 34: 
+ 35: given clause #1: (wt=3) 17 [] CONTAINS(b,apples).
+ 36: ** KEPT (pick-wt=6): 18 [hyper,17,8,6] CONTAINS(c,bananas)|CONTAINS(c,oranges).
+ 37: ** KEPT (pick-wt=6): 19 [hyper,17,7,4] CONTAINS(a,bananas)|CONTAINS(a,oranges).
+ 38: 18 back subsumes 6.
+ 39: 19 back subsumes 4.
+ 40: 
+ 41: given clause #2: (wt=6) 18 [hyper,17,8,6] CONTAINS(c,bananas)|CONTAINS(c,oranges).
+ 42: ** KEPT (pick-wt=3): 20 [hyper,18,16,3] CONTAINS(c,oranges).
+ 43: 20 back subsumes 18.
+ 44: 
+ 45: given clause #3: (wt=3) 20 [hyper,18,16,3] CONTAINS(c,oranges).
+ 46: 
+ 47: given clause #4: (wt=6) 19 [hyper,17,7,4] CONTAINS(a,bananas)|CONTAINS(a,oranges).
+ 48: ** KEPT (pick-wt=3): 21 [hyper,19,15,20] CONTAINS(a,bananas).
+ 49: 21 back subsumes 19.
+ 50: 
+ 51: given clause #5: (wt=3) 21 [hyper,19,15,20] CONTAINS(a,bananas).
+ 52: 
+ 53: Search stopped because sos empty.
+ 54: 
+ 55: ============ end of search ============
+ 56: 
+ 57: -------------- statistics -------------
+ 58: clauses given                  5
+ 59: clauses generated             10
+ 60:   hyper_res generated         10
+ 61: demod & eval rewrites          0
+ 62: clauses wt,lit,sk delete       0
+ 63: tautologies deleted            0
+ 64: clauses forward subsumed       6
+ 65:   (subsumed by sos)            2
+ 66: unit deletions                 0
+ 67: factor simplifications         0
+ 68: clauses kept                   4
+ 69: new demodulators               0
+ 70: empty clauses                  0
+ 71: clauses back demodulated       0
+ 72: clauses back subsumed          4
+ 73: usable size                   17
+ 74: sos size                       0
+ 75: demodulators size              0
+ 76: passive size                   0
+ 77: hot size                       0
+ 78: Kbytes malloced              976
+ 79: 
+ 80: ----------- times (seconds) -----------
+ 81: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+ 82: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+ 83: wall-clock time        0             (0 hr, 0 min, 0 sec)
+ 84: 
+ 85: Process 15126 finished Sun Jul 24 12:23:19 2016

@@ -1,6 +1,8 @@
 set(binary_res).
 set(order_history).
-assign(max_proofs, 2).
+assign(max_proofs, 1).
+
+make_evaluable(_-_, $DIFF(_,_)).
 
 list(usable).
         -Achievable(bw,x,y) | -$GT(x,0) | Achievable(be,$DIFF(3,x),$DIFF(2,y)).

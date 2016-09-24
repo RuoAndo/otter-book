@@ -1,0 +1,88 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on www20363ui.sakura.ne.jp,
+Mon Aug 22 13:12:56 2016
+The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 21220.
+
+set(hyper_res).
+
+list(sos).
+1 [] n([G,N,A,T]).
+end_of_list.
+
+list(usable).
+2 [] -n([G|x])|n(G*x).
+3 [] -n(G*[N|x])|n(GN*x).
+4 [] -n(GN*x)|generate(x).
+end_of_list.
+
+list(passive).
+5 [] -generate(x).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=10) 1 [] n([G,N,A,T]).
+** KEPT (pick-wt=10): 6 [hyper,1,2] n(G*[N,A,T]).
+
+given clause #2: (wt=10) 6 [hyper,1,2] n(G*[N,A,T]).
+** KEPT (pick-wt=8): 7 [hyper,6,3] n(GN*[A,T]).
+
+given clause #3: (wt=8) 7 [hyper,6,3] n(GN*[A,T]).
+** KEPT (pick-wt=6): 8 [hyper,7,4] generate([A,T]).
+
+----> UNIT CONFLICT at   0.00 sec ----> 9 [binary,8.1,5.1] $F.
+
+Length of proof is 3.  Level of proof is 3.
+
+---------------- PROOF ----------------
+
+1 [] n([G,N,A,T]).
+2 [] -n([G|x])|n(G*x).
+3 [] -n(G*[N|x])|n(GN*x).
+4 [] -n(GN*x)|generate(x).
+5 [] -generate(x).
+6 [hyper,1,2] n(G*[N,A,T]).
+7 [hyper,6,3] n(GN*[A,T]).
+8 [hyper,7,4] generate([A,T]).
+9 [binary,8.1,5.1] $F.
+
+------------ end of proof -------------
+
+
+Search stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  3
+clauses generated              3
+  hyper_res generated          3
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed       0
+  (subsumed by sos)            0
+unit deletions                 0
+factor simplifications         0
+clauses kept                   3
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                    6
+sos size                       1
+demodulators size              0
+passive size                   1
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+That finishes the proof of the theorem.
+
+Process 21220 finished Mon Aug 22 13:12:56 2016

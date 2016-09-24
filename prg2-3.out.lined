@@ -1,0 +1,129 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Mon Jul 25 02:13:22 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 26998.
+  5: 
+  6: set(hyper_res).
+  7: assign(max_given,10).
+  8: 
+  9: list(usable).
+ 10: 1 [] -P(T(x))| -P(Says(x,y))|P(y).
+ 11: 2 [] -P(L(x))| -P(Says(x,y))| -P(y).
+ 12: 3 [] P(T(x))|P(L(x)).
+ 13: 4 [] -P(T(x))| -P(L(x)).
+ 14: 5 [] -P(y)|P(or(y,z)).
+ 15: 6 [] -P(z)|P(or(y,z)).
+ 16: 7 [] -P(or(y,z))|P(y)|P(z).
+ 17: end_of_list.
+ 18: 
+ 19: list(sos).
+ 20: 8 [] P(Says(A,or(L(A),L(B)))).
+ 21: end_of_list.
+ 22: 
+ 23: ======= end of input processing =======
+ 24: 
+ 25: =========== start of search ===========
+ 26: 
+ 27: given clause #1: (wt=8) 8 [] P(Says(A,or(L(A),L(B)))).
+ 28: ** KEPT (pick-wt=10): 9 [hyper,8,6] P(or(x,Says(A,or(L(A),L(B))))).
+ 29: ** KEPT (pick-wt=10): 10 [hyper,8,5] P(or(Says(A,or(L(A),L(B))),x)).
+ 30: ** KEPT (pick-wt=9): 11 [hyper,8,1,3] P(or(L(A),L(B)))|P(L(A)).
+ 31: 
+ 32: given clause #2: (wt=9) 11 [hyper,8,1,3] P(or(L(A),L(B)))|P(L(A)).
+ 33: ** KEPT (pick-wt=6): 12 [hyper,11,7] P(L(A))|P(L(B)).
+ 34: ** KEPT (pick-wt=11): 13 [hyper,11,6] P(L(A))|P(or(x,or(L(A),L(B)))).
+ 35: ** KEPT (pick-wt=11): 14 [hyper,11,5] P(L(A))|P(or(or(L(A),L(B)),x)).
+ 36: ** KEPT (pick-wt=11): 15 [hyper,11,6] P(or(L(A),L(B)))|P(or(x,L(A))).
+ 37: ** KEPT (pick-wt=11): 16 [hyper,11,5] P(or(L(A),L(B)))|P(or(L(A),x)).
+ 38: 16 back subsumes 15.
+ 39: 16 back subsumes 11.
+ 40: 
+ 41: given clause #3: (wt=6) 12 [hyper,11,7] P(L(A))|P(L(B)).
+ 42: ** KEPT (pick-wt=8): 17 [hyper,12,6] P(L(B))|P(or(x,L(A))).
+ 43: ** KEPT (pick-wt=8): 18 [hyper,12,5] P(L(B))|P(or(L(A),x)).
+ 44: ** KEPT (pick-wt=8): 19 [hyper,12,6] P(L(A))|P(or(x,L(B))).
+ 45: ** KEPT (pick-wt=8): 20 [hyper,12,5] P(L(A))|P(or(L(B),x)).
+ 46: 
+ 47: given clause #4: (wt=8) 17 [hyper,12,6] P(L(B))|P(or(x,L(A))).
+ 48: ** KEPT (pick-wt=10): 21 [hyper,17,6] P(or(x,L(A)))|P(or(y,L(B))).
+ 49: ** KEPT (pick-wt=10): 22 [hyper,17,5] P(or(x,L(A)))|P(or(L(B),y)).
+ 50: ** KEPT (pick-wt=10): 23 [hyper,17,6] P(L(B))|P(or(x,or(y,L(A)))).
+ 51: ** KEPT (pick-wt=10): 24 [hyper,17,5] P(L(B))|P(or(or(x,L(A)),y)).
+ 52: 
+ 53: given clause #5: (wt=8) 18 [hyper,12,5] P(L(B))|P(or(L(A),x)).
+ 54: ** KEPT (pick-wt=10): 25 [hyper,18,6] P(or(L(A),x))|P(or(y,L(B))).
+ 55: ** KEPT (pick-wt=10): 26 [hyper,18,5] P(or(L(A),x))|P(or(L(B),y)).
+ 56: ** KEPT (pick-wt=10): 27 [hyper,18,6] P(L(B))|P(or(x,or(L(A),y))).
+ 57: ** KEPT (pick-wt=10): 28 [hyper,18,5] P(L(B))|P(or(or(L(A),x),y)).
+ 58: ** KEPT (pick-wt=3): 29 [hyper,18,2,12,8] P(L(B)).
+ 59: 25 back subsumes 16.
+ 60: 29 back subsumes 28.
+ 61: 29 back subsumes 27.
+ 62: 29 back subsumes 24.
+ 63: 29 back subsumes 23.
+ 64: 29 back subsumes 18.
+ 65: 29 back subsumes 17.
+ 66: 29 back subsumes 12.
+ 67: 
+ 68: given clause #6: (wt=3) 29 [hyper,18,2,12,8] P(L(B)).
+ 69: ** KEPT (pick-wt=5): 30 [hyper,29,6] P(or(x,L(B))).
+ 70: ** KEPT (pick-wt=5): 31 [hyper,29,5] P(or(L(B),x)).
+ 71: 30 back subsumes 25.
+ 72: 30 back subsumes 21.
+ 73: 30 back subsumes 19.
+ 74: 31 back subsumes 26.
+ 75: 31 back subsumes 22.
+ 76: 31 back subsumes 20.
+ 77: 
+ 78: given clause #7: (wt=5) 30 [hyper,29,6] P(or(x,L(B))).
+ 79: ** KEPT (pick-wt=7): 32 [hyper,30,6] P(or(x,or(y,L(B)))).
+ 80: ** KEPT (pick-wt=7): 33 [hyper,30,5] P(or(or(x,L(B)),y)).
+ 81: ** KEPT (pick-wt=3): 34 [hyper,30,2,3,8] P(T(A)).
+ 82: 32 back subsumes 13.
+ 83: 33 back subsumes 14.
+ 84: 
+ 85: given clause #8: (wt=3) 34 [hyper,30,2,3,8] P(T(A)).
+ 86: ** KEPT (pick-wt=5): 35 [hyper,34,6] P(or(x,T(A))).
+ 87: ** KEPT (pick-wt=5): 36 [hyper,34,5] P(or(T(A),x)).
+ 88: 
+ 89: given clause #9: (wt=5) 31 [hyper,29,5] P(or(L(B),x)).
+ 90: ** KEPT (pick-wt=7): 37 [hyper,31,6] P(or(x,or(L(B),y))).
+ 91: ** KEPT (pick-wt=7): 38 [hyper,31,5] P(or(or(L(B),x),y)).
+ 92: 
+ 93: given clause #10: (wt=5) 35 [hyper,34,6] P(or(x,T(A))).
+ 94: ** KEPT (pick-wt=7): 39 [hyper,35,6] P(or(x,or(y,T(A)))).
+ 95: ** KEPT (pick-wt=7): 40 [hyper,35,5] P(or(or(x,T(A)),y)).
+ 96: 
+ 97: Search stopped by max_given option.
+ 98: 
+ 99: ============ end of search ============
+100: 
+101: -------------- statistics -------------
+102: clauses given                 10
+103: clauses generated             49
+104:   hyper_res generated         49
+105: demod & eval rewrites          0
+106: clauses wt,lit,sk delete       0
+107: tautologies deleted            0
+108: clauses forward subsumed      17
+109:   (subsumed by sos)            3
+110: unit deletions                 0
+111: factor simplifications         0
+112: clauses kept                  32
+113: new demodulators               0
+114: empty clauses                  0
+115: clauses back demodulated       0
+116: clauses back subsumed         18
+117: usable size                   13
+118: sos size                       9
+119: demodulators size              0
+120: passive size                   0
+121: hot size                       0
+122: Kbytes malloced              976
+123: 
+124: ----------- times (seconds) -----------
+125: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+126: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+127: wall-clock time        0             (0 hr, 0 min, 0 sec)
+128: 
+129: Process 26998 finished Mon Jul 25 02:13:22 2016

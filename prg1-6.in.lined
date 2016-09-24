@@ -1,0 +1,20 @@
+  1: set(binary_res).
+  2: set(order_history).
+  3: assign(max_proofs, 2).
+  4: 
+  5: list(usable).
+  6:         -Achievable(bw,x,y) | -$GT(x,0) | Achievable(be,$DIFF(3,x),$DIFF(2,y)).
+  7:         -Achievable(be,x,y) | -$GT(x,0) | Achievable(bw,$DIFF(3,x),$DIFF(2,y)).
+  8:         -Achievable(bw,x,y) | -$GT(y,0) | Achievable(be,$DIFF(2,x),$DIFF(3,y)).
+  9:         -Achievable(be,x,y) | -$GT(y,0) | Achievable(bw,$DIFF(2,x),$DIFF(3,y)).
+ 10:         -Achievable(bw,x,y) | -$GT(y,1) | Achievable(be,$DIFF(2,x),$DIFF(4,y)).
+ 11:         -Achievable(be,x,y) | -$GT(y,1) | Achievable(bw,$DIFF(2,x),$DIFF(4,y)).
+ 12: end_of_list.
+ 13: 
+ 14: list(sos).
+ 15:         Achievable(bw,2,2).
+ 16: end_of_list.
+ 17: 
+ 18: list(passive).
+ 19:         -Achievable(be,2,2).
+ 20: end_of_list.

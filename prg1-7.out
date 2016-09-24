@@ -1,0 +1,127 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on www20363ui.sakura.ne.jp,
+Tue Aug  9 09:31:07 2016
+The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 12823.
+
+set(hyper_res).
+set(order_history).
+assign(max_proofs,2).
+
+list(usable).
+1 [] -Achievable(xb,xb,xg,xc)|Achievable(opp(xb),opp(xb),xg,xc).
+2 [] -Achievable(xb,xw,xb,xc)|Achievable(opp(xb),xw,opp(xb),xc).
+3 [] -Achievable(xb,xw,xg,xb)|Achievable(opp(xb),xw,xg,opp(xb)).
+4 [] -Achievable(xb,xw,xg,xc)|Achievable(opp(xb),xw,xg,xc).
+end_of_list.
+
+list(sos).
+5 [] Achievable(bw,bw,bw,bw).
+end_of_list.
+
+list(passive).
+6 [] -Achievable(be,be,be,be).
+7 [] Achievable(bw,be,be,xc).
+8 [] Achievable(be,bw,bw,xc).
+9 [] Achievable(bw,xw,be,be).
+10 [] Achievable(be,xw,bw,bw).
+end_of_list.
+
+list(demodulators).
+11 [] opp(bw)=be.
+12 [] opp(be)=bw.
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=5) 5 [] Achievable(bw,bw,bw,bw).
+** KEPT (pick-wt=5): 13 [hyper,2,5,demod,11,11] Achievable(be,bw,be,bw).
+
+given clause #2: (wt=5) 13 [hyper,2,5,demod,11,11] Achievable(be,bw,be,bw).
+** KEPT (pick-wt=5): 14 [hyper,4,13,demod,12] Achievable(bw,bw,be,bw).
+
+given clause #3: (wt=5) 14 [hyper,4,13,demod,12] Achievable(bw,bw,be,bw).
+** KEPT (pick-wt=5): 15 [hyper,3,14,demod,11,11] Achievable(be,bw,be,be).
+** KEPT (pick-wt=5): 16 [hyper,1,14,demod,11,11] Achievable(be,be,be,bw).
+
+given clause #4: (wt=5) 15 [hyper,3,14,demod,11,11] Achievable(be,bw,be,be).
+** KEPT (pick-wt=5): 17 [hyper,2,15,demod,12,12] Achievable(bw,bw,bw,be).
+
+given clause #5: (wt=5) 16 [hyper,1,14,demod,11,11] Achievable(be,be,be,bw).
+** KEPT (pick-wt=5): 18 [hyper,2,16,demod,12,12] Achievable(bw,be,bw,bw).
+
+given clause #6: (wt=5) 17 [hyper,2,15,demod,12,12] Achievable(bw,bw,bw,be).
+** KEPT (pick-wt=5): 19 [hyper,1,17,demod,11,11] Achievable(be,be,bw,be).
+
+given clause #7: (wt=5) 18 [hyper,2,16,demod,12,12] Achievable(bw,be,bw,bw).
+
+given clause #8: (wt=5) 19 [hyper,1,17,demod,11,11] Achievable(be,be,bw,be).
+** KEPT (pick-wt=5): 20 [hyper,4,19,demod,12] Achievable(bw,be,bw,be).
+
+given clause #9: (wt=5) 20 [hyper,4,19,demod,12] Achievable(bw,be,bw,be).
+** KEPT (pick-wt=5): 21 [hyper,2,20,demod,11,11] Achievable(be,be,be,be).
+
+----> UNIT CONFLICT at   0.00 sec ----> 22 [binary,21.1,6.1] $F.
+
+Length of proof is 7.  Level of proof is 7.
+
+---------------- PROOF ----------------
+
+1 [] -Achievable(xb,xb,xg,xc)|Achievable(opp(xb),opp(xb),xg,xc).
+2 [] -Achievable(xb,xw,xb,xc)|Achievable(opp(xb),xw,opp(xb),xc).
+3 [] -Achievable(xb,xw,xg,xb)|Achievable(opp(xb),xw,xg,opp(xb)).
+4 [] -Achievable(xb,xw,xg,xc)|Achievable(opp(xb),xw,xg,xc).
+5 [] Achievable(bw,bw,bw,bw).
+6 [] -Achievable(be,be,be,be).
+11 [] opp(bw)=be.
+12 [] opp(be)=bw.
+13 [hyper,2,5,demod,11,11] Achievable(be,bw,be,bw).
+14 [hyper,4,13,demod,12] Achievable(bw,bw,be,bw).
+15 [hyper,3,14,demod,11,11] Achievable(be,bw,be,be).
+17 [hyper,2,15,demod,12,12] Achievable(bw,bw,bw,be).
+19 [hyper,1,17,demod,11,11] Achievable(be,be,bw,be).
+20 [hyper,4,19,demod,12] Achievable(bw,be,bw,be).
+21 [hyper,2,20,demod,11,11] Achievable(be,be,be,be).
+22 [binary,21.1,6.1] $F.
+
+------------ end of proof -------------
+
+
+given clause #10: (wt=5) 21 [hyper,2,20,demod,11,11] Achievable(be,be,be,be).
+
+Search stopped because sos empty.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                 10
+clauses generated             30
+  hyper_res generated         30
+demod & eval rewrites         50
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed      21
+  (subsumed by sos)            1
+unit deletions                 0
+factor simplifications         0
+clauses kept                   9
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                   14
+sos size                       0
+demodulators size              2
+passive size                   5
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+That finishes the proof of the theorem.
+
+Process 12823 finished Tue Aug  9 09:31:07 2016

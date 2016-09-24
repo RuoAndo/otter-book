@@ -1,0 +1,16 @@
+  1: set(hyper_res).
+  2: assign(max_proofs,-1).
+  3: 
+  4: list(usable).
+  5: %グループA:
+  6:         -P(T(x)) | -P(Says(x,y)) | P(y).%- A-1
+  7:         -P(L(x)) | -P(Says(x,y)) | -P(y).%- A-2
+  8: 
+  9: %グループB：
+ 10:         P(T(x)) | P(L(x)).%- B-1  
+ 11:         -P(T(x)) | -P(L(x)).%- B-2
+ 12: end_of_list.
+ 13: 
+ 14: list(sos).
+ 15:         P(Says(A,L(A))).
+ 16: end_of_list.

@@ -1,0 +1,79 @@
+  1: %
+  2: % Missionaries and Cannibals Puzzle -- 
+  3: %
+  4: % There are 3 missionaries, 3 cannibals, and a boat on the west bank of
+  5: % a river.  All wish to cross, but the boat holds at most 2 people.
+  6: % If the missionaries ever outnumber the cannibals on either bank of the
+  7: % river or in the boat, the outnumbered cannibals will be converted.
+  8: % Can they all safely cross the river?  If so, how?
+  9: % (The boat cannot cross empty.)
+ 10: %
+ 11: % state(X,Y,Z) means that X missionaries, Y cannibals, and the boat
+ 12: % are on the Z side of the river.
+ 13: %
+ 14: 
+ 15: %set(hyper_res).
+ 16: set(binary_res).
+ 17: set(prolog_style_variables).
+ 18: 
+ 19: op(900, xfx, ||).
+ 20: op(900, xfx, &&).
+ 21: 
+ 22: make_evaluable(_-_, $DIFF(_,_)).
+ 23: make_evaluable(_+_, $SUM(_,_)).
+ 24: make_evaluable(_<_, $LT(_,_)).
+ 25: make_evaluable(_<=_, $LE(_,_)).
+ 26: make_evaluable(_>_, $GT(_,_)).
+ 27: make_evaluable(_>=_, $GE(_,_)).
+ 28: make_evaluable(_==_, $EQ(_,_)).
+ 29: make_evaluable(_&&_, $AND(_,_)).
+ 30: make_evaluable(_||_, $OR(_,_)).
+ 31: 
+ 32: list(usable).
+ 33: 
+ 34: %  MBS - missionaries on same side as the boat
+ 35: %  CBS - cannibals on same side as the boat
+ 36: %  BP  - position of boat (either west or east)
+ 37: %  M   - missionaries to cross
+ 38: %  C   - cannibals to cross
+ 39: 
+ 40: -state(MBS,CBS,BP)   % If we have an achievable state,
+ 41: 
+ 42:  | -pick(M)          % missionaries to cross
+ 43:  | -pick(C)          % cannibals to cross
+ 44:  | -(M<=MBS)
+ 45:  | -(C<=CBS)
+ 46:  | -(M+C>0)          % if number in boat > 0,
+ 47:  | -(M+C<=2)         % if number in boat <= 2,
+ 48:  | -(C>=M||C==0)     % if no conversions in the boat,
+ 49: 
+ 50: 	% if no conversions after the boat leaves current side,
+ 51: 
+ 52:  | -(CBS-C>=MBS-M || CBS-C==0)
+ 53: 
+ 54: 	% if no conversions when the boat arrives at the other side,
+ 55: 
+ 56:  | -((3-CBS)+C >= (3-MBS)+M || (3-CBS)+C==0)
+ 57: 
+ 58: 	% then a crossing can occur
+ 59: 
+ 60:  | state((3-MBS)+M, (3-CBS)+C, otherside(BP)).
+ 61: 
+ 62: % The following give the number of each that can cross.
+ 63: 
+ 64: pick(0).
+ 65: pick(1).
+ 66: pick(2).
+ 67: 
+ 68: -state(3,3,east).   % goal state
+ 69: end_of_list.
+ 70: 
+ 71: list(sos).
+ 72: state(3,3,west).    % initial state
+ 73: end_of_list.
+ 74: 
+ 75: list(demodulators).
+ 76: otherside(west) = east.
+ 77: otherside(east) = west.
+ 78: end_of_list.
+ 79: 

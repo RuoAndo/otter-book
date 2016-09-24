@@ -1,0 +1,110 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on www20363ui.sakura.ne.jp,
+Mon Jul 25 08:41:04 2016
+The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 735.
+
+set(hyper_res).
+
+list(sos).
+1 [] n([G,N,G,R,N,A,T,G,N]).
+end_of_list.
+
+list(usable).
+2 [] -n([G|x])|n(G*x).
+3 [] -n(G*[N|x])|n(GN*x).
+4 [] -n(G*[R|x])|n(G*R*x).
+5 [] -n(G*R*[N|x])|n(GRN*x).
+6 [] -n(GN*x)|n(x).
+7 [] -n(GRN*x)|generate([x*x]).
+end_of_list.
+
+list(passive).
+8 [] -generate(x).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=20) 1 [] n([G,N,G,R,N,A,T,G,N]).
+** KEPT (pick-wt=20): 9 [hyper,1,2] n(G*[N,G,R,N,A,T,G,N]).
+
+given clause #2: (wt=20) 9 [hyper,1,2] n(G*[N,G,R,N,A,T,G,N]).
+** KEPT (pick-wt=18): 10 [hyper,9,3] n(GN*[G,R,N,A,T,G,N]).
+
+given clause #3: (wt=18) 10 [hyper,9,3] n(GN*[G,R,N,A,T,G,N]).
+** KEPT (pick-wt=16): 11 [hyper,10,6] n([G,R,N,A,T,G,N]).
+
+given clause #4: (wt=16) 11 [hyper,10,6] n([G,R,N,A,T,G,N]).
+** KEPT (pick-wt=16): 12 [hyper,11,2] n(G*[R,N,A,T,G,N]).
+
+given clause #5: (wt=16) 12 [hyper,11,2] n(G*[R,N,A,T,G,N]).
+** KEPT (pick-wt=16): 13 [hyper,12,4] n(G*R*[N,A,T,G,N]).
+
+given clause #6: (wt=16) 13 [hyper,12,4] n(G*R*[N,A,T,G,N]).
+** KEPT (pick-wt=12): 14 [hyper,13,5] n(GRN*[A,T,G,N]).
+
+given clause #7: (wt=12) 14 [hyper,13,5] n(GRN*[A,T,G,N]).
+** KEPT (pick-wt=22): 15 [hyper,14,7] generate([[A,T,G,N]*[A,T,G,N]]).
+
+----> UNIT CONFLICT at   0.00 sec ----> 16 [binary,15.1,8.1] $F.
+
+Length of proof is 7.  Level of proof is 7.
+
+---------------- PROOF ----------------
+
+1 [] n([G,N,G,R,N,A,T,G,N]).
+2 [] -n([G|x])|n(G*x).
+3 [] -n(G*[N|x])|n(GN*x).
+4 [] -n(G*[R|x])|n(G*R*x).
+5 [] -n(G*R*[N|x])|n(GRN*x).
+6 [] -n(GN*x)|n(x).
+7 [] -n(GRN*x)|generate([x*x]).
+8 [] -generate(x).
+9 [hyper,1,2] n(G*[N,G,R,N,A,T,G,N]).
+10 [hyper,9,3] n(GN*[G,R,N,A,T,G,N]).
+11 [hyper,10,6] n([G,R,N,A,T,G,N]).
+12 [hyper,11,2] n(G*[R,N,A,T,G,N]).
+13 [hyper,12,4] n(G*R*[N,A,T,G,N]).
+14 [hyper,13,5] n(GRN*[A,T,G,N]).
+15 [hyper,14,7] generate([[A,T,G,N]*[A,T,G,N]]).
+16 [binary,15.1,8.1] $F.
+
+------------ end of proof -------------
+
+
+Search stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  7
+clauses generated              7
+  hyper_res generated          7
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed       0
+  (subsumed by sos)            0
+unit deletions                 0
+factor simplifications         0
+clauses kept                   7
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                   13
+sos size                       1
+demodulators size              0
+passive size                   1
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+That finishes the proof of the theorem.
+
+Process 735 finished Mon Jul 25 08:41:04 2016

@@ -8,11 +8,6 @@ make_evaluable(_&&_,$AND(_,_)).
 make_evaluable(_||_,$OR(_,_)).
 
 list(usable).
-	%-P(vampire(x)) | -P(sane(x)) | -P(says(x,y)) | -P(y).
-        %-P(vampire(x)) | -P(mad(x)) | -P(says(x,y)) | P(x).
-	%-P(human(x)) | -P(sane(x)) | -P(says(x,y)) | P(y).
-	%-P(human(x)) |  -P(sane(x)) | -P(says(x,y)) | -P(y).
-
 	-vampire(x) | -sane(x) | -says(x,P(y)) | lie(P(y)).
         -vampire(x) | -mad(x) | -says(x,P(y)) | true(P(y)).
 	-human(x) | -sane(x) | -says(x,P(y)) | true(P(y)).

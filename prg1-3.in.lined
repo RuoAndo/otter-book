@@ -1,0 +1,10 @@
+  1: set(hyper_res).
+  2: 
+  3: list(usable).
+  4:         -Greek(x) | -Person(x)| Mortal(x).
+  5: end_of_list.
+  6: 
+  7: list(sos).
+  8:         Greek(Socrates).
+  9:         Person(Socrates).
+ 10: end_of_list.

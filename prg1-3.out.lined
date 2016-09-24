@@ -1,0 +1,60 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Fri Jul 22 22:58:11 2016
+  4: The command was "./otter".  The process ID is 16000.
+  5: 
+  6: set(hyper_res).
+  7: 
+  8: list(usable).
+  9: 1 [] -Greek(x)| -Person(x)|Mortal(x).
+ 10: end_of_list.
+ 11: 
+ 12: list(sos).
+ 13: 2 [] Greek(Socrates).
+ 14: 3 [] Person(Socrates).
+ 15: end_of_list.
+ 16: 
+ 17: ======= end of input processing =======
+ 18: 
+ 19: =========== start of search ===========
+ 20: 
+ 21: given clause #1: (wt=2) 2 [] Greek(Socrates).
+ 22: 
+ 23: given clause #2: (wt=2) 3 [] Person(Socrates).
+ 24: ** KEPT (pick-wt=2): 4 [hyper,3,1,2] Mortal(Socrates).
+ 25: 
+ 26: given clause #3: (wt=2) 4 [hyper,3,1,2] Mortal(Socrates).
+ 27: 
+ 28: Search stopped because sos empty.
+ 29: 
+ 30: ============ end of search ============
+ 31: 
+ 32: -------------- statistics -------------
+ 33: clauses given                  3
+ 34: clauses generated              1
+ 35:   hyper_res generated          1
+ 36: demod & eval rewrites          0
+ 37: clauses wt,lit,sk delete       0
+ 38: tautologies deleted            0
+ 39: clauses forward subsumed       0
+ 40:   (subsumed by sos)            0
+ 41: unit deletions                 0
+ 42: factor simplifications         0
+ 43: clauses kept                   1
+ 44: new demodulators               0
+ 45: empty clauses                  0
+ 46: clauses back demodulated       0
+ 47: clauses back subsumed          0
+ 48: usable size                    4
+ 49: sos size                       0
+ 50: demodulators size              0
+ 51: passive size                   0
+ 52: hot size                       0
+ 53: Kbytes malloced              976
+ 54: 
+ 55: ----------- times (seconds) -----------
+ 56: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+ 57: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+ 58: wall-clock time        0             (0 hr, 0 min, 0 sec)
+ 59: 
+ 60: Process 16000 finished Fri Jul 22 22:58:11 2016

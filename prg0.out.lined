@@ -1,0 +1,270 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Sun Sep  4 23:15:37 2016
+  4: The command was "./otter".  The process ID is 30878.
+  5: 
+  6: set(hyper_res).
+  7: set(prolog_style_variables).
+  8: assign(max_proofs,-1).
+  9: op(900,xfx,||).
+ 10: op(900,xfx,&&).
+ 11: make_evaluable(_-_,$DIFF(_,_)).
+ 12: make_evaluable(_+_,$SUM(_,_)).
+ 13: make_evaluable(_<_,$LT(_,_)).
+ 14: make_evaluable(_<=_,$LE(_,_)).
+ 15: make_evaluable(_>_,$GT(_,_)).
+ 16: make_evaluable(_>=_,$GE(_,_)).
+ 17: make_evaluable(_==_,$EQ(_,_)).
+ 18: make_evaluable(_&&_,$AND(_,_)).
+ 19: make_evaluable(_||_,$OR(_,_)).
+ 20: make_evaluable(_*_,$PROD(_,_)).
+ 21: 
+ 22: list(usable).
+ 23: 1 [] PICK(0).
+ 24: 2 [] PICK(1).
+ 25: 3 [] PICK(2).
+ 26: 4 [] PICK(3).
+ 27: 5 [] PICK(4).
+ 28: 6 [] PICK(5).
+ 29: 7 [] PICK(6).
+ 30: 8 [] -solvable(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM)))| -PICK(YHLS)| -PICK(YHS)| -PICK(YLS)| -PICK(YS)| -$LE(YHLS,XHLS)| -$LE(YHS,XHS)| -$LE(YLS,XLS)| -$LE(YS,XS)| -$GT(YHLS+YHS+YLS+YS,0)| -$LE(YHLS+YHS+YLS+YS,6)| -PICK(ZHLS)| -PICK(ZHS)| -PICK(ZLS)| -$LE(ZHLS+YHLS,XHLS)| -$LE(ZHS+YHS,XHS)| -$LE(ZLS+YLS,XLS)| -$GE(XREM,0)| -$EQ(YHLS+YHS+YLS+YS,ZHLS+ZHS+ZLS)| -$LE(ZHLS+ZHS+YHLS+YLS,$DIV(3,XREM-1))| -$LE(ZHLS+ZLS+YHLS+YHS,$DIV(3,XREM-1))| -$LE($PROD(2,$DIFF(XHLS,YHLS+ZHLS)+$DIFF(XHS,YHS+ZHS)+$DIFF(XLS,YLS+ZLS)),$DIV(3,XREM-1))|RECORD(parent(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM))),left(state(hls(0),hs(ZHLS+ZHS),ls(YHLS+YLS),s($DIFF(XHLS,YHLS+ZHLS)+$DIFF(XHS,ZHS)+$DIFF(XLS,YLS)+XS),rem(XREM-1))),right(state(hls(0),hs(YHLS+YHS),ls(ZHLS+ZLS),s($DIFF(XHLS,ZHLS+YHLS)+$DIFF(XHS,YHS)+$DIFF(XLS,ZLS)+XS),rem(XREM-1))),balance(state(hls($DIFF(XHLS,YHLS+ZHLS)),hs($DIFF(XHS,YHS+ZHS)),ls($DIFF(XLS,YLS+ZLS)),s(XS+YHLS+ZHLS+YHS+ZHS+YLS+ZLS),rem(XREM-1)))).
+ 31: 9 [] -solvable(state(hls(0),hs(1),ls(0),s(10),rem(0))).
+ 32: 10 [] -solvable(state(hls(0),hs(0),ls(1),s(10),rem(0))).
+ 33: 11 [] -solvable(state(hls(0),hs(0),ls(0),s(10),rem(0))).
+ 34: 12 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XL).
+ 35: 13 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XR).
+ 36: 14 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XBAL).
+ 37: 15 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))| -solvable(XL)| -solvable(XR)| -solvable(XBAL)|solvable(XP).
+ 38: end_of_list.
+ 39: 
+ 40: list(sos).
+ 41: 16 [] solvable(state(hls(11),hs(0),ls(0),s(0),rem(3))).
+ 42: end_of_list.
+ 43: 
+ 44: ======= end of input processing =======
+ 45: 
+ 46: =========== start of search ===========
+ 47: 
+ 48: given clause #1: (wt=12) 16 [] solvable(state(hls(11),hs(0),ls(0),s(0),rem(3))).
+ 49: ** KEPT (pick-wt=49): 17 [hyper,16,8,5,1,1,1,eval,eval,eval,eval,eval,eval,5,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(11),hs(0),ls(0),s(0),rem(3))),left(state(hls(0),hs(4),ls(4),s(3),rem(2))),right(state(hls(0),hs(4),ls(4),s(3),rem(2))),balance(state(hls(3),hs(0),ls(0),s(8),rem(2)))).
+ 50: 
+ 51: given clause #2: (wt=49) 17 [hyper,16,8,5,1,1,1,eval,eval,eval,eval,eval,eval,5,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(11),hs(0),ls(0),s(0),rem(3))),left(state(hls(0),hs(4),ls(4),s(3),rem(2))),right(state(hls(0),hs(4),ls(4),s(3),rem(2))),balance(state(hls(3),hs(0),ls(0),s(8),rem(2)))).
+ 52: ** KEPT (pick-wt=12): 18 [hyper,17,14] solvable(state(hls(3),hs(0),ls(0),s(8),rem(2))).
+ 53: ** KEPT (pick-wt=12): 19 [hyper,17,13] solvable(state(hls(0),hs(4),ls(4),s(3),rem(2))).
+ 54: 
+ 55: given clause #3: (wt=12) 18 [hyper,17,14] solvable(state(hls(3),hs(0),ls(0),s(8),rem(2))).
+ 56: ** KEPT (pick-wt=49): 20 [hyper,18,8,2,1,1,2,eval,eval,eval,eval,eval,eval,3,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(2),ls(1),s(8),rem(1))),right(state(hls(0),hs(1),ls(2),s(8),rem(1))),balance(state(hls(0),hs(0),ls(0),s(11),rem(1)))).
+ 57: ** KEPT (pick-wt=49): 21 [hyper,18,8,2,1,1,1,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(1),ls(1),s(9),rem(1))),right(state(hls(0),hs(1),ls(1),s(9),rem(1))),balance(state(hls(1),hs(0),ls(0),s(10),rem(1)))).
+ 58: ** KEPT (pick-wt=49): 22 [hyper,18,8,1,1,1,4,eval,eval,eval,eval,eval,eval,4,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(3),ls(0),s(8),rem(1))),right(state(hls(0),hs(0),ls(3),s(8),rem(1))),balance(state(hls(0),hs(0),ls(0),s(11),rem(1)))).
+ 59: ** KEPT (pick-wt=49): 23 [hyper,18,8,1,1,1,3,eval,eval,eval,eval,eval,eval,3,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(2),ls(0),s(9),rem(1))),right(state(hls(0),hs(0),ls(2),s(9),rem(1))),balance(state(hls(1),hs(0),ls(0),s(10),rem(1)))).
+ 60: 
+ 61: given clause #4: (wt=12) 19 [hyper,17,13] solvable(state(hls(0),hs(4),ls(4),s(3),rem(2))).
+ 62: 
+ 63: given clause #5: (wt=49) 20 [hyper,18,8,2,1,1,2,eval,eval,eval,eval,eval,eval,3,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(2),ls(1),s(8),rem(1))),right(state(hls(0),hs(1),ls(2),s(8),rem(1))),balance(state(hls(0),hs(0),ls(0),s(11),rem(1)))).
+ 64: ** KEPT (pick-wt=12): 24 [hyper,20,14] solvable(state(hls(0),hs(0),ls(0),s(11),rem(1))).
+ 65: ** KEPT (pick-wt=12): 25 [hyper,20,13] solvable(state(hls(0),hs(1),ls(2),s(8),rem(1))).
+ 66: ** KEPT (pick-wt=12): 26 [hyper,20,12] solvable(state(hls(0),hs(2),ls(1),s(8),rem(1))).
+ 67: 
+ 68: given clause #6: (wt=12) 24 [hyper,20,14] solvable(state(hls(0),hs(0),ls(0),s(11),rem(1))).
+ 69: 
+ 70: given clause #7: (wt=12) 25 [hyper,20,13] solvable(state(hls(0),hs(1),ls(2),s(8),rem(1))).
+ 71: 
+ 72: given clause #8: (wt=12) 26 [hyper,20,12] solvable(state(hls(0),hs(2),ls(1),s(8),rem(1))).
+ 73: 
+ 74: given clause #9: (wt=49) 21 [hyper,18,8,2,1,1,1,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(1),ls(1),s(9),rem(1))),right(state(hls(0),hs(1),ls(1),s(9),rem(1))),balance(state(hls(1),hs(0),ls(0),s(10),rem(1)))).
+ 75: ** KEPT (pick-wt=12): 27 [hyper,21,14] solvable(state(hls(1),hs(0),ls(0),s(10),rem(1))).
+ 76: ** KEPT (pick-wt=12): 28 [hyper,21,13] solvable(state(hls(0),hs(1),ls(1),s(9),rem(1))).
+ 77: 
+ 78: given clause #10: (wt=12) 27 [hyper,21,14] solvable(state(hls(1),hs(0),ls(0),s(10),rem(1))).
+ 79: ** KEPT (pick-wt=49): 29 [hyper,27,8,1,1,1,2,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(1),hs(0),ls(0),s(10),rem(1))),left(state(hls(0),hs(1),ls(0),s(10),rem(0))),right(state(hls(0),hs(0),ls(1),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+ 80: 
+ 81: given clause #11: (wt=12) 28 [hyper,21,13] solvable(state(hls(0),hs(1),ls(1),s(9),rem(1))).
+ 82: ** KEPT (pick-wt=49): 30 [hyper,28,8,1,1,1,3,eval,eval,eval,eval,eval,eval,1,2,2,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(0),hs(1),ls(1),s(9),rem(1))),left(state(hls(0),hs(1),ls(0),s(10),rem(0))),right(state(hls(0),hs(0),ls(1),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+ 83: 
+ 84: given clause #12: (wt=49) 22 [hyper,18,8,1,1,1,4,eval,eval,eval,eval,eval,eval,4,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(3),ls(0),s(8),rem(1))),right(state(hls(0),hs(0),ls(3),s(8),rem(1))),balance(state(hls(0),hs(0),ls(0),s(11),rem(1)))).
+ 85: ** KEPT (pick-wt=12): 31 [hyper,22,13] solvable(state(hls(0),hs(0),ls(3),s(8),rem(1))).
+ 86: ** KEPT (pick-wt=12): 32 [hyper,22,12] solvable(state(hls(0),hs(3),ls(0),s(8),rem(1))).
+ 87: 
+ 88: given clause #13: (wt=12) 31 [hyper,22,13] solvable(state(hls(0),hs(0),ls(3),s(8),rem(1))).
+ 89: 
+ 90: given clause #14: (wt=12) 32 [hyper,22,12] solvable(state(hls(0),hs(3),ls(0),s(8),rem(1))).
+ 91: 
+ 92: given clause #15: (wt=49) 23 [hyper,18,8,1,1,1,3,eval,eval,eval,eval,eval,eval,3,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(2),ls(0),s(9),rem(1))),right(state(hls(0),hs(0),ls(2),s(9),rem(1))),balance(state(hls(1),hs(0),ls(0),s(10),rem(1)))).
+ 93: ** KEPT (pick-wt=12): 33 [hyper,23,13] solvable(state(hls(0),hs(0),ls(2),s(9),rem(1))).
+ 94: ** KEPT (pick-wt=12): 34 [hyper,23,12] solvable(state(hls(0),hs(2),ls(0),s(9),rem(1))).
+ 95: 
+ 96: given clause #16: (wt=12) 33 [hyper,23,13] solvable(state(hls(0),hs(0),ls(2),s(9),rem(1))).
+ 97: ** KEPT (pick-wt=49): 35 [hyper,33,8,1,1,2,1,eval,eval,eval,eval,eval,eval,1,1,2,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(0),hs(0),ls(2),s(9),rem(1))),left(state(hls(0),hs(0),ls(1),s(10),rem(0))),right(state(hls(0),hs(0),ls(1),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+ 98: 
+ 99: given clause #17: (wt=12) 34 [hyper,23,12] solvable(state(hls(0),hs(2),ls(0),s(9),rem(1))).
+100: ** KEPT (pick-wt=49): 36 [hyper,34,8,1,2,1,1,eval,eval,eval,eval,eval,eval,1,2,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(0),hs(2),ls(0),s(9),rem(1))),left(state(hls(0),hs(1),ls(0),s(10),rem(0))),right(state(hls(0),hs(1),ls(0),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+101: 
+102: given clause #18: (wt=49) 29 [hyper,27,8,1,1,1,2,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(1),hs(0),ls(0),s(10),rem(1))),left(state(hls(0),hs(1),ls(0),s(10),rem(0))),right(state(hls(0),hs(0),ls(1),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+103: ** KEPT (pick-wt=12): 37 [hyper,29,14] solvable(state(hls(0),hs(0),ls(0),s(11),rem(0))).
+104: ** KEPT (pick-wt=12): 38 [hyper,29,13] solvable(state(hls(0),hs(0),ls(1),s(10),rem(0))).
+105: 
+106: ----> UNIT CONFLICT at   0.98 sec ----> 39 [binary,38.1,10.1] $F.
+107: 
+108: Length of proof is 6.  Level of proof is 6.
+109: 
+110: ---------------- PROOF ----------------
+111: 
+112: 1 [] PICK(0).
+113: 2 [] PICK(1).
+114: 5 [] PICK(4).
+115: 8 [] -solvable(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM)))| -PICK(YHLS)| -PICK(YHS)| -PICK(YLS)| -PICK(YS)| -$LE(YHLS,XHLS)| -$LE(YHS,XHS)| -$LE(YLS,XLS)| -$LE(YS,XS)| -$GT(YHLS+YHS+YLS+YS,0)| -$LE(YHLS+YHS+YLS+YS,6)| -PICK(ZHLS)| -PICK(ZHS)| -PICK(ZLS)| -$LE(ZHLS+YHLS,XHLS)| -$LE(ZHS+YHS,XHS)| -$LE(ZLS+YLS,XLS)| -$GE(XREM,0)| -$EQ(YHLS+YHS+YLS+YS,ZHLS+ZHS+ZLS)| -$LE(ZHLS+ZHS+YHLS+YLS,$DIV(3,XREM-1))| -$LE(ZHLS+ZLS+YHLS+YHS,$DIV(3,XREM-1))| -$LE($PROD(2,$DIFF(XHLS,YHLS+ZHLS)+$DIFF(XHS,YHS+ZHS)+$DIFF(XLS,YLS+ZLS)),$DIV(3,XREM-1))|RECORD(parent(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM))),left(state(hls(0),hs(ZHLS+ZHS),ls(YHLS+YLS),s($DIFF(XHLS,YHLS+ZHLS)+$DIFF(XHS,ZHS)+$DIFF(XLS,YLS)+XS),rem(XREM-1))),right(state(hls(0),hs(YHLS+YHS),ls(ZHLS+ZLS),s($DIFF(XHLS,ZHLS+YHLS)+$DIFF(XHS,YHS)+$DIFF(XLS,ZLS)+XS),rem(XREM-1))),balance(state(hls($DIFF(XHLS,YHLS+ZHLS)),hs($DIFF(XHS,YHS+ZHS)),ls($DIFF(XLS,YLS+ZLS)),s(XS+YHLS+ZHLS+YHS+ZHS+YLS+ZLS),rem(XREM-1)))).
+116: 10 [] -solvable(state(hls(0),hs(0),ls(1),s(10),rem(0))).
+117: 13 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XR).
+118: 14 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XBAL).
+119: 16 [] solvable(state(hls(11),hs(0),ls(0),s(0),rem(3))).
+120: 17 [hyper,16,8,5,1,1,1,eval,eval,eval,eval,eval,eval,5,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(11),hs(0),ls(0),s(0),rem(3))),left(state(hls(0),hs(4),ls(4),s(3),rem(2))),right(state(hls(0),hs(4),ls(4),s(3),rem(2))),balance(state(hls(3),hs(0),ls(0),s(8),rem(2)))).
+121: 18 [hyper,17,14] solvable(state(hls(3),hs(0),ls(0),s(8),rem(2))).
+122: 21 [hyper,18,8,2,1,1,1,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(1),ls(1),s(9),rem(1))),right(state(hls(0),hs(1),ls(1),s(9),rem(1))),balance(state(hls(1),hs(0),ls(0),s(10),rem(1)))).
+123: 27 [hyper,21,14] solvable(state(hls(1),hs(0),ls(0),s(10),rem(1))).
+124: 29 [hyper,27,8,1,1,1,2,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(1),hs(0),ls(0),s(10),rem(1))),left(state(hls(0),hs(1),ls(0),s(10),rem(0))),right(state(hls(0),hs(0),ls(1),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+125: 38 [hyper,29,13] solvable(state(hls(0),hs(0),ls(1),s(10),rem(0))).
+126: 39 [binary,38.1,10.1] $F.
+127: 
+128: ------------ end of proof -------------
+129: 
+130: ** KEPT (pick-wt=12): 40 [hyper,29,12] solvable(state(hls(0),hs(1),ls(0),s(10),rem(0))).
+131: 
+132: ----> UNIT CONFLICT at   0.98 sec ----> 41 [binary,40.1,9.1] $F.
+133: 
+134: Length of proof is 6.  Level of proof is 6.
+135: 
+136: ---------------- PROOF ----------------
+137: 
+138: 1 [] PICK(0).
+139: 2 [] PICK(1).
+140: 5 [] PICK(4).
+141: 8 [] -solvable(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM)))| -PICK(YHLS)| -PICK(YHS)| -PICK(YLS)| -PICK(YS)| -$LE(YHLS,XHLS)| -$LE(YHS,XHS)| -$LE(YLS,XLS)| -$LE(YS,XS)| -$GT(YHLS+YHS+YLS+YS,0)| -$LE(YHLS+YHS+YLS+YS,6)| -PICK(ZHLS)| -PICK(ZHS)| -PICK(ZLS)| -$LE(ZHLS+YHLS,XHLS)| -$LE(ZHS+YHS,XHS)| -$LE(ZLS+YLS,XLS)| -$GE(XREM,0)| -$EQ(YHLS+YHS+YLS+YS,ZHLS+ZHS+ZLS)| -$LE(ZHLS+ZHS+YHLS+YLS,$DIV(3,XREM-1))| -$LE(ZHLS+ZLS+YHLS+YHS,$DIV(3,XREM-1))| -$LE($PROD(2,$DIFF(XHLS,YHLS+ZHLS)+$DIFF(XHS,YHS+ZHS)+$DIFF(XLS,YLS+ZLS)),$DIV(3,XREM-1))|RECORD(parent(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM))),left(state(hls(0),hs(ZHLS+ZHS),ls(YHLS+YLS),s($DIFF(XHLS,YHLS+ZHLS)+$DIFF(XHS,ZHS)+$DIFF(XLS,YLS)+XS),rem(XREM-1))),right(state(hls(0),hs(YHLS+YHS),ls(ZHLS+ZLS),s($DIFF(XHLS,ZHLS+YHLS)+$DIFF(XHS,YHS)+$DIFF(XLS,ZLS)+XS),rem(XREM-1))),balance(state(hls($DIFF(XHLS,YHLS+ZHLS)),hs($DIFF(XHS,YHS+ZHS)),ls($DIFF(XLS,YLS+ZLS)),s(XS+YHLS+ZHLS+YHS+ZHS+YLS+ZLS),rem(XREM-1)))).
+142: 9 [] -solvable(state(hls(0),hs(1),ls(0),s(10),rem(0))).
+143: 12 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XL).
+144: 14 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XBAL).
+145: 16 [] solvable(state(hls(11),hs(0),ls(0),s(0),rem(3))).
+146: 17 [hyper,16,8,5,1,1,1,eval,eval,eval,eval,eval,eval,5,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(11),hs(0),ls(0),s(0),rem(3))),left(state(hls(0),hs(4),ls(4),s(3),rem(2))),right(state(hls(0),hs(4),ls(4),s(3),rem(2))),balance(state(hls(3),hs(0),ls(0),s(8),rem(2)))).
+147: 18 [hyper,17,14] solvable(state(hls(3),hs(0),ls(0),s(8),rem(2))).
+148: 21 [hyper,18,8,2,1,1,1,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(1),ls(1),s(9),rem(1))),right(state(hls(0),hs(1),ls(1),s(9),rem(1))),balance(state(hls(1),hs(0),ls(0),s(10),rem(1)))).
+149: 27 [hyper,21,14] solvable(state(hls(1),hs(0),ls(0),s(10),rem(1))).
+150: 29 [hyper,27,8,1,1,1,2,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(1),hs(0),ls(0),s(10),rem(1))),left(state(hls(0),hs(1),ls(0),s(10),rem(0))),right(state(hls(0),hs(0),ls(1),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+151: 40 [hyper,29,12] solvable(state(hls(0),hs(1),ls(0),s(10),rem(0))).
+152: 41 [binary,40.1,9.1] $F.
+153: 
+154: ------------ end of proof -------------
+155: 
+156: 
+157: given clause #19: (wt=12) 37 [hyper,29,14] solvable(state(hls(0),hs(0),ls(0),s(11),rem(0))).
+158: 
+159: given clause #20: (wt=12) 38 [hyper,29,13] solvable(state(hls(0),hs(0),ls(1),s(10),rem(0))).
+160: ** KEPT (pick-wt=0): 42 [hyper,38,10] $F.
+161: 
+162: -----> EMPTY CLAUSE at   1.01 sec ----> 42 [hyper,38,10] $F.
+163: 
+164: Length of proof is 6.  Level of proof is 6.
+165: 
+166: ---------------- PROOF ----------------
+167: 
+168: 1 [] PICK(0).
+169: 2 [] PICK(1).
+170: 5 [] PICK(4).
+171: 8 [] -solvable(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM)))| -PICK(YHLS)| -PICK(YHS)| -PICK(YLS)| -PICK(YS)| -$LE(YHLS,XHLS)| -$LE(YHS,XHS)| -$LE(YLS,XLS)| -$LE(YS,XS)| -$GT(YHLS+YHS+YLS+YS,0)| -$LE(YHLS+YHS+YLS+YS,6)| -PICK(ZHLS)| -PICK(ZHS)| -PICK(ZLS)| -$LE(ZHLS+YHLS,XHLS)| -$LE(ZHS+YHS,XHS)| -$LE(ZLS+YLS,XLS)| -$GE(XREM,0)| -$EQ(YHLS+YHS+YLS+YS,ZHLS+ZHS+ZLS)| -$LE(ZHLS+ZHS+YHLS+YLS,$DIV(3,XREM-1))| -$LE(ZHLS+ZLS+YHLS+YHS,$DIV(3,XREM-1))| -$LE($PROD(2,$DIFF(XHLS,YHLS+ZHLS)+$DIFF(XHS,YHS+ZHS)+$DIFF(XLS,YLS+ZLS)),$DIV(3,XREM-1))|RECORD(parent(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM))),left(state(hls(0),hs(ZHLS+ZHS),ls(YHLS+YLS),s($DIFF(XHLS,YHLS+ZHLS)+$DIFF(XHS,ZHS)+$DIFF(XLS,YLS)+XS),rem(XREM-1))),right(state(hls(0),hs(YHLS+YHS),ls(ZHLS+ZLS),s($DIFF(XHLS,ZHLS+YHLS)+$DIFF(XHS,YHS)+$DIFF(XLS,ZLS)+XS),rem(XREM-1))),balance(state(hls($DIFF(XHLS,YHLS+ZHLS)),hs($DIFF(XHS,YHS+ZHS)),ls($DIFF(XLS,YLS+ZLS)),s(XS+YHLS+ZHLS+YHS+ZHS+YLS+ZLS),rem(XREM-1)))).
+172: 10 [] -solvable(state(hls(0),hs(0),ls(1),s(10),rem(0))).
+173: 13 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XR).
+174: 14 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XBAL).
+175: 16 [] solvable(state(hls(11),hs(0),ls(0),s(0),rem(3))).
+176: 17 [hyper,16,8,5,1,1,1,eval,eval,eval,eval,eval,eval,5,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(11),hs(0),ls(0),s(0),rem(3))),left(state(hls(0),hs(4),ls(4),s(3),rem(2))),right(state(hls(0),hs(4),ls(4),s(3),rem(2))),balance(state(hls(3),hs(0),ls(0),s(8),rem(2)))).
+177: 18 [hyper,17,14] solvable(state(hls(3),hs(0),ls(0),s(8),rem(2))).
+178: 21 [hyper,18,8,2,1,1,1,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(1),ls(1),s(9),rem(1))),right(state(hls(0),hs(1),ls(1),s(9),rem(1))),balance(state(hls(1),hs(0),ls(0),s(10),rem(1)))).
+179: 27 [hyper,21,14] solvable(state(hls(1),hs(0),ls(0),s(10),rem(1))).
+180: 29 [hyper,27,8,1,1,1,2,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(1),hs(0),ls(0),s(10),rem(1))),left(state(hls(0),hs(1),ls(0),s(10),rem(0))),right(state(hls(0),hs(0),ls(1),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+181: 38 [hyper,29,13] solvable(state(hls(0),hs(0),ls(1),s(10),rem(0))).
+182: 42 [hyper,38,10] $F.
+183: 
+184: ------------ end of proof -------------
+185: 
+186: ** KEPT (pick-wt=49): 43 [hyper,38,8,1,1,1,2,eval,eval,eval,eval,eval,eval,1,1,2,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(0),hs(0),ls(1),s(10),rem(0))),left(state(hls(0),hs(0),ls(0),s(11),rem(-1))),right(state(hls(0),hs(0),ls(1),s(10),rem(-1))),balance(state(hls(0),hs(0),ls(0),s(11),rem(-1)))).
+187: 
+188: given clause #21: (wt=12) 40 [hyper,29,12] solvable(state(hls(0),hs(1),ls(0),s(10),rem(0))).
+189: ** KEPT (pick-wt=0): 44 [hyper,40,9] $F.
+190: 
+191: -----> EMPTY CLAUSE at   1.06 sec ----> 44 [hyper,40,9] $F.
+192: 
+193: Length of proof is 6.  Level of proof is 6.
+194: 
+195: ---------------- PROOF ----------------
+196: 
+197: 1 [] PICK(0).
+198: 2 [] PICK(1).
+199: 5 [] PICK(4).
+200: 8 [] -solvable(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM)))| -PICK(YHLS)| -PICK(YHS)| -PICK(YLS)| -PICK(YS)| -$LE(YHLS,XHLS)| -$LE(YHS,XHS)| -$LE(YLS,XLS)| -$LE(YS,XS)| -$GT(YHLS+YHS+YLS+YS,0)| -$LE(YHLS+YHS+YLS+YS,6)| -PICK(ZHLS)| -PICK(ZHS)| -PICK(ZLS)| -$LE(ZHLS+YHLS,XHLS)| -$LE(ZHS+YHS,XHS)| -$LE(ZLS+YLS,XLS)| -$GE(XREM,0)| -$EQ(YHLS+YHS+YLS+YS,ZHLS+ZHS+ZLS)| -$LE(ZHLS+ZHS+YHLS+YLS,$DIV(3,XREM-1))| -$LE(ZHLS+ZLS+YHLS+YHS,$DIV(3,XREM-1))| -$LE($PROD(2,$DIFF(XHLS,YHLS+ZHLS)+$DIFF(XHS,YHS+ZHS)+$DIFF(XLS,YLS+ZLS)),$DIV(3,XREM-1))|RECORD(parent(state(hls(XHLS),hs(XHS),ls(XLS),s(XS),rem(XREM))),left(state(hls(0),hs(ZHLS+ZHS),ls(YHLS+YLS),s($DIFF(XHLS,YHLS+ZHLS)+$DIFF(XHS,ZHS)+$DIFF(XLS,YLS)+XS),rem(XREM-1))),right(state(hls(0),hs(YHLS+YHS),ls(ZHLS+ZLS),s($DIFF(XHLS,ZHLS+YHLS)+$DIFF(XHS,YHS)+$DIFF(XLS,ZLS)+XS),rem(XREM-1))),balance(state(hls($DIFF(XHLS,YHLS+ZHLS)),hs($DIFF(XHS,YHS+ZHS)),ls($DIFF(XLS,YLS+ZLS)),s(XS+YHLS+ZHLS+YHS+ZHS+YLS+ZLS),rem(XREM-1)))).
+201: 9 [] -solvable(state(hls(0),hs(1),ls(0),s(10),rem(0))).
+202: 12 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XL).
+203: 14 [] -RECORD(parent(XP),left(XL),right(XR),balance(XBAL))|solvable(XBAL).
+204: 16 [] solvable(state(hls(11),hs(0),ls(0),s(0),rem(3))).
+205: 17 [hyper,16,8,5,1,1,1,eval,eval,eval,eval,eval,eval,5,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(11),hs(0),ls(0),s(0),rem(3))),left(state(hls(0),hs(4),ls(4),s(3),rem(2))),right(state(hls(0),hs(4),ls(4),s(3),rem(2))),balance(state(hls(3),hs(0),ls(0),s(8),rem(2)))).
+206: 18 [hyper,17,14] solvable(state(hls(3),hs(0),ls(0),s(8),rem(2))).
+207: 21 [hyper,18,8,2,1,1,1,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(3),hs(0),ls(0),s(8),rem(2))),left(state(hls(0),hs(1),ls(1),s(9),rem(1))),right(state(hls(0),hs(1),ls(1),s(9),rem(1))),balance(state(hls(1),hs(0),ls(0),s(10),rem(1)))).
+208: 27 [hyper,21,14] solvable(state(hls(1),hs(0),ls(0),s(10),rem(1))).
+209: 29 [hyper,27,8,1,1,1,2,eval,eval,eval,eval,eval,eval,2,1,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(1),hs(0),ls(0),s(10),rem(1))),left(state(hls(0),hs(1),ls(0),s(10),rem(0))),right(state(hls(0),hs(0),ls(1),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+210: 40 [hyper,29,12] solvable(state(hls(0),hs(1),ls(0),s(10),rem(0))).
+211: 44 [hyper,40,9] $F.
+212: 
+213: ------------ end of proof -------------
+214: 
+215: ** KEPT (pick-wt=49): 45 [hyper,40,8,1,1,1,2,eval,eval,eval,eval,eval,eval,1,2,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(0),hs(1),ls(0),s(10),rem(0))),left(state(hls(0),hs(1),ls(0),s(10),rem(-1))),right(state(hls(0),hs(0),ls(0),s(11),rem(-1))),balance(state(hls(0),hs(0),ls(0),s(11),rem(-1)))).
+216: 
+217: given clause #22: (wt=49) 30 [hyper,28,8,1,1,1,3,eval,eval,eval,eval,eval,eval,1,2,2,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(0),hs(1),ls(1),s(9),rem(1))),left(state(hls(0),hs(1),ls(0),s(10),rem(0))),right(state(hls(0),hs(0),ls(1),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+218: 
+219: given clause #23: (wt=49) 35 [hyper,33,8,1,1,2,1,eval,eval,eval,eval,eval,eval,1,1,2,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(0),hs(0),ls(2),s(9),rem(1))),left(state(hls(0),hs(0),ls(1),s(10),rem(0))),right(state(hls(0),hs(0),ls(1),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+220: 
+221: given clause #24: (wt=49) 36 [hyper,34,8,1,2,1,1,eval,eval,eval,eval,eval,eval,1,2,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(0),hs(2),ls(0),s(9),rem(1))),left(state(hls(0),hs(1),ls(0),s(10),rem(0))),right(state(hls(0),hs(1),ls(0),s(10),rem(0))),balance(state(hls(0),hs(0),ls(0),s(11),rem(0)))).
+222: 
+223: given clause #25: (wt=49) 43 [hyper,38,8,1,1,1,2,eval,eval,eval,eval,eval,eval,1,1,2,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(0),hs(0),ls(1),s(10),rem(0))),left(state(hls(0),hs(0),ls(0),s(11),rem(-1))),right(state(hls(0),hs(0),ls(1),s(10),rem(-1))),balance(state(hls(0),hs(0),ls(0),s(11),rem(-1)))).
+224: ** KEPT (pick-wt=12): 46 [hyper,43,14] solvable(state(hls(0),hs(0),ls(0),s(11),rem(-1))).
+225: ** KEPT (pick-wt=12): 47 [hyper,43,13] solvable(state(hls(0),hs(0),ls(1),s(10),rem(-1))).
+226: 
+227: given clause #26: (wt=12) 46 [hyper,43,14] solvable(state(hls(0),hs(0),ls(0),s(11),rem(-1))).
+228: 
+229: given clause #27: (wt=12) 47 [hyper,43,13] solvable(state(hls(0),hs(0),ls(1),s(10),rem(-1))).
+230: 
+231: given clause #28: (wt=49) 45 [hyper,40,8,1,1,1,2,eval,eval,eval,eval,eval,eval,1,2,1,eval,eval,eval,eval,eval,eval,eval,eval,demod] RECORD(parent(state(hls(0),hs(1),ls(0),s(10),rem(0))),left(state(hls(0),hs(1),ls(0),s(10),rem(-1))),right(state(hls(0),hs(0),ls(0),s(11),rem(-1))),balance(state(hls(0),hs(0),ls(0),s(11),rem(-1)))).
+232: ** KEPT (pick-wt=12): 48 [hyper,45,12] solvable(state(hls(0),hs(1),ls(0),s(10),rem(-1))).
+233: 
+234: given clause #29: (wt=12) 48 [hyper,45,12] solvable(state(hls(0),hs(1),ls(0),s(10),rem(-1))).
+235: 
+236: Search stopped because sos empty.
+237: 
+238: ============ end of search ============
+239: 
+240: -------------- statistics test ! -------------
+241: clauses given                 29
+242: clauses generated             59
+243:   hyper_res generated         59
+244: demod & eval rewrites        363
+245: clauses wt,lit,sk delete       0
+246: tautologies deleted            0
+247: clauses forward subsumed      29
+248:   (subsumed by sos)            3
+249: unit deletions                 0
+250: factor simplifications         0
+251: clauses kept                  28
+252: new demodulators               0
+253: empty clauses                  4
+254: clauses back demodulated       0
+255: clauses back subsumed          0
+256: usable size                   44
+257: sos size                       0
+258: demodulators size              0
+259: passive size                   0
+260: hot size                       0
+261: Kbytes malloced             2929
+262: 
+263: ----------- times (seconds) -----------
+264: user CPU time          1.21          (0 hr, 0 min, 1 sec)
+265: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+266: wall-clock time        1             (0 hr, 0 min, 1 sec)
+267: 
+268: That finishes the proof of the theorem.
+269: 
+270: Process 30878 finished Sun Sep  4 23:15:38 2016

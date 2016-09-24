@@ -1,0 +1,23 @@
+  1: # gdb ./otter                                                                                                    
+  2: GNU gdb (GDB) Red Hat Enterprise Linux (7.2-60.el6_4.1)
+  3: Copyright (C) 2010 Free Software Foundation, Inc.
+  4: License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+  5: This is free software: you are free to change and redistribute it.
+  6: There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+  7: and "show warranty" for details.
+  8: This GDB was configured as "x86_64-redhat-linux-gnu".
+  9: For bug reporting instructions, please see:
+ 10: <http://www.gnu.org/software/gdb/bugs/>...
+ 11: 
+ 12: (gdb) b hyper_res
+ 13: Breakpoint 1 at 0x409188: file resolve.c, line 405.
+ 14: (gdb) r < two_inv.in 
+ 15: 
+ 16: Breakpoint 1, hyper_res (giv_cl=0x7ffff7c8bf70) at resolve.c:405
+ 17: 405     resolve.c: No such file or directory.
+ 18:         in resolve.c
+ 19: Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.132.el6.x86_64
+ 20: (gdb) bt
+ 21: #0  hyper_res (giv_cl=0x7ffff7c8bf70) at resolve.c:405
+ 22: #1  0x000000000041428c in infer_and_process (giv_cl=0x7ffff7c8bf70) at process.c:243
+ 23: #2  0x00000000004014fb in main (argc=1, argv=0x7fffffffe278) at main.c:85

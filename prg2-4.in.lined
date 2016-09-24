@@ -1,0 +1,15 @@
+  1: set(hyper_res).
+  2: 
+  3: list(usable).
+  4: %グループA:
+  5:         -P(T(x)) | -P(Says(x,y)) | P(y).%- A-1
+  6:         -P(L(x)) | -P(Says(x,y)) | -P(y).%- A-2
+  7: 
+  8: %グループB：
+  9:         P(T(x)) | P(L(x)).%- B-1  
+ 10:         -P(T(x)) | -P(L(x)).%- B-2
+ 11: end_of_list.
+ 12: 
+ 13: list(sos).
+ 14:         P(Says(A,L(A))).
+ 15: end_of_list.

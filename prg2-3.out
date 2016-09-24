@@ -1,0 +1,129 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on www20363ui.sakura.ne.jp,
+Mon Jul 25 02:13:22 2016
+The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 26998.
+
+set(hyper_res).
+assign(max_given,10).
+
+list(usable).
+1 [] -P(T(x))| -P(Says(x,y))|P(y).
+2 [] -P(L(x))| -P(Says(x,y))| -P(y).
+3 [] P(T(x))|P(L(x)).
+4 [] -P(T(x))| -P(L(x)).
+5 [] -P(y)|P(or(y,z)).
+6 [] -P(z)|P(or(y,z)).
+7 [] -P(or(y,z))|P(y)|P(z).
+end_of_list.
+
+list(sos).
+8 [] P(Says(A,or(L(A),L(B)))).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=8) 8 [] P(Says(A,or(L(A),L(B)))).
+** KEPT (pick-wt=10): 9 [hyper,8,6] P(or(x,Says(A,or(L(A),L(B))))).
+** KEPT (pick-wt=10): 10 [hyper,8,5] P(or(Says(A,or(L(A),L(B))),x)).
+** KEPT (pick-wt=9): 11 [hyper,8,1,3] P(or(L(A),L(B)))|P(L(A)).
+
+given clause #2: (wt=9) 11 [hyper,8,1,3] P(or(L(A),L(B)))|P(L(A)).
+** KEPT (pick-wt=6): 12 [hyper,11,7] P(L(A))|P(L(B)).
+** KEPT (pick-wt=11): 13 [hyper,11,6] P(L(A))|P(or(x,or(L(A),L(B)))).
+** KEPT (pick-wt=11): 14 [hyper,11,5] P(L(A))|P(or(or(L(A),L(B)),x)).
+** KEPT (pick-wt=11): 15 [hyper,11,6] P(or(L(A),L(B)))|P(or(x,L(A))).
+** KEPT (pick-wt=11): 16 [hyper,11,5] P(or(L(A),L(B)))|P(or(L(A),x)).
+16 back subsumes 15.
+16 back subsumes 11.
+
+given clause #3: (wt=6) 12 [hyper,11,7] P(L(A))|P(L(B)).
+** KEPT (pick-wt=8): 17 [hyper,12,6] P(L(B))|P(or(x,L(A))).
+** KEPT (pick-wt=8): 18 [hyper,12,5] P(L(B))|P(or(L(A),x)).
+** KEPT (pick-wt=8): 19 [hyper,12,6] P(L(A))|P(or(x,L(B))).
+** KEPT (pick-wt=8): 20 [hyper,12,5] P(L(A))|P(or(L(B),x)).
+
+given clause #4: (wt=8) 17 [hyper,12,6] P(L(B))|P(or(x,L(A))).
+** KEPT (pick-wt=10): 21 [hyper,17,6] P(or(x,L(A)))|P(or(y,L(B))).
+** KEPT (pick-wt=10): 22 [hyper,17,5] P(or(x,L(A)))|P(or(L(B),y)).
+** KEPT (pick-wt=10): 23 [hyper,17,6] P(L(B))|P(or(x,or(y,L(A)))).
+** KEPT (pick-wt=10): 24 [hyper,17,5] P(L(B))|P(or(or(x,L(A)),y)).
+
+given clause #5: (wt=8) 18 [hyper,12,5] P(L(B))|P(or(L(A),x)).
+** KEPT (pick-wt=10): 25 [hyper,18,6] P(or(L(A),x))|P(or(y,L(B))).
+** KEPT (pick-wt=10): 26 [hyper,18,5] P(or(L(A),x))|P(or(L(B),y)).
+** KEPT (pick-wt=10): 27 [hyper,18,6] P(L(B))|P(or(x,or(L(A),y))).
+** KEPT (pick-wt=10): 28 [hyper,18,5] P(L(B))|P(or(or(L(A),x),y)).
+** KEPT (pick-wt=3): 29 [hyper,18,2,12,8] P(L(B)).
+25 back subsumes 16.
+29 back subsumes 28.
+29 back subsumes 27.
+29 back subsumes 24.
+29 back subsumes 23.
+29 back subsumes 18.
+29 back subsumes 17.
+29 back subsumes 12.
+
+given clause #6: (wt=3) 29 [hyper,18,2,12,8] P(L(B)).
+** KEPT (pick-wt=5): 30 [hyper,29,6] P(or(x,L(B))).
+** KEPT (pick-wt=5): 31 [hyper,29,5] P(or(L(B),x)).
+30 back subsumes 25.
+30 back subsumes 21.
+30 back subsumes 19.
+31 back subsumes 26.
+31 back subsumes 22.
+31 back subsumes 20.
+
+given clause #7: (wt=5) 30 [hyper,29,6] P(or(x,L(B))).
+** KEPT (pick-wt=7): 32 [hyper,30,6] P(or(x,or(y,L(B)))).
+** KEPT (pick-wt=7): 33 [hyper,30,5] P(or(or(x,L(B)),y)).
+** KEPT (pick-wt=3): 34 [hyper,30,2,3,8] P(T(A)).
+32 back subsumes 13.
+33 back subsumes 14.
+
+given clause #8: (wt=3) 34 [hyper,30,2,3,8] P(T(A)).
+** KEPT (pick-wt=5): 35 [hyper,34,6] P(or(x,T(A))).
+** KEPT (pick-wt=5): 36 [hyper,34,5] P(or(T(A),x)).
+
+given clause #9: (wt=5) 31 [hyper,29,5] P(or(L(B),x)).
+** KEPT (pick-wt=7): 37 [hyper,31,6] P(or(x,or(L(B),y))).
+** KEPT (pick-wt=7): 38 [hyper,31,5] P(or(or(L(B),x),y)).
+
+given clause #10: (wt=5) 35 [hyper,34,6] P(or(x,T(A))).
+** KEPT (pick-wt=7): 39 [hyper,35,6] P(or(x,or(y,T(A)))).
+** KEPT (pick-wt=7): 40 [hyper,35,5] P(or(or(x,T(A)),y)).
+
+Search stopped by max_given option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                 10
+clauses generated             49
+  hyper_res generated         49
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed      17
+  (subsumed by sos)            3
+unit deletions                 0
+factor simplifications         0
+clauses kept                  32
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed         18
+usable size                   13
+sos size                       9
+demodulators size              0
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+Process 26998 finished Mon Jul 25 02:13:22 2016

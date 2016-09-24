@@ -1,0 +1,142 @@
+  1: # diff -up source-viz/ source-balancer/
+  2: Only in source-viz/: .svn
+  3: Only in source-balancer/: GPATH
+  4: Only in source-balancer/: GRTAGS
+  5: Only in source-balancer/: GSYMS
+  6: Only in source-balancer/: GTAGS
+  7: diff -up source-viz/Makefile source-balancer/Makefile
+  8: --- source-viz/Makefile 2016-08-25 02:22:05.979145421 +0900
+  9: +++ source-balancer/Makefile    2016-08-25 02:21:45.234146233 +0900
+ 10: @@ -57,7 +57,7 @@ CC = gcc
+ 11:  #
+ 12:  # optimized
+ 13:  
+ 14: -CFLAGS = -O $(DFLAGS)
+ 15: +CFLAGS = -g -pg $(DFLAGS)
+ 16:  
+ 17:  #
+ 18:  # check for strict ANSI conformance with Solaris cc:
+ 19: @@ -95,7 +95,7 @@ OBJECTS = av.o io.o share.o fpa.o clocks
+ 20:  all: otter install clean
+ 21:  
+ 22:  otter: main.o libotter.a
+ 23: -       $(CC) $(CFLAGS) main.o libotter.a -o otter
+ 24: +       $(CC) $(CFLAGS) main.o libotter.a -o otter 
+ 25:  
+ 26:  libotter.a: $(OBJECTS)
+ 27:         $(AR) rs libotter.a $(OBJECTS)
+ 28: Only in source-viz/: Makefile.lined
+ 29: Only in source-balancer/: a.out
+ 30: Only in source-viz/: cat.sh
+ 31: diff -up source-viz/demod.c source-balancer/demod.c
+ 32: --- source-viz/demod.c  2016-08-25 02:22:05.872145425 +0900
+ 33: +++ source-balancer/demod.c     2016-08-25 02:21:45.228146233 +0900
+ 34: @@ -15,6 +15,31 @@
+ 35:   *
+ 36:   *************/
+ 37:  
+ 38: +int poww(int n,int m)
+ 39: +{ 
+ 40: +  int i,powa;
+ 41: +
+ 42: +  if(m==0) 
+ 43: +    { 
+ 44: +      return 1;
+ 45: +      exit;
+ 46: +    }
+ 47: +  else
+ 48: +    {
+ 49: +
+ 50: +
+ 51: +  powa=1;
+ 52: +
+ 53: +  for(i=0;i<m;i++)
+ 54: +    {
+ 55: +      powa=powa * n;
+ 56: +    }
+ 57: +  return powa;
+ 58: +  exit;
+ 59: +    }
+ 60: +
+ 61: +}
+ 62: +
+ 63:  static struct term *contract_lin(struct term *t,
+ 64:                                  int *demods,
+ 65:                                  struct context *c,
+ 66: @@ -183,6 +208,9 @@ static struct term *dollar_contract(stru
+ 67:      case DIFF_SYM:
+ 68:      case DIV_SYM:
+ 69:      case MOD_SYM:  op_type = 1; break; /* int x int -> int */
+ 70: +    case POWER_SYM:
+ 71: +
+ 72: +
+ 73:      case EQ_SYM:
+ 74:      case NE_SYM:
+ 75:      case LT_SYM:
+ 76: @@ -247,17 +275,20 @@ static struct term *dollar_contract(stru
+ 77:        s2 = sn_to_str(tb->sym_num);
+ 78:        if (str_long(s1, &i1) == 0 || str_long(s2, &i2) == 0)
+ 79:         return(NULL);
+ 80: -       
+ 81: +
+ 82: +      /*       
+ 83:        if ((op_code == DIV_SYM || op_code == MOD_SYM) && i2 == 0) {
+ 84:         print_term_nl(stdout, t);
+ 85:         abend("integer divide by 0.");
+ 86:        }
+ 87: +      */
+ 88:        switch (op_code) {
+ 89:        case SUM_SYM:   i3 = i1 + i2; break;
+ 90:        case PROD_SYM:  i3 = i1 * i2; break;
+ 91:        case DIFF_SYM:  i3 = i1 - i2; break;
+ 92: -      case DIV_SYM:   i3 = i1 / i2; break;
+ 93: +      case DIV_SYM:   i3 = poww(i1,i2); break;
+ 94:        case MOD_SYM:   i3 = i1 % i2; break;
+ 95: +      case POWER_SYM: i3 = poww(i1,i2); break;
+ 96:        }
+ 97:        zap_term_special(t);
+ 98:        t1 = get_term();
+ 99: @@ -418,7 +449,7 @@ static struct term *dollar_contract(stru
+100:        case FSUM_SYM:   d3 = d1 + d2; break;
+101:        case FPROD_SYM:  d3 = d1 * d2; break;
+102:        case FDIFF_SYM:  d3 = d1 - d2; break;
+103: -      case FDIV_SYM:   d3 = d1 / d2; break;
+104: +      case FDIV_SYM:   d3 = poww(d1,d2); break;
+105:        }
+106:        zap_term_special(t);
+107:        t1 = get_term();
+108: Common subdirectories: source-viz/formed and source-balancer/formed
+109: diff -up source-viz/header.h source-balancer/header.h
+110: --- source-viz/header.h 2016-08-25 02:22:05.861145426 +0900
+111: +++ source-balancer/header.h    2016-08-25 02:21:45.228146233 +0900
+112: @@ -12,6 +12,7 @@
+113:  #include <stdio.h>
+114:  #include <string.h>
+115:  #include <stdlib.h>
+116: +// #include <math.h>
+117:  
+118:  /*********** INCLUDES FOR TIMES AND DATES ************/
+119:  
+120: @@ -108,7 +109,8 @@
+121:  #define PROD_SYM         1002
+122:  #define DIFF_SYM         1003
+123:  #define DIV_SYM          1004
+124: -#define MOD_SYM          1005
+125: +#define MOD_SYM          1056
+126: +#define POWER_SYM        1005
+127:  
+128:  #define EQ_SYM           1006
+129:  #define NE_SYM           1007
+130: diff -up source-viz/io.c source-balancer/io.c
+131: --- source-viz/io.c     2016-08-25 02:22:05.980145421 +0900
+132: +++ source-balancer/io.c        2016-08-25 02:21:45.234146233 +0900
+133: @@ -1424,6 +1424,8 @@ void built_in_symbols(void)
+134:    p = insert_sym("$DIFF", 2); p->eval_code = DIFF_SYM;
+135:    p = insert_sym("$DIV", 2);  p->eval_code = DIV_SYM;
+136:    p = insert_sym("$MOD", 2);  p->eval_code = MOD_SYM;
+137: +  p = insert_sym("$POWER", 2);  p->eval_code = POWER_SYM;
+138: +  
+139:  
+140:    p = insert_sym("$EQ", 2);   p->eval_code = EQ_SYM;
+141:    p = insert_sym("$NE", 2);   p->eval_code = NE_SYM;
+142: Binary files source-viz/libotter.a and source-balancer/libotter.a differ
