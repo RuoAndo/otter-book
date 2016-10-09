@@ -1,0 +1,10 @@
+  1: set(para_into).
+  2: set(very_verbose).
+  3: 
+  4: list(usable).
+  5: 	a=b.
+  6: end_of_list.
+  7: 
+  8: list(sos).
+  9: 	P(a).
+ 10: end_of_list.

@@ -1,0 +1,32 @@
+  1: % G: generate 
+  2: % R: repeat
+  3: % N: name
+  4: 
+  5: set(hyper_res).
+  6: 
+  7: list(sos).
+  8: 
+  9:         %　x = CQx. CQx = x. 
+ 10:         n([G,R,N,G,N,G,R,N],[]).
+ 11:         n([G,N,G,R,N,G,N,G,R,N],[]).
+ 12: 
+ 13: end_of_list.
+ 14: 
+ 15: list(usable).
+ 16: 
+ 17:         -n([G|x],[]) | n(G*x,[]).
+ 18:         -n(G*[N|x],[]) | n(GN*x,[]).
+ 19:         -n(G*[R|x],[]) | n(G*R*x,[]).
+ 20:         -n(G*R*[N|x],[]) | n(GRN*x,[]).
+ 21: 
+ 22:         -n(GN*x,[]) | m([],(x)).
+ 23:         -n(GRN*x,[]) | m([],([x,x])).
+ 24: 
+ 25: end_of_list.
+ 26: 
+ 27: list(demodulators).
+ 28:         %CRQ*[x] = [x,x].
+ 29:     	[[x]*[y]] = [x,y].
+ 30:     	[x]*[y] = [x,y].
+ 31:     	[[x],[y]] = [x,y].    
+ 32: end_of_list.

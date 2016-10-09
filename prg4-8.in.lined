@@ -1,0 +1,14 @@
+  1: set(para_into).
+  2: 
+  3: list(usable).
+  4: EQUAL(l(hole,l(n(x),y)),l(n(x),l(hole,y))).
+  5: EQUAL(l(hole,l(x,l(y,l(z,l(u,l(n(w),v)))))),l(n(w),l(x,l(y,l(z,l(u,l(hole,v))))))).
+  6: 
+  7: -STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),
+  8: l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+  9: end_of_list.
+ 10: 
+ 11: list(sos).
+ 12: STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),
+ 13: l(hole,l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 14: end_of_list.

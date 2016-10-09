@@ -1,0 +1,9 @@
+  1: op(350,xf,^).
+  2: set(knuth_bendix).
+  3: 
+  4: list(sos).
+  5: 	x=x.
+  6: 	(x*y)*z=x*y*z.
+  7: 	e*x=x.
+  8: 	x^ *x=e.
+  9: end_of_list.

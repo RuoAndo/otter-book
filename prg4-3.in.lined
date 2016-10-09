@@ -1,0 +1,14 @@
+  1: set(para_into).
+  2: 
+  3: list(usable).
+  4:         father(ichiro)=taro.
+  5: end_of_list.
+  6: 
+  7: list(sos).
+  8:         Grandmother(mother(father(x)),x).
+  9: end_of_list.
+ 10: 
+ 11: list(demodulators).
+ 12:         mother(taro)=hanako.
+ 13: end_of_list.
+ 14: 
