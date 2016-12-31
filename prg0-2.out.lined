@@ -1,0 +1,126 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Sat Dec 31 18:29:46 2016
+  4: The command was "otter".  The process ID is 1302.
+  5: 
+  6: set(hyper_res).
+  7: clear(back_sub).
+  8: clear(demod_history).
+  9: clear(print_kept).
+ 10: clear(print_given).
+ 11: assign(min_bit_width,8).
+ 12: 
+ 13: list(usable).
+ 14: 1 [] -P(x,v)| -P(y,v)|P($BIT_AND(x,y),v).
+ 15: 2 [] -P(x,v)| -P(y,v)|P($BIT_OR(x,y),v).
+ 16: 3 [] -P(x,v)|P($BIT_AND(11111111,$BIT_NOT(x)),append_inversion(v,x)).
+ 17: end_of_list.
+ 18: 
+ 19: list(sos).
+ 20: 4 [] P(00001111,v).
+ 21: 5 [] P(00110011,v).
+ 22: 6 [] P(01010101,v).
+ 23: end_of_list.
+ 24: 
+ 25: list(usable).
+ 26: 7 [] -P(11110000,v)| -P(11001100,v)| -P(10101010,v).
+ 27: end_of_list.
+ 28: 
+ 29: list(demodulators).
+ 30: 8 [] append_inversion([x1|x2],y)=[x1|append_inversion(x2,y)].
+ 31: 9 [] $VAR(x)->append_inversion(x,y)=[y|x].
+ 32: end_of_list.
+ 33: 
+ 34: list(passive).
+ 35: 10 [] P(x,[y1,y2,y3|y4]).
+ 36: end_of_list.
+ 37: 
+ 38: weight_list(pick_given).
+ 39: weight(P(11110000,$(1)),-50).
+ 40: weight(P(11001100,$(1)),-50).
+ 41: weight(P(10101010,$(1)),-50).
+ 42: end_of_list.
+ 43: 
+ 44: ======= end of input processing =======
+ 45: 
+ 46: =========== start of search ===========
+ 47: 
+ 48: -----> EMPTY CLAUSE at  10.28 sec ----> 20227 [hyper,20222,7,20203,20178] $F.
+ 49: 
+ 50: Length of proof is 26.  Level of proof is 9.
+ 51: 
+ 52: ---------------- PROOF ----------------
+ 53: 
+ 54: 1 [] -P(x,v)| -P(y,v)|P($BIT_AND(x,y),v).
+ 55: 2 [] -P(x,v)| -P(y,v)|P($BIT_OR(x,y),v).
+ 56: 3 [] -P(x,v)|P($BIT_AND(11111111,$BIT_NOT(x)),append_inversion(v,x)).
+ 57: 4 [] P(00001111,v).
+ 58: 5 [] P(00110011,v).
+ 59: 6 [] P(01010101,v).
+ 60: 7 [] -P(11110000,v)| -P(11001100,v)| -P(10101010,v).
+ 61: 16 [hyper,5,2,4,demod] P(00111111,x).
+ 62: 18 [hyper,5,1,4,demod] P(00000011,x).
+ 63: 26 [hyper,6,2,5,demod] P(01110111,x).
+ 64: 27 [hyper,6,2,4,demod] P(01011111,x).
+ 65: 30 [hyper,6,1,5,demod] P(00010001,x).
+ 66: 31 [hyper,6,1,4,demod] P(00000101,x).
+ 67: 40 [hyper,16,2,6,demod] P(01111111,x).
+ 68: 42 [hyper,16,1,6,demod] P(00010101,x).
+ 69: 47 [hyper,18,1,6,demod] P(00000001,x).
+ 70: 66 [hyper,42,2,18,demod] P(00010111,x).
+ 71: 73 [hyper,66,3,demod] P(11101000,[00010111|x]).
+ 72: 334 [hyper,73,2,47,demod] P(11101001,[00010111|x]).
+ 73: 336 [hyper,73,2,31,demod] P(11101101,[00010111|x]).
+ 74: 337 [hyper,73,2,30,demod] P(11111001,[00010111|x]).
+ 75: 338 [hyper,73,2,18,demod] P(11101011,[00010111|x]).
+ 76: 344 [hyper,73,1,27,demod] P(01001000,[00010111|x]).
+ 77: 345 [hyper,73,1,26,demod] P(01100000,[00010111|x]).
+ 78: 346 [hyper,73,1,16,demod] P(00101000,[00010111|x]).
+ 79: 754 [hyper,334,1,40,demod] P(01101001,[00010111|x]).
+ 80: 991 [hyper,754,3,demod] P(10010110,[00010111,01101001|x]).
+ 81: 8477 [hyper,991,2,346,demod] P(10111110,[00010111,01101001|x]).
+ 82: 8478 [hyper,991,2,345,demod] P(11110110,[00010111,01101001|x]).
+ 83: 8479 [hyper,991,2,344,demod] P(11011110,[00010111,01101001|x]).
+ 84: 20178 [hyper,8477,1,338,demod] P(10101010,[00010111,01101001|x]).
+ 85: 20203 [hyper,8478,1,337,demod] P(11110000,[00010111,01101001|x]).
+ 86: 20222 [hyper,8479,1,336,demod] P(11001100,[00010111,01101001|x]).
+ 87: 20227 [hyper,20222,7,20203,20178] $F.
+ 88: 
+ 89: ------------ end of proof -------------
+ 90: 
+ 91: 
+ 92: Search stopped by max_proofs option.
+ 93: 
+ 94: ============ end of search ============
+ 95: 
+ 96: -------------- statistics -------------
+ 97: clauses given               8642
+ 98: clauses generated        2069334
+ 99:   hyper_res generated    2069334
+100: demod & eval rewrites    2103338
+101: clauses wt,lit,sk delete       0
+102: tautologies deleted            0
+103: clauses forward subsumed 2049117
+104:   (subsumed by sos)       314773
+105: unit deletions                 0
+106: factor simplifications         0
+107: clauses kept               20216
+108: new demodulators               0
+109: empty clauses                  1
+110: clauses back demodulated       0
+111: clauses back subsumed          0
+112: usable size                 8646
+113: sos size                   11577
+114: demodulators size              2
+115: passive size                   1
+116: hot size                       0
+117: Kbytes malloced            12695
+118: 
+119: ----------- times (seconds) -----------
+120: user CPU time         10.28          (0 hr, 0 min, 10 sec)
+121: system CPU time        0.02          (0 hr, 0 min, 0 sec)
+122: wall-clock time       10             (0 hr, 0 min, 10 sec)
+123: 
+124: That finishes the proof of the theorem.
+125: 
+126: Process 1302 finished Sat Dec 31 18:29:56 2016
