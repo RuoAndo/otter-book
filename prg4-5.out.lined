@@ -1,0 +1,174 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Sat Dec 31 20:26:18 2016
+  4: The command was "otter".  The process ID is 6318.
+  5: 
+  6: op(350,xf,^).
+  7: set(knuth_bendix).
+  8:    dependent: set(anl_eq).
+  9:    dependent: set(para_from).
+ 10:    dependent: set(para_into).
+ 11:    dependent: clear(para_from_right).
+ 12:    dependent: clear(para_into_right).
+ 13:    dependent: set(para_from_vars).
+ 14:    dependent: set(eq_units_both_ways).
+ 15:    dependent: set(dynamic_demod_all).
+ 16:    dependent: set(dynamic_demod).
+ 17:    dependent: set(order_eq).
+ 18:    dependent: set(back_demod).
+ 19:    dependent: set(process_input).
+ 20:    dependent: set(lrpo).
+ 21: 
+ 22: list(sos).
+ 23: 0 [] x=x.
+ 24: 0 [] (x*y)*z=x*y*z.
+ 25: 0 [] e*x=x.
+ 26: 0 [] x^ *x=e.
+ 27: end_of_list.
+ 28: 
+ 29: ------------> process usable:
+ 30: 
+ 31: ------------> process sos:
+ 32: ** KEPT (pick-wt=3): 1 [] x=x.
+ 33: ** KEPT (pick-wt=11): 2 [] (x*y)*z=x*y*z.
+ 34: ---> New Demodulator: 3 [new_demod,2] (x*y)*z=x*y*z.
+ 35: ** KEPT (pick-wt=5): 4 [] e*x=x.
+ 36: ---> New Demodulator: 5 [new_demod,4] e*x=x.
+ 37: ** KEPT (pick-wt=6): 6 [] x^ *x=e.
+ 38: ---> New Demodulator: 7 [new_demod,6] x^ *x=e.
+ 39:   Following clause subsumed by 1 during input processing: 0 [copy,1,flip.1] x=x.
+ 40: >>>> Starting back demodulation with 3.
+ 41: >>>> Starting back demodulation with 5.
+ 42: >>>> Starting back demodulation with 7.
+ 43: 
+ 44: ======= end of input processing =======
+ 45: 
+ 46: =========== start of search ===========
+ 47: 
+ 48: given clause #1: (wt=3) 1 [] x=x.
+ 49: 
+ 50: given clause #2: (wt=5) 4 [] e*x=x.
+ 51: 
+ 52: given clause #3: (wt=6) 6 [] x^ *x=e.
+ 53: 
+ 54: given clause #4: (wt=11) 2 [] (x*y)*z=x*y*z.
+ 55: ** KEPT (pick-wt=8): 8 [para_into,2.1.1.1,6.1.1,demod,5,flip.1] x^ *x*y=y.
+ 56: ---> New Demodulator: 9 [new_demod,8] x^ *x*y=y.
+ 57: >>>> Starting back demodulation with 9.
+ 58: 
+ 59: given clause #5: (wt=8) 8 [para_into,2.1.1.1,6.1.1,demod,5,flip.1] x^ *x*y=y.
+ 60: ** KEPT (pick-wt=9): 10 [para_into,8.1.1.2,8.1.1] (x^ )^ *y=x*y.
+ 61: ---> New Demodulator: 11 [new_demod,10] (x^ )^ *y=x*y.
+ 62: ** KEPT (pick-wt=5): 12 [para_into,8.1.1.2,6.1.1,demod,11] x*e=x.
+ 63: ---> New Demodulator: 13 [new_demod,12] x*e=x.
+ 64: ** KEPT (pick-wt=6): 14 [para_into,8.1.1.2,4.1.1] e^ *x=x.
+ 65: ---> New Demodulator: 15 [new_demod,14] e^ *x=x.
+ 66: ** KEPT (pick-wt=12): 16 [para_into,8.1.1.2,2.1.1] (x*y)^ *x*y*z=z.
+ 67: ---> New Demodulator: 17 [new_demod,16] (x*y)^ *x*y*z=z.
+ 68: >>>> Starting back demodulation with 11.
+ 69: >>>> Starting back demodulation with 13.
+ 70: >>>> Starting back demodulation with 15.
+ 71: >>>> Starting back demodulation with 17.
+ 72: 
+ 73: given clause #6: (wt=5) 12 [para_into,8.1.1.2,6.1.1,demod,11] x*e=x.
+ 74: ** KEPT (pick-wt=4): 18 [para_into,12.1.1,6.1.1,flip.1] e^ =e.
+ 75: ---> New Demodulator: 19 [new_demod,18] e^ =e.
+ 76: >>>> Starting back demodulation with 19.
+ 77:     >> back demodulating 14 with 19.
+ 78: 
+ 79: given clause #7: (wt=4) 18 [para_into,12.1.1,6.1.1,flip.1] e^ =e.
+ 80: 
+ 81: given clause #8: (wt=9) 10 [para_into,8.1.1.2,8.1.1] (x^ )^ *y=x*y.
+ 82: ** KEPT (pick-wt=5): 20 [para_into,10.1.1,12.1.1,demod,13] (x^ )^ =x.
+ 83: ---> New Demodulator: 21 [new_demod,20] (x^ )^ =x.
+ 84: ** KEPT (pick-wt=8): 22 [para_into,10.1.1,8.1.1,flip.1] x*x^ *y=y.
+ 85: ---> New Demodulator: 23 [new_demod,22] x*x^ *y=y.
+ 86: ** KEPT (pick-wt=6): 24 [para_into,10.1.1,6.1.1,flip.1] x*x^ =e.
+ 87: ---> New Demodulator: 25 [new_demod,24] x*x^ =e.
+ 88: >>>> Starting back demodulation with 21.
+ 89:     >> back demodulating 10 with 21.
+ 90: >>>> Starting back demodulation with 23.
+ 91: >>>> Starting back demodulation with 25.
+ 92: 
+ 93: given clause #9: (wt=5) 20 [para_into,10.1.1,12.1.1,demod,13] (x^ )^ =x.
+ 94: 
+ 95: given clause #10: (wt=6) 24 [para_into,10.1.1,6.1.1,flip.1] x*x^ =e.
+ 96: ** KEPT (pick-wt=10): 26 [para_into,24.1.1,2.1.1] x*y* (x*y)^ =e.
+ 97: ---> New Demodulator: 27 [new_demod,26] x*y* (x*y)^ =e.
+ 98: >>>> Starting back demodulation with 27.
+ 99: 
+100: given clause #11: (wt=8) 22 [para_into,10.1.1,8.1.1,flip.1] x*x^ *y=y.
+101: ** KEPT (pick-wt=12): 28 [para_into,22.1.1,2.1.1] x*y* (x*y)^ *z=z.
+102: ---> New Demodulator: 29 [new_demod,28] x*y* (x*y)^ *z=z.
+103: >>>> Starting back demodulation with 29.
+104: 
+105: given clause #12: (wt=10) 26 [para_into,24.1.1,2.1.1] x*y* (x*y)^ =e.
+106: ** KEPT (pick-wt=14): 30 [para_into,26.1.1.2.2.1,2.1.1,demod,3] x*y*z* (x*y*z)^ =e.
+107: ---> New Demodulator: 31 [new_demod,30] x*y*z* (x*y*z)^ =e.
+108: >>>> Starting back demodulation with 31.
+109: ** KEPT (pick-wt=9): 32 [para_from,26.1.1,22.1.1.2,demod,13,flip.1] x* (y^ *x)^ =y.
+110: ---> New Demodulator: 33 [new_demod,32] x* (y^ *x)^ =y.
+111: ** KEPT (pick-wt=9): 34 [para_from,26.1.1,8.1.1.2,demod,13,flip.1] x* (y*x)^ =y^ .
+112: ---> New Demodulator: 35 [new_demod,34] x* (y*x)^ =y^ .
+113: >>>> Starting back demodulation with 33.
+114: >>>> Starting back demodulation with 35.
+115:     >> back demodulating 32 with 35.
+116:     >> back demodulating 26 with 35.
+117: 
+118: given clause #13: (wt=9) 34 [para_from,26.1.1,8.1.1.2,demod,13,flip.1] x* (y*x)^ =y^ .
+119: ** KEPT (pick-wt=9): 36 [para_into,34.1.1.2.1,34.1.1,demod,21] (x*y)^ *x=y^ .
+120: ---> New Demodulator: 37 [new_demod,36] (x*y)^ *x=y^ .
+121: ** KEPT (pick-wt=13): 38 [para_into,34.1.1.2.1,2.1.1] x* (y*z*x)^ = (y*z)^ .
+122: ---> New Demodulator: 39 [new_demod,38] x* (y*z*x)^ = (y*z)^ .
+123: >>>> Starting back demodulation with 37.
+124: >>>> Starting back demodulation with 39.
+125:     >> back demodulating 30 with 39.
+126: ** KEPT (pick-wt=10): 40 [para_from,34.1.1,22.1.1.2,flip.1] (x*y^ )^ =y*x^ .
+127: ---> New Demodulator: 41 [new_demod,40] (x*y^ )^ =y*x^ .
+128: ** KEPT (pick-wt=10): 42 [para_from,34.1.1,8.1.1.2,flip.1] (x*y)^ =y^ *x^ .
+129: ---> New Demodulator: 43 [new_demod,42] (x*y)^ =y^ *x^ .
+130: >>>> Starting back demodulation with 41.
+131: >>>> Starting back demodulation with 43.
+132:     >> back demodulating 40 with 43.
+133:     >> back demodulating 38 with 43.
+134:     >> back demodulating 36 with 43.
+135:     >> back demodulating 34 with 43.
+136:     >> back demodulating 28 with 43.
+137:     >> back demodulating 16 with 43.
+138: 
+139: given clause #14: (wt=10) 42 [para_from,34.1.1,8.1.1.2,flip.1] (x*y)^ =y^ *x^ .
+140: 
+141: Search stopped because sos empty.
+142: 
+143: ============ end of search ============
+144: 
+145: -------------- statistics -------------
+146: clauses given                 14
+147: clauses generated            126
+148:   para_from generated         53
+149:   para_into generated         73
+150: demod & eval rewrites        202
+151: clauses wt,lit,sk delete       0
+152: tautologies deleted            0
+153: clauses forward subsumed     120
+154:   (subsumed by sos)            1
+155: unit deletions                 0
+156: factor simplifications         0
+157: clauses kept                  22
+158: new demodulators              21
+159: empty clauses                  0
+160: clauses back demodulated      11
+161: clauses back subsumed          0
+162: usable size                   11
+163: sos size                       0
+164: demodulators size             10
+165: passive size                   0
+166: hot size                       0
+167: Kbytes malloced             1953
+168: 
+169: ----------- times (seconds) -----------
+170: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+171: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+172: wall-clock time        0             (0 hr, 0 min, 0 sec)
+173: 
+174: Process 6318 finished Sat Dec 31 20:26:18 2016
