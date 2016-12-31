@@ -1,0 +1,262 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Sat Dec 31 19:38:26 2016
+  4: The command was "otter".  The process ID is 4059.
+  5: 
+  6: set(hyper_res).
+  7: assign(max_proofs,2).
+  8: set(print_lists_at_end).
+  9: 
+ 10: list(usable).
+ 11: 1 [] -P(T(x))| -P(Says(x,y))|P(y).
+ 12: 2 [] -P(L(x))| -P(Says(x,y))| -P(y).
+ 13: 3 [] P(T(x))|P(L(x)).
+ 14: 4 [] -P(T(x))| -P(L(x)).
+ 15: 5 [] -P(n(L(x)))|P(T(x)).
+ 16: 6 [] -P(y)|P(or(y,z)).
+ 17: 7 [] -P(z)|P(or(y,z)).
+ 18: 8 [] -P(or(y,z))|P(y)|P(z).
+ 19: end_of_list.
+ 20: 
+ 21: list(sos).
+ 22: 9 [] P(Says(A,or(n(L(B)),L(A)))).
+ 23: end_of_list.
+ 24: 
+ 25: list(passive).
+ 26: 10 [] -P(T(A)).
+ 27: 11 [] -P(T(B)).
+ 28: end_of_list.
+ 29: 
+ 30: ======= end of input processing =======
+ 31: 
+ 32: =========== start of search ===========
+ 33: 
+ 34: given clause #1: (wt=9) 9 [] P(Says(A,or(n(L(B)),L(A)))).
+ 35: ** KEPT (pick-wt=11): 12 [hyper,9,7] P(or(x,Says(A,or(n(L(B)),L(A))))).
+ 36: ** KEPT (pick-wt=11): 13 [hyper,9,6] P(or(Says(A,or(n(L(B)),L(A))),x)).
+ 37: ** KEPT (pick-wt=10): 14 [hyper,9,1,3] P(or(n(L(B)),L(A)))|P(L(A)).
+ 38: 
+ 39: given clause #2: (wt=10) 14 [hyper,9,1,3] P(or(n(L(B)),L(A)))|P(L(A)).
+ 40: ** KEPT (pick-wt=7): 15 [hyper,14,8] P(L(A))|P(n(L(B))).
+ 41: ** KEPT (pick-wt=12): 16 [hyper,14,7] P(L(A))|P(or(x,or(n(L(B)),L(A)))).
+ 42: ** KEPT (pick-wt=12): 17 [hyper,14,6] P(L(A))|P(or(or(n(L(B)),L(A)),x)).
+ 43: ** KEPT (pick-wt=12): 18 [hyper,14,7] P(or(n(L(B)),L(A)))|P(or(x,L(A))).
+ 44: 18 back subsumes 14.
+ 45: 
+ 46: given clause #3: (wt=7) 15 [hyper,14,8] P(L(A))|P(n(L(B))).
+ 47: ** KEPT (pick-wt=9): 19 [hyper,15,7] P(n(L(B)))|P(or(x,L(A))).
+ 48: ** KEPT (pick-wt=9): 20 [hyper,15,6] P(n(L(B)))|P(or(L(A),x)).
+ 49: ** KEPT (pick-wt=9): 21 [hyper,15,7] P(L(A))|P(or(x,n(L(B)))).
+ 50: ** KEPT (pick-wt=9): 22 [hyper,15,6] P(L(A))|P(or(n(L(B)),x)).
+ 51: ** KEPT (pick-wt=6): 23 [hyper,15,5] P(L(A))|P(T(B)).
+ 52: 
+ 53: given clause #4: (wt=6) 23 [hyper,15,5] P(L(A))|P(T(B)).
+ 54: ** KEPT (pick-wt=8): 24 [hyper,23,7] P(T(B))|P(or(x,L(A))).
+ 55: ** KEPT (pick-wt=8): 25 [hyper,23,6] P(T(B))|P(or(L(A),x)).
+ 56: ** KEPT (pick-wt=8): 26 [hyper,23,7] P(L(A))|P(or(x,T(B))).
+ 57: ** KEPT (pick-wt=8): 27 [hyper,23,6] P(L(A))|P(or(T(B),x)).
+ 58: 
+ 59: given clause #5: (wt=8) 24 [hyper,23,7] P(T(B))|P(or(x,L(A))).
+ 60: ** KEPT (pick-wt=10): 28 [hyper,24,7] P(or(x,L(A)))|P(or(y,T(B))).
+ 61: ** KEPT (pick-wt=10): 29 [hyper,24,6] P(or(x,L(A)))|P(or(T(B),y)).
+ 62: ** KEPT (pick-wt=10): 30 [hyper,24,7] P(T(B))|P(or(x,or(y,L(A)))).
+ 63: ** KEPT (pick-wt=10): 31 [hyper,24,6] P(T(B))|P(or(or(x,L(A)),y)).
+ 64: ** KEPT (pick-wt=3): 32 [hyper,24,2,23,9] P(T(B)).
+ 65: 
+ 66: ----> UNIT CONFLICT at   0.00 sec ----> 33 [binary,32.1,11.1] $F.
+ 67: 
+ 68: Length of proof is 5.  Level of proof is 5.
+ 69: 
+ 70: ---------------- PROOF ----------------
+ 71: 
+ 72: 1 [] -P(T(x))| -P(Says(x,y))|P(y).
+ 73: 2 [] -P(L(x))| -P(Says(x,y))| -P(y).
+ 74: 3 [] P(T(x))|P(L(x)).
+ 75: 5 [] -P(n(L(x)))|P(T(x)).
+ 76: 7 [] -P(z)|P(or(y,z)).
+ 77: 8 [] -P(or(y,z))|P(y)|P(z).
+ 78: 9 [] P(Says(A,or(n(L(B)),L(A)))).
+ 79: 11 [] -P(T(B)).
+ 80: 14 [hyper,9,1,3] P(or(n(L(B)),L(A)))|P(L(A)).
+ 81: 15 [hyper,14,8] P(L(A))|P(n(L(B))).
+ 82: 23 [hyper,15,5] P(L(A))|P(T(B)).
+ 83: 24 [hyper,23,7] P(T(B))|P(or(x,L(A))).
+ 84: 32 [hyper,24,2,23,9] P(T(B)).
+ 85: 33 [binary,32.1,11.1] $F.
+ 86: 
+ 87: ------------ end of proof -------------
+ 88: 
+ 89: 32 back subsumes 31.
+ 90: 32 back subsumes 30.
+ 91: 32 back subsumes 25.
+ 92: 32 back subsumes 24.
+ 93: 32 back subsumes 23.
+ 94: 
+ 95: given clause #6: (wt=3) 32 [hyper,24,2,23,9] P(T(B)).
+ 96: ** KEPT (pick-wt=5): 34 [hyper,32,7] P(or(x,T(B))).
+ 97: ** KEPT (pick-wt=5): 35 [hyper,32,6] P(or(T(B),x)).
+ 98: 34 back subsumes 28.
+ 99: 34 back subsumes 26.
+100: 35 back subsumes 29.
+101: 35 back subsumes 27.
+102: 
+103: given clause #7: (wt=5) 34 [hyper,32,7] P(or(x,T(B))).
+104: ** KEPT (pick-wt=7): 36 [hyper,34,7] P(or(x,or(y,T(B)))).
+105: ** KEPT (pick-wt=7): 37 [hyper,34,6] P(or(or(x,T(B)),y)).
+106: 
+107: given clause #8: (wt=5) 35 [hyper,32,6] P(or(T(B),x)).
+108: ** KEPT (pick-wt=7): 38 [hyper,35,7] P(or(x,or(T(B),y))).
+109: ** KEPT (pick-wt=7): 39 [hyper,35,6] P(or(or(T(B),x),y)).
+110: 
+111: given clause #9: (wt=7) 36 [hyper,34,7] P(or(x,or(y,T(B)))).
+112: ** KEPT (pick-wt=9): 40 [hyper,36,7] P(or(x,or(y,or(z,T(B))))).
+113: ** KEPT (pick-wt=9): 41 [hyper,36,6] P(or(or(x,or(y,T(B))),z)).
+114: 
+115: given clause #10: (wt=7) 37 [hyper,34,6] P(or(or(x,T(B)),y)).
+116: ** KEPT (pick-wt=9): 42 [hyper,37,7] P(or(x,or(or(y,T(B)),z))).
+117: ** KEPT (pick-wt=9): 43 [hyper,37,6] P(or(or(or(x,T(B)),y),z)).
+118: 
+119: given clause #11: (wt=7) 38 [hyper,35,7] P(or(x,or(T(B),y))).
+120: ** KEPT (pick-wt=9): 44 [hyper,38,7] P(or(x,or(y,or(T(B),z)))).
+121: ** KEPT (pick-wt=9): 45 [hyper,38,6] P(or(or(x,or(T(B),y)),z)).
+122: 
+123: given clause #12: (wt=7) 39 [hyper,35,6] P(or(or(T(B),x),y)).
+124: ** KEPT (pick-wt=9): 46 [hyper,39,7] P(or(x,or(or(T(B),y),z))).
+125: ** KEPT (pick-wt=9): 47 [hyper,39,6] P(or(or(or(T(B),x),y),z)).
+126: 
+127: given clause #13: (wt=9) 19 [hyper,15,7] P(n(L(B)))|P(or(x,L(A))).
+128: ** KEPT (pick-wt=11): 48 [hyper,19,7] P(or(x,L(A)))|P(or(y,n(L(B)))).
+129: ** KEPT (pick-wt=11): 49 [hyper,19,6] P(or(x,L(A)))|P(or(n(L(B)),y)).
+130: ** KEPT (pick-wt=11): 50 [hyper,19,7] P(n(L(B)))|P(or(x,or(y,L(A)))).
+131: ** KEPT (pick-wt=11): 51 [hyper,19,6] P(n(L(B)))|P(or(or(x,L(A)),y)).
+132: ** KEPT (pick-wt=4): 52 [hyper,19,2,15,9] P(n(L(B))).
+133: 49 back subsumes 18.
+134: 52 back subsumes 51.
+135: 52 back subsumes 50.
+136: 52 back subsumes 20.
+137: 52 back subsumes 19.
+138: 52 back subsumes 15.
+139: 
+140: given clause #14: (wt=4) 52 [hyper,19,2,15,9] P(n(L(B))).
+141: ** KEPT (pick-wt=6): 53 [hyper,52,7] P(or(x,n(L(B)))).
+142: ** KEPT (pick-wt=6): 54 [hyper,52,6] P(or(n(L(B)),x)).
+143: 53 back subsumes 48.
+144: 53 back subsumes 21.
+145: 54 back subsumes 49.
+146: 54 back subsumes 22.
+147: 
+148: given clause #15: (wt=6) 53 [hyper,52,7] P(or(x,n(L(B)))).
+149: ** KEPT (pick-wt=8): 55 [hyper,53,7] P(or(x,or(y,n(L(B))))).
+150: ** KEPT (pick-wt=8): 56 [hyper,53,6] P(or(or(x,n(L(B))),y)).
+151: 
+152: given clause #16: (wt=6) 54 [hyper,52,6] P(or(n(L(B)),x)).
+153: ** KEPT (pick-wt=8): 57 [hyper,54,7] P(or(x,or(n(L(B)),y))).
+154: ** KEPT (pick-wt=8): 58 [hyper,54,6] P(or(or(n(L(B)),x),y)).
+155: ** KEPT (pick-wt=3): 59 [hyper,54,2,3,9] P(T(A)).
+156: 
+157: ----> UNIT CONFLICT at   0.00 sec ----> 60 [binary,59.1,10.1] $F.
+158: 
+159: Length of proof is 6.  Level of proof is 6.
+160: 
+161: ---------------- PROOF ----------------
+162: 
+163: 1 [] -P(T(x))| -P(Says(x,y))|P(y).
+164: 2 [] -P(L(x))| -P(Says(x,y))| -P(y).
+165: 3 [] P(T(x))|P(L(x)).
+166: 6 [] -P(y)|P(or(y,z)).
+167: 7 [] -P(z)|P(or(y,z)).
+168: 8 [] -P(or(y,z))|P(y)|P(z).
+169: 9 [] P(Says(A,or(n(L(B)),L(A)))).
+170: 10 [] -P(T(A)).
+171: 14 [hyper,9,1,3] P(or(n(L(B)),L(A)))|P(L(A)).
+172: 15 [hyper,14,8] P(L(A))|P(n(L(B))).
+173: 19 [hyper,15,7] P(n(L(B)))|P(or(x,L(A))).
+174: 52 [hyper,19,2,15,9] P(n(L(B))).
+175: 54 [hyper,52,6] P(or(n(L(B)),x)).
+176: 59 [hyper,54,2,3,9] P(T(A)).
+177: 60 [binary,59.1,10.1] $F.
+178: 
+179: ------------ end of proof -------------
+180: 
+181: 
+182: Search stopped by max_proofs option.
+183: 
+184: ============ end of search ============
+185: 
+186: list(usable).
+187: 1 [] -P(T(x))| -P(Says(x,y))|P(y).
+188: 2 [] -P(L(x))| -P(Says(x,y))| -P(y).
+189: 3 [] P(T(x))|P(L(x)).
+190: 4 [] -P(T(x))| -P(L(x)).
+191: 5 [] -P(n(L(x)))|P(T(x)).
+192: 6 [] -P(y)|P(or(y,z)).
+193: 7 [] -P(z)|P(or(y,z)).
+194: 8 [] -P(or(y,z))|P(y)|P(z).
+195: 9 [] P(Says(A,or(n(L(B)),L(A)))).
+196: 32 [hyper,24,2,23,9] P(T(B)).
+197: 34 [hyper,32,7] P(or(x,T(B))).
+198: 35 [hyper,32,6] P(or(T(B),x)).
+199: 36 [hyper,34,7] P(or(x,or(y,T(B)))).
+200: 37 [hyper,34,6] P(or(or(x,T(B)),y)).
+201: 38 [hyper,35,7] P(or(x,or(T(B),y))).
+202: 39 [hyper,35,6] P(or(or(T(B),x),y)).
+203: 52 [hyper,19,2,15,9] P(n(L(B))).
+204: 53 [hyper,52,7] P(or(x,n(L(B)))).
+205: 54 [hyper,52,6] P(or(n(L(B)),x)).
+206: end_of_list.
+207: 
+208: list(sos).
+209: 12 [hyper,9,7] P(or(x,Says(A,or(n(L(B)),L(A))))).
+210: 13 [hyper,9,6] P(or(Says(A,or(n(L(B)),L(A))),x)).
+211: 16 [hyper,14,7] P(L(A))|P(or(x,or(n(L(B)),L(A)))).
+212: 17 [hyper,14,6] P(L(A))|P(or(or(n(L(B)),L(A)),x)).
+213: 40 [hyper,36,7] P(or(x,or(y,or(z,T(B))))).
+214: 41 [hyper,36,6] P(or(or(x,or(y,T(B))),z)).
+215: 42 [hyper,37,7] P(or(x,or(or(y,T(B)),z))).
+216: 43 [hyper,37,6] P(or(or(or(x,T(B)),y),z)).
+217: 44 [hyper,38,7] P(or(x,or(y,or(T(B),z)))).
+218: 45 [hyper,38,6] P(or(or(x,or(T(B),y)),z)).
+219: 46 [hyper,39,7] P(or(x,or(or(T(B),y),z))).
+220: 47 [hyper,39,6] P(or(or(or(T(B),x),y),z)).
+221: 55 [hyper,53,7] P(or(x,or(y,n(L(B))))).
+222: 56 [hyper,53,6] P(or(or(x,n(L(B))),y)).
+223: 57 [hyper,54,7] P(or(x,or(n(L(B)),y))).
+224: 58 [hyper,54,6] P(or(or(n(L(B)),x),y)).
+225: 59 [hyper,54,2,3,9] P(T(A)).
+226: end_of_list.
+227: 
+228: list(demodulators).
+229: end_of_list.
+230: 
+231: 
+232: -------------- statistics -------------
+233: clauses given                 16
+234: clauses generated             72
+235:   hyper_res generated         72
+236: demod & eval rewrites          0
+237: clauses wt,lit,sk delete       0
+238: tautologies deleted            0
+239: clauses forward subsumed      25
+240:   (subsumed by sos)            6
+241: unit deletions                 0
+242: factor simplifications         0
+243: clauses kept                  47
+244: new demodulators               0
+245: empty clauses                  2
+246: clauses back demodulated       0
+247: clauses back subsumed         20
+248: usable size                   19
+249: sos size                      17
+250: demodulators size              0
+251: passive size                   2
+252: hot size                       0
+253: Kbytes malloced              976
+254: 
+255: ----------- times (seconds) -----------
+256: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+257: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+258: wall-clock time        0             (0 hr, 0 min, 0 sec)
+259: 
+260: That finishes the proof of the theorem.
+261: 
+262: Process 4059 finished Sat Dec 31 19:38:26 2016
