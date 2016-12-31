@@ -1,0 +1,368 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Sat Dec 31 19:48:28 2016
+  4: The command was "otter".  The process ID is 4503.
+  5: 
+  6: set(hyper_res).
+  7: set(demod_inf).
+  8: set(very_verbose).
+  9: 
+ 10: list(usable).
+ 11: end_of_list.
+ 12: 
+ 13: list(sos).
+ 14: 1 [] P([1,2,3,4,5,6,7,8,9],[]).
+ 15: end_of_list.
+ 16: 
+ 17: list(demodulators).
+ 18: 2 [] P([x|y],[])=P(y,[x]).
+ 19: 3 [] P([x|y],z)=P(y,[x,z]).
+ 20: 4 [] [x,[]]=[x].
+ 21: 5 [] [x,[y]]=[x,y].
+ 22: 6 [] [x,[y|z]]=[x,y,z].
+ 23: end_of_list.
+ 24: 
+ 25: ======= end of input processing =======
+ 26: 
+ 27: =========== start of search ===========
+ 28: 
+ 29: given clause #1: (wt=21) 1 [] P([1,2,3,4,5,6,7,8,9],[]).
+ 30: 
+ 31:   0 [1] P([1,2,3,4,5,6,7,8,9],[]).
+ 32:    demod term: 1.
+ 33:    demod term: 2.
+ 34:    demod term: 3.
+ 35:    demod term: 4.
+ 36:    demod term: 5.
+ 37:    demod term: 6.
+ 38:    demod term: 7.
+ 39:    demod term: 8.
+ 40:    demod term: 9.
+ 41:    demod term: [].
+ 42:    demod term: [9].
+ 43:    demod term: [8,9].
+ 44:    demod term: [7,8,9].
+ 45:    demod term: [6,7,8,9].
+ 46:    demod term: [5,6,7,8,9].
+ 47:    demod term: [4,5,6,7,8,9].
+ 48:    demod term: [3,4,5,6,7,8,9].
+ 49:    demod term: [2,3,4,5,6,7,8,9].
+ 50:    demod term: [1,2,3,4,5,6,7,8,9].
+ 51:    demod term: [].
+ 52:    demod term: P([1,2,3,4,5,6,7,8,9],[]).
+ 53:    --> result: P([2,3,4,5,6,7,8,9],[1,[]])   demod<3>
+ 54:    demod term: [].
+ 55:    demod term: [[]].
+ 56:    demod term: [1,[]].
+ 57:    --> result: [1]   demod<4>
+ 58:    demod term: [].
+ 59:    demod term: [1].
+ 60:    demod term: P([2,3,4,5,6,7,8,9],[1]).
+ 61:    --> result: P([3,4,5,6,7,8,9],[2,[1]])   demod<3>
+ 62:    demod term: [].
+ 63:    demod term: [[1]].
+ 64:    demod term: [2,[1]].
+ 65:    --> result: [2,1,[]]   demod<6>
+ 66:    demod term: [].
+ 67:    demod term: [[]].
+ 68:    demod term: [1,[]].
+ 69:    --> result: [1]   demod<4>
+ 70:    demod term: [].
+ 71:    demod term: [1].
+ 72:    demod term: [2,1].
+ 73:    demod term: P([3,4,5,6,7,8,9],[2,1]).
+ 74:    --> result: P([4,5,6,7,8,9],[3,[2,1]])   demod<3>
+ 75:    demod term: [].
+ 76:    demod term: [[2,1]].
+ 77:    demod term: [3,[2,1]].
+ 78:    --> result: [3,2,[1]]   demod<6>
+ 79:    demod term: [].
+ 80:    demod term: [[1]].
+ 81:    demod term: [2,[1]].
+ 82:    --> result: [2,1,[]]   demod<6>
+ 83:    demod term: [].
+ 84:    demod term: [[]].
+ 85:    demod term: [1,[]].
+ 86:    --> result: [1]   demod<4>
+ 87:    demod term: [].
+ 88:    demod term: [1].
+ 89:    demod term: [2,1].
+ 90:    demod term: [3,2,1].
+ 91:    demod term: P([4,5,6,7,8,9],[3,2,1]).
+ 92:    --> result: P([5,6,7,8,9],[4,[3,2,1]])   demod<3>
+ 93:    demod term: [].
+ 94:    demod term: [[3,2,1]].
+ 95:    demod term: [4,[3,2,1]].
+ 96:    --> result: [4,3,[2,1]]   demod<6>
+ 97:    demod term: [].
+ 98:    demod term: [[2,1]].
+ 99:    demod term: [3,[2,1]].
+100:    --> result: [3,2,[1]]   demod<6>
+101:    demod term: [].
+102:    demod term: [[1]].
+103:    demod term: [2,[1]].
+104:    --> result: [2,1,[]]   demod<6>
+105:    demod term: [].
+106:    demod term: [[]].
+107:    demod term: [1,[]].
+108:    --> result: [1]   demod<4>
+109:    demod term: [].
+110:    demod term: [1].
+111:    demod term: [2,1].
+112:    demod term: [3,2,1].
+113:    demod term: [4,3,2,1].
+114:    demod term: P([5,6,7,8,9],[4,3,2,1]).
+115:    --> result: P([6,7,8,9],[5,[4,3,2,1]])   demod<3>
+116:    demod term: [].
+117:    demod term: [[4,3,2,1]].
+118:    demod term: [5,[4,3,2,1]].
+119:    --> result: [5,4,[3,2,1]]   demod<6>
+120:    demod term: [].
+121:    demod term: [[3,2,1]].
+122:    demod term: [4,[3,2,1]].
+123:    --> result: [4,3,[2,1]]   demod<6>
+124:    demod term: [].
+125:    demod term: [[2,1]].
+126:    demod term: [3,[2,1]].
+127:    --> result: [3,2,[1]]   demod<6>
+128:    demod term: [].
+129:    demod term: [[1]].
+130:    demod term: [2,[1]].
+131:    --> result: [2,1,[]]   demod<6>
+132:    demod term: [].
+133:    demod term: [[]].
+134:    demod term: [1,[]].
+135:    --> result: [1]   demod<4>
+136:    demod term: [].
+137:    demod term: [1].
+138:    demod term: [2,1].
+139:    demod term: [3,2,1].
+140:    demod term: [4,3,2,1].
+141:    demod term: [5,4,3,2,1].
+142:    demod term: P([6,7,8,9],[5,4,3,2,1]).
+143:    --> result: P([7,8,9],[6,[5,4,3,2,1]])   demod<3>
+144:    demod term: [].
+145:    demod term: [[5,4,3,2,1]].
+146:    demod term: [6,[5,4,3,2,1]].
+147:    --> result: [6,5,[4,3,2,1]]   demod<6>
+148:    demod term: [].
+149:    demod term: [[4,3,2,1]].
+150:    demod term: [5,[4,3,2,1]].
+151:    --> result: [5,4,[3,2,1]]   demod<6>
+152:    demod term: [].
+153:    demod term: [[3,2,1]].
+154:    demod term: [4,[3,2,1]].
+155:    --> result: [4,3,[2,1]]   demod<6>
+156:    demod term: [].
+157:    demod term: [[2,1]].
+158:    demod term: [3,[2,1]].
+159:    --> result: [3,2,[1]]   demod<6>
+160:    demod term: [].
+161:    demod term: [[1]].
+162:    demod term: [2,[1]].
+163:    --> result: [2,1,[]]   demod<6>
+164:    demod term: [].
+165:    demod term: [[]].
+166:    demod term: [1,[]].
+167:    --> result: [1]   demod<4>
+168:    demod term: [].
+169:    demod term: [1].
+170:    demod term: [2,1].
+171:    demod term: [3,2,1].
+172:    demod term: [4,3,2,1].
+173:    demod term: [5,4,3,2,1].
+174:    demod term: [6,5,4,3,2,1].
+175:    demod term: P([7,8,9],[6,5,4,3,2,1]).
+176:    --> result: P([8,9],[7,[6,5,4,3,2,1]])   demod<3>
+177:    demod term: [].
+178:    demod term: [[6,5,4,3,2,1]].
+179:    demod term: [7,[6,5,4,3,2,1]].
+180:    --> result: [7,6,[5,4,3,2,1]]   demod<6>
+181:    demod term: [].
+182:    demod term: [[5,4,3,2,1]].
+183:    demod term: [6,[5,4,3,2,1]].
+184:    --> result: [6,5,[4,3,2,1]]   demod<6>
+185:    demod term: [].
+186:    demod term: [[4,3,2,1]].
+187:    demod term: [5,[4,3,2,1]].
+188:    --> result: [5,4,[3,2,1]]   demod<6>
+189:    demod term: [].
+190:    demod term: [[3,2,1]].
+191:    demod term: [4,[3,2,1]].
+192:    --> result: [4,3,[2,1]]   demod<6>
+193:    demod term: [].
+194:    demod term: [[2,1]].
+195:    demod term: [3,[2,1]].
+196:    --> result: [3,2,[1]]   demod<6>
+197:    demod term: [].
+198:    demod term: [[1]].
+199:    demod term: [2,[1]].
+200:    --> result: [2,1,[]]   demod<6>
+201:    demod term: [].
+202:    demod term: [[]].
+203:    demod term: [1,[]].
+204:    --> result: [1]   demod<4>
+205:    demod term: [].
+206:    demod term: [1].
+207:    demod term: [2,1].
+208:    demod term: [3,2,1].
+209:    demod term: [4,3,2,1].
+210:    demod term: [5,4,3,2,1].
+211:    demod term: [6,5,4,3,2,1].
+212:    demod term: [7,6,5,4,3,2,1].
+213:    demod term: P([8,9],[7,6,5,4,3,2,1]).
+214:    --> result: P([9],[8,[7,6,5,4,3,2,1]])   demod<3>
+215:    demod term: [].
+216:    demod term: [[7,6,5,4,3,2,1]].
+217:    demod term: [8,[7,6,5,4,3,2,1]].
+218:    --> result: [8,7,[6,5,4,3,2,1]]   demod<6>
+219:    demod term: [].
+220:    demod term: [[6,5,4,3,2,1]].
+221:    demod term: [7,[6,5,4,3,2,1]].
+222:    --> result: [7,6,[5,4,3,2,1]]   demod<6>
+223:    demod term: [].
+224:    demod term: [[5,4,3,2,1]].
+225:    demod term: [6,[5,4,3,2,1]].
+226:    --> result: [6,5,[4,3,2,1]]   demod<6>
+227:    demod term: [].
+228:    demod term: [[4,3,2,1]].
+229:    demod term: [5,[4,3,2,1]].
+230:    --> result: [5,4,[3,2,1]]   demod<6>
+231:    demod term: [].
+232:    demod term: [[3,2,1]].
+233:    demod term: [4,[3,2,1]].
+234:    --> result: [4,3,[2,1]]   demod<6>
+235:    demod term: [].
+236:    demod term: [[2,1]].
+237:    demod term: [3,[2,1]].
+238:    --> result: [3,2,[1]]   demod<6>
+239:    demod term: [].
+240:    demod term: [[1]].
+241:    demod term: [2,[1]].
+242:    --> result: [2,1,[]]   demod<6>
+243:    demod term: [].
+244:    demod term: [[]].
+245:    demod term: [1,[]].
+246:    --> result: [1]   demod<4>
+247:    demod term: [].
+248:    demod term: [1].
+249:    demod term: [2,1].
+250:    demod term: [3,2,1].
+251:    demod term: [4,3,2,1].
+252:    demod term: [5,4,3,2,1].
+253:    demod term: [6,5,4,3,2,1].
+254:    demod term: [7,6,5,4,3,2,1].
+255:    demod term: [8,7,6,5,4,3,2,1].
+256:    demod term: P([9],[8,7,6,5,4,3,2,1]).
+257:    --> result: P([],[9,[8,7,6,5,4,3,2,1]])   demod<3>
+258:    demod term: [].
+259:    demod term: [[8,7,6,5,4,3,2,1]].
+260:    demod term: [9,[8,7,6,5,4,3,2,1]].
+261:    --> result: [9,8,[7,6,5,4,3,2,1]]   demod<6>
+262:    demod term: [].
+263:    demod term: [[7,6,5,4,3,2,1]].
+264:    demod term: [8,[7,6,5,4,3,2,1]].
+265:    --> result: [8,7,[6,5,4,3,2,1]]   demod<6>
+266:    demod term: [].
+267:    demod term: [[6,5,4,3,2,1]].
+268:    demod term: [7,[6,5,4,3,2,1]].
+269:    --> result: [7,6,[5,4,3,2,1]]   demod<6>
+270:    demod term: [].
+271:    demod term: [[5,4,3,2,1]].
+272:    demod term: [6,[5,4,3,2,1]].
+273:    --> result: [6,5,[4,3,2,1]]   demod<6>
+274:    demod term: [].
+275:    demod term: [[4,3,2,1]].
+276:    demod term: [5,[4,3,2,1]].
+277:    --> result: [5,4,[3,2,1]]   demod<6>
+278:    demod term: [].
+279:    demod term: [[3,2,1]].
+280:    demod term: [4,[3,2,1]].
+281:    --> result: [4,3,[2,1]]   demod<6>
+282:    demod term: [].
+283:    demod term: [[2,1]].
+284:    demod term: [3,[2,1]].
+285:    --> result: [3,2,[1]]   demod<6>
+286:    demod term: [].
+287:    demod term: [[1]].
+288:    demod term: [2,[1]].
+289:    --> result: [2,1,[]]   demod<6>
+290:    demod term: [].
+291:    demod term: [[]].
+292:    demod term: [1,[]].
+293:    --> result: [1]   demod<4>
+294:    demod term: [].
+295:    demod term: [1].
+296:    demod term: [2,1].
+297:    demod term: [3,2,1].
+298:    demod term: [4,3,2,1].
+299:    demod term: [5,4,3,2,1].
+300:    demod term: [6,5,4,3,2,1].
+301:    demod term: [7,6,5,4,3,2,1].
+302:    demod term: [8,7,6,5,4,3,2,1].
+303:    demod term: [9,8,7,6,5,4,3,2,1].
+304:    demod term: P([],[9,8,7,6,5,4,3,2,1]).
+305:   after demodulation: 0 [1,demod,3,4,3,6,4,3,6,6,4,3,6,6,6,4,3,6,6,6,6,4,3,6,6,6,6,6,4,3,6,6,6,6,6,6,4,3,6,6,6,6,6,6,6,4,3,6,6,6,6,6,6,6,6,4] P([],[9,8,7,6,5,4,3,2,1]).
+306: ** KEPT (pick-wt=21): 7 [1,demod,3,4,3,6,4,3,6,6,4,3,6,6,6,4,3,6,6,6,6,4,3,6,6,6,6,6,4,3,6,6,6,6,6,6,4,3,6,6,6,6,6,6,6,4,3,6,6,6,6,6,6,6,6,4] P([],[9,8,7,6,5,4,3,2,1]).
+307: 
+308: given clause #2: (wt=21) 7 [1,demod,3,4,3,6,4,3,6,6,4,3,6,6,6,4,3,6,6,6,6,4,3,6,6,6,6,6,4,3,6,6,6,6,6,6,4,3,6,6,6,6,6,6,6,4,3,6,6,6,6,6,6,6,6,4] P([],[9,8,7,6,5,4,3,2,1]).
+309: 
+310:   0 [7] P([],[9,8,7,6,5,4,3,2,1]).
+311:    demod term: [].
+312:    demod term: 9.
+313:    demod term: 8.
+314:    demod term: 7.
+315:    demod term: 6.
+316:    demod term: 5.
+317:    demod term: 4.
+318:    demod term: 3.
+319:    demod term: 2.
+320:    demod term: 1.
+321:    demod term: [].
+322:    demod term: [1].
+323:    demod term: [2,1].
+324:    demod term: [3,2,1].
+325:    demod term: [4,3,2,1].
+326:    demod term: [5,4,3,2,1].
+327:    demod term: [6,5,4,3,2,1].
+328:    demod term: [7,6,5,4,3,2,1].
+329:    demod term: [8,7,6,5,4,3,2,1].
+330:    demod term: [9,8,7,6,5,4,3,2,1].
+331:    demod term: P([],[9,8,7,6,5,4,3,2,1]).
+332:   after demodulation: 0 [7] P([],[9,8,7,6,5,4,3,2,1]).
+333:   Subsumed by 7.
+334: 
+335: Search stopped because sos empty.
+336: 
+337: ============ end of search ============
+338: 
+339: -------------- statistics -------------
+340: clauses given                  2
+341: clauses generated              2
+342:   hyper_res generated          0
+343:   demod_inf generated          2
+344: demod & eval rewrites         54
+345: clauses wt,lit,sk delete       0
+346: tautologies deleted            0
+347: clauses forward subsumed       1
+348:   (subsumed by sos)            0
+349: unit deletions                 0
+350: factor simplifications         0
+351: clauses kept                   1
+352: new demodulators               0
+353: empty clauses                  0
+354: clauses back demodulated       0
+355: clauses back subsumed          0
+356: usable size                    2
+357: sos size                       0
+358: demodulators size              5
+359: passive size                   0
+360: hot size                       0
+361: Kbytes malloced              976
+362: 
+363: ----------- times (seconds) -----------
+364: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+365: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+366: wall-clock time        0             (0 hr, 0 min, 0 sec)
+367: 
+368: Process 4503 finished Sat Dec 31 19:48:28 2016
