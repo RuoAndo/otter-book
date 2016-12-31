@@ -1,0 +1,125 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on flare-OptiPlex-3020M,
+Sat Dec 31 19:52:17 2016
+The command was "otter".  The process ID is 4661.
+
+set(hyper_res).
+set(demod_inf).
+
+list(usable).
+end_of_list.
+
+list(sos).
+1 [] P([1,2,3,4,5,6,7,8,9,E],[]).
+end_of_list.
+
+list(usable).
+2 [] -P([x|y],[])|P(y,[x]).
+3 [] -P([x|y],z)|P(y,[$PROD(x,z)]).
+end_of_list.
+
+list(demodulators).
+4 [] [x,[]]=[x].
+5 [] [x,[y]]=[x,y].
+6 [] [x,[y|z]]=[x,y,z].
+7 [] $PROD(x,[])=x.
+8 [] [x]=x.
+end_of_list.
+
+list(passive).
+9 [] -P(E,x).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=23) 1 [] P([1,2,3,4,5,6,7,8,9,E],[]).
+** KEPT (pick-wt=19): 10 [hyper,1,3,demod,8,7,8] P([2,3,4,5,6,7,8,9|E],1).
+** KEPT (pick-wt=21): 11 [1,demod,8] P([1,2,3,4,5,6,7,8,9|E],[]).
+
+given clause #2: (wt=19) 10 [hyper,1,3,demod,8,7,8] P([2,3,4,5,6,7,8,9|E],1).
+** KEPT (pick-wt=17): 12 [hyper,10,3,demod,8] P([3,4,5,6,7,8,9|E],2).
+
+given clause #3: (wt=17) 12 [hyper,10,3,demod,8] P([3,4,5,6,7,8,9|E],2).
+** KEPT (pick-wt=15): 13 [hyper,12,3,demod,8] P([4,5,6,7,8,9|E],6).
+
+given clause #4: (wt=15) 13 [hyper,12,3,demod,8] P([4,5,6,7,8,9|E],6).
+** KEPT (pick-wt=13): 14 [hyper,13,3,demod,8] P([5,6,7,8,9|E],24).
+
+given clause #5: (wt=13) 14 [hyper,13,3,demod,8] P([5,6,7,8,9|E],24).
+** KEPT (pick-wt=11): 15 [hyper,14,3,demod,8] P([6,7,8,9|E],120).
+
+given clause #6: (wt=11) 15 [hyper,14,3,demod,8] P([6,7,8,9|E],120).
+** KEPT (pick-wt=9): 16 [hyper,15,3,demod,8] P([7,8,9|E],720).
+
+given clause #7: (wt=9) 16 [hyper,15,3,demod,8] P([7,8,9|E],720).
+** KEPT (pick-wt=7): 17 [hyper,16,3,demod,8] P([8,9|E],5040).
+
+given clause #8: (wt=7) 17 [hyper,16,3,demod,8] P([8,9|E],5040).
+** KEPT (pick-wt=5): 18 [hyper,17,3,demod,8] P([9|E],40320).
+
+given clause #9: (wt=5) 18 [hyper,17,3,demod,8] P([9|E],40320).
+** KEPT (pick-wt=3): 19 [hyper,18,3,demod,8] P(E,362880).
+
+----> UNIT CONFLICT at   0.00 sec ----> 20 [binary,19.1,9.1] $F.
+
+Length of proof is 9.  Level of proof is 9.
+
+---------------- PROOF ----------------
+
+1 [] P([1,2,3,4,5,6,7,8,9,E],[]).
+3 [] -P([x|y],z)|P(y,[$PROD(x,z)]).
+7 [] $PROD(x,[])=x.
+8 [] [x]=x.
+9 [] -P(E,x).
+10 [hyper,1,3,demod,8,7,8] P([2,3,4,5,6,7,8,9|E],1).
+12 [hyper,10,3,demod,8] P([3,4,5,6,7,8,9|E],2).
+13 [hyper,12,3,demod,8] P([4,5,6,7,8,9|E],6).
+14 [hyper,13,3,demod,8] P([5,6,7,8,9|E],24).
+15 [hyper,14,3,demod,8] P([6,7,8,9|E],120).
+16 [hyper,15,3,demod,8] P([7,8,9|E],720).
+17 [hyper,16,3,demod,8] P([8,9|E],5040).
+18 [hyper,17,3,demod,8] P([9|E],40320).
+19 [hyper,18,3,demod,8] P(E,362880).
+20 [binary,19.1,9.1] $F.
+
+------------ end of proof -------------
+
+
+Search stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  9
+clauses generated             18
+  hyper_res generated         10
+  demod_inf generated          8
+demod & eval rewrites         22
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed       8
+  (subsumed by sos)            1
+unit deletions                 0
+factor simplifications         0
+clauses kept                  10
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                   11
+sos size                       2
+demodulators size              5
+passive size                   1
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+That finishes the proof of the theorem.
+
+Process 4661 finished Sat Dec 31 19:52:17 2016

@@ -1,0 +1,125 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Sat Dec 31 19:52:17 2016
+  4: The command was "otter".  The process ID is 4661.
+  5: 
+  6: set(hyper_res).
+  7: set(demod_inf).
+  8: 
+  9: list(usable).
+ 10: end_of_list.
+ 11: 
+ 12: list(sos).
+ 13: 1 [] P([1,2,3,4,5,6,7,8,9,E],[]).
+ 14: end_of_list.
+ 15: 
+ 16: list(usable).
+ 17: 2 [] -P([x|y],[])|P(y,[x]).
+ 18: 3 [] -P([x|y],z)|P(y,[$PROD(x,z)]).
+ 19: end_of_list.
+ 20: 
+ 21: list(demodulators).
+ 22: 4 [] [x,[]]=[x].
+ 23: 5 [] [x,[y]]=[x,y].
+ 24: 6 [] [x,[y|z]]=[x,y,z].
+ 25: 7 [] $PROD(x,[])=x.
+ 26: 8 [] [x]=x.
+ 27: end_of_list.
+ 28: 
+ 29: list(passive).
+ 30: 9 [] -P(E,x).
+ 31: end_of_list.
+ 32: 
+ 33: ======= end of input processing =======
+ 34: 
+ 35: =========== start of search ===========
+ 36: 
+ 37: given clause #1: (wt=23) 1 [] P([1,2,3,4,5,6,7,8,9,E],[]).
+ 38: ** KEPT (pick-wt=19): 10 [hyper,1,3,demod,8,7,8] P([2,3,4,5,6,7,8,9|E],1).
+ 39: ** KEPT (pick-wt=21): 11 [1,demod,8] P([1,2,3,4,5,6,7,8,9|E],[]).
+ 40: 
+ 41: given clause #2: (wt=19) 10 [hyper,1,3,demod,8,7,8] P([2,3,4,5,6,7,8,9|E],1).
+ 42: ** KEPT (pick-wt=17): 12 [hyper,10,3,demod,8] P([3,4,5,6,7,8,9|E],2).
+ 43: 
+ 44: given clause #3: (wt=17) 12 [hyper,10,3,demod,8] P([3,4,5,6,7,8,9|E],2).
+ 45: ** KEPT (pick-wt=15): 13 [hyper,12,3,demod,8] P([4,5,6,7,8,9|E],6).
+ 46: 
+ 47: given clause #4: (wt=15) 13 [hyper,12,3,demod,8] P([4,5,6,7,8,9|E],6).
+ 48: ** KEPT (pick-wt=13): 14 [hyper,13,3,demod,8] P([5,6,7,8,9|E],24).
+ 49: 
+ 50: given clause #5: (wt=13) 14 [hyper,13,3,demod,8] P([5,6,7,8,9|E],24).
+ 51: ** KEPT (pick-wt=11): 15 [hyper,14,3,demod,8] P([6,7,8,9|E],120).
+ 52: 
+ 53: given clause #6: (wt=11) 15 [hyper,14,3,demod,8] P([6,7,8,9|E],120).
+ 54: ** KEPT (pick-wt=9): 16 [hyper,15,3,demod,8] P([7,8,9|E],720).
+ 55: 
+ 56: given clause #7: (wt=9) 16 [hyper,15,3,demod,8] P([7,8,9|E],720).
+ 57: ** KEPT (pick-wt=7): 17 [hyper,16,3,demod,8] P([8,9|E],5040).
+ 58: 
+ 59: given clause #8: (wt=7) 17 [hyper,16,3,demod,8] P([8,9|E],5040).
+ 60: ** KEPT (pick-wt=5): 18 [hyper,17,3,demod,8] P([9|E],40320).
+ 61: 
+ 62: given clause #9: (wt=5) 18 [hyper,17,3,demod,8] P([9|E],40320).
+ 63: ** KEPT (pick-wt=3): 19 [hyper,18,3,demod,8] P(E,362880).
+ 64: 
+ 65: ----> UNIT CONFLICT at   0.00 sec ----> 20 [binary,19.1,9.1] $F.
+ 66: 
+ 67: Length of proof is 9.  Level of proof is 9.
+ 68: 
+ 69: ---------------- PROOF ----------------
+ 70: 
+ 71: 1 [] P([1,2,3,4,5,6,7,8,9,E],[]).
+ 72: 3 [] -P([x|y],z)|P(y,[$PROD(x,z)]).
+ 73: 7 [] $PROD(x,[])=x.
+ 74: 8 [] [x]=x.
+ 75: 9 [] -P(E,x).
+ 76: 10 [hyper,1,3,demod,8,7,8] P([2,3,4,5,6,7,8,9|E],1).
+ 77: 12 [hyper,10,3,demod,8] P([3,4,5,6,7,8,9|E],2).
+ 78: 13 [hyper,12,3,demod,8] P([4,5,6,7,8,9|E],6).
+ 79: 14 [hyper,13,3,demod,8] P([5,6,7,8,9|E],24).
+ 80: 15 [hyper,14,3,demod,8] P([6,7,8,9|E],120).
+ 81: 16 [hyper,15,3,demod,8] P([7,8,9|E],720).
+ 82: 17 [hyper,16,3,demod,8] P([8,9|E],5040).
+ 83: 18 [hyper,17,3,demod,8] P([9|E],40320).
+ 84: 19 [hyper,18,3,demod,8] P(E,362880).
+ 85: 20 [binary,19.1,9.1] $F.
+ 86: 
+ 87: ------------ end of proof -------------
+ 88: 
+ 89: 
+ 90: Search stopped by max_proofs option.
+ 91: 
+ 92: ============ end of search ============
+ 93: 
+ 94: -------------- statistics -------------
+ 95: clauses given                  9
+ 96: clauses generated             18
+ 97:   hyper_res generated         10
+ 98:   demod_inf generated          8
+ 99: demod & eval rewrites         22
+100: clauses wt,lit,sk delete       0
+101: tautologies deleted            0
+102: clauses forward subsumed       8
+103:   (subsumed by sos)            1
+104: unit deletions                 0
+105: factor simplifications         0
+106: clauses kept                  10
+107: new demodulators               0
+108: empty clauses                  1
+109: clauses back demodulated       0
+110: clauses back subsumed          0
+111: usable size                   11
+112: sos size                       2
+113: demodulators size              5
+114: passive size                   1
+115: hot size                       0
+116: Kbytes malloced              976
+117: 
+118: ----------- times (seconds) -----------
+119: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+120: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+121: wall-clock time        0             (0 hr, 0 min, 0 sec)
+122: 
+123: That finishes the proof of the theorem.
+124: 
+125: Process 4661 finished Sat Dec 31 19:52:17 2016
