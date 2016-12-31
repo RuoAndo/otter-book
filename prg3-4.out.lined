@@ -1,0 +1,110 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Mon Jul 25 08:41:04 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 735.
+  5: 
+  6: set(hyper_res).
+  7: 
+  8: list(sos).
+  9: 1 [] n([G,N,G,R,N,A,T,G,N]).
+ 10: end_of_list.
+ 11: 
+ 12: list(usable).
+ 13: 2 [] -n([G|x])|n(G*x).
+ 14: 3 [] -n(G*[N|x])|n(GN*x).
+ 15: 4 [] -n(G*[R|x])|n(G*R*x).
+ 16: 5 [] -n(G*R*[N|x])|n(GRN*x).
+ 17: 6 [] -n(GN*x)|n(x).
+ 18: 7 [] -n(GRN*x)|generate([x*x]).
+ 19: end_of_list.
+ 20: 
+ 21: list(passive).
+ 22: 8 [] -generate(x).
+ 23: end_of_list.
+ 24: 
+ 25: ======= end of input processing =======
+ 26: 
+ 27: =========== start of search ===========
+ 28: 
+ 29: given clause #1: (wt=20) 1 [] n([G,N,G,R,N,A,T,G,N]).
+ 30: ** KEPT (pick-wt=20): 9 [hyper,1,2] n(G*[N,G,R,N,A,T,G,N]).
+ 31: 
+ 32: given clause #2: (wt=20) 9 [hyper,1,2] n(G*[N,G,R,N,A,T,G,N]).
+ 33: ** KEPT (pick-wt=18): 10 [hyper,9,3] n(GN*[G,R,N,A,T,G,N]).
+ 34: 
+ 35: given clause #3: (wt=18) 10 [hyper,9,3] n(GN*[G,R,N,A,T,G,N]).
+ 36: ** KEPT (pick-wt=16): 11 [hyper,10,6] n([G,R,N,A,T,G,N]).
+ 37: 
+ 38: given clause #4: (wt=16) 11 [hyper,10,6] n([G,R,N,A,T,G,N]).
+ 39: ** KEPT (pick-wt=16): 12 [hyper,11,2] n(G*[R,N,A,T,G,N]).
+ 40: 
+ 41: given clause #5: (wt=16) 12 [hyper,11,2] n(G*[R,N,A,T,G,N]).
+ 42: ** KEPT (pick-wt=16): 13 [hyper,12,4] n(G*R*[N,A,T,G,N]).
+ 43: 
+ 44: given clause #6: (wt=16) 13 [hyper,12,4] n(G*R*[N,A,T,G,N]).
+ 45: ** KEPT (pick-wt=12): 14 [hyper,13,5] n(GRN*[A,T,G,N]).
+ 46: 
+ 47: given clause #7: (wt=12) 14 [hyper,13,5] n(GRN*[A,T,G,N]).
+ 48: ** KEPT (pick-wt=22): 15 [hyper,14,7] generate([[A,T,G,N]*[A,T,G,N]]).
+ 49: 
+ 50: ----> UNIT CONFLICT at   0.00 sec ----> 16 [binary,15.1,8.1] $F.
+ 51: 
+ 52: Length of proof is 7.  Level of proof is 7.
+ 53: 
+ 54: ---------------- PROOF ----------------
+ 55: 
+ 56: 1 [] n([G,N,G,R,N,A,T,G,N]).
+ 57: 2 [] -n([G|x])|n(G*x).
+ 58: 3 [] -n(G*[N|x])|n(GN*x).
+ 59: 4 [] -n(G*[R|x])|n(G*R*x).
+ 60: 5 [] -n(G*R*[N|x])|n(GRN*x).
+ 61: 6 [] -n(GN*x)|n(x).
+ 62: 7 [] -n(GRN*x)|generate([x*x]).
+ 63: 8 [] -generate(x).
+ 64: 9 [hyper,1,2] n(G*[N,G,R,N,A,T,G,N]).
+ 65: 10 [hyper,9,3] n(GN*[G,R,N,A,T,G,N]).
+ 66: 11 [hyper,10,6] n([G,R,N,A,T,G,N]).
+ 67: 12 [hyper,11,2] n(G*[R,N,A,T,G,N]).
+ 68: 13 [hyper,12,4] n(G*R*[N,A,T,G,N]).
+ 69: 14 [hyper,13,5] n(GRN*[A,T,G,N]).
+ 70: 15 [hyper,14,7] generate([[A,T,G,N]*[A,T,G,N]]).
+ 71: 16 [binary,15.1,8.1] $F.
+ 72: 
+ 73: ------------ end of proof -------------
+ 74: 
+ 75: 
+ 76: Search stopped by max_proofs option.
+ 77: 
+ 78: ============ end of search ============
+ 79: 
+ 80: -------------- statistics -------------
+ 81: clauses given                  7
+ 82: clauses generated              7
+ 83:   hyper_res generated          7
+ 84: demod & eval rewrites          0
+ 85: clauses wt,lit,sk delete       0
+ 86: tautologies deleted            0
+ 87: clauses forward subsumed       0
+ 88:   (subsumed by sos)            0
+ 89: unit deletions                 0
+ 90: factor simplifications         0
+ 91: clauses kept                   7
+ 92: new demodulators               0
+ 93: empty clauses                  1
+ 94: clauses back demodulated       0
+ 95: clauses back subsumed          0
+ 96: usable size                   13
+ 97: sos size                       1
+ 98: demodulators size              0
+ 99: passive size                   1
+100: hot size                       0
+101: Kbytes malloced              976
+102: 
+103: ----------- times (seconds) -----------
+104: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+105: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+106: wall-clock time        0             (0 hr, 0 min, 0 sec)
+107: 
+108: That finishes the proof of the theorem.
+109: 
+110: Process 735 finished Mon Jul 25 08:41:04 2016
