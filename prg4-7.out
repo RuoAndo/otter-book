@@ -1,7 +1,7 @@
 ----- Otter 3.3f, August 2004 -----
 The process was started by root on flare-OptiPlex-3020M,
-Sat Dec 31 20:31:14 2016
-The command was "otter".  The process ID is 6522.
+Sat Dec 31 20:32:41 2016
+The command was "otter".  The process ID is 6570.
 
 set(knuth_bendix).
    dependent: set(anl_eq).
@@ -249,4 +249,4 @@ wall-clock time        0             (0 hr, 0 min, 0 sec)
 
 That finishes the proof of the theorem.
 
-Process 6522 finished Sat Dec 31 20:31:14 2016
+Process 6570 finished Sat Dec 31 20:32:41 2016
