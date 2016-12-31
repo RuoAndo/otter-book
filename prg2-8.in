@@ -18,9 +18,9 @@ list(usable).
        -P(T(x)) | -P(L(x)).
        
 %グループC:
-       -P(and(y,z)) | P(y).　 - C-1
-       -P(and(y,z)) | P(z). - C-2
-       -P(y) | -P(z) | P(and(y,z)). - C-3
+       -P(and(y,z)) | P(y).
+       -P(and(y,z)) | P(z).
+       -P(y) | -P(z) | P(and(y,z)).
 
 end_of_list.
 

@@ -18,9 +18,9 @@
  18:        -P(T(x)) | -P(L(x)).
  19:        
  20: %グループC:
- 21:        -P(and(y,z)) | P(y).　 - C-1
- 22:        -P(and(y,z)) | P(z). - C-2
- 23:        -P(y) | -P(z) | P(and(y,z)). - C-3
+ 21:        -P(and(y,z)) | P(y).
+ 22:        -P(and(y,z)) | P(z).
+ 23:        -P(y) | -P(z) | P(and(y,z)).
  24: 
  25: end_of_list.
  26: 
