@@ -1,0 +1,19 @@
+  1: set(hyper_res).
+  2: 
+  3: list(usable).
+  4:         -state([x1|x2], [y1|y2], z) | -$LT(x1,y1) | state(x2, [x1|[y1|y2]], z).
+  5:         -state([x1|x2], y, [z1|z2]) | -$LT(x1,z1) | state(x2, y, [x1|[z1|z2]]).
+  6:         -state([x1|x2], [y1|y2], z) | -$LT(y1,x1) | state([y1|[x1|x2]] ,y2 ,z).
+  7: 
+  8:         -state(x, [y1|y2], [z1|z2]) | -$LT(y1,z1) | state(x, y2, [y1|[z1|z2]]).
+  9:         -state([x1|x2], y, [z1|z2]) | -$LT(z1,x1) | state([z1|[x1|x2]], y, z2).
+ 10:         -state(x, [y1|y2], [z1|z2]) | -$LT(z1,y1) | state(x, [z1|[y1|y2]], z2).
+ 11: end_of_list.
+ 12: 
+ 13: list(sos).
+ 14:         state([1,2,3,4,5], [5], [5]).
+ 15: end_of_list.
+ 16: 
+ 17: list(passive).
+ 18:         -state([5], [5], [1,2,3,4,5]).
+ 19: end_of_list.

@@ -1,0 +1,298 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Mon Jul 25 12:39:53 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 4358.
+  5: 
+  6: set(hyper_res).
+  7: 
+  8: list(usable).
+  9: 1 [] -state([x1|x2],[y1|y2],z)| -$LT(x1,y1)|state(x2,[x1,y1|y2],z).
+ 10: 2 [] -state([x1|x2],y,[z1|z2])| -$LT(x1,z1)|state(x2,y,[x1,z1|z2]).
+ 11: 3 [] -state([x1|x2],[y1|y2],z)| -$LT(y1,x1)|state([y1,x1|x2],y2,z).
+ 12: 4 [] -state(x,[y1|y2],[z1|z2])| -$LT(y1,z1)|state(x,y2,[y1,z1|z2]).
+ 13: 5 [] -state([x1|x2],y,[z1|z2])| -$LT(z1,x1)|state([z1,x1|x2],y,z2).
+ 14: 6 [] -state(x,[y1|y2],[z1|z2])| -$LT(z1,y1)|state(x,[z1,y1|y2],z2).
+ 15: end_of_list.
+ 16: 
+ 17: list(sos).
+ 18: 7 [] state([1,2,3,4,5],[5],[5]).
+ 19: end_of_list.
+ 20: 
+ 21: list(passive).
+ 22: 8 [] -state([5],[5],[1,2,3,4,5]).
+ 23: end_of_list.
+ 24: 
+ 25: ======= end of input processing =======
+ 26: 
+ 27: =========== start of search ===========
+ 28: 
+ 29: given clause #1: (wt=18) 7 [] state([1,2,3,4,5],[5],[5]).
+ 30: ** KEPT (pick-wt=18): 9 [hyper,7,2,eval] state([2,3,4,5],[5],[1,5]).
+ 31: ** KEPT (pick-wt=18): 10 [hyper,7,1,eval] state([2,3,4,5],[1,5],[5]).
+ 32: 
+ 33: given clause #2: (wt=18) 9 [hyper,7,2,eval] state([2,3,4,5],[5],[1,5]).
+ 34: ** KEPT (pick-wt=18): 11 [hyper,9,1,eval] state([3,4,5],[2,5],[1,5]).
+ 35: 
+ 36: given clause #3: (wt=18) 10 [hyper,7,1,eval] state([2,3,4,5],[1,5],[5]).
+ 37: ** KEPT (pick-wt=18): 12 [hyper,10,2,eval] state([3,4,5],[1,5],[2,5]).
+ 38: 
+ 39: given clause #4: (wt=18) 11 [hyper,9,1,eval] state([3,4,5],[2,5],[1,5]).
+ 40: ** KEPT (pick-wt=18): 13 [hyper,11,6,eval] state([3,4,5],[1,2,5],[5]).
+ 41: ** KEPT (pick-wt=18): 14 [hyper,11,5,eval] state([1,3,4,5],[2,5],[5]).
+ 42: 
+ 43: given clause #5: (wt=18) 12 [hyper,10,2,eval] state([3,4,5],[1,5],[2,5]).
+ 44: ** KEPT (pick-wt=18): 15 [hyper,12,4,eval] state([3,4,5],[5],[1,2,5]).
+ 45: ** KEPT (pick-wt=18): 16 [hyper,12,3,eval] state([1,3,4,5],[5],[2,5]).
+ 46: 
+ 47: given clause #6: (wt=18) 13 [hyper,11,6,eval] state([3,4,5],[1,2,5],[5]).
+ 48: ** KEPT (pick-wt=18): 17 [hyper,13,2,eval] state([4,5],[1,2,5],[3,5]).
+ 49: 
+ 50: given clause #7: (wt=18) 14 [hyper,11,5,eval] state([1,3,4,5],[2,5],[5]).
+ 51: 
+ 52: given clause #8: (wt=18) 15 [hyper,12,4,eval] state([3,4,5],[5],[1,2,5]).
+ 53: ** KEPT (pick-wt=18): 18 [hyper,15,1,eval] state([4,5],[3,5],[1,2,5]).
+ 54: 
+ 55: given clause #9: (wt=18) 16 [hyper,12,3,eval] state([1,3,4,5],[5],[2,5]).
+ 56: 
+ 57: given clause #10: (wt=18) 17 [hyper,13,2,eval] state([4,5],[1,2,5],[3,5]).
+ 58: ** KEPT (pick-wt=18): 19 [hyper,17,4,eval] state([4,5],[2,5],[1,3,5]).
+ 59: ** KEPT (pick-wt=18): 20 [hyper,17,3,eval] state([1,4,5],[2,5],[3,5]).
+ 60: 
+ 61: given clause #11: (wt=18) 18 [hyper,15,1,eval] state([4,5],[3,5],[1,2,5]).
+ 62: ** KEPT (pick-wt=18): 21 [hyper,18,6,eval] state([4,5],[1,3,5],[2,5]).
+ 63: ** KEPT (pick-wt=18): 22 [hyper,18,5,eval] state([1,4,5],[3,5],[2,5]).
+ 64: 
+ 65: given clause #12: (wt=18) 19 [hyper,17,4,eval] state([4,5],[2,5],[1,3,5]).
+ 66: ** KEPT (pick-wt=18): 23 [hyper,19,3,eval] state([2,4,5],[5],[1,3,5]).
+ 67: 
+ 68: given clause #13: (wt=18) 20 [hyper,17,3,eval] state([1,4,5],[2,5],[3,5]).
+ 69: ** KEPT (pick-wt=18): 24 [hyper,20,4,eval] state([1,4,5],[5],[2,3,5]).
+ 70: 
+ 71: given clause #14: (wt=18) 21 [hyper,18,6,eval] state([4,5],[1,3,5],[2,5]).
+ 72: ** KEPT (pick-wt=18): 25 [hyper,21,5,eval] state([2,4,5],[1,3,5],[5]).
+ 73: 
+ 74: given clause #15: (wt=18) 22 [hyper,18,5,eval] state([1,4,5],[3,5],[2,5]).
+ 75: ** KEPT (pick-wt=18): 26 [hyper,22,6,eval] state([1,4,5],[2,3,5],[5]).
+ 76: 
+ 77: given clause #16: (wt=18) 23 [hyper,19,3,eval] state([2,4,5],[5],[1,3,5]).
+ 78: ** KEPT (pick-wt=18): 27 [hyper,23,6,eval] state([2,4,5],[1,5],[3,5]).
+ 79: ** KEPT (pick-wt=18): 28 [hyper,23,5,eval] state([1,2,4,5],[5],[3,5]).
+ 80: 
+ 81: given clause #17: (wt=18) 24 [hyper,20,4,eval] state([1,4,5],[5],[2,3,5]).
+ 82: ** KEPT (pick-wt=18): 29 [hyper,24,2,eval] state([4,5],[5],[1,2,3,5]).
+ 83: ** KEPT (pick-wt=18): 30 [hyper,24,1,eval] state([4,5],[1,5],[2,3,5]).
+ 84: 
+ 85: given clause #18: (wt=18) 25 [hyper,21,5,eval] state([2,4,5],[1,3,5],[5]).
+ 86: ** KEPT (pick-wt=18): 31 [hyper,25,4,eval] state([2,4,5],[3,5],[1,5]).
+ 87: ** KEPT (pick-wt=18): 32 [hyper,25,3,eval] state([1,2,4,5],[3,5],[5]).
+ 88: 
+ 89: given clause #19: (wt=18) 26 [hyper,22,6,eval] state([1,4,5],[2,3,5],[5]).
+ 90: ** KEPT (pick-wt=18): 33 [hyper,26,2,eval] state([4,5],[2,3,5],[1,5]).
+ 91: ** KEPT (pick-wt=18): 34 [hyper,26,1,eval] state([4,5],[1,2,3,5],[5]).
+ 92: 
+ 93: given clause #20: (wt=18) 27 [hyper,23,6,eval] state([2,4,5],[1,5],[3,5]).
+ 94: 
+ 95: given clause #21: (wt=18) 28 [hyper,23,5,eval] state([1,2,4,5],[5],[3,5]).
+ 96: 
+ 97: given clause #22: (wt=18) 29 [hyper,24,2,eval] state([4,5],[5],[1,2,3,5]).
+ 98: ** KEPT (pick-wt=18): 35 [hyper,29,1,eval] state([5],[4,5],[1,2,3,5]).
+ 99: 
+100: given clause #23: (wt=18) 30 [hyper,24,1,eval] state([4,5],[1,5],[2,3,5]).
+101: 
+102: given clause #24: (wt=18) 31 [hyper,25,4,eval] state([2,4,5],[3,5],[1,5]).
+103: 
+104: given clause #25: (wt=18) 32 [hyper,25,3,eval] state([1,2,4,5],[3,5],[5]).
+105: 
+106: given clause #26: (wt=18) 33 [hyper,26,2,eval] state([4,5],[2,3,5],[1,5]).
+107: 
+108: given clause #27: (wt=18) 34 [hyper,26,1,eval] state([4,5],[1,2,3,5],[5]).
+109: ** KEPT (pick-wt=18): 36 [hyper,34,2,eval] state([5],[1,2,3,5],[4,5]).
+110: 
+111: given clause #28: (wt=18) 35 [hyper,29,1,eval] state([5],[4,5],[1,2,3,5]).
+112: ** KEPT (pick-wt=18): 37 [hyper,35,6,eval] state([5],[1,4,5],[2,3,5]).
+113: ** KEPT (pick-wt=18): 38 [hyper,35,5,eval] state([1,5],[4,5],[2,3,5]).
+114: 
+115: given clause #29: (wt=18) 36 [hyper,34,2,eval] state([5],[1,2,3,5],[4,5]).
+116: ** KEPT (pick-wt=18): 39 [hyper,36,4,eval] state([5],[2,3,5],[1,4,5]).
+117: ** KEPT (pick-wt=18): 40 [hyper,36,3,eval] state([1,5],[2,3,5],[4,5]).
+118: 
+119: given clause #30: (wt=18) 37 [hyper,35,6,eval] state([5],[1,4,5],[2,3,5]).
+120: ** KEPT (pick-wt=18): 41 [hyper,37,5,eval] state([2,5],[1,4,5],[3,5]).
+121: 
+122: given clause #31: (wt=18) 38 [hyper,35,5,eval] state([1,5],[4,5],[2,3,5]).
+123: ** KEPT (pick-wt=18): 42 [hyper,38,6,eval] state([1,5],[2,4,5],[3,5]).
+124: 
+125: given clause #32: (wt=18) 39 [hyper,36,4,eval] state([5],[2,3,5],[1,4,5]).
+126: ** KEPT (pick-wt=18): 43 [hyper,39,3,eval] state([2,5],[3,5],[1,4,5]).
+127: 
+128: given clause #33: (wt=18) 40 [hyper,36,3,eval] state([1,5],[2,3,5],[4,5]).
+129: ** KEPT (pick-wt=18): 44 [hyper,40,4,eval] state([1,5],[3,5],[2,4,5]).
+130: 
+131: given clause #34: (wt=18) 41 [hyper,37,5,eval] state([2,5],[1,4,5],[3,5]).
+132: ** KEPT (pick-wt=18): 45 [hyper,41,4,eval] state([2,5],[4,5],[1,3,5]).
+133: ** KEPT (pick-wt=18): 46 [hyper,41,3,eval] state([1,2,5],[4,5],[3,5]).
+134: 
+135: given clause #35: (wt=18) 42 [hyper,38,6,eval] state([1,5],[2,4,5],[3,5]).
+136: ** KEPT (pick-wt=18): 47 [hyper,42,2,eval] state([5],[2,4,5],[1,3,5]).
+137: ** KEPT (pick-wt=18): 48 [hyper,42,1,eval] state([5],[1,2,4,5],[3,5]).
+138: 
+139: given clause #36: (wt=18) 43 [hyper,39,3,eval] state([2,5],[3,5],[1,4,5]).
+140: ** KEPT (pick-wt=18): 49 [hyper,43,6,eval] state([2,5],[1,3,5],[4,5]).
+141: ** KEPT (pick-wt=18): 50 [hyper,43,5,eval] state([1,2,5],[3,5],[4,5]).
+142: 
+143: given clause #37: (wt=18) 44 [hyper,40,4,eval] state([1,5],[3,5],[2,4,5]).
+144: ** KEPT (pick-wt=18): 51 [hyper,44,2,eval] state([5],[3,5],[1,2,4,5]).
+145: ** KEPT (pick-wt=18): 52 [hyper,44,1,eval] state([5],[1,3,5],[2,4,5]).
+146: 
+147: given clause #38: (wt=18) 45 [hyper,41,4,eval] state([2,5],[4,5],[1,3,5]).
+148: 
+149: given clause #39: (wt=18) 46 [hyper,41,3,eval] state([1,2,5],[4,5],[3,5]).
+150: ** KEPT (pick-wt=18): 53 [hyper,46,6,eval] state([1,2,5],[3,4,5],[5]).
+151: 
+152: given clause #40: (wt=18) 47 [hyper,42,2,eval] state([5],[2,4,5],[1,3,5]).
+153: 
+154: given clause #41: (wt=18) 48 [hyper,42,1,eval] state([5],[1,2,4,5],[3,5]).
+155: ** KEPT (pick-wt=18): 54 [hyper,48,5,eval] state([3,5],[1,2,4,5],[5]).
+156: 
+157: given clause #42: (wt=18) 49 [hyper,43,6,eval] state([2,5],[1,3,5],[4,5]).
+158: 
+159: given clause #43: (wt=18) 50 [hyper,43,5,eval] state([1,2,5],[3,5],[4,5]).
+160: ** KEPT (pick-wt=18): 55 [hyper,50,4,eval] state([1,2,5],[5],[3,4,5]).
+161: 
+162: given clause #44: (wt=18) 51 [hyper,44,2,eval] state([5],[3,5],[1,2,4,5]).
+163: ** KEPT (pick-wt=18): 56 [hyper,51,3,eval] state([3,5],[5],[1,2,4,5]).
+164: 
+165: given clause #45: (wt=18) 52 [hyper,44,1,eval] state([5],[1,3,5],[2,4,5]).
+166: 
+167: given clause #46: (wt=18) 53 [hyper,46,6,eval] state([1,2,5],[3,4,5],[5]).
+168: ** KEPT (pick-wt=18): 57 [hyper,53,2,eval] state([2,5],[3,4,5],[1,5]).
+169: ** KEPT (pick-wt=18): 58 [hyper,53,1,eval] state([2,5],[1,3,4,5],[5]).
+170: 
+171: given clause #47: (wt=18) 54 [hyper,48,5,eval] state([3,5],[1,2,4,5],[5]).
+172: ** KEPT (pick-wt=18): 59 [hyper,54,4,eval] state([3,5],[2,4,5],[1,5]).
+173: ** KEPT (pick-wt=18): 60 [hyper,54,3,eval] state([1,3,5],[2,4,5],[5]).
+174: 
+175: given clause #48: (wt=18) 55 [hyper,50,4,eval] state([1,2,5],[5],[3,4,5]).
+176: ** KEPT (pick-wt=18): 61 [hyper,55,2,eval] state([2,5],[5],[1,3,4,5]).
+177: ** KEPT (pick-wt=18): 62 [hyper,55,1,eval] state([2,5],[1,5],[3,4,5]).
+178: 
+179: given clause #49: (wt=18) 56 [hyper,51,3,eval] state([3,5],[5],[1,2,4,5]).
+180: ** KEPT (pick-wt=18): 63 [hyper,56,6,eval] state([3,5],[1,5],[2,4,5]).
+181: ** KEPT (pick-wt=18): 64 [hyper,56,5,eval] state([1,3,5],[5],[2,4,5]).
+182: 
+183: given clause #50: (wt=18) 57 [hyper,53,2,eval] state([2,5],[3,4,5],[1,5]).
+184: ** KEPT (pick-wt=18): 65 [hyper,57,1,eval] state([5],[2,3,4,5],[1,5]).
+185: 
+186: given clause #51: (wt=18) 58 [hyper,53,1,eval] state([2,5],[1,3,4,5],[5]).
+187: ** KEPT (pick-wt=18): 66 [hyper,58,2,eval] state([5],[1,3,4,5],[2,5]).
+188: 
+189: given clause #52: (wt=18) 59 [hyper,54,4,eval] state([3,5],[2,4,5],[1,5]).
+190: ** KEPT (pick-wt=18): 67 [hyper,59,3,eval] state([2,3,5],[4,5],[1,5]).
+191: 
+192: given clause #53: (wt=18) 60 [hyper,54,3,eval] state([1,3,5],[2,4,5],[5]).
+193: ** KEPT (pick-wt=18): 68 [hyper,60,4,eval] state([1,3,5],[4,5],[2,5]).
+194: 
+195: given clause #54: (wt=18) 61 [hyper,55,2,eval] state([2,5],[5],[1,3,4,5]).
+196: ** KEPT (pick-wt=18): 69 [hyper,61,1,eval] state([5],[2,5],[1,3,4,5]).
+197: 
+198: given clause #55: (wt=18) 62 [hyper,55,1,eval] state([2,5],[1,5],[3,4,5]).
+199: ** KEPT (pick-wt=18): 70 [hyper,62,2,eval] state([5],[1,5],[2,3,4,5]).
+200: 
+201: given clause #56: (wt=18) 63 [hyper,56,6,eval] state([3,5],[1,5],[2,4,5]).
+202: ** KEPT (pick-wt=18): 71 [hyper,63,5,eval] state([2,3,5],[1,5],[4,5]).
+203: 
+204: given clause #57: (wt=18) 64 [hyper,56,5,eval] state([1,3,5],[5],[2,4,5]).
+205: ** KEPT (pick-wt=18): 72 [hyper,64,6,eval] state([1,3,5],[2,5],[4,5]).
+206: 
+207: given clause #58: (wt=18) 65 [hyper,57,1,eval] state([5],[2,3,4,5],[1,5]).
+208: ** KEPT (pick-wt=18): 73 [hyper,65,6,eval] state([5],[1,2,3,4,5],[5]).
+209: ** KEPT (pick-wt=18): 74 [hyper,65,5,eval] state([1,5],[2,3,4,5],[5]).
+210: 
+211: given clause #59: (wt=18) 66 [hyper,58,2,eval] state([5],[1,3,4,5],[2,5]).
+212: ** KEPT (pick-wt=18): 75 [hyper,66,4,eval] state([5],[3,4,5],[1,2,5]).
+213: ** KEPT (pick-wt=18): 76 [hyper,66,3,eval] state([1,5],[3,4,5],[2,5]).
+214: 
+215: given clause #60: (wt=18) 67 [hyper,59,3,eval] state([2,3,5],[4,5],[1,5]).
+216: ** KEPT (pick-wt=18): 77 [hyper,67,6,eval] state([2,3,5],[1,4,5],[5]).
+217: ** KEPT (pick-wt=18): 78 [hyper,67,5,eval] state([1,2,3,5],[4,5],[5]).
+218: 
+219: given clause #61: (wt=18) 68 [hyper,60,4,eval] state([1,3,5],[4,5],[2,5]).
+220: ** KEPT (pick-wt=18): 79 [hyper,68,2,eval] state([3,5],[4,5],[1,2,5]).
+221: ** KEPT (pick-wt=18): 80 [hyper,68,1,eval] state([3,5],[1,4,5],[2,5]).
+222: 
+223: given clause #62: (wt=18) 69 [hyper,61,1,eval] state([5],[2,5],[1,3,4,5]).
+224: ** KEPT (pick-wt=18): 81 [hyper,69,6,eval] state([5],[1,2,5],[3,4,5]).
+225: ** KEPT (pick-wt=18): 82 [hyper,69,5,eval] state([1,5],[2,5],[3,4,5]).
+226: 
+227: given clause #63: (wt=18) 70 [hyper,62,2,eval] state([5],[1,5],[2,3,4,5]).
+228: ** KEPT (pick-wt=18): 83 [hyper,70,4,eval] state([5],[5],[1,2,3,4,5]).
+229: 
+230: ----> UNIT CONFLICT at   0.00 sec ----> 84 [binary,83.1,8.1] $F.
+231: 
+232: Length of proof is 15.  Level of proof is 15.
+233: 
+234: ---------------- PROOF ----------------
+235: 
+236: 1 [] -state([x1|x2],[y1|y2],z)| -$LT(x1,y1)|state(x2,[x1,y1|y2],z).
+237: 2 [] -state([x1|x2],y,[z1|z2])| -$LT(x1,z1)|state(x2,y,[x1,z1|z2]).
+238: 3 [] -state([x1|x2],[y1|y2],z)| -$LT(y1,x1)|state([y1,x1|x2],y2,z).
+239: 4 [] -state(x,[y1|y2],[z1|z2])| -$LT(y1,z1)|state(x,y2,[y1,z1|z2]).
+240: 5 [] -state([x1|x2],y,[z1|z2])| -$LT(z1,x1)|state([z1,x1|x2],y,z2).
+241: 6 [] -state(x,[y1|y2],[z1|z2])| -$LT(z1,y1)|state(x,[z1,y1|y2],z2).
+242: 7 [] state([1,2,3,4,5],[5],[5]).
+243: 8 [] -state([5],[5],[1,2,3,4,5]).
+244: 10 [hyper,7,1,eval] state([2,3,4,5],[1,5],[5]).
+245: 12 [hyper,10,2,eval] state([3,4,5],[1,5],[2,5]).
+246: 15 [hyper,12,4,eval] state([3,4,5],[5],[1,2,5]).
+247: 18 [hyper,15,1,eval] state([4,5],[3,5],[1,2,5]).
+248: 22 [hyper,18,5,eval] state([1,4,5],[3,5],[2,5]).
+249: 26 [hyper,22,6,eval] state([1,4,5],[2,3,5],[5]).
+250: 34 [hyper,26,1,eval] state([4,5],[1,2,3,5],[5]).
+251: 36 [hyper,34,2,eval] state([5],[1,2,3,5],[4,5]).
+252: 39 [hyper,36,4,eval] state([5],[2,3,5],[1,4,5]).
+253: 43 [hyper,39,3,eval] state([2,5],[3,5],[1,4,5]).
+254: 50 [hyper,43,5,eval] state([1,2,5],[3,5],[4,5]).
+255: 55 [hyper,50,4,eval] state([1,2,5],[5],[3,4,5]).
+256: 62 [hyper,55,1,eval] state([2,5],[1,5],[3,4,5]).
+257: 70 [hyper,62,2,eval] state([5],[1,5],[2,3,4,5]).
+258: 83 [hyper,70,4,eval] state([5],[5],[1,2,3,4,5]).
+259: 84 [binary,83.1,8.1] $F.
+260: 
+261: ------------ end of proof -------------
+262: 
+263: 
+264: Search stopped by max_proofs option.
+265: 
+266: ============ end of search ============
+267: 
+268: -------------- statistics -------------
+269: clauses given                 63
+270: clauses generated            187
+271:   hyper_res generated        187
+272: demod & eval rewrites          0
+273: clauses wt,lit,sk delete       0
+274: tautologies deleted            0
+275: clauses forward subsumed     112
+276:   (subsumed by sos)           25
+277: unit deletions                 0
+278: factor simplifications         0
+279: clauses kept                  75
+280: new demodulators               0
+281: empty clauses                  1
+282: clauses back demodulated       0
+283: clauses back subsumed          0
+284: usable size                   69
+285: sos size                      13
+286: demodulators size              0
+287: passive size                   1
+288: hot size                       0
+289: Kbytes malloced             1953
+290: 
+291: ----------- times (seconds) -----------
+292: user CPU time          0.01          (0 hr, 0 min, 0 sec)
+293: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+294: wall-clock time        0             (0 hr, 0 min, 0 sec)
+295: 
+296: That finishes the proof of the theorem.
+297: 
+298: Process 4358 finished Mon Jul 25 12:39:53 2016
