@@ -1,0 +1,63 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on flare-OptiPlex-3020M,
+Sat Dec 31 20:17:46 2016
+The command was "otter".  The process ID is 5977.
+
+set(para_into).
+set(very_verbose).
+
+list(usable).
+1 [] a=b.
+end_of_list.
+
+list(sos).
+2 [] P(a).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=2) 2 [] P(a).
+
+  0 [para_into,2.1.1,1.1.1] P(b).
+** KEPT (pick-wt=2): 3 [para_into,2.1.1,1.1.1] P(b).
+
+given clause #2: (wt=2) 3 [para_into,2.1.1,1.1.1] P(b).
+
+  0 [para_into,3.1.1,1.1.2] P(a).
+  Subsumed by 2.
+
+Search stopped because sos empty.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  2
+clauses generated              2
+  para_into generated          2
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed       1
+  (subsumed by sos)            0
+unit deletions                 0
+factor simplifications         0
+clauses kept                   1
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                    3
+sos size                       0
+demodulators size              0
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+Process 5977 finished Sat Dec 31 20:17:46 2016
