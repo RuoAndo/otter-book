@@ -1,0 +1,548 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Sat Dec 31 19:40:38 2016
+  4: The command was "otter".  The process ID is 4216.
+  5: 
+  6: set(hyper_res).
+  7: set(factor).
+  8: assign(max_given,15).
+  9: set(print_lists_at_end).
+ 10: 
+ 11: list(usable).
+ 12: 1 [] -P(T(x))| -P(Says(x,y))|P(y).
+ 13: 2 [] -P(L(x))| -P(Says(x,y))| -P(y).
+ 14: 3 [] P(T(x))|P(L(x)).
+ 15: 4 [] -P(T(x))| -P(L(x)).
+ 16: 5 [] P(y)|P(impl(y,z)).
+ 17: 6 [] -P(z)|P(impl(y,z)).
+ 18: 7 [] -P(impl(y,z))| -P(y)|P(z).
+ 19: end_of_list.
+ 20: 
+ 21: list(sos).
+ 22: 8 [] P(Says(A,impl(L(B),L(A)))).
+ 23: end_of_list.
+ 24: 
+ 25: ======= end of input processing =======
+ 26: 
+ 27: =========== start of search ===========
+ 28: 
+ 29: given clause #1: (wt=8) 8 [] P(Says(A,impl(L(B),L(A)))).
+ 30: ** KEPT (pick-wt=14): 9 [hyper,8,7,5] P(x)|P(impl(impl(Says(A,impl(L(B),L(A))),x),y)).
+ 31: ** KEPT (pick-wt=10): 10 [hyper,8,6] P(impl(x,Says(A,impl(L(B),L(A))))).
+ 32: ** KEPT (pick-wt=17): 11 [hyper,8,2,5,5] P(impl(L(x),y))|P(impl(Says(x,Says(A,impl(L(B),L(A)))),z)).
+ 33: ** KEPT (pick-wt=15): 12 [hyper,8,2,3,5] P(T(x))|P(impl(Says(x,Says(A,impl(L(B),L(A)))),y)).
+ 34: ** KEPT (pick-wt=8): 13 [hyper,8,2,5,5] P(impl(L(A),x))|P(L(B)).
+ 35: ** KEPT (pick-wt=13): 14 [hyper,8,2,5,5] P(impl(L(A),x))|P(impl(impl(L(B),L(A)),y)).
+ 36: ** KEPT (pick-wt=6): 15 [hyper,8,2,3,5] P(T(A))|P(L(B)).
+ 37: ** KEPT (pick-wt=11): 16 [hyper,8,2,3,5] P(T(A))|P(impl(impl(L(B),L(A)),x)).
+ 38: ** KEPT (pick-wt=11): 17 [hyper,8,1,5] P(impl(L(B),L(A)))|P(impl(T(A),x)).
+ 39: ** KEPT (pick-wt=9): 18 [hyper,8,1,3] P(impl(L(B),L(A)))|P(L(A)).
+ 40: 
+ 41: given clause #2: (wt=6) 15 [hyper,8,2,3,5] P(T(A))|P(L(B)).
+ 42: ** KEPT (pick-wt=12): 19 [hyper,15,7,5] P(L(B))|P(x)|P(impl(impl(T(A),x),y)).
+ 43: ** KEPT (pick-wt=8): 20 [hyper,15,6] P(L(B))|P(impl(x,T(A))).
+ 44: ** KEPT (pick-wt=15): 21 [hyper,15,2,5,5] P(L(B))|P(impl(L(x),y))|P(impl(Says(x,T(A)),z)).
+ 45: ** KEPT (pick-wt=13): 22 [hyper,15,2,3,5] P(L(B))|P(T(x))|P(impl(Says(x,T(A)),y)).
+ 46: ** KEPT (pick-wt=11): 23 [hyper,15,1,5] P(L(B))|P(x)|P(impl(Says(A,x),y)).
+ 47: ** KEPT (pick-wt=12): 24 [hyper,15,7,5] P(T(A))|P(x)|P(impl(impl(L(B),x),y)).
+ 48: ** KEPT (pick-wt=8): 25 [hyper,15,6] P(T(A))|P(impl(x,L(B))).
+ 49: ** KEPT (pick-wt=8): 26 [hyper,15,4,5] P(T(A))|P(impl(T(B),x)).
+ 50: ** KEPT (pick-wt=10): 27 [hyper,15,2,15,5,factor_simp] P(T(A))|P(impl(Says(B,L(B)),x)).
+ 51: ** KEPT (pick-wt=15): 28 [hyper,15,2,5,5] P(T(A))|P(impl(L(x),y))|P(impl(Says(x,L(B)),z)).
+ 52: ** KEPT (pick-wt=13): 29 [hyper,15,2,3,5] P(T(A))|P(T(x))|P(impl(Says(x,L(B)),y)).
+ 53: ** KEPT (pick-wt=15): 30 [hyper,15,2,5,8] P(T(A))|P(impl(Says(B,Says(A,impl(L(B),L(A)))),x)).
+ 54: ** KEPT (pick-wt=13): 31 [hyper,15,2,5,5] P(T(A))|P(impl(Says(B,impl(x,y)),z))|P(x).
+ 55: ** KEPT (pick-wt=13): 32 [hyper,15,2,5,5] P(T(A))|P(impl(Says(B,x),y))|P(impl(x,z)).
+ 56: ** KEPT (pick-wt=13): 33 [hyper,15,2,5,3] P(T(A))|P(impl(Says(B,L(x)),y))|P(T(x)).
+ 57: ** KEPT (pick-wt=13): 34 [hyper,15,2,5,3] P(T(A))|P(impl(Says(B,T(x)),y))|P(L(x)).
+ 58: ** KEPT (pick-wt=11): 35 [factor,19.1.2] P(L(B))|P(impl(impl(T(A),L(B)),x)).
+ 59: ** KEPT (pick-wt=10): 36 [factor,23.1.2] P(L(B))|P(impl(Says(A,L(B)),x)).
+ 60: ** KEPT (pick-wt=11): 37 [factor,24.1.2] P(T(A))|P(impl(impl(L(B),T(A)),x)).
+ 61: ** KEPT (pick-wt=10): 38 [factor,29.1.2] P(T(A))|P(impl(Says(A,L(B)),x)).
+ 62: ** KEPT (pick-wt=12): 39 [factor,31.1.3] P(T(A))|P(impl(Says(B,impl(T(A),x)),y)).
+ 63: ** KEPT (pick-wt=10): 40 [factor,33.1.3] P(T(A))|P(impl(Says(B,L(A)),x)).
+ 64: 
+ 65: given clause #3: (wt=8) 13 [hyper,8,2,5,5] P(impl(L(A),x))|P(L(B)).
+ 66: ** KEPT (pick-wt=14): 41 [hyper,13,7,5] P(L(B))|P(x)|P(impl(impl(impl(L(A),y),x),z)).
+ 67: ** KEPT (pick-wt=10): 42 [hyper,13,6] P(L(B))|P(impl(x,impl(L(A),y))).
+ 68: ** KEPT (pick-wt=17): 43 [hyper,13,2,5,5] P(L(B))|P(impl(L(x),y))|P(impl(Says(x,impl(L(A),z)),u)).
+ 69: ** KEPT (pick-wt=15): 44 [hyper,13,2,3,5] P(L(B))|P(T(x))|P(impl(Says(x,impl(L(A),y)),z)).
+ 70: ** KEPT (pick-wt=14): 45 [hyper,13,7,5] P(impl(L(A),x))|P(y)|P(impl(impl(L(B),y),z)).
+ 71: ** KEPT (pick-wt=10): 46 [hyper,13,6] P(impl(L(A),x))|P(impl(y,L(B))).
+ 72: ** KEPT (pick-wt=10): 47 [hyper,13,4,5] P(impl(L(A),x))|P(impl(T(B),y)).
+ 73: ** KEPT (pick-wt=12): 48 [hyper,13,2,13,5,factor_simp] P(impl(L(A),x))|P(impl(Says(B,L(B)),y)).
+ 74: ** KEPT (pick-wt=17): 49 [hyper,13,2,5,5] P(impl(L(A),x))|P(impl(L(y),z))|P(impl(Says(y,L(B)),u)).
+ 75: ** KEPT (pick-wt=15): 50 [hyper,13,2,3,5] P(impl(L(A),x))|P(T(y))|P(impl(Says(y,L(B)),z)).
+ 76: ** KEPT (pick-wt=17): 51 [hyper,13,2,5,8] P(impl(L(A),x))|P(impl(Says(B,Says(A,impl(L(B),L(A)))),y)).
+ 77: ** KEPT (pick-wt=15): 52 [hyper,13,2,5,5] P(impl(L(A),x))|P(impl(Says(B,impl(y,z)),u))|P(y).
+ 78: ** KEPT (pick-wt=15): 53 [hyper,13,2,5,5] P(impl(L(A),x))|P(impl(Says(B,y),z))|P(impl(y,u)).
+ 79: ** KEPT (pick-wt=15): 54 [hyper,13,2,5,3] P(impl(L(A),x))|P(impl(Says(B,L(y)),z))|P(T(y)).
+ 80: ** KEPT (pick-wt=15): 55 [hyper,13,2,5,3] P(impl(L(A),x))|P(impl(Says(B,T(y)),z))|P(L(y)).
+ 81: ** KEPT (pick-wt=13): 56 [factor,41.1.2] P(L(B))|P(impl(impl(impl(L(A),x),L(B)),y)).
+ 82: ** KEPT (pick-wt=15): 57 [factor,45.1.2] P(impl(L(A),x))|P(impl(impl(L(B),impl(L(A),x)),y)).
+ 83: ** KEPT (pick-wt=6): 58 [factor,46.1.2] P(impl(L(A),L(B))).
+ 84: ** KEPT (pick-wt=12): 59 [factor,49.1.2] P(impl(L(A),x))|P(impl(Says(A,L(B)),y)).
+ 85: ** KEPT (pick-wt=16): 60 [factor,52.1.3] P(impl(L(A),x))|P(impl(Says(B,impl(impl(L(A),x),y)),z)).
+ 86: ** KEPT (pick-wt=12): 61 [factor,53.1.3] P(impl(L(A),x))|P(impl(Says(B,L(A)),y)).
+ 87: 
+ 88: given clause #4: (wt=6) 58 [factor,46.1.2] P(impl(L(A),L(B))).
+ 89: ** KEPT (pick-wt=12): 62 [hyper,58,7,5] P(x)|P(impl(impl(impl(L(A),L(B)),x),y)).
+ 90: ** KEPT (pick-wt=8): 63 [hyper,58,6] P(impl(x,impl(L(A),L(B)))).
+ 91: ** KEPT (pick-wt=13): 64 [hyper,58,2,15,5] P(T(A))|P(impl(Says(B,impl(L(A),L(B))),x)).
+ 92: ** KEPT (pick-wt=15): 65 [hyper,58,2,13,5] P(impl(L(A),x))|P(impl(Says(B,impl(L(A),L(B))),y)).
+ 93: ** KEPT (pick-wt=15): 66 [hyper,58,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(L(A),L(B))),z)).
+ 94: ** KEPT (pick-wt=13): 67 [hyper,58,2,3,5] P(T(x))|P(impl(Says(x,impl(L(A),L(B))),y)).
+ 95: 
+ 96: given clause #5: (wt=8) 20 [hyper,15,6] P(L(B))|P(impl(x,T(A))).
+ 97: ** KEPT (pick-wt=14): 68 [hyper,20,7,5] P(impl(x,T(A)))|P(y)|P(impl(impl(L(B),y),z)).
+ 98: ** KEPT (pick-wt=10): 69 [hyper,20,6] P(impl(x,T(A)))|P(impl(y,L(B))).
+ 99: ** KEPT (pick-wt=10): 70 [hyper,20,4,5] P(impl(x,T(A)))|P(impl(T(B),y)).
+100: ** KEPT (pick-wt=12): 71 [hyper,20,2,20,5,factor_simp] P(impl(x,T(A)))|P(impl(Says(B,L(B)),y)).
+101: ** KEPT (pick-wt=17): 72 [hyper,20,2,5,5] P(impl(x,T(A)))|P(impl(L(y),z))|P(impl(Says(y,L(B)),u)).
+102: ** KEPT (pick-wt=15): 73 [hyper,20,2,3,5] P(impl(x,T(A)))|P(T(y))|P(impl(Says(y,L(B)),z)).
+103: ** KEPT (pick-wt=15): 74 [hyper,20,2,5,58] P(impl(x,T(A)))|P(impl(Says(B,impl(L(A),L(B))),y)).
+104: ** KEPT (pick-wt=17): 75 [hyper,20,2,5,8] P(impl(x,T(A)))|P(impl(Says(B,Says(A,impl(L(B),L(A)))),y)).
+105: ** KEPT (pick-wt=15): 76 [hyper,20,2,5,5] P(impl(x,T(A)))|P(impl(Says(B,impl(y,z)),u))|P(y).
+106: ** KEPT (pick-wt=15): 77 [hyper,20,2,5,5] P(impl(x,T(A)))|P(impl(Says(B,y),z))|P(impl(y,u)).
+107: ** KEPT (pick-wt=15): 78 [hyper,20,2,5,3] P(impl(x,T(A)))|P(impl(Says(B,L(y)),z))|P(T(y)).
+108: ** KEPT (pick-wt=15): 79 [hyper,20,2,5,3] P(impl(x,T(A)))|P(impl(Says(B,T(y)),z))|P(L(y)).
+109: ** KEPT (pick-wt=14): 80 [hyper,20,7,5] P(L(B))|P(x)|P(impl(impl(impl(y,T(A)),x),z)).
+110: ** KEPT (pick-wt=10): 81 [hyper,20,6] P(L(B))|P(impl(x,impl(y,T(A)))).
+111: ** KEPT (pick-wt=17): 82 [hyper,20,2,5,5] P(L(B))|P(impl(L(x),y))|P(impl(Says(x,impl(z,T(A))),u)).
+112: ** KEPT (pick-wt=15): 83 [hyper,20,2,3,5] P(L(B))|P(T(x))|P(impl(Says(x,impl(y,T(A))),z)).
+113: ** KEPT (pick-wt=15): 84 [factor,68.1.2] P(impl(x,T(A)))|P(impl(impl(L(B),impl(x,T(A))),y)).
+114: ** KEPT (pick-wt=10): 85 [factor,68.1.3] P(impl(impl(L(B),x),T(A)))|P(x).
+115: ** KEPT (pick-wt=6): 86 [factor,70.1.2] P(impl(T(B),T(A))).
+116: ** KEPT (pick-wt=8): 87 [factor,71.1.2] P(impl(Says(B,L(B)),T(A))).
+117: ** KEPT (pick-wt=13): 88 [factor,72.1.2] P(impl(L(x),T(A)))|P(impl(Says(x,L(B)),y)).
+118: ** KEPT (pick-wt=13): 89 [factor,72.1.3] P(impl(Says(x,L(B)),T(A)))|P(impl(L(x),y)).
+119: ** KEPT (pick-wt=11): 90 [factor,73.1.3] P(impl(Says(x,L(B)),T(A)))|P(T(x)).
+120: ** KEPT (pick-wt=11): 91 [factor,74.1.2] P(impl(Says(B,impl(L(A),L(B))),T(A))).
+121: ** KEPT (pick-wt=13): 92 [factor,75.1.2] P(impl(Says(B,Says(A,impl(L(B),L(A)))),T(A))).
+122: ** KEPT (pick-wt=11): 93 [factor,76.1.2] P(impl(Says(B,impl(x,y)),T(A)))|P(x).
+123: ** KEPT (pick-wt=16): 94 [factor,76.1.3] P(impl(x,T(A)))|P(impl(Says(B,impl(impl(x,T(A)),y)),z)).
+124: ** KEPT (pick-wt=11): 95 [factor,77.1.2] P(impl(Says(B,x),T(A)))|P(impl(x,y)).
+125: ** KEPT (pick-wt=11): 96 [factor,77.1.3] P(impl(x,T(A)))|P(impl(Says(B,x),y)).
+126: ** KEPT (pick-wt=11): 97 [factor,78.1.2] P(impl(Says(B,L(x)),T(A)))|P(T(x)).
+127: ** KEPT (pick-wt=11): 98 [factor,79.1.2] P(impl(Says(B,T(x)),T(A)))|P(L(x)).
+128: ** KEPT (pick-wt=13): 99 [factor,80.1.2] P(L(B))|P(impl(impl(impl(x,T(A)),L(B)),y)).
+129: 
+130: given clause #6: (wt=6) 86 [factor,70.1.2] P(impl(T(B),T(A))).
+131: ** KEPT (pick-wt=12): 100 [hyper,86,7,5] P(x)|P(impl(impl(impl(T(B),T(A)),x),y)).
+132: ** KEPT (pick-wt=8): 101 [hyper,86,6] P(impl(x,impl(T(B),T(A)))).
+133: ** KEPT (pick-wt=15): 102 [hyper,86,2,20,5] P(impl(x,T(A)))|P(impl(Says(B,impl(T(B),T(A))),y)).
+134: ** KEPT (pick-wt=13): 103 [hyper,86,2,15,5] P(T(A))|P(impl(Says(B,impl(T(B),T(A))),x)).
+135: ** KEPT (pick-wt=15): 104 [hyper,86,2,13,5] P(impl(L(A),x))|P(impl(Says(B,impl(T(B),T(A))),y)).
+136: ** KEPT (pick-wt=15): 105 [hyper,86,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(T(B),T(A))),z)).
+137: ** KEPT (pick-wt=13): 106 [hyper,86,2,3,5] P(T(x))|P(impl(Says(x,impl(T(B),T(A))),y)).
+138: ** KEPT (pick-wt=11): 107 [factor,102.1.2] P(impl(Says(B,impl(T(B),T(A))),T(A))).
+139: 
+140: given clause #7: (wt=8) 25 [hyper,15,6] P(T(A))|P(impl(x,L(B))).
+141: ** KEPT (pick-wt=14): 108 [hyper,25,7,5] P(impl(x,L(B)))|P(y)|P(impl(impl(T(A),y),z)).
+142: ** KEPT (pick-wt=17): 109 [hyper,25,2,5,5] P(impl(x,L(B)))|P(impl(L(y),z))|P(impl(Says(y,T(A)),u)).
+143: ** KEPT (pick-wt=15): 110 [hyper,25,2,3,5] P(impl(x,L(B)))|P(T(y))|P(impl(Says(y,T(A)),z)).
+144: ** KEPT (pick-wt=11): 111 [hyper,25,1,8] P(impl(x,L(B)))|P(impl(L(B),L(A))).
+145: ** KEPT (pick-wt=13): 112 [hyper,25,1,5] P(impl(x,L(B)))|P(y)|P(impl(Says(A,y),z)).
+146: ** KEPT (pick-wt=14): 113 [hyper,25,7,5] P(T(A))|P(x)|P(impl(impl(impl(y,L(B)),x),z)).
+147: ** KEPT (pick-wt=10): 114 [hyper,25,6] P(T(A))|P(impl(x,impl(y,L(B)))).
+148: ** KEPT (pick-wt=17): 115 [hyper,25,2,20,5] P(T(A))|P(impl(x,T(A)))|P(impl(Says(B,impl(y,L(B))),z)).
+149: ** KEPT (pick-wt=12): 116 [hyper,25,2,15,5,factor_simp] P(T(A))|P(impl(Says(B,impl(x,L(B))),y)).
+150: ** KEPT (pick-wt=17): 117 [hyper,25,2,5,5] P(T(A))|P(impl(L(x),y))|P(impl(Says(x,impl(z,L(B))),u)).
+151: ** KEPT (pick-wt=15): 118 [hyper,25,2,3,5] P(T(A))|P(T(x))|P(impl(Says(x,impl(y,L(B))),z)).
+152: ** KEPT (pick-wt=15): 119 [factor,108.1.2] P(impl(x,L(B)))|P(impl(impl(T(A),impl(x,L(B))),y)).
+153: ** KEPT (pick-wt=10): 120 [factor,108.1.3] P(impl(impl(T(A),x),L(B)))|P(x).
+154: ** KEPT (pick-wt=13): 121 [factor,109.1.2] P(impl(L(x),L(B)))|P(impl(Says(x,T(A)),y)).
+155: ** KEPT (pick-wt=13): 122 [factor,109.1.3] P(impl(Says(x,T(A)),L(B)))|P(impl(L(x),y)).
+156: ** KEPT (pick-wt=11): 123 [factor,110.1.3] P(impl(Says(x,T(A)),L(B)))|P(T(x)).
+157: ** KEPT (pick-wt=14): 124 [factor,112.1.2] P(impl(x,L(B)))|P(impl(Says(A,impl(x,L(B))),y)).
+158: ** KEPT (pick-wt=9): 125 [factor,112.1.3] P(impl(Says(A,x),L(B)))|P(x).
+159: ** KEPT (pick-wt=13): 126 [factor,113.1.2] P(T(A))|P(impl(impl(impl(x,L(B)),T(A)),y)).
+160: 116 back subsumes 115.
+161: 116 back subsumes 64.
+162: ** KEPT (pick-wt=12): 127 [factor,118.1.2] P(T(A))|P(impl(Says(A,impl(x,L(B))),y)).
+163: 
+164: given clause #8: (wt=8) 26 [hyper,15,4,5] P(T(A))|P(impl(T(B),x)).
+165: ** KEPT (pick-wt=14): 128 [hyper,26,7,5] P(impl(T(B),x))|P(y)|P(impl(impl(T(A),y),z)).
+166: ** KEPT (pick-wt=17): 129 [hyper,26,2,5,5] P(impl(T(B),x))|P(impl(L(y),z))|P(impl(Says(y,T(A)),u)).
+167: ** KEPT (pick-wt=15): 130 [hyper,26,2,3,5] P(impl(T(B),x))|P(T(y))|P(impl(Says(y,T(A)),z)).
+168: ** KEPT (pick-wt=11): 131 [hyper,26,1,8] P(impl(T(B),x))|P(impl(L(B),L(A))).
+169: ** KEPT (pick-wt=13): 132 [hyper,26,1,5] P(impl(T(B),x))|P(y)|P(impl(Says(A,y),z)).
+170: ** KEPT (pick-wt=14): 133 [hyper,26,7,5] P(T(A))|P(x)|P(impl(impl(impl(T(B),y),x),z)).
+171: ** KEPT (pick-wt=10): 134 [hyper,26,6] P(T(A))|P(impl(x,impl(T(B),y))).
+172: ** KEPT (pick-wt=17): 135 [hyper,26,2,20,5] P(T(A))|P(impl(x,T(A)))|P(impl(Says(B,impl(T(B),y)),z)).
+173: ** KEPT (pick-wt=12): 136 [hyper,26,2,15,5,factor_simp] P(T(A))|P(impl(Says(B,impl(T(B),x)),y)).
+174: ** KEPT (pick-wt=17): 137 [hyper,26,2,5,5] P(T(A))|P(impl(L(x),y))|P(impl(Says(x,impl(T(B),z)),u)).
+175: ** KEPT (pick-wt=15): 138 [hyper,26,2,3,5] P(T(A))|P(T(x))|P(impl(Says(x,impl(T(B),y)),z)).
+176: ** KEPT (pick-wt=15): 139 [factor,128.1.2] P(impl(T(B),x))|P(impl(impl(T(A),impl(T(B),x)),y)).
+177: ** KEPT (pick-wt=14): 140 [factor,132.1.2] P(impl(T(B),x))|P(impl(Says(A,impl(T(B),x)),y)).
+178: ** KEPT (pick-wt=13): 141 [factor,133.1.2] P(T(A))|P(impl(impl(impl(T(B),x),T(A)),y)).
+179: 136 back subsumes 135.
+180: 136 back subsumes 103.
+181: ** KEPT (pick-wt=12): 142 [factor,138.1.2] P(T(A))|P(impl(Says(A,impl(T(B),x)),y)).
+182: 
+183: given clause #9: (wt=8) 63 [hyper,58,6] P(impl(x,impl(L(A),L(B)))).
+184: ** KEPT (pick-wt=14): 143 [hyper,63,7,5] P(x)|P(impl(impl(impl(y,impl(L(A),L(B))),x),z)).
+185: ** KEPT (pick-wt=10): 144 [hyper,63,6] P(impl(x,impl(y,impl(L(A),L(B))))).
+186: ** KEPT (pick-wt=17): 145 [hyper,63,2,20,5] P(impl(x,T(A)))|P(impl(Says(B,impl(y,impl(L(A),L(B)))),z)).
+187: ** KEPT (pick-wt=15): 146 [hyper,63,2,15,5] P(T(A))|P(impl(Says(B,impl(x,impl(L(A),L(B)))),y)).
+188: ** KEPT (pick-wt=17): 147 [hyper,63,2,13,5] P(impl(L(A),x))|P(impl(Says(B,impl(y,impl(L(A),L(B)))),z)).
+189: ** KEPT (pick-wt=17): 148 [hyper,63,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(z,impl(L(A),L(B)))),u)).
+190: ** KEPT (pick-wt=15): 149 [hyper,63,2,3,5] P(T(x))|P(impl(Says(x,impl(y,impl(L(A),L(B)))),z)).
+191: ** KEPT (pick-wt=13): 150 [factor,145.1.2] P(impl(Says(B,impl(x,impl(L(A),L(B)))),T(A))).
+192: 
+193: given clause #10: (wt=8) 87 [factor,71.1.2] P(impl(Says(B,L(B)),T(A))).
+194: ** KEPT (pick-wt=14): 151 [hyper,87,7,5] P(x)|P(impl(impl(impl(Says(B,L(B)),T(A)),x),y)).
+195: ** KEPT (pick-wt=10): 152 [hyper,87,6] P(impl(x,impl(Says(B,L(B)),T(A)))).
+196: ** KEPT (pick-wt=17): 153 [hyper,87,2,20,5] P(impl(x,T(A)))|P(impl(Says(B,impl(Says(B,L(B)),T(A))),y)).
+197: ** KEPT (pick-wt=15): 154 [hyper,87,2,15,5] P(T(A))|P(impl(Says(B,impl(Says(B,L(B)),T(A))),x)).
+198: ** KEPT (pick-wt=17): 155 [hyper,87,2,13,5] P(impl(L(A),x))|P(impl(Says(B,impl(Says(B,L(B)),T(A))),y)).
+199: ** KEPT (pick-wt=17): 156 [hyper,87,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(Says(B,L(B)),T(A))),z)).
+200: ** KEPT (pick-wt=15): 157 [hyper,87,2,3,5] P(T(x))|P(impl(Says(x,impl(Says(B,L(B)),T(A))),y)).
+201: ** KEPT (pick-wt=13): 158 [factor,153.1.2] P(impl(Says(B,impl(Says(B,L(B)),T(A))),T(A))).
+202: 
+203: given clause #11: (wt=8) 101 [hyper,86,6] P(impl(x,impl(T(B),T(A)))).
+204: ** KEPT (pick-wt=14): 159 [hyper,101,7,5] P(x)|P(impl(impl(impl(y,impl(T(B),T(A))),x),z)).
+205: ** KEPT (pick-wt=10): 160 [hyper,101,6] P(impl(x,impl(y,impl(T(B),T(A))))).
+206: ** KEPT (pick-wt=17): 161 [hyper,101,2,20,5] P(impl(x,T(A)))|P(impl(Says(B,impl(y,impl(T(B),T(A)))),z)).
+207: ** KEPT (pick-wt=15): 162 [hyper,101,2,15,5] P(T(A))|P(impl(Says(B,impl(x,impl(T(B),T(A)))),y)).
+208: ** KEPT (pick-wt=17): 163 [hyper,101,2,13,5] P(impl(L(A),x))|P(impl(Says(B,impl(y,impl(T(B),T(A)))),z)).
+209: ** KEPT (pick-wt=17): 164 [hyper,101,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(z,impl(T(B),T(A)))),u)).
+210: ** KEPT (pick-wt=15): 165 [hyper,101,2,3,5] P(T(x))|P(impl(Says(x,impl(y,impl(T(B),T(A)))),z)).
+211: ** KEPT (pick-wt=13): 166 [factor,161.1.2] P(impl(Says(B,impl(x,impl(T(B),T(A)))),T(A))).
+212: 
+213: given clause #12: (wt=9) 18 [hyper,8,1,3] P(impl(L(B),L(A)))|P(L(A)).
+214: ** KEPT (pick-wt=15): 167 [hyper,18,7,5] P(L(A))|P(x)|P(impl(impl(impl(L(B),L(A)),x),y)).
+215: ** KEPT (pick-wt=8): 168 [hyper,18,7,20,factor_simp] P(L(A))|P(impl(x,T(A))).
+216: ** KEPT (pick-wt=8): 169 [hyper,18,7,5,factor_simp] P(L(A))|P(impl(L(B),x)).
+217: ** KEPT (pick-wt=6): 170 [hyper,18,7,3,factor_simp] P(L(A))|P(T(B)).
+218: ** KEPT (pick-wt=11): 171 [hyper,18,6] P(L(A))|P(impl(x,impl(L(B),L(A)))).
+219: ** KEPT (pick-wt=18): 172 [hyper,18,2,5,5] P(L(A))|P(impl(L(x),y))|P(impl(Says(x,impl(L(B),L(A))),z)).
+220: ** KEPT (pick-wt=16): 173 [hyper,18,2,3,5] P(L(A))|P(T(x))|P(impl(Says(x,impl(L(B),L(A))),y)).
+221: ** KEPT (pick-wt=15): 174 [hyper,18,7,5] P(impl(L(B),L(A)))|P(x)|P(impl(impl(L(A),x),y)).
+222: ** KEPT (pick-wt=6): 175 [hyper,18,6,factor_simp] P(impl(L(B),L(A))).
+223: ** KEPT (pick-wt=14): 176 [factor,167.1.2] P(L(A))|P(impl(impl(impl(L(B),L(A)),L(A)),x)).
+224: 169 back subsumes 18.
+225: 175 back subsumes 174.
+226: 175 back subsumes 131.
+227: 175 back subsumes 111.
+228: 175 back subsumes 17.
+229: 
+230: given clause #13: (wt=6) 170 [hyper,18,7,3,factor_simp] P(L(A))|P(T(B)).
+231: ** KEPT (pick-wt=12): 177 [hyper,170,7,5] P(T(B))|P(x)|P(impl(impl(L(A),x),y)).
+232: ** KEPT (pick-wt=8): 178 [hyper,170,6] P(T(B))|P(impl(x,L(A))).
+233: ** KEPT (pick-wt=8): 179 [hyper,170,4,25] P(T(B))|P(impl(x,L(B))).
+234: ** KEPT (pick-wt=8): 180 [hyper,170,4,5] P(T(B))|P(impl(T(A),x)).
+235: ** KEPT (pick-wt=10): 181 [hyper,170,2,170,5,factor_simp] P(T(B))|P(impl(Says(A,L(A)),x)).
+236: ** KEPT (pick-wt=15): 182 [hyper,170,2,20,5] P(T(B))|P(impl(x,T(A)))|P(impl(Says(B,L(A)),y)).
+237: ** KEPT (pick-wt=15): 183 [hyper,170,2,5,5] P(T(B))|P(impl(L(x),y))|P(impl(Says(x,L(A)),z)).
+238: ** KEPT (pick-wt=13): 184 [hyper,170,2,3,5] P(T(B))|P(T(x))|P(impl(Says(x,L(A)),y)).
+239: ** KEPT (pick-wt=11): 185 [hyper,170,2,8,5] P(T(B))|P(impl(impl(L(B),L(A)),x)).
+240: ** KEPT (pick-wt=15): 186 [hyper,170,2,5,101] P(T(B))|P(impl(Says(A,impl(x,impl(T(B),T(A)))),y)).
+241: ** KEPT (pick-wt=15): 187 [hyper,170,2,5,87] P(T(B))|P(impl(Says(A,impl(Says(B,L(B)),T(A))),x)).
+242: ** KEPT (pick-wt=13): 188 [hyper,170,2,5,86] P(T(B))|P(impl(Says(A,impl(T(B),T(A))),x)).
+243: ** KEPT (pick-wt=15): 189 [hyper,170,2,5,63] P(T(B))|P(impl(Says(A,impl(x,impl(L(A),L(B)))),y)).
+244: ** KEPT (pick-wt=13): 190 [hyper,170,2,5,58] P(T(B))|P(impl(Says(A,impl(L(A),L(B))),x)).
+245: ** KEPT (pick-wt=15): 191 [hyper,170,2,5,20] P(T(B))|P(impl(Says(A,L(B)),x))|P(impl(y,T(A))).
+246: ** KEPT (pick-wt=15): 192 [hyper,170,2,5,8] P(T(B))|P(impl(Says(A,Says(A,impl(L(B),L(A)))),x)).
+247: ** KEPT (pick-wt=13): 193 [hyper,170,2,5,5] P(T(B))|P(impl(Says(A,impl(x,y)),z))|P(x).
+248: ** KEPT (pick-wt=13): 194 [hyper,170,2,5,5] P(T(B))|P(impl(Says(A,x),y))|P(impl(x,z)).
+249: ** KEPT (pick-wt=13): 195 [hyper,170,2,5,3] P(T(B))|P(impl(Says(A,L(x)),y))|P(T(x)).
+250: ** KEPT (pick-wt=13): 196 [hyper,170,2,5,3] P(T(B))|P(impl(Says(A,T(x)),y))|P(L(x)).
+251: ** KEPT (pick-wt=12): 197 [hyper,170,7,5] P(L(A))|P(x)|P(impl(impl(T(B),x),y)).
+252: ** KEPT (pick-wt=8): 198 [hyper,170,6] P(L(A))|P(impl(x,T(B))).
+253: ** KEPT (pick-wt=15): 199 [hyper,170,2,5,5] P(L(A))|P(impl(L(x),y))|P(impl(Says(x,T(B)),z)).
+254: ** KEPT (pick-wt=13): 200 [hyper,170,2,3,5] P(L(A))|P(T(x))|P(impl(Says(x,T(B)),y)).
+255: ** KEPT (pick-wt=11): 201 [hyper,170,1,5] P(L(A))|P(x)|P(impl(Says(B,x),y)).
+256: ** KEPT (pick-wt=11): 202 [factor,177.1.2] P(T(B))|P(impl(impl(L(A),T(B)),x)).
+257: ** KEPT (pick-wt=11): 203 [factor,182.2.3] P(T(B))|P(impl(Says(B,L(A)),T(A))).
+258: 184 back subsumes 182.
+259: ** KEPT (pick-wt=10): 204 [factor,184.1.2] P(T(B))|P(impl(Says(B,L(A)),x)).
+260: ** KEPT (pick-wt=11): 205 [factor,191.2.3] P(T(B))|P(impl(Says(A,L(B)),T(A))).
+261: ** KEPT (pick-wt=12): 206 [factor,193.1.3] P(T(B))|P(impl(Says(A,impl(T(B),x)),y)).
+262: 195 back subsumes 191.
+263: ** KEPT (pick-wt=10): 207 [factor,195.1.3] P(T(B))|P(impl(Says(A,L(B)),x)).
+264: ** KEPT (pick-wt=11): 208 [factor,197.1.2] P(L(A))|P(impl(impl(T(B),L(A)),x)).
+265: ** KEPT (pick-wt=10): 209 [factor,201.1.2] P(L(A))|P(impl(Says(B,L(A)),x)).
+266: 204 back subsumes 203.
+267: 206 back subsumes 188.
+268: 207 back subsumes 205.
+269: 
+270: given clause #14: (wt=6) 175 [hyper,18,6,factor_simp] P(impl(L(B),L(A))).
+271: ** KEPT (pick-wt=12): 210 [hyper,175,7,5] P(x)|P(impl(impl(impl(L(B),L(A)),x),y)).
+272: ** KEPT (pick-wt=8): 211 [hyper,175,6] P(impl(x,impl(L(B),L(A)))).
+273: ** KEPT (pick-wt=3): 212 [hyper,175,2,170,8] P(T(B)).
+274: ** KEPT (pick-wt=15): 213 [hyper,175,2,20,5] P(impl(x,T(A)))|P(impl(Says(B,impl(L(B),L(A))),y)).
+275: ** KEPT (pick-wt=13): 214 [hyper,175,2,15,5] P(T(A))|P(impl(Says(B,impl(L(B),L(A))),x)).
+276: ** KEPT (pick-wt=15): 215 [hyper,175,2,13,5] P(impl(L(A),x))|P(impl(Says(B,impl(L(B),L(A))),y)).
+277: ** KEPT (pick-wt=5): 216 [hyper,175,2,5,8] P(impl(L(A),x)).
+278: ** KEPT (pick-wt=15): 217 [hyper,175,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(L(B),L(A))),z)).
+279: ** KEPT (pick-wt=3): 218 [hyper,175,2,3,8] P(T(A)).
+280: ** KEPT (pick-wt=13): 219 [hyper,175,2,3,5] P(T(x))|P(impl(Says(x,impl(L(B),L(A))),y)).
+281: 210 back subsumes 176.
+282: 210 back subsumes 167.
+283: 211 back subsumes 171.
+284: 212 back subsumes 207.
+285: 212 back subsumes 206.
+286: 212 back subsumes 204.
+287: 212 back subsumes 202.
+288: 212 back subsumes 196.
+289: 212 back subsumes 195.
+290: 212 back subsumes 194.
+291: 212 back subsumes 193.
+292: 212 back subsumes 192.
+293: 212 back subsumes 190.
+294: 212 back subsumes 189.
+295: 212 back subsumes 187.
+296: 212 back subsumes 186.
+297: 212 back subsumes 185.
+298: 212 back subsumes 184.
+299: 212 back subsumes 183.
+300: 212 back subsumes 181.
+301: 212 back subsumes 180.
+302: 212 back subsumes 179.
+303: 212 back subsumes 178.
+304: 212 back subsumes 177.
+305: 212 back subsumes 170.
+306: ** KEPT (pick-wt=11): 220 [factor,213.1.2] P(impl(Says(B,impl(L(B),L(A))),T(A))).
+307: 216 back subsumes 215.
+308: 216 back subsumes 163.
+309: 216 back subsumes 155.
+310: 216 back subsumes 147.
+311: 216 back subsumes 104.
+312: 216 back subsumes 65.
+313: 216 back subsumes 61.
+314: 216 back subsumes 60.
+315: 216 back subsumes 59.
+316: 216 back subsumes 58.
+317: 216 back subsumes 57.
+318: 216 back subsumes 55.
+319: 216 back subsumes 54.
+320: 216 back subsumes 53.
+321: 216 back subsumes 52.
+322: 216 back subsumes 51.
+323: 216 back subsumes 50.
+324: 216 back subsumes 49.
+325: 216 back subsumes 48.
+326: 216 back subsumes 47.
+327: 216 back subsumes 46.
+328: 216 back subsumes 45.
+329: 216 back subsumes 14.
+330: 216 back subsumes 13.
+331: 217 back subsumes 172.
+332: 218 back subsumes 214.
+333: 218 back subsumes 162.
+334: 218 back subsumes 154.
+335: 218 back subsumes 146.
+336: 218 back subsumes 142.
+337: 218 back subsumes 141.
+338: 218 back subsumes 138.
+339: 218 back subsumes 137.
+340: 218 back subsumes 136.
+341: 218 back subsumes 134.
+342: 218 back subsumes 133.
+343: 218 back subsumes 127.
+344: 218 back subsumes 126.
+345: 218 back subsumes 118.
+346: 218 back subsumes 117.
+347: 218 back subsumes 116.
+348: 218 back subsumes 114.
+349: 218 back subsumes 113.
+350: 218 back subsumes 40.
+351: 218 back subsumes 39.
+352: 218 back subsumes 38.
+353: 218 back subsumes 37.
+354: 218 back subsumes 34.
+355: 218 back subsumes 33.
+356: 218 back subsumes 32.
+357: 218 back subsumes 31.
+358: 218 back subsumes 30.
+359: 218 back subsumes 29.
+360: 218 back subsumes 28.
+361: 218 back subsumes 27.
+362: 218 back subsumes 26.
+363: 218 back subsumes 25.
+364: 218 back subsumes 24.
+365: 218 back subsumes 16.
+366: 218 back subsumes 15.
+367: 219 back subsumes 173.
+368: 
+369: given clause #15: (wt=3) 212 [hyper,175,2,170,8] P(T(B)).
+370: ** KEPT (pick-wt=9): 221 [hyper,212,7,5] P(x)|P(impl(impl(T(B),x),y)).
+371: ** KEPT (pick-wt=5): 222 [hyper,212,6] P(impl(x,T(B))).
+372: ** KEPT (pick-wt=5): 223 [hyper,212,4,20] P(impl(x,T(A))).
+373: ** KEPT (pick-wt=5): 224 [hyper,212,4,5] P(impl(L(B),x)).
+374: ** KEPT (pick-wt=12): 225 [hyper,212,2,5,5] P(impl(L(x),y))|P(impl(Says(x,T(B)),z)).
+375: ** KEPT (pick-wt=10): 226 [hyper,212,2,3,5] P(T(x))|P(impl(Says(x,T(B)),y)).
+376: ** KEPT (pick-wt=8): 227 [hyper,212,1,5] P(x)|P(impl(Says(B,x),y)).
+377: 221 back subsumes 208.
+378: 221 back subsumes 197.
+379: 222 back subsumes 198.
+380: 223 back subsumes 220.
+381: 223 back subsumes 213.
+382: 223 back subsumes 168.
+383: 223 back subsumes 166.
+384: 223 back subsumes 161.
+385: 223 back subsumes 158.
+386: 223 back subsumes 153.
+387: 223 back subsumes 150.
+388: 223 back subsumes 145.
+389: 223 back subsumes 107.
+390: 223 back subsumes 102.
+391: 223 back subsumes 98.
+392: 223 back subsumes 97.
+393: 223 back subsumes 96.
+394: 223 back subsumes 95.
+395: 223 back subsumes 94.
+396: 223 back subsumes 93.
+397: 223 back subsumes 92.
+398: 223 back subsumes 91.
+399: 223 back subsumes 90.
+400: 223 back subsumes 89.
+401: 223 back subsumes 88.
+402: 223 back subsumes 87.
+403: 223 back subsumes 86.
+404: 223 back subsumes 85.
+405: 223 back subsumes 84.
+406: 223 back subsumes 79.
+407: 223 back subsumes 78.
+408: 223 back subsumes 77.
+409: 223 back subsumes 76.
+410: 223 back subsumes 75.
+411: 223 back subsumes 74.
+412: 223 back subsumes 73.
+413: 223 back subsumes 72.
+414: 223 back subsumes 71.
+415: 223 back subsumes 70.
+416: 223 back subsumes 69.
+417: 223 back subsumes 68.
+418: 223 back subsumes 20.
+419: 224 back subsumes 175.
+420: 224 back subsumes 169.
+421: 225 back subsumes 199.
+422: 226 back subsumes 200.
+423: 227 back subsumes 209.
+424: 227 back subsumes 201.
+425: 
+426: Search stopped by max_given option.
+427: 
+428: ============ end of search ============
+429: 
+430: list(usable).
+431: 1 [] -P(T(x))| -P(Says(x,y))|P(y).
+432: 2 [] -P(L(x))| -P(Says(x,y))| -P(y).
+433: 3 [] P(T(x))|P(L(x)).
+434: 4 [] -P(T(x))| -P(L(x)).
+435: 5 [] P(y)|P(impl(y,z)).
+436: 6 [] -P(z)|P(impl(y,z)).
+437: 7 [] -P(impl(y,z))| -P(y)|P(z).
+438: 8 [] P(Says(A,impl(L(B),L(A)))).
+439: 63 [hyper,58,6] P(impl(x,impl(L(A),L(B)))).
+440: 101 [hyper,86,6] P(impl(x,impl(T(B),T(A)))).
+441: 212 [hyper,175,2,170,8] P(T(B)).
+442: end_of_list.
+443: 
+444: list(sos).
+445: 9 [hyper,8,7,5] P(x)|P(impl(impl(Says(A,impl(L(B),L(A))),x),y)).
+446: 10 [hyper,8,6] P(impl(x,Says(A,impl(L(B),L(A))))).
+447: 11 [hyper,8,2,5,5] P(impl(L(x),y))|P(impl(Says(x,Says(A,impl(L(B),L(A)))),z)).
+448: 12 [hyper,8,2,3,5] P(T(x))|P(impl(Says(x,Says(A,impl(L(B),L(A)))),y)).
+449: 19 [hyper,15,7,5] P(L(B))|P(x)|P(impl(impl(T(A),x),y)).
+450: 21 [hyper,15,2,5,5] P(L(B))|P(impl(L(x),y))|P(impl(Says(x,T(A)),z)).
+451: 22 [hyper,15,2,3,5] P(L(B))|P(T(x))|P(impl(Says(x,T(A)),y)).
+452: 23 [hyper,15,1,5] P(L(B))|P(x)|P(impl(Says(A,x),y)).
+453: 35 [factor,19.1.2] P(L(B))|P(impl(impl(T(A),L(B)),x)).
+454: 36 [factor,23.1.2] P(L(B))|P(impl(Says(A,L(B)),x)).
+455: 41 [hyper,13,7,5] P(L(B))|P(x)|P(impl(impl(impl(L(A),y),x),z)).
+456: 42 [hyper,13,6] P(L(B))|P(impl(x,impl(L(A),y))).
+457: 43 [hyper,13,2,5,5] P(L(B))|P(impl(L(x),y))|P(impl(Says(x,impl(L(A),z)),u)).
+458: 44 [hyper,13,2,3,5] P(L(B))|P(T(x))|P(impl(Says(x,impl(L(A),y)),z)).
+459: 56 [factor,41.1.2] P(L(B))|P(impl(impl(impl(L(A),x),L(B)),y)).
+460: 62 [hyper,58,7,5] P(x)|P(impl(impl(impl(L(A),L(B)),x),y)).
+461: 66 [hyper,58,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(L(A),L(B))),z)).
+462: 67 [hyper,58,2,3,5] P(T(x))|P(impl(Says(x,impl(L(A),L(B))),y)).
+463: 80 [hyper,20,7,5] P(L(B))|P(x)|P(impl(impl(impl(y,T(A)),x),z)).
+464: 81 [hyper,20,6] P(L(B))|P(impl(x,impl(y,T(A)))).
+465: 82 [hyper,20,2,5,5] P(L(B))|P(impl(L(x),y))|P(impl(Says(x,impl(z,T(A))),u)).
+466: 83 [hyper,20,2,3,5] P(L(B))|P(T(x))|P(impl(Says(x,impl(y,T(A))),z)).
+467: 99 [factor,80.1.2] P(L(B))|P(impl(impl(impl(x,T(A)),L(B)),y)).
+468: 100 [hyper,86,7,5] P(x)|P(impl(impl(impl(T(B),T(A)),x),y)).
+469: 105 [hyper,86,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(T(B),T(A))),z)).
+470: 106 [hyper,86,2,3,5] P(T(x))|P(impl(Says(x,impl(T(B),T(A))),y)).
+471: 108 [hyper,25,7,5] P(impl(x,L(B)))|P(y)|P(impl(impl(T(A),y),z)).
+472: 109 [hyper,25,2,5,5] P(impl(x,L(B)))|P(impl(L(y),z))|P(impl(Says(y,T(A)),u)).
+473: 110 [hyper,25,2,3,5] P(impl(x,L(B)))|P(T(y))|P(impl(Says(y,T(A)),z)).
+474: 112 [hyper,25,1,5] P(impl(x,L(B)))|P(y)|P(impl(Says(A,y),z)).
+475: 119 [factor,108.1.2] P(impl(x,L(B)))|P(impl(impl(T(A),impl(x,L(B))),y)).
+476: 120 [factor,108.1.3] P(impl(impl(T(A),x),L(B)))|P(x).
+477: 121 [factor,109.1.2] P(impl(L(x),L(B)))|P(impl(Says(x,T(A)),y)).
+478: 122 [factor,109.1.3] P(impl(Says(x,T(A)),L(B)))|P(impl(L(x),y)).
+479: 123 [factor,110.1.3] P(impl(Says(x,T(A)),L(B)))|P(T(x)).
+480: 124 [factor,112.1.2] P(impl(x,L(B)))|P(impl(Says(A,impl(x,L(B))),y)).
+481: 125 [factor,112.1.3] P(impl(Says(A,x),L(B)))|P(x).
+482: 128 [hyper,26,7,5] P(impl(T(B),x))|P(y)|P(impl(impl(T(A),y),z)).
+483: 129 [hyper,26,2,5,5] P(impl(T(B),x))|P(impl(L(y),z))|P(impl(Says(y,T(A)),u)).
+484: 130 [hyper,26,2,3,5] P(impl(T(B),x))|P(T(y))|P(impl(Says(y,T(A)),z)).
+485: 132 [hyper,26,1,5] P(impl(T(B),x))|P(y)|P(impl(Says(A,y),z)).
+486: 139 [factor,128.1.2] P(impl(T(B),x))|P(impl(impl(T(A),impl(T(B),x)),y)).
+487: 140 [factor,132.1.2] P(impl(T(B),x))|P(impl(Says(A,impl(T(B),x)),y)).
+488: 143 [hyper,63,7,5] P(x)|P(impl(impl(impl(y,impl(L(A),L(B))),x),z)).
+489: 144 [hyper,63,6] P(impl(x,impl(y,impl(L(A),L(B))))).
+490: 148 [hyper,63,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(z,impl(L(A),L(B)))),u)).
+491: 149 [hyper,63,2,3,5] P(T(x))|P(impl(Says(x,impl(y,impl(L(A),L(B)))),z)).
+492: 151 [hyper,87,7,5] P(x)|P(impl(impl(impl(Says(B,L(B)),T(A)),x),y)).
+493: 152 [hyper,87,6] P(impl(x,impl(Says(B,L(B)),T(A)))).
+494: 156 [hyper,87,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(Says(B,L(B)),T(A))),z)).
+495: 157 [hyper,87,2,3,5] P(T(x))|P(impl(Says(x,impl(Says(B,L(B)),T(A))),y)).
+496: 159 [hyper,101,7,5] P(x)|P(impl(impl(impl(y,impl(T(B),T(A))),x),z)).
+497: 160 [hyper,101,6] P(impl(x,impl(y,impl(T(B),T(A))))).
+498: 164 [hyper,101,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(z,impl(T(B),T(A)))),u)).
+499: 165 [hyper,101,2,3,5] P(T(x))|P(impl(Says(x,impl(y,impl(T(B),T(A)))),z)).
+500: 210 [hyper,175,7,5] P(x)|P(impl(impl(impl(L(B),L(A)),x),y)).
+501: 211 [hyper,175,6] P(impl(x,impl(L(B),L(A)))).
+502: 216 [hyper,175,2,5,8] P(impl(L(A),x)).
+503: 217 [hyper,175,2,5,5] P(impl(L(x),y))|P(impl(Says(x,impl(L(B),L(A))),z)).
+504: 218 [hyper,175,2,3,8] P(T(A)).
+505: 219 [hyper,175,2,3,5] P(T(x))|P(impl(Says(x,impl(L(B),L(A))),y)).
+506: 221 [hyper,212,7,5] P(x)|P(impl(impl(T(B),x),y)).
+507: 222 [hyper,212,6] P(impl(x,T(B))).
+508: 223 [hyper,212,4,20] P(impl(x,T(A))).
+509: 224 [hyper,212,4,5] P(impl(L(B),x)).
+510: 225 [hyper,212,2,5,5] P(impl(L(x),y))|P(impl(Says(x,T(B)),z)).
+511: 226 [hyper,212,2,3,5] P(T(x))|P(impl(Says(x,T(B)),y)).
+512: 227 [hyper,212,1,5] P(x)|P(impl(Says(B,x),y)).
+513: end_of_list.
+514: 
+515: list(demodulators).
+516: end_of_list.
+517: 
+518: 
+519: -------------- statistics -------------
+520: clauses given                 15
+521: clauses generated            489
+522:   hyper_res generated        431
+523:   factors generated           58
+524: demod & eval rewrites          0
+525: clauses wt,lit,sk delete       0
+526: tautologies deleted            0
+527: clauses forward subsumed     270
+528:   (subsumed by sos)          106
+529: unit deletions                 0
+530: factor simplifications        75
+531: clauses kept                 219
+532: new demodulators               0
+533: empty clauses                  0
+534: clauses back demodulated       0
+535: clauses back subsumed        148
+536: usable size                   11
+537: sos size                      68
+538: demodulators size              0
+539: passive size                   0
+540: hot size                       0
+541: Kbytes malloced             1953
+542: 
+543: ----------- times (seconds) -----------
+544: user CPU time          0.01          (0 hr, 0 min, 0 sec)
+545: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+546: wall-clock time        0             (0 hr, 0 min, 0 sec)
+547: 
+548: Process 4216 finished Sat Dec 31 19:40:38 2016
