@@ -1,0 +1,16 @@
+  1: set(hyper_res). 
+  2: assign(max_given,10).
+  3: 
+  4: list(usable).
+  5:        -P(T(x)) | -P(Says(x,y)) | P(y).
+  6:        -P(L(x)) | -P(Says(x,y)) | -P(y).
+  7:        P(T(x)) | P(L(x)).
+  8:        -P(T(x)) | -P(L(x)).
+  9:        -P(y) | P(or(y,z)).
+ 10:        -P(z) | P(or(y,z)).
+ 11:        -P(or(y,z)) | P(y) | P(z).
+ 12: end_of_list.
+ 13: 
+ 14: list(sos).
+ 15:         P(Says(A, or(L(A),L(B)))).
+ 16: end_of_list.
