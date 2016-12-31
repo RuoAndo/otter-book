@@ -1,0 +1,10 @@
+  1: set(hyper_res).
+  2: 
+  3: formula_list(usable).
+  4:     all x y (planet(x,y) -> (star(y) & spin(y,x))).
+  5: end_of_list.
+  6:    
+  7: formula_list(sos).
+  8:     planet(Earth, Sun).
+  9: end_of_list.
+ 10: 

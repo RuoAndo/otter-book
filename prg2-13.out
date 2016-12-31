@@ -1,0 +1,73 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on flare-OptiPlex-3020M,
+Sat Dec 31 19:44:40 2016
+The command was "otter".  The process ID is 4357.
+
+set(hyper_res).
+
+formula_list(usable).
+all x y (planet(x,y)->star(y)&spin(y,x)).
+end_of_list.
+
+-------> usable clausifies to:
+
+list(usable).
+1 [] -planet(x,y)|star(y).
+2 [] -planet(x,y)|spin(y,x).
+end_of_list.
+
+formula_list(sos).
+planet(Earth,Sun).
+end_of_list.
+
+-------> sos clausifies to:
+
+list(sos).
+3 [] planet(Earth,Sun).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=3) 3 [] planet(Earth,Sun).
+** KEPT (pick-wt=3): 4 [hyper,3,2] spin(Sun,Earth).
+** KEPT (pick-wt=2): 5 [hyper,3,1] star(Sun).
+
+given clause #2: (wt=2) 5 [hyper,3,1] star(Sun).
+
+given clause #3: (wt=3) 4 [hyper,3,2] spin(Sun,Earth).
+
+Search stopped because sos empty.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  3
+clauses generated              2
+  hyper_res generated          2
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed       0
+  (subsumed by sos)            0
+unit deletions                 0
+factor simplifications         0
+clauses kept                   2
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                    5
+sos size                       0
+demodulators size              0
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+Process 4357 finished Sat Dec 31 19:44:40 2016
