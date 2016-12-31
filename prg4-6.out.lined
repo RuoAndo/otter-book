@@ -1,0 +1,1694 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Sat Dec 31 20:28:32 2016
+  4: The command was "otter".  The process ID is 6413.
+  5: 
+  6: set(knuth_bendix).
+  7:    dependent: set(anl_eq).
+  8:    dependent: set(para_from).
+  9:    dependent: set(para_into).
+ 10:    dependent: clear(para_from_right).
+ 11:    dependent: clear(para_into_right).
+ 12:    dependent: set(para_from_vars).
+ 13:    dependent: set(eq_units_both_ways).
+ 14:    dependent: set(dynamic_demod_all).
+ 15:    dependent: set(dynamic_demod).
+ 16:    dependent: set(order_eq).
+ 17:    dependent: set(back_demod).
+ 18:    dependent: set(process_input).
+ 19:    dependent: set(lrpo).
+ 20: 
+ 21: list(usable).
+ 22: 0 [] (x+y)+z=x+y+z.
+ 23: 0 [] 0+x=x.
+ 24: 0 [] (-x)+x=0.
+ 25: 0 [] x+y=y+x.
+ 26: 0 [] (x*y)*z=x*y*z.
+ 27: 0 [] x* (y+z)=x*y+x*z.
+ 28: 0 [] (x+y)*z=x*z+y*z.
+ 29: end_of_list.
+ 30: 
+ 31: list(sos).
+ 32: 0 [] x*x=x.
+ 33: end_of_list.
+ 34: 
+ 35: list(passive).
+ 36: 1 [] x=x.
+ 37: 2 [] a*b!=b*a.
+ 38: end_of_list.
+ 39: 
+ 40: ------------> process usable:
+ 41: ** KEPT (pick-wt=11): 3 [] (x+y)+z=x+y+z.
+ 42: ---> New Demodulator: 4 [new_demod,3] (x+y)+z=x+y+z.
+ 43: ** KEPT (pick-wt=5): 5 [] 0+x=x.
+ 44: ---> New Demodulator: 6 [new_demod,5] 0+x=x.
+ 45: ** KEPT (pick-wt=6): 7 [] (-x)+x=0.
+ 46: ---> New Demodulator: 8 [new_demod,7] (-x)+x=0.
+ 47: ** KEPT (pick-wt=7): 9 [] x+y=y+x.
+ 48: ** KEPT (pick-wt=11): 10 [] (x*y)*z=x*y*z.
+ 49: ---> New Demodulator: 11 [new_demod,10] (x*y)*z=x*y*z.
+ 50: ** KEPT (pick-wt=13): 13 [copy,12,flip.1] x*y+x*z=x* (y+z).
+ 51: ---> New Demodulator: 14 [new_demod,13] x*y+x*z=x* (y+z).
+ 52: ** KEPT (pick-wt=13): 16 [copy,15,flip.1] x*y+z*y= (x+z)*y.
+ 53: ---> New Demodulator: 17 [new_demod,16] x*y+z*y= (x+z)*y.
+ 54: >>>> Starting back demodulation with 4.
+ 55: >>>> Starting back demodulation with 6.
+ 56: >>>> Starting back demodulation with 8.
+ 57:   Following clause subsumed by 9 during input processing: 0 [copy,9,flip.1] x+y=y+x.
+ 58: >>>> Starting back demodulation with 11.
+ 59: >>>> Starting back demodulation with 14.
+ 60: >>>> Starting back demodulation with 17.
+ 61: 
+ 62: ------------> process sos:
+ 63: ** KEPT (pick-wt=5): 18 [] x*x=x.
+ 64: ---> New Demodulator: 19 [new_demod,18] x*x=x.
+ 65: >>>> Starting back demodulation with 19.
+ 66: 
+ 67: ======= end of input processing =======
+ 68: 
+ 69: =========== start of search ===========
+ 70: 
+ 71: given clause #1: (wt=5) 18 [] x*x=x.
+ 72: ** KEPT (pick-wt=11): 20 [para_into,18.1.1,10.1.1] x*y*x*y=x*y.
+ 73: ---> New Demodulator: 21 [new_demod,20] x*y*x*y=x*y.
+ 74: >>>> Starting back demodulation with 21.
+ 75: ** KEPT (pick-wt=11): 22 [para_from,18.1.1,16.1.1.2] x*y+y= (x+y)*y.
+ 76: ---> New Demodulator: 23 [new_demod,22] x*y+y= (x+y)*y.
+ 77: ** KEPT (pick-wt=11): 24 [para_from,18.1.1,13.1.1.2] x*y+x=x* (y+x).
+ 78: ---> New Demodulator: 25 [new_demod,24] x*y+x=x* (y+x).
+ 79: ** KEPT (pick-wt=11): 26 [para_from,18.1.1,16.1.1.1] x+y*x= (x+y)*x.
+ 80: ---> New Demodulator: 27 [new_demod,26] x+y*x= (x+y)*x.
+ 81: ** KEPT (pick-wt=11): 28 [para_from,18.1.1,13.1.1.1] x+x*y=x* (x+y).
+ 82: ---> New Demodulator: 29 [new_demod,28] x+x*y=x* (x+y).
+ 83: ** KEPT (pick-wt=9): 30 [para_from,18.1.1,10.1.1.1,flip.1] x*x*y=x*y.
+ 84: ---> New Demodulator: 31 [new_demod,30] x*x*y=x*y.
+ 85: >>>> Starting back demodulation with 23.
+ 86: >>>> Starting back demodulation with 25.
+ 87: >>>> Starting back demodulation with 27.
+ 88: >>>> Starting back demodulation with 29.
+ 89: >>>> Starting back demodulation with 31.
+ 90: 
+ 91: given clause #2: (wt=9) 30 [para_from,18.1.1,10.1.1.1,flip.1] x*x*y=x*y.
+ 92: ** KEPT (pick-wt=15): 32 [para_into,30.1.1.2,10.1.1,demod,11,11] x*y*x*y*z=x*y*z.
+ 93: ---> New Demodulator: 33 [new_demod,32] x*y*x*y*z=x*y*z.
+ 94: >>>> Starting back demodulation with 33.
+ 95: ** KEPT (pick-wt=17): 34 [para_from,30.1.1,16.1.1.2,demod,23] (x+y*z)*y*z= (x+y)*y*z.
+ 96: ---> New Demodulator: 35 [new_demod,34] (x+y*z)*y*z= (x+y)*y*z.
+ 97: ** KEPT (pick-wt=13): 36 [para_from,30.1.1,13.1.1.2,demod,14,flip.1] x* (y+x*z)=x* (y+z).
+ 98: ---> New Demodulator: 37 [new_demod,36] x* (y+x*z)=x* (y+z).
+ 99: ** KEPT (pick-wt=17): 38 [para_from,30.1.1,16.1.1.1,demod,27] (x*y+z)*x*y= (x+z)*x*y.
+100: ---> New Demodulator: 39 [new_demod,38] (x*y+z)*x*y= (x+z)*x*y.
+101: ** KEPT (pick-wt=13): 40 [para_from,30.1.1,13.1.1.1,demod,14,flip.1] x* (x*y+z)=x* (y+z).
+102: ---> New Demodulator: 41 [new_demod,40] x* (x*y+z)=x* (y+z).
+103: >>>> Starting back demodulation with 35.
+104: >>>> Starting back demodulation with 37.
+105: >>>> Starting back demodulation with 39.
+106: >>>> Starting back demodulation with 41.
+107: 
+108: given clause #3: (wt=11) 20 [para_into,18.1.1,10.1.1] x*y*x*y=x*y.
+109: ** KEPT (pick-wt=17): 42 [para_into,20.1.1.2.2,10.1.1,demod,11,11] x*y*z*x*y*z=x*y*z.
+110: ---> New Demodulator: 43 [new_demod,42] x*y*z*x*y*z=x*y*z.
+111: >>>> Starting back demodulation with 43.
+112: ** KEPT (pick-wt=21): 44 [para_from,20.1.1,16.1.1.2] x*y*z*y+z*y= (x+z)*y*z*y.
+113: ---> New Demodulator: 45 [new_demod,44] x*y*z*y+z*y= (x+z)*y*z*y.
+114: ** KEPT (pick-wt=15): 46 [para_from,20.1.1,13.1.1.2,demod,14,flip.1] x* (y+z*x*z)=x* (y+z).
+115: ---> New Demodulator: 47 [new_demod,46] x* (y+z*x*z)=x* (y+z).
+116: ** KEPT (pick-wt=21): 48 [para_from,20.1.1,16.1.1.1] x*y+z*y*x*y= (x+z)*y*x*y.
+117: ---> New Demodulator: 49 [new_demod,48] x*y+z*y*x*y= (x+z)*y*x*y.
+118: ** KEPT (pick-wt=15): 50 [para_from,20.1.1,13.1.1.1,demod,14,flip.1] x* (y*x*y+z)=x* (y+z).
+119: ---> New Demodulator: 51 [new_demod,50] x* (y*x*y+z)=x* (y+z).
+120: >>>> Starting back demodulation with 45.
+121: >>>> Starting back demodulation with 47.
+122: >>>> Starting back demodulation with 49.
+123: >>>> Starting back demodulation with 51.
+124: 
+125: given clause #4: (wt=11) 22 [para_from,18.1.1,16.1.1.2] x*y+y= (x+y)*y.
+126: ** KEPT (pick-wt=15): 52 [para_into,22.1.1.1,30.1.1,demod,14,29,11] x* (y+y)=x* (x+y)*x*y.
+127: ** KEPT (pick-wt=9): 53 [para_into,22.1.1.1,18.1.1,flip.1] (x+x)*x=x+x.
+128: ---> New Demodulator: 54 [new_demod,53] (x+x)*x=x+x.
+129: ** KEPT (pick-wt=15): 55 [para_into,22.1.1.1,10.1.1] x*y*z+z= (x*y+z)*z.
+130: ---> New Demodulator: 56 [new_demod,55] x*y*z+z= (x*y+z)*z.
+131: ** KEPT (pick-wt=17): 57 [para_into,22.1.1,13.1.1,demod,23,29,11,flip.1] x* (x+y)*x*y=x* (x+y)*y.
+132: ---> New Demodulator: 58 [new_demod,57] x* (x+y)*x*y=x* (x+y)*y.
+133: ** KEPT (pick-wt=11): 59 [para_into,22.1.1,9.1.1,demod,27] (x+y)*x= (y+x)*x.
+134: ** KEPT (pick-wt=13): 60 [copy,52,flip.1,demod,58] x* (x+y)*y=x* (y+y).
+135: >>>> Starting back demodulation with 54.
+136: >>>> Starting back demodulation with 56.
+137:     >> back demodulating 44 with 56.
+138: >>>> Starting back demodulation with 58.
+139:     >> back demodulating 52 with 58.
+140: ** KEPT (pick-wt=13): 61 [back_demod,52,demod,58] x* (y+y)=x* (x+y)*y.
+141: ** KEPT (pick-wt=11): 62 [copy,59,flip.1] (x+y)*y= (y+x)*y.
+142: ** KEPT (pick-wt=15): 63 [para_from,22.1.1,3.1.1.1] (x+y)*y+z=x*y+y+z.
+143: ---> New Demodulator: 64 [new_demod,63] (x+y)*y+z=x*y+y+z.
+144: >>>> Starting back demodulation with 64.
+145: 
+146: given clause #5: (wt=9) 53 [para_into,22.1.1.1,18.1.1,flip.1] (x+x)*x=x+x.
+147: ** KEPT (pick-wt=15): 65 [para_into,53.1.1.1,16.1.1,demod,11,14] (x+x)*y*x*y=x* (y+y).
+148: ** KEPT (pick-wt=15): 66 [para_into,53.1.1.1,13.1.1,demod,11,14] x* (y+y)*x*y=x* (y+y).
+149: ---> New Demodulator: 67 [new_demod,66] x* (y+y)*x*y=x* (y+y).
+150: ** KEPT (pick-wt=19): 68 [para_into,53.1.1.1,3.1.1,demod,4] (x+y+x+y)* (x+y)=x+y+x+y.
+151: ---> New Demodulator: 69 [new_demod,68] (x+y+x+y)* (x+y)=x+y+x+y.
+152: ** KEPT (pick-wt=15): 70 [copy,65,flip.1] x* (y+y)= (x+x)*y*x*y.
+153: >>>> Starting back demodulation with 67.
+154: >>>> Starting back demodulation with 69.
+155: ** KEPT (pick-wt=15): 71 [para_from,53.1.1,16.1.1.2] x*y+y+y= (x+y+y)*y.
+156: ---> New Demodulator: 72 [new_demod,71] x*y+y+y= (x+y+y)*y.
+157: ** KEPT (pick-wt=17): 73 [para_from,53.1.1,13.1.1.2,demod,25] (x+x)* (y+x+x)= (x+x)* (y+x).
+158: ---> New Demodulator: 74 [new_demod,73] (x+x)* (y+x+x)= (x+x)* (y+x).
+159: ** KEPT (pick-wt=13): 75 [para_from,53.1.1,22.1.1.1,demod,4,4,flip.1] (x+x+x)*x=x+x+x.
+160: ---> New Demodulator: 76 [new_demod,75] (x+x+x)*x=x+x+x.
+161: ** KEPT (pick-wt=13): 77 [para_from,53.1.1,20.1.1.2.2,demod,54] (x+x)*x* (x+x)=x+x.
+162: ---> New Demodulator: 78 [new_demod,77] (x+x)*x* (x+x)=x+x.
+163: ** KEPT (pick-wt=17): 79 [para_from,53.1.1,13.1.1.1,demod,29,4] (x+x)* (x+x+y)= (x+x)* (x+y).
+164: ---> New Demodulator: 80 [new_demod,79] (x+x)* (x+x+y)= (x+x)* (x+y).
+165: ** KEPT (pick-wt=13): 81 [para_from,53.1.1,10.1.1.1,flip.1] (x+x)*x*y= (x+x)*y.
+166: ---> New Demodulator: 82 [new_demod,81] (x+x)*x*y= (x+x)*y.
+167: >>>> Starting back demodulation with 72.
+168: >>>> Starting back demodulation with 74.
+169: >>>> Starting back demodulation with 76.
+170: >>>> Starting back demodulation with 78.
+171: >>>> Starting back demodulation with 80.
+172: >>>> Starting back demodulation with 82.
+173:     >> back demodulating 77 with 82.
+174: 
+175: given clause #6: (wt=11) 24 [para_from,18.1.1,13.1.1.2] x*y+x=x* (y+x).
+176: ** KEPT (pick-wt=11): 83 [para_into,24.1.1.1,53.1.1,demod,4,80,19] x+x+x+x=x+x.
+177: ---> New Demodulator: 84 [new_demod,83] x+x+x+x=x+x.
+178: ** KEPT (pick-wt=9): 85 [para_into,24.1.1.1,18.1.1,flip.1] x* (x+x)=x+x.
+179: ---> New Demodulator: 86 [new_demod,85] x* (x+x)=x+x.
+180: ** KEPT (pick-wt=17): 87 [para_into,24.1.1.1,10.1.1,demod,14,25,11,flip.1] x*y* (z+x*y)=x*y* (z+y).
+181: ---> New Demodulator: 88 [new_demod,87] x*y* (z+x*y)=x*y* (z+y).
+182: ** KEPT (pick-wt=17): 89 [para_into,24.1.1,16.1.1,demod,25,11,27,11,flip.1] x*y* (y+x)*y=x* (y+x)*y.
+183: ---> New Demodulator: 90 [new_demod,89] x*y* (y+x)*y=x* (y+x)*y.
+184: ** KEPT (pick-wt=11): 91 [para_into,24.1.1,9.1.1,demod,29] x* (x+y)=x* (y+x).
+185: >>>> Starting back demodulation with 84.
+186: >>>> Starting back demodulation with 86.
+187: >>>> Starting back demodulation with 88.
+188: >>>> Starting back demodulation with 90.
+189: ** KEPT (pick-wt=11): 92 [copy,91,flip.1] x* (y+x)=x* (x+y).
+190: ** KEPT (pick-wt=15): 93 [para_from,24.1.1,3.1.1.1] x* (y+x)+z=x*y+x+z.
+191: ---> New Demodulator: 94 [new_demod,93] x* (y+x)+z=x*y+x+z.
+192: >>>> Starting back demodulation with 94.
+193: 
+194: given clause #7: (wt=9) 85 [para_into,24.1.1.1,18.1.1,flip.1] x* (x+x)=x+x.
+195: ** KEPT (pick-wt=15): 95 [para_into,85.1.1.2,16.1.1,demod,11,14] x*y* (x+x)*y=x* (y+y).
+196: ** KEPT (pick-wt=15): 96 [para_into,85.1.1.2,13.1.1,demod,11,14] x*y*x* (y+y)=x* (y+y).
+197: ---> New Demodulator: 97 [new_demod,96] x*y*x* (y+y)=x* (y+y).
+198: ** KEPT (pick-wt=19): 98 [para_into,85.1.1.2,3.1.1,demod,4] (x+y)* (x+y+x+y)=x+y+x+y.
+199: ---> New Demodulator: 99 [new_demod,98] (x+y)* (x+y+x+y)=x+y+x+y.
+200: ** KEPT (pick-wt=15): 100 [copy,95,flip.1] x* (y+y)=x*y* (x+x)*y.
+201: >>>> Starting back demodulation with 97.
+202: >>>> Starting back demodulation with 99.
+203: ** KEPT (pick-wt=17): 101 [para_from,85.1.1,16.1.1.2,demod,23] (x+y+y)* (y+y)= (x+y)* (y+y).
+204: ---> New Demodulator: 102 [new_demod,101] (x+y+y)* (y+y)= (x+y)* (y+y).
+205: ** KEPT (pick-wt=15): 103 [para_from,85.1.1,13.1.1.2] x*y+x+x=x* (y+x+x).
+206: ---> New Demodulator: 104 [new_demod,103] x*y+x+x=x* (y+x+x).
+207: ** KEPT (pick-wt=13): 105 [para_from,85.1.1,24.1.1.1,demod,4,4,flip.1] x* (x+x+x)=x+x+x.
+208: ---> New Demodulator: 106 [new_demod,105] x* (x+x+x)=x+x+x.
+209: ** KEPT (pick-wt=17): 107 [para_from,85.1.1,16.1.1.1,demod,27,4] (x+x+y)* (x+x)= (x+y)* (x+x).
+210: ---> New Demodulator: 108 [new_demod,107] (x+x+y)* (x+x)= (x+y)* (x+x).
+211: ** KEPT (pick-wt=13): 109 [para_from,85.1.1,10.1.1.1,flip.1] x* (x+x)*y= (x+x)*y.
+212: ---> New Demodulator: 110 [new_demod,109] x* (x+x)*y= (x+x)*y.
+213: >>>> Starting back demodulation with 102.
+214: >>>> Starting back demodulation with 104.
+215: >>>> Starting back demodulation with 106.
+216: >>>> Starting back demodulation with 108.
+217: >>>> Starting back demodulation with 110.
+218: 
+219: given clause #8: (wt=11) 26 [para_from,18.1.1,16.1.1.1] x+y*x= (x+y)*x.
+220: ** KEPT (pick-wt=15): 111 [para_into,26.1.1.2,30.1.1,demod,14,25,11] x* (y+y)=x* (y+x)*x*y.
+221: ** KEPT (pick-wt=15): 112 [para_into,26.1.1.2,10.1.1] x+y*z*x= (x+y*z)*x.
+222: ---> New Demodulator: 113 [new_demod,112] x+y*z*x= (x+y*z)*x.
+223: ** KEPT (pick-wt=17): 114 [para_into,26.1.1,13.1.1,demod,27,25,11,flip.1] x* (y+x)*x*y=x* (y+x)*y.
+224: ---> New Demodulator: 115 [new_demod,114] x* (y+x)*x*y=x* (y+x)*y.
+225: ** KEPT (pick-wt=19): 116 [para_into,26.1.1,3.1.1,demod,4] x+y+z* (x+y)= (x+y+z)* (x+y).
+226: ---> New Demodulator: 117 [new_demod,116] x+y+z* (x+y)= (x+y+z)* (x+y).
+227: ** KEPT (pick-wt=13): 118 [copy,111,flip.1,demod,115] x* (y+x)*y=x* (y+y).
+228: >>>> Starting back demodulation with 113.
+229:     >> back demodulating 48 with 113.
+230: >>>> Starting back demodulation with 115.
+231:     >> back demodulating 111 with 115.
+232: ** KEPT (pick-wt=13): 119 [back_demod,111,demod,115] x* (y+y)=x* (y+x)*y.
+233: >>>> Starting back demodulation with 117.
+234: ** KEPT (pick-wt=15): 120 [para_from,26.1.1,3.1.1.1] (x+y)*x+z=x+y*x+z.
+235: ---> New Demodulator: 121 [new_demod,120] (x+y)*x+z=x+y*x+z.
+236: >>>> Starting back demodulation with 121.
+237: 
+238: given clause #9: (wt=11) 28 [para_from,18.1.1,13.1.1.1] x+x*y=x* (x+y).
+239: ** KEPT (pick-wt=17): 122 [para_into,28.1.1.2,10.1.1,demod,14,29,11,flip.1] x*y* (x*y+z)=x*y* (y+z).
+240: ---> New Demodulator: 123 [new_demod,122] x*y* (x*y+z)=x*y* (y+z).
+241: ** KEPT (pick-wt=17): 124 [para_into,28.1.1,16.1.1,demod,29,11,23,11,flip.1] x*y* (x+y)*y=x* (x+y)*y.
+242: ---> New Demodulator: 125 [new_demod,124] x*y* (x+y)*y=x* (x+y)*y.
+243: ** KEPT (pick-wt=19): 126 [para_into,28.1.1,3.1.1,demod,4] x+y+ (x+y)*z= (x+y)* (x+y+z).
+244: ---> New Demodulator: 127 [new_demod,126] x+y+ (x+y)*z= (x+y)* (x+y+z).
+245: >>>> Starting back demodulation with 123.
+246: >>>> Starting back demodulation with 125.
+247: >>>> Starting back demodulation with 127.
+248: ** KEPT (pick-wt=15): 128 [para_from,28.1.1,3.1.1.1] x* (x+y)+z=x+x*y+z.
+249: ---> New Demodulator: 129 [new_demod,128] x* (x+y)+z=x+x*y+z.
+250: >>>> Starting back demodulation with 129.
+251: 
+252: given clause #10: (wt=11) 59 [para_into,22.1.1,9.1.1,demod,27] (x+y)*x= (y+x)*x.
+253: ** KEPT (pick-wt=15): 130 [para_into,59.1.1.1,28.1.1,demod,11,25,11] x* (x+y)*x=x* (y+x)*x.
+254: ** KEPT (pick-wt=15): 131 [para_into,59.1.1.1,24.1.1,demod,11,115,29,11,58] x* (y+x)*y=x* (x+y)*y.
+255: ** KEPT (pick-wt=19): 132 [para_into,59.1.1.1,22.1.1,demod,11,27,11] (x+y)*y*x*y= (y+x)*y*x*y.
+256: ** KEPT (pick-wt=19): 133 [para_into,59.1.1.1,16.1.1,demod,11,17,11] (x+y)*z*x*z= (y+x)*z*x*z.
+257: ** KEPT (pick-wt=19): 134 [para_into,59.1.1.1,13.1.1,demod,11,14,11] x* (y+z)*x*y=x* (z+y)*x*y.
+258: ** KEPT (pick-wt=12): 135 [para_into,59.1.1.1,7.1.1,flip.1] (x+ -x)* (-x)=0* (-x).
+259: ---> New Demodulator: 136 [new_demod,135] (x+ -x)* (-x)=0* (-x).
+260: ** KEPT (pick-wt=9): 137 [para_into,59.1.1.1,5.1.1,flip.1] (x+0)*0=x*0.
+261: ---> New Demodulator: 138 [new_demod,137] (x+0)*0=x*0.
+262: ** KEPT (pick-wt=19): 139 [para_into,59.1.1.1,3.1.1] (x+y+z)* (x+y)= (z+x+y)* (x+y).
+263: ** KEPT (pick-wt=15): 140 [copy,130,flip.1] x* (y+x)*x=x* (x+y)*x.
+264: ** KEPT (pick-wt=15): 141 [copy,131,flip.1] x* (x+y)*y=x* (y+x)*y.
+265: ** KEPT (pick-wt=19): 142 [copy,132,flip.1] (x+y)*x*y*x= (y+x)*x*y*x.
+266: ** KEPT (pick-wt=19): 143 [copy,133,flip.1] (x+y)*z*y*z= (y+x)*z*y*z.
+267: 133 back subsumes 132.
+268: ** KEPT (pick-wt=19): 144 [copy,134,flip.1] x* (y+z)*x*z=x* (z+y)*x*z.
+269: >>>> Starting back demodulation with 136.
+270: >>>> Starting back demodulation with 138.
+271: ** KEPT (pick-wt=19): 145 [copy,139,flip.1] (x+y+z)* (y+z)= (y+z+x)* (y+z).
+272: 143 back subsumes 142.
+273: ** KEPT (pick-wt=15): 146 [para_from,59.1.1,26.1.1.2,demod,27] (x+y+x)*x= (x+x+y)*x.
+274: ** KEPT (pick-wt=15): 147 [para_from,59.1.1,16.1.1.2,demod,17] (x+y+z)*z= (x+z+y)*z.
+275: ** KEPT (pick-wt=19): 148 [para_from,59.1.1,13.1.1.2] (x+y)*z+ (y+x)*x= (x+y)* (z+x).
+276: ---> New Demodulator: 149 [new_demod,148] (x+y)*z+ (y+x)*x= (x+y)* (z+x).
+277: ** KEPT (pick-wt=15): 150 [para_from,59.1.1,30.1.1.2] (x+y)* (y+x)*x= (x+y)*x.
+278: ---> New Demodulator: 151 [new_demod,150] (x+y)* (y+x)*x= (x+y)*x.
+279: ** KEPT (pick-wt=19): 152 [para_from,59.1.1,28.1.1.2,demod,4,4] x+y+ (y+x)*x= (x+y)* (x+y+x).
+280: ---> New Demodulator: 153 [new_demod,152] x+y+ (y+x)*x= (x+y)* (x+y+x).
+281: ** KEPT (pick-wt=19): 154 [para_from,59.1.1,24.1.1.1,demod,64] x*y+y+y+x= (y+x)* (y+y+x).
+282: ---> New Demodulator: 155 [new_demod,154] x*y+y+y+x= (y+x)* (y+y+x).
+283: ** KEPT (pick-wt=15): 156 [para_from,59.1.1,22.1.1.1,demod,23,4,4] (x+y+y)*y= (y+x+y)*y.
+284: ** KEPT (pick-wt=17): 157 [para_from,59.1.1,20.1.1.2.2] (x+y)*x* (y+x)*x= (x+y)*x.
+285: ---> New Demodulator: 158 [new_demod,157] (x+y)*x* (y+x)*x= (x+y)*x.
+286: ** KEPT (pick-wt=15): 159 [para_from,59.1.1,16.1.1.1,demod,17,4,4] (x+y+z)*y= (y+x+z)*y.
+287: ** KEPT (pick-wt=19): 160 [para_from,59.1.1,13.1.1.1,demod,64] x*y+y+ (y+x)*z= (y+x)* (y+z).
+288: ---> New Demodulator: 161 [new_demod,160] x*y+y+ (y+x)*z= (y+x)* (y+z).
+289: ** KEPT (pick-wt=15): 162 [para_from,59.1.1,10.1.1.1,demod,11] (x+y)*y*z= (y+x)*y*z.
+290: ** KEPT (pick-wt=15): 163 [copy,146,flip.1] (x+x+y)*x= (x+y+x)*x.
+291: ** KEPT (pick-wt=15): 164 [copy,147,flip.1] (x+y+z)*y= (x+z+y)*y.
+292: 147 back subsumes 146.
+293: >>>> Starting back demodulation with 149.
+294: >>>> Starting back demodulation with 151.
+295: >>>> Starting back demodulation with 153.
+296: >>>> Starting back demodulation with 155.
+297: ** KEPT (pick-wt=15): 165 [copy,156,flip.1] (x+y+x)*x= (y+x+x)*x.
+298: >>>> Starting back demodulation with 158.
+299: ** KEPT (pick-wt=15): 166 [copy,159,flip.1] (x+y+z)*x= (y+x+z)*x.
+300: 159 back subsumes 156.
+301: >>>> Starting back demodulation with 161.
+302: ** KEPT (pick-wt=15): 167 [copy,162,flip.1] (x+y)*x*z= (y+x)*x*z.
+303: 164 back subsumes 163.
+304: 166 back subsumes 165.
+305: 
+306: given clause #11: (wt=9) 137 [para_into,59.1.1.1,5.1.1,flip.1] (x+0)*0=x*0.
+307: ** KEPT (pick-wt=6): 168 [para_into,137.1.1.1,7.1.1,demod,19,flip.1] (-0)*0=0.
+308: ---> New Demodulator: 169 [new_demod,168] (-0)*0=0.
+309: ** KEPT (pick-wt=13): 170 [para_into,137.1.1.1,3.1.1] (x+y+0)*0= (x+y)*0.
+310: ---> New Demodulator: 171 [new_demod,170] (x+y+0)*0= (x+y)*0.
+311: >>>> Starting back demodulation with 169.
+312: >>>> Starting back demodulation with 171.
+313: ** KEPT (pick-wt=17): 172 [para_from,137.1.1,13.1.1.2] (x+0)*y+x*0= (x+0)* (y+0).
+314: ---> New Demodulator: 173 [new_demod,172] (x+0)*y+x*0= (x+0)* (y+0).
+315: ** KEPT (pick-wt=11): 174 [para_from,137.1.1,30.1.1.2,demod,138] (x+0)*x*0=x*0.
+316: ---> New Demodulator: 175 [new_demod,174] (x+0)*x*0=x*0.
+317: ** KEPT (pick-wt=9): 176 [para_from,137.1.1,28.1.1.2,demod,4,27,6,29,4,6,19] x* (x+0)=x+0.
+318: ---> New Demodulator: 177 [new_demod,176] x* (x+0)=x+0.
+319: ** KEPT (pick-wt=11): 178 [para_from,137.1.1,24.1.1.1,demod,6,19] x*0+x+0=x+0.
+320: ---> New Demodulator: 179 [new_demod,178] x*0+x+0=x+0.
+321: ** KEPT (pick-wt=13): 180 [para_from,137.1.1,20.1.1.2.2,demod,138] (x+0)*0*x*0=x*0.
+322: ---> New Demodulator: 181 [new_demod,180] (x+0)*0*x*0=x*0.
+323: ** KEPT (pick-wt=15): 182 [para_from,137.1.1,13.1.1.1,demod,6] x*0+ (x+0)*y= (x+0)*y.
+324: ---> New Demodulator: 183 [new_demod,182] x*0+ (x+0)*y= (x+0)*y.
+325: ** KEPT (pick-wt=13): 184 [para_from,137.1.1,10.1.1.1,demod,11,flip.1] (x+0)*0*y=x*0*y.
+326: ---> New Demodulator: 185 [new_demod,184] (x+0)*0*y=x*0*y.
+327: >>>> Starting back demodulation with 173.
+328: >>>> Starting back demodulation with 175.
+329: >>>> Starting back demodulation with 177.
+330: >>>> Starting back demodulation with 179.
+331: >>>> Starting back demodulation with 181.
+332: >>>> Starting back demodulation with 183.
+333: >>>> Starting back demodulation with 185.
+334:     >> back demodulating 180 with 185.
+335: 
+336: given clause #12: (wt=6) 168 [para_into,137.1.1.1,7.1.1,demod,19,flip.1] (-0)*0=0.
+337: ** KEPT (pick-wt=10): 186 [para_from,168.1.1,16.1.1.2,demod,23,138,flip.1] (x+ -0)*0=x*0.
+338: ---> New Demodulator: 187 [new_demod,186] (x+ -0)*0=x*0.
+339: ** KEPT (pick-wt=13): 188 [para_from,168.1.1,13.1.1.2] (-0)*x+0= (-0)* (x+0).
+340: ---> New Demodulator: 189 [new_demod,188] (-0)*x+0= (-0)* (x+0).
+341: ** KEPT (pick-wt=10): 190 [para_from,168.1.1,16.1.1.1,demod,27,6,flip.1] ((-0)+x)*0=x*0.
+342: ---> New Demodulator: 191 [new_demod,190] ((-0)+x)*0=x*0.
+343: ** KEPT (pick-wt=10): 192 [para_from,168.1.1,10.1.1.1,flip.1] (-0)*0*x=0*x.
+344: ---> New Demodulator: 193 [new_demod,192] (-0)*0*x=0*x.
+345: >>>> Starting back demodulation with 187.
+346: >>>> Starting back demodulation with 189.
+347: >>>> Starting back demodulation with 191.
+348: >>>> Starting back demodulation with 193.
+349: 
+350: given clause #13: (wt=9) 176 [para_from,137.1.1,28.1.1.2,demod,4,27,6,29,4,6,19] x* (x+0)=x+0.
+351: ** KEPT (pick-wt=15): 194 [para_into,176.1.1.2,24.1.1,demod,11,25] 0*x*0* (x+0)=0* (x+0).
+352: ---> New Demodulator: 195 [new_demod,194] 0*x*0* (x+0)=0* (x+0).
+353: ** KEPT (pick-wt=5): 196 [para_into,176.1.1.2,9.1.1,demod,6,19,flip.1] x+0=x.
+354: ---> New Demodulator: 197 [new_demod,196] x+0=x.
+355: ** KEPT (pick-wt=4): 198 [para_into,176.1.1.2,7.1.1,demod,169,197,flip.1] -0=0.
+356: ---> New Demodulator: 199 [new_demod,198] -0=0.
+357: >>>> Starting back demodulation with 195.
+358: >>>> Starting back demodulation with 197.
+359:     >> back demodulating 194 with 197.
+360:     >> back demodulating 188 with 197.
+361:     >> back demodulating 184 with 197.
+362:     >> back demodulating 182 with 197.
+363:     >> back demodulating 178 with 197.
+364:     >> back demodulating 176 with 197.
+365:     >> back demodulating 174 with 197.
+366:     >> back demodulating 172 with 197.
+367:     >> back demodulating 170 with 197.
+368:     >> back demodulating 137 with 197.
+369: >>>> Starting back demodulation with 199.
+370:     >> back demodulating 192 with 199.
+371:     >> back demodulating 190 with 199.
+372:     >> back demodulating 186 with 199.
+373:     >> back demodulating 168 with 199.
+374: 
+375: given clause #14: (wt=4) 198 [para_into,176.1.1.2,7.1.1,demod,169,197,flip.1] -0=0.
+376: 
+377: given clause #15: (wt=5) 196 [para_into,176.1.1.2,9.1.1,demod,6,19,flip.1] x+0=x.
+378: 
+379: given clause #16: (wt=11) 62 [copy,59,flip.1] (x+y)*y= (y+x)*y.
+380: ** KEPT (pick-wt=10): 200 [para_into,62.1.1.1,7.1.1,flip.1] (x+ -x)*x=0*x.
+381: ---> New Demodulator: 201 [new_demod,200] (x+ -x)*x=0*x.
+382: ** KEPT (pick-wt=15): 202 [para_into,62.1.1.1,3.1.1] (x+y+z)*z= (z+x+y)*z.
+383: >>>> Starting back demodulation with 201.
+384: ** KEPT (pick-wt=15): 203 [copy,202,flip.1] (x+y+z)*x= (y+z+x)*x.
+385: ** KEPT (pick-wt=19): 204 [para_from,62.1.1,13.1.1.2] (x+y)*z+ (y+x)*y= (x+y)* (z+y).
+386: ---> New Demodulator: 205 [new_demod,204] (x+y)*z+ (y+x)*y= (x+y)* (z+y).
+387: ** KEPT (pick-wt=15): 206 [para_from,62.1.1,30.1.1.2] (x+y)* (y+x)*y= (x+y)*y.
+388: ---> New Demodulator: 207 [new_demod,206] (x+y)* (y+x)*y= (x+y)*y.
+389: ** KEPT (pick-wt=19): 208 [para_from,62.1.1,28.1.1.2,demod,4,27,4] x+ (y+y+x)*y= (x+y)* (x+y+y).
+390: ---> New Demodulator: 209 [new_demod,208] x+ (y+y+x)*y= (x+y)* (x+y+y).
+391: ** KEPT (pick-wt=19): 210 [para_from,62.1.1,24.1.1.1,demod,121] x+y*x+y+x= (y+x)* (x+y+x).
+392: ---> New Demodulator: 211 [new_demod,210] x+y*x+y+x= (y+x)* (x+y+x).
+393: ** KEPT (pick-wt=17): 212 [para_from,62.1.1,20.1.1.2.2] (x+y)*y* (y+x)*y= (x+y)*y.
+394: ---> New Demodulator: 213 [new_demod,212] (x+y)*y* (y+x)*y= (x+y)*y.
+395: ** KEPT (pick-wt=19): 214 [para_from,62.1.1,13.1.1.1,demod,121] x+y*x+ (y+x)*z= (y+x)* (x+z).
+396: ---> New Demodulator: 215 [new_demod,214] x+y*x+ (y+x)*z= (y+x)* (x+z).
+397: >>>> Starting back demodulation with 205.
+398: >>>> Starting back demodulation with 207.
+399: >>>> Starting back demodulation with 209.
+400: >>>> Starting back demodulation with 211.
+401: >>>> Starting back demodulation with 213.
+402: >>>> Starting back demodulation with 215.
+403: 
+404: given clause #17: (wt=10) 200 [para_into,62.1.1.1,7.1.1,flip.1] (x+ -x)*x=0*x.
+405: ** KEPT (pick-wt=18): 216 [para_into,200.1.1.1,3.1.1] (x+y+ -(x+y))* (x+y)=0* (x+y).
+406: ---> New Demodulator: 217 [new_demod,216] (x+y+ -(x+y))* (x+y)=0* (x+y).
+407: >>>> Starting back demodulation with 217.
+408: ** KEPT (pick-wt=10): 218 [para_from,200.1.1,26.1.1.2,demod,27,197,19,flip.1] (x+x+ -x)*x=x.
+409: ---> New Demodulator: 219 [new_demod,218] (x+x+ -x)*x=x.
+410: ** KEPT (pick-wt=12): 220 [para_from,200.1.1,16.1.1.2,demod,17,197,flip.1] (x+y+ -y)*y=x*y.
+411: ---> New Demodulator: 221 [new_demod,220] (x+y+ -y)*y=x*y.
+412: ** KEPT (pick-wt=19): 222 [para_from,200.1.1,13.1.1.2] (x+ -x)*y+0*x= (x+ -x)* (y+x).
+413: ---> New Demodulator: 223 [new_demod,222] (x+ -x)*y+0*x= (x+ -x)* (y+x).
+414: ** KEPT (pick-wt=12): 224 [para_from,200.1.1,30.1.1.2,demod,201] (x+ -x)*0*x=0*x.
+415: ---> New Demodulator: 225 [new_demod,224] (x+ -x)*0*x=0*x.
+416: ** KEPT (pick-wt=12): 226 [para_from,200.1.1,28.1.1.2,demod,4,4,8,197,201] x+ (-x)+0*x=0*x.
+417: ---> New Demodulator: 227 [new_demod,226] x+ (-x)+0*x=0*x.
+418: ** KEPT (pick-wt=20): 228 [para_from,200.1.1,24.1.1.1] 0*x+x+ -x= (x+ -x)* (x+x+ -x).
+419: ---> New Demodulator: 229 [new_demod,228] 0*x+x+ -x= (x+ -x)* (x+x+ -x).
+420: ** KEPT (pick-wt=14): 230 [para_from,200.1.1,20.1.1.2.2,demod,201] (x+ -x)*x*0*x=0*x.
+421: ---> New Demodulator: 231 [new_demod,230] (x+ -x)*x*0*x=0*x.
+422: ** KEPT (pick-wt=12): 232 [para_from,200.1.1,16.1.1.1,demod,17,6,4,flip.1] (x+ (-x)+y)*x=y*x.
+423: ---> New Demodulator: 233 [new_demod,232] (x+ (-x)+y)*x=y*x.
+424: ** KEPT (pick-wt=19): 234 [para_from,200.1.1,13.1.1.1] 0*x+ (x+ -x)*y= (x+ -x)* (x+y).
+425: ---> New Demodulator: 235 [new_demod,234] 0*x+ (x+ -x)*y= (x+ -x)* (x+y).
+426: ** KEPT (pick-wt=14): 236 [para_from,200.1.1,10.1.1.1,demod,11,flip.1] (x+ -x)*x*y=0*x*y.
+427: ---> New Demodulator: 237 [new_demod,236] (x+ -x)*x*y=0*x*y.
+428: >>>> Starting back demodulation with 219.
+429: >>>> Starting back demodulation with 221.
+430:     >> back demodulating 218 with 221.
+431: >>>> Starting back demodulation with 223.
+432: >>>> Starting back demodulation with 225.
+433: >>>> Starting back demodulation with 227.
+434: >>>> Starting back demodulation with 229.
+435: >>>> Starting back demodulation with 231.
+436: >>>> Starting back demodulation with 233.
+437: >>>> Starting back demodulation with 235.
+438: >>>> Starting back demodulation with 237.
+439:     >> back demodulating 230 with 237.
+440: 
+441: given clause #18: (wt=11) 83 [para_into,24.1.1.1,53.1.1,demod,4,80,19] x+x+x+x=x+x.
+442: ** KEPT (pick-wt=11): 238 [para_into,83.1.1.2.2,16.1.1,demod,17,17,84,14] (x+x)*y=x* (y+y).
+443: ** KEPT (pick-wt=23): 239 [para_into,83.1.1.2.2,3.1.1,demod,4,4,4] x+y+x+y+x+y+x+y=x+y+x+y.
+444: ---> New Demodulator: 240 [new_demod,239] x+y+x+y+x+y+x+y=x+y+x+y.
+445: ** KEPT (pick-wt=11): 241 [copy,238,flip.1] x* (y+y)= (x+x)*y.
+446: >>>> Starting back demodulation with 240.
+447: ** KEPT (pick-wt=15): 242 [para_from,83.1.1,3.1.1.1,demod,4,4,4,flip.1] x+x+x+x+y=x+x+y.
+448: ---> New Demodulator: 243 [new_demod,242] x+x+x+x+y=x+x+y.
+449: >>>> Starting back demodulation with 243.
+450: 
+451: given clause #19: (wt=11) 91 [para_into,24.1.1,9.1.1,demod,29] x* (x+y)=x* (y+x).
+452: ** KEPT (pick-wt=19): 244 [para_into,91.1.1.2,24.1.1,demod,11,29,11] x*y*x* (y+x)=x*y*x* (x+y).
+453: ** KEPT (pick-wt=19): 245 [para_into,91.1.1.2,16.1.1,demod,11,17,11] x*y* (x+z)*y=x*y* (z+x)*y.
+454: ** KEPT (pick-wt=19): 246 [para_into,91.1.1.2,13.1.1,demod,11,14,11] x*y*x* (y+z)=x*y*x* (z+y).
+455: ** KEPT (pick-wt=12): 247 [para_into,91.1.1.2,7.1.1,flip.1] (-x)* (x+ -x)= (-x)*0.
+456: ---> New Demodulator: 248 [new_demod,247] (-x)* (x+ -x)= (-x)*0.
+457: ** KEPT (pick-wt=19): 249 [para_into,91.1.1.2,3.1.1] (x+y)* (x+y+z)= (x+y)* (z+x+y).
+458: ** KEPT (pick-wt=15): 250 [para_into,91.1.1,10.1.1,demod,123,11,88] x*y* (y+z)=x*y* (z+y).
+459: ** KEPT (pick-wt=19): 251 [copy,244,flip.1] x*y*x* (x+y)=x*y*x* (y+x).
+460: ** KEPT (pick-wt=19): 252 [copy,245,flip.1] x*y* (z+x)*y=x*y* (x+z)*y.
+461: ** KEPT (pick-wt=19): 253 [copy,246,flip.1] x*y*x* (z+y)=x*y*x* (y+z).
+462: 246 back subsumes 244.
+463: >>>> Starting back demodulation with 248.
+464: ** KEPT (pick-wt=19): 254 [copy,249,flip.1] (x+y)* (z+x+y)= (x+y)* (x+y+z).
+465: ** KEPT (pick-wt=15): 255 [copy,250,flip.1] x*y* (z+y)=x*y* (y+z).
+466: 253 back subsumes 251.
+467: ** KEPT (pick-wt=19): 256 [para_from,91.1.1,26.1.1.2,demod,4,4] x+y+x* (y+x)= (x+y+x)* (x+y).
+468: ---> New Demodulator: 257 [new_demod,256] x+y+x* (y+x)= (x+y+x)* (x+y).
+469: ** KEPT (pick-wt=19): 258 [para_from,91.1.1,16.1.1.2] x* (y+z)+y* (z+y)= (x+y)* (y+z).
+470: ---> New Demodulator: 259 [new_demod,258] x* (y+z)+y* (z+y)= (x+y)* (y+z).
+471: ** KEPT (pick-wt=15): 260 [para_from,91.1.1,13.1.1.2,demod,14] x* (y+z+x)=x* (y+x+z).
+472: ** KEPT (pick-wt=15): 261 [para_from,91.1.1,24.1.1.1,demod,25,4,4] x* (y+x+x)=x* (x+y+x).
+473: ** KEPT (pick-wt=19): 262 [para_from,91.1.1,22.1.1.1,demod,94] x*y+x+x+y= (x+x+y)* (x+y).
+474: ---> New Demodulator: 263 [new_demod,262] x*y+x+x+y= (x+x+y)* (x+y).
+475: ** KEPT (pick-wt=17): 264 [para_from,91.1.1,20.1.1.2.2] x* (x+y)*x* (y+x)=x* (x+y).
+476: ---> New Demodulator: 265 [new_demod,264] x* (x+y)*x* (y+x)=x* (x+y).
+477: ** KEPT (pick-wt=19): 266 [para_from,91.1.1,16.1.1.1,demod,94] x*y+x+z* (x+y)= (x+z)* (x+y).
+478: ---> New Demodulator: 267 [new_demod,266] x*y+x+z* (x+y)= (x+z)* (x+y).
+479: ** KEPT (pick-wt=15): 268 [para_from,91.1.1,13.1.1.1,demod,14,4,4] x* (y+x+z)=x* (x+y+z).
+480: ** KEPT (pick-wt=15): 269 [para_from,91.1.1,10.1.1.1,demod,11] x* (y+x)*z=x* (x+y)*z.
+481: >>>> Starting back demodulation with 257.
+482: >>>> Starting back demodulation with 259.
+483: ** KEPT (pick-wt=15): 270 [copy,260,flip.1] x* (y+x+z)=x* (y+z+x).
+484: ** KEPT (pick-wt=15): 271 [copy,261,flip.1] x* (x+y+x)=x* (y+x+x).
+485: >>>> Starting back demodulation with 263.
+486: >>>> Starting back demodulation with 265.
+487: >>>> Starting back demodulation with 267.
+488: ** KEPT (pick-wt=15): 272 [copy,268,flip.1] x* (x+y+z)=x* (y+x+z).
+489: 268 back subsumes 261.
+490: ** KEPT (pick-wt=15): 273 [copy,269,flip.1] x* (x+y)*z=x* (y+x)*z.
+491: 269 back subsumes 140.
+492: 269 back subsumes 131.
+493: 272 back subsumes 271.
+494: 273 back subsumes 141.
+495: 273 back subsumes 130.
+496: 
+497: given clause #20: (wt=11) 92 [copy,91,flip.1] x* (y+x)=x* (x+y).
+498: ** KEPT (pick-wt=10): 274 [para_into,92.1.1.2,7.1.1,flip.1] x* (x+ -x)=x*0.
+499: ---> New Demodulator: 275 [new_demod,274] x* (x+ -x)=x*0.
+500: ** KEPT (pick-wt=15): 276 [para_into,92.1.1.2,3.1.1] x* (y+z+x)=x* (x+y+z).
+501: >>>> Starting back demodulation with 275.
+502: ** KEPT (pick-wt=15): 277 [copy,276,flip.1] x* (x+y+z)=x* (y+z+x).
+503: ** KEPT (pick-wt=19): 278 [para_from,92.1.1,26.1.1.2,demod,4,29,4] x+y* (y+y+x)= (x+y+y)* (x+y).
+504: ---> New Demodulator: 279 [new_demod,278] x+y* (y+y+x)= (x+y+y)* (x+y).
+505: ** KEPT (pick-wt=19): 280 [para_from,92.1.1,16.1.1.2] x* (y+z)+z* (z+y)= (x+z)* (y+z).
+506: ---> New Demodulator: 281 [new_demod,280] x* (y+z)+z* (z+y)= (x+z)* (y+z).
+507: ** KEPT (pick-wt=19): 282 [para_from,92.1.1,22.1.1.1,demod,129] x+x*y+y+x= (x+y+x)* (y+x).
+508: ---> New Demodulator: 283 [new_demod,282] x+x*y+y+x= (x+y+x)* (y+x).
+509: ** KEPT (pick-wt=17): 284 [para_from,92.1.1,20.1.1.2.2] x* (y+x)*x* (x+y)=x* (y+x).
+510: ---> New Demodulator: 285 [new_demod,284] x* (y+x)*x* (x+y)=x* (y+x).
+511: ** KEPT (pick-wt=19): 286 [para_from,92.1.1,16.1.1.1,demod,129] x+x*y+z* (y+x)= (x+z)* (y+x).
+512: ---> New Demodulator: 287 [new_demod,286] x+x*y+z* (y+x)= (x+z)* (y+x).
+513: >>>> Starting back demodulation with 279.
+514: >>>> Starting back demodulation with 281.
+515: >>>> Starting back demodulation with 283.
+516: >>>> Starting back demodulation with 285.
+517: >>>> Starting back demodulation with 287.
+518: 
+519: given clause #21: (wt=10) 274 [para_into,92.1.1.2,7.1.1,flip.1] x* (x+ -x)=x*0.
+520: ** KEPT (pick-wt=18): 288 [para_into,274.1.1.2,3.1.1] (x+y)* (x+y+ -(x+y))= (x+y)*0.
+521: ---> New Demodulator: 289 [new_demod,288] (x+y)* (x+y+ -(x+y))= (x+y)*0.
+522: ** KEPT (pick-wt=16): 290 [para_into,274.1.1,10.1.1,demod,123,11] x*y* (y+ -x*y)=x*y*0.
+523: ---> New Demodulator: 291 [new_demod,290] x*y* (y+ -x*y)=x*y*0.
+524: >>>> Starting back demodulation with 289.
+525: >>>> Starting back demodulation with 291.
+526: ** KEPT (pick-wt=12): 292 [para_from,274.1.1,26.1.1.2,demod,4,4,8,197,275] x+ (-x)+x*0=x*0.
+527: ---> New Demodulator: 293 [new_demod,292] x+ (-x)+x*0=x*0.
+528: ** KEPT (pick-wt=19): 294 [para_from,274.1.1,16.1.1.2] x* (y+ -y)+y*0= (x+y)* (y+ -y).
+529: ---> New Demodulator: 295 [new_demod,294] x* (y+ -y)+y*0= (x+y)* (y+ -y).
+530: ** KEPT (pick-wt=12): 296 [para_from,274.1.1,13.1.1.2,demod,14,197,flip.1] x* (y+x+ -x)=x*y.
+531: ---> New Demodulator: 297 [new_demod,296] x* (y+x+ -x)=x*y.
+532: ** KEPT (pick-wt=20): 298 [para_from,274.1.1,22.1.1.1] x*0+x+ -x= (x+x+ -x)* (x+ -x).
+533: ---> New Demodulator: 299 [new_demod,298] x*0+x+ -x= (x+x+ -x)* (x+ -x).
+534: ** KEPT (pick-wt=19): 300 [para_from,274.1.1,16.1.1.1] x*0+y* (x+ -x)= (x+y)* (x+ -x).
+535: ---> New Demodulator: 301 [new_demod,300] x*0+y* (x+ -x)= (x+y)* (x+ -x).
+536: ** KEPT (pick-wt=12): 302 [para_from,274.1.1,13.1.1.1,demod,14,6,4,flip.1] x* (x+ (-x)+y)=x*y.
+537: ---> New Demodulator: 303 [new_demod,302] x* (x+ (-x)+y)=x*y.
+538: ** KEPT (pick-wt=14): 304 [para_from,274.1.1,10.1.1.1,demod,11,flip.1] x* (x+ -x)*y=x*0*y.
+539: ---> New Demodulator: 305 [new_demod,304] x* (x+ -x)*y=x*0*y.
+540: >>>> Starting back demodulation with 293.
+541: >>>> Starting back demodulation with 295.
+542: >>>> Starting back demodulation with 297.
+543: >>>> Starting back demodulation with 299.
+544: >>>> Starting back demodulation with 301.
+545: >>>> Starting back demodulation with 303.
+546: >>>> Starting back demodulation with 305.
+547: 
+548: given clause #22: (wt=11) 238 [para_into,83.1.1.2.2,16.1.1,demod,17,17,84,14] (x+x)*y=x* (y+y).
+549: ** KEPT (pick-wt=9): 306 [para_into,238.1.1.1,196.1.1,flip.1] 0* (x+x)=0*x.
+550: ---> New Demodulator: 307 [new_demod,306] 0* (x+x)=0*x.
+551: ** KEPT (pick-wt=15): 308 [para_into,238.1.1.1,16.1.1,demod,11,11] (x+x)*y*z=x*y* (z+z).
+552: ** KEPT (pick-wt=15): 309 [para_into,238.1.1.1,13.1.1,demod,11,11] x* (y+y)*z=x*y* (z+z).
+553: ** KEPT (pick-wt=17): 310 [para_into,238.1.1.1,3.1.1] (x+y+x+y)*z= (x+y)* (z+z).
+554: ** KEPT (pick-wt=25): 311 [para_into,238.1.1,274.1.1,demod,4,4,4,4,flip.1] x* (x+x+ (-(x+x))+x+x+ -(x+x))= (x+x)*0.
+555: ---> New Demodulator: 312 [new_demod,311] x* (x+x+ (-(x+x))+x+x+ -(x+x))= (x+x)*0.
+556: ** KEPT (pick-wt=21): 313 [para_into,238.1.1,92.1.1,demod,4,80,4,4,flip.1] x* (y+x+x+y+x+x)= (x+x)* (x+y).
+557: ---> New Demodulator: 314 [new_demod,313] x* (y+x+x+y+x+x)= (x+x)* (x+y).
+558: ** KEPT (pick-wt=21): 315 [para_into,238.1.1,91.1.1,demod,74,4,4,4,4,flip.1] x* (x+x+y+x+x+y)= (x+x)* (y+x).
+559: ---> New Demodulator: 316 [new_demod,315] x* (x+x+y+x+x+y)= (x+x)* (y+x).
+560: ** KEPT (pick-wt=13): 317 [para_into,238.1.1,30.1.1,demod,14,110,flip.1] (x+x)* (y+y)= (x+x)*y.
+561: ---> New Demodulator: 318 [new_demod,317] (x+x)* (y+y)= (x+x)*y.
+562: ** KEPT (pick-wt=15): 319 [para_into,238.1.1,20.1.1,demod,14,14,318,flip.1] x*y* (x+x)*y= (x+x)*y.
+563: ---> New Demodulator: 320 [new_demod,319] x*y* (x+x)*y= (x+x)*y.
+564: >>>> Starting back demodulation with 307.
+565: ** KEPT (pick-wt=15): 321 [copy,308,flip.1] x*y* (z+z)= (x+x)*y*z.
+566: ** KEPT (pick-wt=15): 322 [copy,309,flip.1] x*y* (z+z)=x* (y+y)*z.
+567: ** KEPT (pick-wt=17): 323 [copy,310,flip.1] (x+y)* (z+z)= (x+y+x+y)*z.
+568: >>>> Starting back demodulation with 312.
+569: >>>> Starting back demodulation with 314.
+570: >>>> Starting back demodulation with 316.
+571:     >> back demodulating 311 with 316.
+572: ** KEPT (pick-wt=16): 324 [back_demod,311,demod,316] (x+x)* ((-(x+x))+x)= (x+x)*0.
+573: ---> New Demodulator: 325 [new_demod,324] (x+x)* ((-(x+x))+x)= (x+x)*0.
+574: >>>> Starting back demodulation with 318.
+575: >>>> Starting back demodulation with 320.
+576:     >> back demodulating 100 with 320.
+577:     >> back demodulating 95 with 320.
+578: >>>> Starting back demodulation with 325.
+579: ** KEPT (pick-wt=15): 326 [para_from,238.1.1,26.1.1.2] x+y* (x+x)= (x+y+y)*x.
+580: ** KEPT (pick-wt=17): 327 [para_from,238.1.1,16.1.1.2] x*y+z* (y+y)= (x+z+z)*y.
+581: ** KEPT (pick-wt=19): 328 [para_from,238.1.1,13.1.1.2] (x+x)*y+x* (z+z)= (x+x)* (y+z).
+582: ---> New Demodulator: 329 [new_demod,328] (x+x)*y+x* (z+z)= (x+x)* (y+z).
+583: ** KEPT (pick-wt=17): 330 [para_from,238.1.1,28.1.1.2,demod,4,29,29,4,80] x* (x+x+y+y)= (x+x)* (x+y).
+584: ---> New Demodulator: 331 [new_demod,330] x* (x+x+y+y)= (x+x)* (x+y).
+585: ** KEPT (pick-wt=17): 332 [para_from,238.1.1,24.1.1.1,demod,104,4,74] x* (y+y+x+x)= (x+x)* (y+x).
+586: ---> New Demodulator: 333 [new_demod,332] x* (y+y+x+x)= (x+x)* (y+x).
+587: ** KEPT (pick-wt=15): 334 [para_from,238.1.1,22.1.1.1,demod,4] x* (y+y)+y= (x+x+y)*y.
+588: ---> New Demodulator: 335 [new_demod,334] x* (y+y)+y= (x+x+y)*y.
+589: ** KEPT (pick-wt=17): 336 [para_from,238.1.1,20.1.1.2.2] (x+x)*y*x* (y+y)= (x+x)*y.
+590: ---> New Demodulator: 337 [new_demod,336] (x+x)*y*x* (y+y)= (x+x)*y.
+591: ** KEPT (pick-wt=17): 338 [para_from,238.1.1,16.1.1.1,demod,4] x* (y+y)+z*y= (x+x+z)*y.
+592: ---> New Demodulator: 339 [new_demod,338] x* (y+y)+z*y= (x+x+z)*y.
+593: ** KEPT (pick-wt=19): 340 [para_from,238.1.1,13.1.1.1] x* (y+y)+ (x+x)*z= (x+x)* (y+z).
+594: ---> New Demodulator: 341 [new_demod,340] x* (y+y)+ (x+x)*z= (x+x)* (y+z).
+595: ** KEPT (pick-wt=15): 342 [para_from,238.1.1,10.1.1.1,demod,11] x* (y+y)*z= (x+x)*y*z.
+596: ** KEPT (pick-wt=15): 343 [copy,326,flip.1] (x+y+y)*x=x+y* (x+x).
+597: ** KEPT (pick-wt=17): 344 [copy,327,flip.1] (x+y+y)*z=x*z+y* (z+z).
+598: >>>> Starting back demodulation with 329.
+599: >>>> Starting back demodulation with 331.
+600: >>>> Starting back demodulation with 333.
+601: >>>> Starting back demodulation with 335.
+602: >>>> Starting back demodulation with 337.
+603: >>>> Starting back demodulation with 339.
+604: >>>> Starting back demodulation with 341.
+605: ** KEPT (pick-wt=15): 345 [copy,342,flip.1] (x+x)*y*z=x* (y+y)*z.
+606: 
+607: given clause #23: (wt=9) 306 [para_into,238.1.1.1,196.1.1,flip.1] 0* (x+x)=0*x.
+608: ** KEPT (pick-wt=13): 346 [para_into,306.1.1.2,16.1.1] 0* (x+x)*y=0*x*y.
+609: ---> New Demodulator: 347 [new_demod,346] 0* (x+x)*y=0*x*y.
+610: ** KEPT (pick-wt=13): 348 [para_into,306.1.1.2,13.1.1] 0*x* (y+y)=0*x*y.
+611: ---> New Demodulator: 349 [new_demod,348] 0*x* (y+y)=0*x*y.
+612: ** KEPT (pick-wt=15): 350 [para_into,306.1.1.2,3.1.1] 0* (x+y+x+y)=0* (x+y).
+613: ---> New Demodulator: 351 [new_demod,350] 0* (x+y+x+y)=0* (x+y).
+614: >>>> Starting back demodulation with 347.
+615: >>>> Starting back demodulation with 349.
+616: >>>> Starting back demodulation with 351.
+617: ** KEPT (pick-wt=13): 352 [para_from,306.1.1,13.1.1.2,demod,14,flip.1] 0* (x+y+y)=0* (x+y).
+618: ---> New Demodulator: 353 [new_demod,352] 0* (x+y+y)=0* (x+y).
+619: ** KEPT (pick-wt=15): 354 [para_from,306.1.1,16.1.1.1,demod,6] 0*x+y* (x+x)=y* (x+x).
+620: ---> New Demodulator: 355 [new_demod,354] 0*x+y* (x+x)=y* (x+x).
+621: ** KEPT (pick-wt=13): 356 [para_from,306.1.1,13.1.1.1,demod,14,4,flip.1] 0* (x+x+y)=0* (x+y).
+622: ---> New Demodulator: 357 [new_demod,356] 0* (x+x+y)=0* (x+y).
+623: >>>> Starting back demodulation with 353.
+624: >>>> Starting back demodulation with 355.
+625: >>>> Starting back demodulation with 357.
+626: 
+627: given clause #24: (wt=11) 241 [copy,238,flip.1] x* (y+y)= (x+x)*y.
+628: ** KEPT (pick-wt=9): 358 [para_into,241.1.1.2,196.1.1,flip.1] (x+x)*0=x*0.
+629: ---> New Demodulator: 359 [new_demod,358] (x+x)*0=x*0.
+630: ** KEPT (pick-wt=17): 360 [para_into,241.1.1.2,3.1.1] x* (y+z+y+z)= (x+x)* (y+z).
+631: ** KEPT (pick-wt=23): 361 [para_into,241.1.1,200.1.1,demod,307,4,4,4,4,flip.1] (x+x+ (-(x+x))+x+x+ -(x+x))*x=0*x.
+632: ---> New Demodulator: 362 [new_demod,361] (x+x+ (-(x+x))+x+x+ -(x+x))*x=0*x.
+633: ** KEPT (pick-wt=21): 363 [para_into,241.1.1,62.1.1,demod,4,108,4,4,flip.1] (x+y+y+x+y+y)*y= (y+x)* (y+y).
+634: ---> New Demodulator: 364 [new_demod,363] (x+y+y+x+y+y)*y= (y+x)* (y+y).
+635: ** KEPT (pick-wt=21): 365 [para_into,241.1.1,59.1.1,demod,102,4,4,4,4,flip.1] (x+x+y+x+x+y)*x= (y+x)* (x+x).
+636: ---> New Demodulator: 366 [new_demod,365] (x+x+y+x+x+y)*x= (y+x)* (x+x).
+637: >>>> Starting back demodulation with 359.
+638:     >> back demodulating 324 with 359.
+639: ** KEPT (pick-wt=14): 367 [back_demod,324,demod,359] (x+x)* ((-(x+x))+x)=x*0.
+640: ---> New Demodulator: 368 [new_demod,367] (x+x)* ((-(x+x))+x)=x*0.
+641: ** KEPT (pick-wt=17): 369 [copy,360,flip.1] (x+x)* (y+z)=x* (y+z+y+z).
+642: >>>> Starting back demodulation with 362.
+643: >>>> Starting back demodulation with 364.
+644: >>>> Starting back demodulation with 366.
+645:     >> back demodulating 361 with 366.
+646: ** KEPT (pick-wt=14): 370 [back_demod,361,demod,366] ((-(x+x))+x)* (x+x)=0*x.
+647: ---> New Demodulator: 371 [new_demod,370] ((-(x+x))+x)* (x+x)=0*x.
+648: >>>> Starting back demodulation with 368.
+649: >>>> Starting back demodulation with 371.
+650: ** KEPT (pick-wt=17): 372 [para_from,241.1.1,26.1.1.2,demod,4,27,27,4,108] (x+x+y+y)*x= (x+y)* (x+x).
+651: ---> New Demodulator: 373 [new_demod,372] (x+x+y+y)*x= (x+y)* (x+x).
+652: ** KEPT (pick-wt=17): 374 [para_from,241.1.1,16.1.1.2,demod,339] (x+x+y+y)*z= (x+y)* (z+z).
+653: ** KEPT (pick-wt=17): 375 [para_from,241.1.1,13.1.1.2] x*y+ (x+x)*z=x* (y+z+z).
+654: ** KEPT (pick-wt=15): 376 [para_from,241.1.1,28.1.1.2] x+ (x+x)*y=x* (x+y+y).
+655: ** KEPT (pick-wt=15): 377 [para_from,241.1.1,24.1.1.1,demod,4] (x+x)*y+x=x* (y+y+x).
+656: ---> New Demodulator: 378 [new_demod,377] (x+x)*y+x=x* (y+y+x).
+657: ** KEPT (pick-wt=17): 379 [para_from,241.1.1,20.1.1.2.2] x* (y+y)* (x+x)*y=x* (y+y).
+658: ---> New Demodulator: 380 [new_demod,379] x* (y+y)* (x+x)*y=x* (y+y).
+659: ** KEPT (pick-wt=19): 381 [para_from,241.1.1,16.1.1.1] (x+x)*y+z* (y+y)= (x+z)* (y+y).
+660: ---> New Demodulator: 382 [new_demod,381] (x+x)*y+z* (y+y)= (x+z)* (y+y).
+661: ** KEPT (pick-wt=17): 383 [para_from,241.1.1,13.1.1.1,demod,4] (x+x)*y+x*z=x* (y+y+z).
+662: ---> New Demodulator: 384 [new_demod,383] (x+x)*y+x*z=x* (y+y+z).
+663: >>>> Starting back demodulation with 373.
+664: ** KEPT (pick-wt=17): 385 [copy,374,flip.1] (x+y)* (z+z)= (x+x+y+y)*z.
+665: 374 back subsumes 372.
+666: ** KEPT (pick-wt=17): 386 [copy,375,flip.1] x* (y+z+z)=x*y+ (x+x)*z.
+667: ** KEPT (pick-wt=15): 387 [copy,376,flip.1] x* (x+y+y)=x+ (x+x)*y.
+668: >>>> Starting back demodulation with 378.
+669: >>>> Starting back demodulation with 380.
+670: >>>> Starting back demodulation with 382.
+671: >>>> Starting back demodulation with 384.
+672:     >> back demodulating 328 with 384.
+673: ** KEPT (pick-wt=17): 388 [back_demod,328,demod,384] x* (y+y+z+z)= (x+x)* (y+z).
+674: ** KEPT (pick-wt=17): 389 [copy,388,flip.1] (x+x)* (y+z)=x* (y+y+z+z).
+675: 388 back subsumes 332.
+676: 388 back subsumes 330.
+677: 
+678: given clause #25: (wt=9) 358 [para_into,241.1.1.2,196.1.1,flip.1] (x+x)*0=x*0.
+679: ** KEPT (pick-wt=13): 390 [para_into,358.1.1.1,16.1.1,demod,11,11] (x+x)*y*0=x*y*0.
+680: ---> New Demodulator: 391 [new_demod,390] (x+x)*y*0=x*y*0.
+681: ** KEPT (pick-wt=15): 392 [para_into,358.1.1.1,3.1.1] (x+y+x+y)*0= (x+y)*0.
+682: ---> New Demodulator: 393 [new_demod,392] (x+y+x+y)*0= (x+y)*0.
+683: >>>> Starting back demodulation with 391.
+684: >>>> Starting back demodulation with 393.
+685: ** KEPT (pick-wt=13): 394 [para_from,358.1.1,16.1.1.2,demod,17,flip.1] (x+y+y)*0= (x+y)*0.
+686: ---> New Demodulator: 395 [new_demod,394] (x+y+y)*0= (x+y)*0.
+687: ** KEPT (pick-wt=13): 396 [para_from,358.1.1,20.1.1.2.2,demod,359] (x+x)*0*x*0=x*0.
+688: ---> New Demodulator: 397 [new_demod,396] (x+x)*0*x*0=x*0.
+689: ** KEPT (pick-wt=13): 398 [para_from,358.1.1,16.1.1.1,demod,17,4,flip.1] (x+x+y)*0= (x+y)*0.
+690: ---> New Demodulator: 399 [new_demod,398] (x+x+y)*0= (x+y)*0.
+691: ** KEPT (pick-wt=15): 400 [para_from,358.1.1,13.1.1.1,demod,6] x*0+ (x+x)*y= (x+x)*y.
+692: ---> New Demodulator: 401 [new_demod,400] x*0+ (x+x)*y= (x+x)*y.
+693: ** KEPT (pick-wt=13): 402 [para_from,358.1.1,10.1.1.1,demod,11,flip.1] (x+x)*0*y=x*0*y.
+694: ---> New Demodulator: 403 [new_demod,402] (x+x)*0*y=x*0*y.
+695: >>>> Starting back demodulation with 395.
+696: >>>> Starting back demodulation with 397.
+697: >>>> Starting back demodulation with 399.
+698: >>>> Starting back demodulation with 401.
+699: >>>> Starting back demodulation with 403.
+700:     >> back demodulating 396 with 403.
+701: 
+702: given clause #26: (wt=12) 135 [para_into,59.1.1.1,7.1.1,flip.1] (x+ -x)* (-x)=0* (-x).
+703: ** KEPT (pick-wt=20): 404 [para_into,135.1.1.1,3.1.1] (x+y+ -(x+y))* (-(x+y))=0* (-(x+y)).
+704: ---> New Demodulator: 405 [new_demod,404] (x+y+ -(x+y))* (-(x+y))=0* (-(x+y)).
+705: >>>> Starting back demodulation with 405.
+706: ** KEPT (pick-wt=13): 406 [para_from,135.1.1,26.1.1.2,demod,27,197,19,flip.1] ((-x)+x+ -x)* (-x)= -x.
+707: ---> New Demodulator: 407 [new_demod,406] ((-x)+x+ -x)* (-x)= -x.
+708: ** KEPT (pick-wt=14): 408 [para_from,135.1.1,16.1.1.2,demod,17,197,flip.1] (x+y+ -y)* (-y)=x* (-y).
+709: ---> New Demodulator: 409 [new_demod,408] (x+y+ -y)* (-y)=x* (-y).
+710: ** KEPT (pick-wt=21): 410 [para_from,135.1.1,13.1.1.2] (x+ -x)*y+0* (-x)= (x+ -x)* (y+ -x).
+711: ---> New Demodulator: 411 [new_demod,410] (x+ -x)*y+0* (-x)= (x+ -x)* (y+ -x).
+712: ** KEPT (pick-wt=14): 412 [para_from,135.1.1,30.1.1.2,demod,136] (x+ -x)*0* (-x)=0* (-x).
+713: ---> New Demodulator: 413 [new_demod,412] (x+ -x)*0* (-x)=0* (-x).
+714: ** KEPT (pick-wt=17): 414 [para_from,135.1.1,28.1.1.2,demod,4,27,197,19,4,flip.1] (x+ -x)* (x+ (-x)+ -x)=x+ -x.
+715: ---> New Demodulator: 415 [new_demod,414] (x+ -x)* (x+ (-x)+ -x)=x+ -x.
+716: ** KEPT (pick-wt=22): 416 [para_from,135.1.1,24.1.1.1] 0* (-x)+x+ -x= (x+ -x)* ((-x)+x+ -x).
+717: ---> New Demodulator: 417 [new_demod,416] 0* (-x)+x+ -x= (x+ -x)* ((-x)+x+ -x).
+718: ** KEPT (pick-wt=13): 418 [para_from,135.1.1,22.1.1.1,demod,23,6,19,4,flip.1] (x+ (-x)+ -x)* (-x)= -x.
+719: ---> New Demodulator: 419 [new_demod,418] (x+ (-x)+ -x)* (-x)= -x.
+720: ** KEPT (pick-wt=17): 420 [para_from,135.1.1,20.1.1.2.2,demod,136] (x+ -x)* (-x)*0* (-x)=0* (-x).
+721: ---> New Demodulator: 421 [new_demod,420] (x+ -x)* (-x)*0* (-x)=0* (-x).
+722: ** KEPT (pick-wt=14): 422 [para_from,135.1.1,16.1.1.1,demod,17,6,4,flip.1] (x+ (-x)+y)* (-x)=y* (-x).
+723: ---> New Demodulator: 423 [new_demod,422] (x+ (-x)+y)* (-x)=y* (-x).
+724: ** KEPT (pick-wt=21): 424 [para_from,135.1.1,13.1.1.1] 0* (-x)+ (x+ -x)*y= (x+ -x)* ((-x)+y).
+725: ---> New Demodulator: 425 [new_demod,424] 0* (-x)+ (x+ -x)*y= (x+ -x)* ((-x)+y).
+726: ** KEPT (pick-wt=16): 426 [para_from,135.1.1,10.1.1.1,demod,11,flip.1] (x+ -x)* (-x)*y=0* (-x)*y.
+727: ---> New Demodulator: 427 [new_demod,426] (x+ -x)* (-x)*y=0* (-x)*y.
+728: >>>> Starting back demodulation with 407.
+729: >>>> Starting back demodulation with 409.
+730:     >> back demodulating 406 with 409.
+731: >>>> Starting back demodulation with 411.
+732: >>>> Starting back demodulation with 413.
+733: >>>> Starting back demodulation with 415.
+734: >>>> Starting back demodulation with 417.
+735: >>>> Starting back demodulation with 419.
+736: >>>> Starting back demodulation with 421.
+737: >>>> Starting back demodulation with 423.
+738:     >> back demodulating 418 with 423.
+739: >>>> Starting back demodulation with 425.
+740: >>>> Starting back demodulation with 427.
+741:     >> back demodulating 420 with 427.
+742: 
+743: given clause #27: (wt=12) 220 [para_from,200.1.1,16.1.1.2,demod,17,197,flip.1] (x+y+ -y)*y=x*y.
+744: ** KEPT (pick-wt=20): 428 [para_into,220.1.1.1.2,3.1.1] (x+y+z+ -(y+z))* (y+z)=x* (y+z).
+745: ---> New Demodulator: 429 [new_demod,428] (x+y+z+ -(y+z))* (y+z)=x* (y+z).
+746: ** KEPT (pick-wt=16): 430 [para_into,220.1.1.1,22.1.1,demod,11,201,11,201] (x+y+ -y)*0*y=x*0*y.
+747: ---> New Demodulator: 431 [new_demod,430] (x+y+ -y)*0*y=x*0*y.
+748: ** KEPT (pick-wt=11): 432 [para_into,220.1.1.1,7.1.1,flip.1] (-(x+ -x))*x=0*x.
+749: ---> New Demodulator: 433 [new_demod,432] (-(x+ -x))*x=0*x.
+750: ** KEPT (pick-wt=16): 434 [para_into,220.1.1.1,3.1.1] (x+y+z+ -z)*z= (x+y)*z.
+751: ---> New Demodulator: 435 [new_demod,434] (x+y+z+ -z)*z= (x+y)*z.
+752: ** KEPT (pick-wt=29): 436 [para_into,220.1.1,241.1.1,demod,4,4,4,4,4] (x+y+y+ (-(y+y))+x+y+y+ -(y+y))*y=x* (y+y).
+753: ---> New Demodulator: 437 [new_demod,436] (x+y+y+ (-(y+y))+x+y+y+ -(y+y))*y=x* (y+y).
+754: ** KEPT (pick-wt=12): 438 [para_into,220.1.1,238.1.1,demod,201] (x+ -x)* (x+x)=0*x.
+755: ---> New Demodulator: 439 [new_demod,438] (x+ -x)* (x+x)=0*x.
+756: >>>> Starting back demodulation with 429.
+757: >>>> Starting back demodulation with 431.
+758: >>>> Starting back demodulation with 433.
+759: >>>> Starting back demodulation with 435.
+760: >>>> Starting back demodulation with 437.
+761: >>>> Starting back demodulation with 439.
+762: ** KEPT (pick-wt=23): 440 [para_from,220.1.1,13.1.1.2] (x+y+ -y)*z+x*y= (x+y+ -y)* (z+y).
+763: ---> New Demodulator: 441 [new_demod,440] (x+y+ -y)*z+x*y= (x+y+ -y)* (z+y).
+764: ** KEPT (pick-wt=14): 442 [para_from,220.1.1,30.1.1.2,demod,221] (x+y+ -y)*x*y=x*y.
+765: ---> New Demodulator: 443 [new_demod,442] (x+y+ -y)*x*y=x*y.
+766: ** KEPT (pick-wt=21): 444 [para_from,220.1.1,28.1.1.2,demod,4,4,4,4,8,197] x+y+ (-y)+x*y= (x+y+ -y)* (x+y).
+767: ---> New Demodulator: 445 [new_demod,444] x+y+ (-y)+x*y= (x+y+ -y)* (x+y).
+768: ** KEPT (pick-wt=26): 446 [para_from,220.1.1,24.1.1.1] x*y+x+y+ -y= (x+y+ -y)* (y+x+y+ -y).
+769: ---> New Demodulator: 447 [new_demod,446] x*y+x+y+ -y= (x+y+ -y)* (y+x+y+ -y).
+770: ** KEPT (pick-wt=16): 448 [para_from,220.1.1,20.1.1.2.2,demod,221] (x+y+ -y)*y*x*y=x*y.
+771: ---> New Demodulator: 449 [new_demod,448] (x+y+ -y)*y*x*y=x*y.
+772: ** KEPT (pick-wt=16): 450 [para_from,220.1.1,16.1.1.1,demod,17,4,4,flip.1] (x+y+ (-y)+z)*y= (x+z)*y.
+773: ---> New Demodulator: 451 [new_demod,450] (x+y+ (-y)+z)*y= (x+z)*y.
+774: ** KEPT (pick-wt=23): 452 [para_from,220.1.1,13.1.1.1] x*y+ (x+y+ -y)*z= (x+y+ -y)* (y+z).
+775: ---> New Demodulator: 453 [new_demod,452] x*y+ (x+y+ -y)*z= (x+y+ -y)* (y+z).
+776: ** KEPT (pick-wt=16): 454 [para_from,220.1.1,10.1.1.1,demod,11,flip.1] (x+y+ -y)*y*z=x*y*z.
+777: ---> New Demodulator: 455 [new_demod,454] (x+y+ -y)*y*z=x*y*z.
+778: >>>> Starting back demodulation with 441.
+779: >>>> Starting back demodulation with 443.
+780: >>>> Starting back demodulation with 445.
+781: >>>> Starting back demodulation with 447.
+782: >>>> Starting back demodulation with 449.
+783: >>>> Starting back demodulation with 451.
+784: >>>> Starting back demodulation with 453.
+785: >>>> Starting back demodulation with 455.
+786:     >> back demodulating 448 with 455.
+787: 
+788: given clause #28: (wt=11) 432 [para_into,220.1.1.1,7.1.1,flip.1] (-(x+ -x))*x=0*x.
+789: ** KEPT (pick-wt=19): 456 [para_into,432.1.1.1.1,3.1.1] (-(x+y+ -(x+y)))* (x+y)=0* (x+y).
+790: ---> New Demodulator: 457 [new_demod,456] (-(x+y+ -(x+y)))* (x+y)=0* (x+y).
+791: ** KEPT (pick-wt=25): 458 [para_into,432.1.1,241.1.1,demod,4,4,307] ((-(x+x+ -(x+x)))+ -(x+x+ -(x+x)))*x=0*x.
+792: ---> New Demodulator: 459 [new_demod,458] ((-(x+x+ -(x+x)))+ -(x+x+ -(x+x)))*x=0*x.
+793: >>>> Starting back demodulation with 457.
+794: >>>> Starting back demodulation with 459.
+795: ** KEPT (pick-wt=11): 460 [para_from,432.1.1,26.1.1.2,demod,27,197,19,flip.1] (x+ -(x+ -x))*x=x.
+796: ---> New Demodulator: 461 [new_demod,460] (x+ -(x+ -x))*x=x.
+797: ** KEPT (pick-wt=13): 462 [para_from,432.1.1,16.1.1.2,demod,17,197,flip.1] (x+ -(y+ -y))*y=x*y.
+798: ---> New Demodulator: 463 [new_demod,462] (x+ -(y+ -y))*y=x*y.
+799: ** KEPT (pick-wt=21): 464 [para_from,432.1.1,13.1.1.2] (-(x+ -x))*y+0*x= (-(x+ -x))* (y+x).
+800: ---> New Demodulator: 465 [new_demod,464] (-(x+ -x))*y+0*x= (-(x+ -x))* (y+x).
+801: ** KEPT (pick-wt=13): 466 [para_from,432.1.1,30.1.1.2,demod,433] (-(x+ -x))*0*x=0*x.
+802: ---> New Demodulator: 467 [new_demod,466] (-(x+ -x))*0*x=0*x.
+803: ** KEPT (pick-wt=23): 468 [para_from,432.1.1,28.1.1.2] (-(x+ -x))+0*x= (-(x+ -x))* ((-(x+ -x))+x).
+804: ---> New Demodulator: 469 [new_demod,468] (-(x+ -x))+0*x= (-(x+ -x))* ((-(x+ -x))+x).
+805: ** KEPT (pick-wt=23): 470 [para_from,432.1.1,24.1.1.1] 0*x+ -(x+ -x)= (-(x+ -x))* (x+ -(x+ -x)).
+806: ---> New Demodulator: 471 [new_demod,470] 0*x+ -(x+ -x)= (-(x+ -x))* (x+ -(x+ -x)).
+807: ** KEPT (pick-wt=11): 472 [para_from,432.1.1,22.1.1.1,demod,23,6,19,flip.1] ((-(x+ -x))+x)*x=x.
+808: ---> New Demodulator: 473 [new_demod,472] ((-(x+ -x))+x)*x=x.
+809: ** KEPT (pick-wt=15): 474 [para_from,432.1.1,20.1.1.2.2,demod,433] (-(x+ -x))*x*0*x=0*x.
+810: ---> New Demodulator: 475 [new_demod,474] (-(x+ -x))*x*0*x=0*x.
+811: ** KEPT (pick-wt=13): 476 [para_from,432.1.1,16.1.1.1,demod,17,6,flip.1] ((-(x+ -x))+y)*x=y*x.
+812: ---> New Demodulator: 477 [new_demod,476] ((-(x+ -x))+y)*x=y*x.
+813: ** KEPT (pick-wt=21): 478 [para_from,432.1.1,13.1.1.1] 0*x+ (-(x+ -x))*y= (-(x+ -x))* (x+y).
+814: ---> New Demodulator: 479 [new_demod,478] 0*x+ (-(x+ -x))*y= (-(x+ -x))* (x+y).
+815: ** KEPT (pick-wt=15): 480 [para_from,432.1.1,10.1.1.1,demod,11,flip.1] (-(x+ -x))*x*y=0*x*y.
+816: ---> New Demodulator: 481 [new_demod,480] (-(x+ -x))*x*y=0*x*y.
+817: >>>> Starting back demodulation with 461.
+818: >>>> Starting back demodulation with 463.
+819:     >> back demodulating 460 with 463.
+820: >>>> Starting back demodulation with 465.
+821: >>>> Starting back demodulation with 467.
+822: >>>> Starting back demodulation with 469.
+823: >>>> Starting back demodulation with 471.
+824: >>>> Starting back demodulation with 473.
+825: >>>> Starting back demodulation with 475.
+826: >>>> Starting back demodulation with 477.
+827:     >> back demodulating 472 with 477.
+828: >>>> Starting back demodulation with 479.
+829: >>>> Starting back demodulation with 481.
+830:     >> back demodulating 474 with 481.
+831: 
+832: given clause #29: (wt=12) 224 [para_from,200.1.1,30.1.1.2,demod,201] (x+ -x)*0*x=0*x.
+833: ** KEPT (pick-wt=20): 482 [para_into,224.1.1.1,3.1.1] (x+y+ -(x+y))*0* (x+y)=0* (x+y).
+834: ---> New Demodulator: 483 [new_demod,482] (x+y+ -(x+y))*0* (x+y)=0* (x+y).
+835: ** KEPT (pick-wt=16): 484 [para_into,224.1.1.2,306.1.1,demod,4,307] (x+x+ -(x+x))*0*x=0*x.
+836: ---> New Demodulator: 485 [new_demod,484] (x+x+ -(x+x))*0*x=0*x.
+837: ** KEPT (pick-wt=20): 486 [para_into,224.1.1.2,20.1.1,demod,21] (x*0*x+ -x*0*x)*0*x=0*x.
+838: ---> New Demodulator: 487 [new_demod,486] (x*0*x+ -x*0*x)*0*x=0*x.
+839: >>>> Starting back demodulation with 483.
+840: >>>> Starting back demodulation with 485.
+841: >>>> Starting back demodulation with 487.
+842: ** KEPT (pick-wt=19): 488 [para_from,224.1.1,13.1.1.2,demod,223,flip.1] (x+ -x)* (y+0*x)= (x+ -x)* (y+x).
+843: ---> New Demodulator: 489 [new_demod,488] (x+ -x)* (y+0*x)= (x+ -x)* (y+x).
+844: ** KEPT (pick-wt=16): 490 [para_from,224.1.1,16.1.1.1,demod,27,39,6,4,flip.1] (x+ (-x)+y)*0*x=y*0*x.
+845: ---> New Demodulator: 491 [new_demod,490] (x+ (-x)+y)*0*x=y*0*x.
+846: ** KEPT (pick-wt=19): 492 [para_from,224.1.1,13.1.1.1,demod,235,flip.1] (x+ -x)* (0*x+y)= (x+ -x)* (x+y).
+847: ---> New Demodulator: 493 [new_demod,492] (x+ -x)* (0*x+y)= (x+ -x)* (x+y).
+848: ** KEPT (pick-wt=16): 494 [para_from,224.1.1,10.1.1.1,demod,11,11,flip.1] (x+ -x)*0*x*y=0*x*y.
+849: ---> New Demodulator: 495 [new_demod,494] (x+ -x)*0*x*y=0*x*y.
+850: >>>> Starting back demodulation with 489.
+851: >>>> Starting back demodulation with 491.
+852: >>>> Starting back demodulation with 493.
+853: >>>> Starting back demodulation with 495.
+854: 
+855: given clause #30: (wt=12) 226 [para_from,200.1.1,28.1.1.2,demod,4,4,8,197,201] x+ (-x)+0*x=0*x.
+856: ** KEPT (pick-wt=16): 496 [para_into,226.1.1.2.2,306.1.1,demod,4,307] x+x+ (-(x+x))+0*x=0*x.
+857: ---> New Demodulator: 497 [new_demod,496] x+x+ (-(x+x))+0*x=0*x.
+858: ** KEPT (pick-wt=20): 498 [para_into,226.1.1.2.2,20.1.1,demod,21] x*0*x+ (-x*0*x)+0*x=0*x.
+859: ---> New Demodulator: 499 [new_demod,498] x*0*x+ (-x*0*x)+0*x=0*x.
+860: ** KEPT (pick-wt=12): 500 [para_into,226.1.1.2,9.1.1] x+0*x+ -x=0*x.
+861: ---> New Demodulator: 501 [new_demod,500] x+0*x+ -x=0*x.
+862: ** KEPT (pick-wt=5): 502 [para_into,226.1.1,9.1.1,demod,4,23,6,19,8,flip.1] 0*x=0.
+863: ---> New Demodulator: 503 [new_demod,502] 0*x=0.
+864: ** KEPT (pick-wt=10): 504 [para_into,226.1.1,3.1.1,demod,503,197,503] x+y+ -(x+y)=0.
+865: ---> New Demodulator: 505 [new_demod,504] x+y+ -(x+y)=0.
+866: >>>> Starting back demodulation with 497.
+867: >>>> Starting back demodulation with 499.
+868: >>>> Starting back demodulation with 501.
+869: >>>> Starting back demodulation with 503.
+870:     >> back demodulating 500 with 503.
+871: ** KEPT (pick-wt=6): 506 [back_demod,500,demod,503,6,503] x+ -x=0.
+872: ---> New Demodulator: 507 [new_demod,506] x+ -x=0.
+873:     >> back demodulating 498 with 503.
+874:     >> back demodulating 496 with 503.
+875:     >> back demodulating 494 with 503.
+876:     >> back demodulating 492 with 503.
+877:     >> back demodulating 490 with 503.
+878: ** KEPT (pick-wt=12): 508 [back_demod,490,demod,503,503] (x+ (-x)+y)*0=y*0.
+879: ---> New Demodulator: 509 [new_demod,508] (x+ (-x)+y)*0=y*0.
+880:     >> back demodulating 488 with 503.
+881:     >> back demodulating 486 with 503.
+882:     >> back demodulating 484 with 503.
+883:     >> back demodulating 482 with 503.
+884:     >> back demodulating 480 with 503.
+885:     >> back demodulating 478 with 503.
+886:     >> back demodulating 470 with 503.
+887:     >> back demodulating 468 with 503.
+888:     >> back demodulating 466 with 503.
+889:     >> back demodulating 464 with 503.
+890:     >> back demodulating 458 with 503.
+891:     >> back demodulating 456 with 503.
+892:     >> back demodulating 438 with 503.
+893:     >> back demodulating 432 with 503.
+894:     >> back demodulating 430 with 503.
+895:     >> back demodulating 426 with 503.
+896:     >> back demodulating 424 with 503.
+897:     >> back demodulating 416 with 503.
+898:     >> back demodulating 412 with 503.
+899:     >> back demodulating 410 with 503.
+900:     >> back demodulating 404 with 503.
+901:     >> back demodulating 402 with 503.
+902:     >> back demodulating 370 with 503.
+903: ** KEPT (pick-wt=12): 510 [back_demod,370,demod,503] ((-(x+x))+x)* (x+x)=0.
+904: ---> New Demodulator: 511 [new_demod,510] ((-(x+x))+x)* (x+x)=0.
+905:     >> back demodulating 356 with 503.
+906:     >> back demodulating 354 with 503.
+907:     >> back demodulating 352 with 503.
+908:     >> back demodulating 350 with 503.
+909:     >> back demodulating 348 with 503.
+910:     >> back demodulating 346 with 503.
+911:     >> back demodulating 306 with 503.
+912:     >> back demodulating 304 with 503.
+913:     >> back demodulating 236 with 503.
+914:     >> back demodulating 234 with 503.
+915:     >> back demodulating 228 with 503.
+916:     >> back demodulating 226 with 503.
+917:     >> back demodulating 224 with 503.
+918:     >> back demodulating 222 with 503.
+919:     >> back demodulating 216 with 503.
+920:     >> back demodulating 200 with 503.
+921:     >> back demodulating 135 with 503.
+922: >>>> Starting back demodulation with 505.
+923:     >> back demodulating 436 with 505.
+924: ** KEPT (pick-wt=20): 512 [back_demod,436,demod,505,197] (x+y+y+ (-(y+y))+x)*y=x* (y+y).
+925: ---> New Demodulator: 513 [new_demod,512] (x+y+y+ (-(y+y))+x)*y=x* (y+y).
+926:     >> back demodulating 428 with 505.
+927:     >> back demodulating 288 with 505.
+928: >>>> Starting back demodulation with 507.
+929:     >> back demodulating 476 with 507.
+930:     >> back demodulating 462 with 507.
+931:     >> back demodulating 454 with 507.
+932:     >> back demodulating 452 with 507.
+933:     >> back demodulating 446 with 507.
+934:     >> back demodulating 444 with 507.
+935: ** KEPT (pick-wt=16): 514 [back_demod,444,demod,507,197] x+y+ (-y)+x*y=x* (x+y).
+936: ---> New Demodulator: 515 [new_demod,514] x+y+ (-y)+x*y=x* (x+y).
+937:     >> back demodulating 442 with 507.
+938:     >> back demodulating 440 with 507.
+939:     >> back demodulating 434 with 507.
+940:     >> back demodulating 414 with 507.
+941:     >> back demodulating 408 with 507.
+942:     >> back demodulating 300 with 507.
+943:     >> back demodulating 298 with 507.
+944:     >> back demodulating 296 with 507.
+945:     >> back demodulating 294 with 507.
+946:     >> back demodulating 274 with 507.
+947:     >> back demodulating 247 with 507.
+948:     >> back demodulating 220 with 507.
+949: >>>> Starting back demodulation with 509.
+950: >>>> Starting back demodulation with 511.
+951: >>>> Starting back demodulation with 513.
+952: >>>> Starting back demodulation with 515.
+953: 
+954: given clause #31: (wt=5) 502 [para_into,226.1.1,9.1.1,demod,4,23,6,19,8,flip.1] 0*x=0.
+955: 
+956: given clause #32: (wt=6) 506 [back_demod,500,demod,503,6,503] x+ -x=0.
+957: ** KEPT (pick-wt=8): 516 [para_from,506.1.1,3.1.1.1,demod,6,flip.1] x+ (-x)+y=y.
+958: ---> New Demodulator: 517 [new_demod,516] x+ (-x)+y=y.
+959: >>>> Starting back demodulation with 517.
+960:     >> back demodulating 514 with 517.
+961:     >> back demodulating 508 with 517.
+962:     >> back demodulating 450 with 517.
+963:     >> back demodulating 422 with 517.
+964:     >> back demodulating 302 with 517.
+965:     >> back demodulating 292 with 517.
+966:     >> back demodulating 232 with 517.
+967: 
+968: given clause #33: (wt=8) 516 [para_from,506.1.1,3.1.1.1,demod,6,flip.1] x+ (-x)+y=y.
+969: ** KEPT (pick-wt=9): 518 [para_into,516.1.1.2,516.1.1,flip.1] (-(-x))+y=x+y.
+970: ---> New Demodulator: 519 [new_demod,518] (-(-x))+y=x+y.
+971: ** KEPT (pick-wt=5): 520 [para_into,516.1.1.2,506.1.1,demod,197,flip.1] -(-x)=x.
+972: ---> New Demodulator: 521 [new_demod,520] -(-x)=x.
+973: ** KEPT (pick-wt=11): 522 [para_into,516.1.1.2,83.1.1,demod,517,flip.1] (-x)+ (-x)+ -x= -x.
+974: ---> New Demodulator: 523 [new_demod,522] (-x)+ (-x)+ -x= -x.
+975: ** KEPT (pick-wt=14): 524 [para_into,516.1.1.2,28.1.1] x+ (-x)* ((-x)+y)= (-x)*y.
+976: ---> New Demodulator: 525 [new_demod,524] x+ (-x)* ((-x)+y)= (-x)*y.
+977: ** KEPT (pick-wt=14): 526 [para_into,516.1.1.2,26.1.1] x+ ((-x)+y)* (-x)=y* (-x).
+978: ---> New Demodulator: 527 [new_demod,526] x+ ((-x)+y)* (-x)=y* (-x).
+979: ** KEPT (pick-wt=8): 528 [para_into,516.1.1.2,9.1.1] x+y+ -x=y.
+980: ---> New Demodulator: 529 [new_demod,528] x+y+ -x=y.
+981: ** KEPT (pick-wt=8): 530 [para_into,516.1.1,9.1.1,demod,4] (-x)+y+x=y.
+982: ---> New Demodulator: 531 [new_demod,530] (-x)+y+x=y.
+983: ** KEPT (pick-wt=12): 532 [para_into,516.1.1,3.1.1] x+y+ (-(x+y))+z=z.
+984: ---> New Demodulator: 533 [new_demod,532] x+y+ (-(x+y))+z=z.
+985: >>>> Starting back demodulation with 519.
+986: >>>> Starting back demodulation with 521.
+987:     >> back demodulating 518 with 521.
+988: >>>> Starting back demodulation with 523.
+989: >>>> Starting back demodulation with 525.
+990: >>>> Starting back demodulation with 527.
+991: >>>> Starting back demodulation with 529.
+992: >>>> Starting back demodulation with 531.
+993: >>>> Starting back demodulation with 533.
+994:     >> back demodulating 512 with 533.
+995: 
+996: given clause #34: (wt=5) 520 [para_into,516.1.1.2,506.1.1,demod,197,flip.1] -(-x)=x.
+997: ** KEPT (pick-wt=8): 534 [para_from,520.1.1,516.1.1.2.1] (-x)+x+y=y.
+998: ---> New Demodulator: 535 [new_demod,534] (-x)+x+y=y.
+999: >>>> Starting back demodulation with 535.
+1000: 
+1001: given clause #35: (wt=8) 528 [para_into,516.1.1.2,9.1.1] x+y+ -x=y.
+1002: ** KEPT (pick-wt=14): 536 [para_into,528.1.1.2,24.1.1] x+ (-x)* (y+ -x)= (-x)*y.
+1003: ---> New Demodulator: 537 [new_demod,536] x+ (-x)* (y+ -x)= (-x)*y.
+1004: ** KEPT (pick-wt=14): 538 [para_into,528.1.1.2,22.1.1] x+ (y+ -x)* (-x)=y* (-x).
+1005: ---> New Demodulator: 539 [new_demod,538] x+ (y+ -x)* (-x)=y* (-x).
+1006: ** KEPT (pick-wt=12): 540 [para_into,528.1.1.2,3.1.1] x+y+z+ -x=y+z.
+1007: ---> New Demodulator: 541 [new_demod,540] x+y+z+ -x=y+z.
+1008: ** KEPT (pick-wt=12): 542 [para_into,528.1.1,3.1.1] x+y+z+ -(x+y)=z.
+1009: ---> New Demodulator: 543 [new_demod,542] x+y+z+ -(x+y)=z.
+1010: >>>> Starting back demodulation with 537.
+1011: >>>> Starting back demodulation with 539.
+1012: >>>> Starting back demodulation with 541.
+1013: >>>> Starting back demodulation with 543.
+1014: ** KEPT (pick-wt=12): 544 [para_from,528.1.1,3.1.1.1,demod,4,flip.1] x+y+ (-x)+z=y+z.
+1015: ---> New Demodulator: 545 [new_demod,544] x+y+ (-x)+z=y+z.
+1016: >>>> Starting back demodulation with 545.
+1017: 
+1018: given clause #36: (wt=8) 530 [para_into,516.1.1,9.1.1,demod,4] (-x)+y+x=y.
+1019: ** KEPT (pick-wt=9): 546 [para_into,530.1.1.2,530.1.1] (-(x+y))+x= -y.
+1020: ---> New Demodulator: 547 [new_demod,546] (-(x+y))+x= -y.
+1021: ** KEPT (pick-wt=9): 548 [para_into,530.1.1.2,516.1.1] (-((-x)+y))+y=x.
+1022: ---> New Demodulator: 549 [new_demod,548] (-((-x)+y))+y=x.
+1023: ** KEPT (pick-wt=12): 550 [para_into,530.1.1.2,83.1.1] (-(x+x+x))+x+x=x.
+1024: ---> New Demodulator: 551 [new_demod,550] (-(x+x+x))+x+x=x.
+1025: ** KEPT (pick-wt=12): 552 [para_into,530.1.1.2,28.1.1] (-x*y)+x* (x+y)=x.
+1026: ---> New Demodulator: 553 [new_demod,552] (-x*y)+x* (x+y)=x.
+1027: ** KEPT (pick-wt=12): 554 [para_into,530.1.1.2,26.1.1] (-x*y)+ (y+x)*y=y.
+1028: ---> New Demodulator: 555 [new_demod,554] (-x*y)+ (y+x)*y=y.
+1029: ** KEPT (pick-wt=12): 556 [para_into,530.1.1.2,24.1.1] (-x)+x* (y+x)=x*y.
+1030: ---> New Demodulator: 557 [new_demod,556] (-x)+x* (y+x)=x*y.
+1031: ** KEPT (pick-wt=12): 558 [para_into,530.1.1.2,22.1.1] (-x)+ (y+x)*x=y*x.
+1032: ---> New Demodulator: 559 [new_demod,558] (-x)+ (y+x)*x=y*x.
+1033: ** KEPT (pick-wt=14): 560 [para_into,530.1.1.2,16.1.1] (-x*y)+ (z+x)*y=z*y.
+1034: ---> New Demodulator: 561 [new_demod,560] (-x*y)+ (z+x)*y=z*y.
+1035: ** KEPT (pick-wt=14): 562 [para_into,530.1.1.2,13.1.1] (-x*y)+x* (z+y)=x*z.
+1036: ---> New Demodulator: 563 [new_demod,562] (-x*y)+x* (z+y)=x*z.
+1037: ** KEPT (pick-wt=12): 564 [para_into,530.1.1.2,3.1.1] (-x)+y+z+x=y+z.
+1038: ---> New Demodulator: 565 [new_demod,564] (-x)+y+z+x=y+z.
+1039: >>>> Starting back demodulation with 547.
+1040:     >> back demodulating 510 with 547.
+1041: ** KEPT (pick-wt=8): 566 [back_demod,510,demod,547] (-x)* (x+x)=0.
+1042: ---> New Demodulator: 567 [new_demod,566] (-x)* (x+x)=0.
+1043:     >> back demodulating 367 with 547.
+1044: ** KEPT (pick-wt=10): 568 [back_demod,367,demod,547] (x+x)* (-x)=x*0.
+1045: ---> New Demodulator: 569 [new_demod,568] (x+x)* (-x)=x*0.
+1046: >>>> Starting back demodulation with 549.
+1047: >>>> Starting back demodulation with 551.
+1048: >>>> Starting back demodulation with 553.
+1049: >>>> Starting back demodulation with 555.
+1050: >>>> Starting back demodulation with 557.
+1051: >>>> Starting back demodulation with 559.
+1052: >>>> Starting back demodulation with 561.
+1053:     >> back demodulating 554 with 561.
+1054: >>>> Starting back demodulation with 563.
+1055:     >> back demodulating 552 with 563.
+1056: >>>> Starting back demodulation with 565.
+1057: >>>> Starting back demodulation with 567.
+1058: >>>> Starting back demodulation with 569.
+1059: ** KEPT (pick-wt=12): 570 [para_from,530.1.1,3.1.1.1,demod,4,flip.1] (-x)+y+x+z=y+z.
+1060: ---> New Demodulator: 571 [new_demod,570] (-x)+y+x+z=y+z.
+1061: >>>> Starting back demodulation with 571.
+1062: 
+1063: given clause #37: (wt=8) 534 [para_from,520.1.1,516.1.1.2.1] (-x)+x+y=y.
+1064: ** KEPT (pick-wt=7): 572 [para_into,534.1.1.2,83.1.1,demod,535,flip.1] x+x+x=x.
+1065: ---> New Demodulator: 573 [new_demod,572] x+x+x=x.
+1066: ** KEPT (pick-wt=12): 574 [para_into,534.1.1.2,28.1.1] (-x)+x* (x+y)=x*y.
+1067: ---> New Demodulator: 575 [new_demod,574] (-x)+x* (x+y)=x*y.
+1068: ** KEPT (pick-wt=12): 576 [para_into,534.1.1.2,26.1.1] (-x)+ (x+y)*x=y*x.
+1069: ---> New Demodulator: 577 [new_demod,576] (-x)+ (x+y)*x=y*x.
+1070: ** KEPT (pick-wt=12): 578 [para_into,534.1.1.2,24.1.1] (-x*y)+x* (y+x)=x.
+1071: ---> New Demodulator: 579 [new_demod,578] (-x*y)+x* (y+x)=x.
+1072: ** KEPT (pick-wt=12): 580 [para_into,534.1.1.2,22.1.1] (-x*y)+ (x+y)*y=y.
+1073: ---> New Demodulator: 581 [new_demod,580] (-x*y)+ (x+y)*y=y.
+1074: ** KEPT (pick-wt=14): 582 [para_into,534.1.1.2,16.1.1] (-x*y)+ (x+z)*y=z*y.
+1075: ---> New Demodulator: 583 [new_demod,582] (-x*y)+ (x+z)*y=z*y.
+1076: ** KEPT (pick-wt=14): 584 [para_into,534.1.1.2,13.1.1] (-x*y)+x* (y+z)=x*z.
+1077: ---> New Demodulator: 585 [new_demod,584] (-x*y)+x* (y+z)=x*z.
+1078: ** KEPT (pick-wt=12): 586 [para_into,534.1.1.2,3.1.1] (-(x+y))+x+y+z=z.
+1079: ---> New Demodulator: 587 [new_demod,586] (-(x+y))+x+y+z=z.
+1080: >>>> Starting back demodulation with 573.
+1081:     >> back demodulating 550 with 573.
+1082:     >> back demodulating 522 with 573.
+1083:     >> back demodulating 105 with 573.
+1084:     >> back demodulating 83 with 573.
+1085:     >> back demodulating 75 with 573.
+1086: >>>> Starting back demodulation with 575.
+1087: >>>> Starting back demodulation with 577.
+1088: >>>> Starting back demodulation with 579.
+1089: >>>> Starting back demodulation with 581.
+1090: >>>> Starting back demodulation with 583.
+1091:     >> back demodulating 580 with 583.
+1092: >>>> Starting back demodulation with 585.
+1093:     >> back demodulating 578 with 585.
+1094: >>>> Starting back demodulation with 587.
+1095: ** KEPT (pick-wt=9): 588 [para_from,534.1.1,530.1.1.2] (-(x+y))+y= -x.
+1096: ---> New Demodulator: 589 [new_demod,588] (-(x+y))+y= -x.
+1097: >>>> Starting back demodulation with 589.
+1098:     >> back demodulating 548 with 589.
+1099: 
+1100: given clause #38: (wt=7) 572 [para_into,534.1.1.2,83.1.1,demod,535,flip.1] x+x+x=x.
+1101: ** KEPT (pick-wt=15): 590 [para_into,572.1.1.2,3.1.1,demod,4] x+y+x+y+x+y=x+y.
+1102: ---> New Demodulator: 591 [new_demod,590] x+y+x+y+x+y=x+y.
+1103: >>>> Starting back demodulation with 591.
+1104:     >> back demodulating 239 with 591.
+1105: ** KEPT (pick-wt=7): 592 [para_from,572.1.1,516.1.1.2,demod,507,flip.1] (-x)+ -x=0.
+1106: ---> New Demodulator: 593 [new_demod,592] (-x)+ -x=0.
+1107: ** KEPT (pick-wt=4): 594 [para_from,572.1.1,530.1.1.2,demod,547] -x=x.
+1108: ---> New Demodulator: 595 [new_demod,594] -x=x.
+1109: ** KEPT (pick-wt=11): 596 [para_from,572.1.1,3.1.1.1,demod,4,flip.1] x+x+x+y=x+y.
+1110: ---> New Demodulator: 597 [new_demod,596] x+x+x+y=x+y.
+1111: >>>> Starting back demodulation with 593.
+1112: >>>> Starting back demodulation with 595.
+1113:     >> back demodulating 592 with 595.
+1114: ** KEPT (pick-wt=5): 598 [back_demod,592,demod,595,595] x+x=0.
+1115: ---> New Demodulator: 599 [new_demod,598] x+x=0.
+1116:     >> back demodulating 588 with 595.
+1117:     >> back demodulating 586 with 595.
+1118: ** KEPT (pick-wt=11): 600 [back_demod,586,demod,595,4] x+y+x+y+z=z.
+1119: ---> New Demodulator: 601 [new_demod,600] x+y+x+y+z=z.
+1120:     >> back demodulating 584 with 595.
+1121: ** KEPT (pick-wt=11): 602 [back_demod,584,demod,595,14] x* (y+y+z)=x*z.
+1122: ---> New Demodulator: 603 [new_demod,602] x* (y+y+z)=x*z.
+1123:     >> back demodulating 582 with 595.
+1124: ** KEPT (pick-wt=11): 604 [back_demod,582,demod,595,17] (x+x+y)*z=y*z.
+1125: ---> New Demodulator: 605 [new_demod,604] (x+x+y)*z=y*z.
+1126:     >> back demodulating 576 with 595.
+1127:     >> back demodulating 574 with 595.
+1128:     >> back demodulating 570 with 595.
+1129: ** KEPT (pick-wt=11): 606 [back_demod,570,demod,595] x+y+x+z=y+z.
+1130: ---> New Demodulator: 607 [new_demod,606] x+y+x+z=y+z.
+1131:     >> back demodulating 568 with 595.
+1132: ** KEPT (pick-wt=5): 608 [back_demod,568,demod,599,595,503,flip.1] x*0=0.
+1133: ---> New Demodulator: 609 [new_demod,608] x*0=0.
+1134:     >> back demodulating 566 with 595.
+1135:     >> back demodulating 564 with 595.
+1136: ** KEPT (pick-wt=11): 610 [back_demod,564,demod,595] x+y+z+x=y+z.
+1137: ---> New Demodulator: 611 [new_demod,610] x+y+z+x=y+z.
+1138:     >> back demodulating 562 with 595.
+1139: ** KEPT (pick-wt=11): 612 [back_demod,562,demod,595,14] x* (y+z+y)=x*z.
+1140: ---> New Demodulator: 613 [new_demod,612] x* (y+z+y)=x*z.
+1141:     >> back demodulating 560 with 595.
+1142: ** KEPT (pick-wt=11): 614 [back_demod,560,demod,595,17] (x+y+x)*z=y*z.
+1143: ---> New Demodulator: 615 [new_demod,614] (x+y+x)*z=y*z.
+1144:     >> back demodulating 558 with 595.
+1145:     >> back demodulating 556 with 595.
+1146:     >> back demodulating 546 with 595.
+1147: ** KEPT (pick-wt=7): 616 [back_demod,546,demod,595,4,595] x+y+x=y.
+1148: ---> New Demodulator: 617 [new_demod,616] x+y+x=y.
+1149:     >> back demodulating 544 with 595.
+1150:     >> back demodulating 542 with 595.
+1151:     >> back demodulating 540 with 595.
+1152:     >> back demodulating 538 with 595.
+1153:     >> back demodulating 536 with 595.
+1154:     >> back demodulating 534 with 595.
+1155: ** KEPT (pick-wt=7): 618 [back_demod,534,demod,595] x+x+y=y.
+1156: ---> New Demodulator: 619 [new_demod,618] x+x+y=y.
+1157:     >> back demodulating 532 with 595.
+1158:     >> back demodulating 530 with 595.
+1159:     >> back demodulating 528 with 595.
+1160:     >> back demodulating 526 with 595.
+1161:     >> back demodulating 524 with 595.
+1162:     >> back demodulating 520 with 595.
+1163:     >> back demodulating 516 with 595.
+1164:     >> back demodulating 506 with 595.
+1165:     >> back demodulating 504 with 595.
+1166:     >> back demodulating 290 with 595.
+1167: ** KEPT (pick-wt=9): 620 [back_demod,290,demod,595,27,90,609,609] x* (y+x)*y=0.
+1168: ---> New Demodulator: 621 [new_demod,620] x* (y+x)*y=0.
+1169:     >> back demodulating 198 with 595.
+1170:     >> back demodulating 7 with 595.
+1171: >>>> Starting back demodulation with 597.
+1172:     >> back demodulating 242 with 597.
+1173: >>>> Starting back demodulation with 599.
+1174:     >> back demodulating 572 with 599.
+1175:     >> back demodulating 400 with 599.
+1176:     >> back demodulating 394 with 599.
+1177:     >> back demodulating 390 with 599.
+1178:     >> back demodulating 389 with 599.
+1179:     >> back demodulating 388 with 599.
+1180:     >> back demodulating 387 with 599.
+1181:     >> back demodulating 386 with 599.
+1182:     >> back demodulating 385 with 599.
+1183:     >> back demodulating 383 with 599.
+1184:     >> back demodulating 381 with 599.
+1185:     >> back demodulating 379 with 599.
+1186:     >> back demodulating 377 with 599.
+1187:     >> back demodulating 376 with 599.
+1188:     >> back demodulating 375 with 599.
+1189:     >> back demodulating 374 with 599.
+1190:     >> back demodulating 369 with 599.
+1191:     >> back demodulating 365 with 599.
+1192:     >> back demodulating 363 with 599.
+1193:     >> back demodulating 360 with 599.
+1194:     >> back demodulating 358 with 599.
+1195:     >> back demodulating 345 with 599.
+1196:     >> back demodulating 344 with 599.
+1197:     >> back demodulating 343 with 599.
+1198:     >> back demodulating 342 with 599.
+1199:     >> back demodulating 340 with 599.
+1200:     >> back demodulating 338 with 599.
+1201:     >> back demodulating 336 with 599.
+1202:     >> back demodulating 334 with 599.
+1203:     >> back demodulating 327 with 599.
+1204:     >> back demodulating 326 with 599.
+1205:     >> back demodulating 323 with 599.
+1206:     >> back demodulating 322 with 599.
+1207:     >> back demodulating 321 with 599.
+1208:     >> back demodulating 319 with 599.
+1209:     >> back demodulating 317 with 599.
+1210:     >> back demodulating 315 with 599.
+1211:     >> back demodulating 313 with 599.
+1212:     >> back demodulating 310 with 599.
+1213:     >> back demodulating 309 with 599.
+1214:     >> back demodulating 308 with 599.
+1215:     >> back demodulating 278 with 599.
+1216: ** KEPT (pick-wt=11): 622 [back_demod,278,demod,619,27,599,197] (x+y)*x=x* (x+y).
+1217: ---> New Demodulator: 623 [new_demod,622] (x+y)*x=x* (x+y).
+1218:     >> back demodulating 241 with 599.
+1219:     >> back demodulating 238 with 599.
+1220:     >> back demodulating 208 with 599.
+1221:     >> back demodulating 119 with 599.
+1222: ** KEPT (pick-wt=9): 624 [back_demod,119,demod,599,609,623,flip.1] x*y* (y+x)=0.
+1223: ---> New Demodulator: 625 [new_demod,624] x*y* (y+x)=0.
+1224:     >> back demodulating 118 with 599.
+1225:     >> back demodulating 109 with 599.
+1226:     >> back demodulating 107 with 599.
+1227:     >> back demodulating 103 with 599.
+1228:     >> back demodulating 101 with 599.
+1229:     >> back demodulating 96 with 599.
+1230:     >> back demodulating 85 with 599.
+1231:     >> back demodulating 81 with 599.
+1232:     >> back demodulating 79 with 599.
+1233:     >> back demodulating 73 with 599.
+1234:     >> back demodulating 71 with 599.
+1235:     >> back demodulating 70 with 599.
+1236:     >> back demodulating 66 with 599.
+1237:     >> back demodulating 65 with 599.
+1238:     >> back demodulating 61 with 599.
+1239: ** KEPT (pick-wt=9): 626 [back_demod,61,demod,599,609,flip.1] x* (x+y)*y=0.
+1240: ---> New Demodulator: 627 [new_demod,626] x* (x+y)*y=0.
+1241:     >> back demodulating 60 with 599.
+1242:     >> back demodulating 53 with 599.
+1243: >>>> Starting back demodulation with 601.
+1244:     >> back demodulating 590 with 601.
+1245: >>>> Starting back demodulation with 603.
+1246:     >> back demodulating 154 with 603.
+1247: ** KEPT (pick-wt=11): 628 [back_demod,154,demod,619,25,619,flip.1] (x+y)*y=y* (x+y).
+1248: ---> New Demodulator: 629 [new_demod,628] (x+y)*y=y* (x+y).
+1249: >>>> Starting back demodulation with 605.
+1250:     >> back demodulating 398 with 605.
+1251:     >> back demodulating 262 with 605.
+1252: >>>> Starting back demodulation with 607.
+1253:     >> back demodulating 600 with 607.
+1254:     >> back demodulating 596 with 607.
+1255:     >> back demodulating 392 with 607.
+1256:     >> back demodulating 98 with 607.
+1257:     >> back demodulating 68 with 607.
+1258: >>>> Starting back demodulation with 609.
+1259: >>>> Starting back demodulation with 611.
+1260:     >> back demodulating 282 with 611.
+1261:     >> back demodulating 210 with 611.
+1262: >>>> Starting back demodulation with 613.
+1263:     >> back demodulating 152 with 613.
+1264: >>>> Starting back demodulation with 615.
+1265:     >> back demodulating 256 with 615.
+1266: ** KEPT (pick-wt=15): 630 [back_demod,256,demod,617] x+y+x* (y+x)=y* (x+y).
+1267: ---> New Demodulator: 631 [new_demod,630] x+y+x* (y+x)=y* (x+y).
+1268: >>>> Starting back demodulation with 617.
+1269:     >> back demodulating 614 with 617.
+1270:     >> back demodulating 612 with 617.
+1271: >>>> Starting back demodulation with 619.
+1272:     >> back demodulating 604 with 619.
+1273:     >> back demodulating 602 with 619.
+1274: >>>> Starting back demodulation with 621.
+1275:     >> back demodulating 114 with 621.
+1276: ** KEPT (pick-wt=11): 632 [back_demod,114,demod,623,625] x* (y+x)*x*y=0.
+1277: ---> New Demodulator: 633 [new_demod,632] x* (y+x)*x*y=0.
+1278:     >> back demodulating 89 with 621.
+1279: >>>> Starting back demodulation with 623.
+1280:     >> back demodulating 620 with 623.
+1281:     >> back demodulating 212 with 623.
+1282: ** KEPT (pick-wt=15): 634 [back_demod,212,demod,623,31,629] (x+y)*y* (y+x)=y* (x+y).
+1283: ---> New Demodulator: 635 [new_demod,634] (x+y)*y* (y+x)=y* (x+y).
+1284:     >> back demodulating 206 with 623.
+1285:     >> back demodulating 204 with 623.
+1286: ** KEPT (pick-wt=19): 636 [back_demod,204,demod,623] (x+y)*z+y* (y+x)= (x+y)* (z+y).
+1287: ---> New Demodulator: 637 [new_demod,636] (x+y)*z+y* (y+x)= (x+y)* (z+y).
+1288:     >> back demodulating 203 with 623.
+1289: ** KEPT (pick-wt=15): 638 [back_demod,203,demod,623] x* (x+y+z)= (y+z+x)*x.
+1290:     >> back demodulating 202 with 623.
+1291: ** KEPT (pick-wt=15): 639 [back_demod,202,demod,623] (x+y+z)*z=z* (z+x+y).
+1292:     >> back demodulating 166 with 623.
+1293: ** KEPT (pick-wt=15): 640 [back_demod,166,demod,623] x* (x+y+z)= (y+x+z)*x.
+1294:     >> back demodulating 159 with 623.
+1295: ** KEPT (pick-wt=15): 641 [back_demod,159,demod,623] (x+y+z)*y=y* (y+x+z).
+1296:     >> back demodulating 157 with 623.
+1297: ** KEPT (pick-wt=15): 642 [back_demod,157,demod,629,31,623] (x+y)*x* (y+x)=x* (x+y).
+1298: ---> New Demodulator: 643 [new_demod,642] (x+y)*x* (y+x)=x* (x+y).
+1299:     >> back demodulating 150 with 623.
+1300:     >> back demodulating 120 with 623.
+1301: ** KEPT (pick-wt=15): 644 [back_demod,120,demod,623,129] x+x*y+z=x+y*x+z.
+1302:     >> back demodulating 112 with 623.
+1303: ** KEPT (pick-wt=15): 645 [back_demod,112,demod,623] x+y*z*x=x* (x+y*z).
+1304: ---> New Demodulator: 646 [new_demod,645] x+y*z*x=x* (x+y*z).
+1305:     >> back demodulating 62 with 623.
+1306:     >> back demodulating 59 with 623.
+1307:     >> back demodulating 38 with 623.
+1308: ** KEPT (pick-wt=15): 647 [back_demod,38,demod,623,11,123] x*y* (y+z)= (x+z)*x*y.
+1309:     >> back demodulating 26 with 623.
+1310: ** KEPT (pick-wt=11): 648 [back_demod,26,demod,623] x+y*x=x* (x+y).
+1311: ---> New Demodulator: 649 [new_demod,648] x+y*x=x* (x+y).
+1312: >>>> Starting back demodulation with 625.
+1313: >>>> Starting back demodulation with 627.
+1314:     >> back demodulating 124 with 627.
+1315:     >> back demodulating 57 with 627.
+1316: ** KEPT (pick-wt=17): 650 [back_demod,57,demod,629] x* (x+y)*x*y=x*y* (x+y).
+1317: ---> New Demodulator: 651 [new_demod,650] x* (x+y)*x*y=x*y* (x+y).
+1318: >>>> Starting back demodulation with 629.
+1319:     >> back demodulating 626 with 629.
+1320: ** KEPT (pick-wt=9): 652 [back_demod,626,demod,629] x*y* (x+y)=0.
+1321: ---> New Demodulator: 653 [new_demod,652] x*y* (x+y)=0.
+1322:     >> back demodulating 148 with 629.
+1323: ** KEPT (pick-wt=19): 654 [back_demod,148,demod,629] (x+y)*z+x* (y+x)= (x+y)* (z+x).
+1324: ---> New Demodulator: 655 [new_demod,654] (x+y)*z+x* (y+x)= (x+y)* (z+x).
+1325:     >> back demodulating 145 with 629.
+1326: ** KEPT (pick-wt=19): 656 [back_demod,145,demod,629] (x+y)* (z+x+y)= (x+y+z)* (x+y).
+1327:     >> back demodulating 139 with 629.
+1328: ** KEPT (pick-wt=19): 657 [back_demod,139,demod,629] (x+y+z)* (x+y)= (x+y)* (z+x+y).
+1329:     >> back demodulating 63 with 629.
+1330: ** KEPT (pick-wt=15): 658 [back_demod,63,demod,629,94] x*y+x+z=y*x+x+z.
+1331:     >> back demodulating 55 with 629.
+1332: ** KEPT (pick-wt=15): 659 [back_demod,55,demod,629] x*y*z+z=z* (x*y+z).
+1333: ---> New Demodulator: 660 [new_demod,659] x*y*z+z=z* (x*y+z).
+1334:     >> back demodulating 34 with 629.
+1335: ** KEPT (pick-wt=15): 661 [back_demod,34,demod,629,11,88] x*y* (z+y)= (z+x)*x*y.
+1336:     >> back demodulating 22 with 629.
+1337: ** KEPT (pick-wt=11): 662 [back_demod,22,demod,629] x*y+y=y* (x+y).
+1338: ---> New Demodulator: 663 [new_demod,662] x*y+y=y* (x+y).
+1339: >>>> Starting back demodulation with 631.
+1340: >>>> Starting back demodulation with 633.
+1341: >>>> Starting back demodulation with 635.
+1342:     >> back demodulating 284 with 635.
+1343: >>>> Starting back demodulation with 637.
+1344: >>>> Starting back demodulation with 643.
+1345:     >> back demodulating 264 with 643.
+1346: ** KEPT (pick-wt=15): 664 [copy,644,flip.1] x+y*x+z=x+x*y+z.
+1347: >>>> Starting back demodulation with 646.
+1348: ** KEPT (pick-wt=15): 665 [copy,647,flip.1] (x+y)*x*z=x*z* (z+y).
+1349: >>>> Starting back demodulation with 649.
+1350: >>>> Starting back demodulation with 651.
+1351: >>>> Starting back demodulation with 653.
+1352:     >> back demodulating 650 with 653.
+1353: ** KEPT (pick-wt=11): 666 [back_demod,650,demod,653] x* (x+y)*x*y=0.
+1354: ---> New Demodulator: 667 [new_demod,666] x* (x+y)*x*y=0.
+1355: >>>> Starting back demodulation with 655.
+1356: ** KEPT (pick-wt=15): 668 [copy,658,flip.1] x*y+y+z=y*x+y+z.
+1357: >>>> Starting back demodulation with 660.
+1358: ** KEPT (pick-wt=15): 669 [copy,661,flip.1] (x+y)*y*z=y*z* (x+z).
+1359: >>>> Starting back demodulation with 663.
+1360: >>>> Starting back demodulation with 667.
+1361: 
+1362: given clause #39: (wt=4) 594 [para_from,572.1.1,530.1.1.2,demod,547] -x=x.
+1363: 
+1364: given clause #40: (wt=5) 598 [back_demod,592,demod,595,595] x+x=0.
+1365: 
+1366: given clause #41: (wt=5) 608 [back_demod,568,demod,599,595,503,flip.1] x*0=0.
+1367: 
+1368: given clause #42: (wt=7) 616 [back_demod,546,demod,595,4,595] x+y+x=y.
+1369: 
+1370: given clause #43: (wt=7) 618 [back_demod,534,demod,595] x+x+y=y.
+1371: 
+1372: given clause #44: (wt=9) 624 [back_demod,119,demod,599,609,623,flip.1] x*y* (y+x)=0.
+1373: ** KEPT (pick-wt=9): 670 [para_into,624.1.1.2.2,618.1.1] (x+y)*x*y=0.
+1374: ---> New Demodulator: 671 [new_demod,670] (x+y)*x*y=0.
+1375: ** KEPT (pick-wt=9): 672 [para_into,624.1.1.2.2,616.1.1] (x+y)*y*x=0.
+1376: ---> New Demodulator: 673 [new_demod,672] (x+y)*y*x=0.
+1377: ** KEPT (pick-wt=15): 674 [para_into,624.1.1.2.2,16.1.1,demod,11,11] x*y*z*y* (z+x)*y=0.
+1378: ---> New Demodulator: 675 [new_demod,674] x*y*z*y* (z+x)*y=0.
+1379: ** KEPT (pick-wt=15): 676 [para_into,624.1.1.2.2,13.1.1,demod,11,11] x*y*x*z*x* (z+y)=0.
+1380: ---> New Demodulator: 677 [new_demod,676] x*y*x*z*x* (z+y)=0.
+1381: ** KEPT (pick-wt=13): 678 [para_into,624.1.1.2.2,3.1.1] x* (y+z)* (y+z+x)=0.
+1382: ---> New Demodulator: 679 [new_demod,678] x* (y+z)* (y+z+x)=0.
+1383: ** KEPT (pick-wt=11): 680 [para_into,624.1.1.2,10.1.1,demod,123] x*y*z* (z+x)=0.
+1384: ---> New Demodulator: 681 [new_demod,680] x*y*z* (z+x)=0.
+1385: ** KEPT (pick-wt=13): 682 [para_into,624.1.1,10.1.1] x*y*z* (z+x*y)=0.
+1386: ---> New Demodulator: 683 [new_demod,682] x*y*z* (z+x*y)=0.
+1387: >>>> Starting back demodulation with 671.
+1388:     >> back demodulating 666 with 671.
+1389: >>>> Starting back demodulation with 673.
+1390:     >> back demodulating 632 with 673.
+1391: >>>> Starting back demodulation with 675.
+1392: >>>> Starting back demodulation with 677.
+1393: >>>> Starting back demodulation with 679.
+1394: >>>> Starting back demodulation with 681.
+1395: >>>> Starting back demodulation with 683.
+1396: ** KEPT (pick-wt=17): 684 [para_from,624.1.1,16.1.1.2,demod,197,flip.1] (x+y)*z* (z+y)=x*z* (z+y).
+1397: ---> New Demodulator: 685 [new_demod,684] (x+y)*z* (z+y)=x*z* (z+y).
+1398: ** KEPT (pick-wt=13): 686 [para_from,624.1.1,13.1.1.2,demod,197,flip.1] x* (y+z* (z+x))=x*y.
+1399: ---> New Demodulator: 687 [new_demod,686] x* (y+z* (z+x))=x*y.
+1400: ** KEPT (pick-wt=17): 688 [para_from,624.1.1,16.1.1.1,demod,6,flip.1] (x+y)*z* (z+x)=y*z* (z+x).
+1401: ---> New Demodulator: 689 [new_demod,688] (x+y)*z* (z+x)=y*z* (z+x).
+1402: ** KEPT (pick-wt=13): 690 [para_from,624.1.1,13.1.1.1,demod,6,129,flip.1] x* (y+y*x+z)=x*z.
+1403: ---> New Demodulator: 691 [new_demod,690] x* (y+y*x+z)=x*z.
+1404: ** KEPT (pick-wt=11): 692 [para_from,624.1.1,10.1.1.1,demod,503,11,flip.1] x*y* (y+x)*z=0.
+1405: ---> New Demodulator: 693 [new_demod,692] x*y* (y+x)*z=0.
+1406: >>>> Starting back demodulation with 685.
+1407: >>>> Starting back demodulation with 687.
+1408: >>>> Starting back demodulation with 689.
+1409:     >> back demodulating 634 with 689.
+1410: >>>> Starting back demodulation with 691.
+1411: >>>> Starting back demodulation with 693.
+1412: 
+1413: given clause #45: (wt=9) 652 [back_demod,626,demod,629] x*y* (x+y)=0.
+1414: ** KEPT (pick-wt=15): 694 [para_into,652.1.1.2.2,16.1.1,demod,11,11] x*y*z*y* (x+z)*y=0.
+1415: ---> New Demodulator: 695 [new_demod,694] x*y*z*y* (x+z)*y=0.
+1416: ** KEPT (pick-wt=15): 696 [para_into,652.1.1.2.2,13.1.1,demod,11,11] x*y*x*z*x* (y+z)=0.
+1417: ---> New Demodulator: 697 [new_demod,696] x*y*x*z*x* (y+z)=0.
+1418: ** KEPT (pick-wt=13): 698 [para_into,652.1.1.2.2,3.1.1] (x+y)*z* (x+y+z)=0.
+1419: ---> New Demodulator: 699 [new_demod,698] (x+y)*z* (x+y+z)=0.
+1420: ** KEPT (pick-wt=11): 700 [para_into,652.1.1.2,10.1.1,demod,88] x*y*z* (x+z)=0.
+1421: ---> New Demodulator: 701 [new_demod,700] x*y*z* (x+z)=0.
+1422: ** KEPT (pick-wt=13): 702 [para_into,652.1.1,10.1.1] x*y*z* (x*y+z)=0.
+1423: ---> New Demodulator: 703 [new_demod,702] x*y*z* (x*y+z)=0.
+1424: >>>> Starting back demodulation with 695.
+1425: >>>> Starting back demodulation with 697.
+1426: >>>> Starting back demodulation with 699.
+1427: >>>> Starting back demodulation with 701.
+1428: >>>> Starting back demodulation with 703.
+1429: ** KEPT (pick-wt=17): 704 [para_from,652.1.1,16.1.1.2,demod,197,flip.1] (x+y)*z* (y+z)=x*z* (y+z).
+1430: ---> New Demodulator: 705 [new_demod,704] (x+y)*z* (y+z)=x*z* (y+z).
+1431: ** KEPT (pick-wt=13): 706 [para_from,652.1.1,13.1.1.2,demod,197,flip.1] x* (y+z* (x+z))=x*y.
+1432: ---> New Demodulator: 707 [new_demod,706] x* (y+z* (x+z))=x*y.
+1433: ** KEPT (pick-wt=11): 708 [para_from,652.1.1,24.1.1.1,demod,6,94,flip.1] x* (y*x+y+x)=x.
+1434: ---> New Demodulator: 709 [new_demod,708] x* (y*x+y+x)=x.
+1435: ** KEPT (pick-wt=17): 710 [para_from,652.1.1,16.1.1.1,demod,6,flip.1] (x+y)*z* (x+z)=y*z* (x+z).
+1436: ---> New Demodulator: 711 [new_demod,710] (x+y)*z* (x+z)=y*z* (x+z).
+1437: ** KEPT (pick-wt=13): 712 [para_from,652.1.1,13.1.1.1,demod,6,94,flip.1] x* (y*x+y+z)=x*z.
+1438: ---> New Demodulator: 713 [new_demod,712] x* (y*x+y+z)=x*z.
+1439: ** KEPT (pick-wt=11): 714 [para_from,652.1.1,10.1.1.1,demod,503,11,flip.1] x*y* (x+y)*z=0.
+1440: ---> New Demodulator: 715 [new_demod,714] x*y* (x+y)*z=0.
+1441: >>>> Starting back demodulation with 705.
+1442:     >> back demodulating 642 with 705.
+1443: >>>> Starting back demodulation with 707.
+1444: >>>> Starting back demodulation with 709.
+1445: >>>> Starting back demodulation with 711.
+1446: >>>> Starting back demodulation with 713.
+1447:     >> back demodulating 708 with 713.
+1448: >>>> Starting back demodulation with 715.
+1449: 
+1450: given clause #46: (wt=9) 670 [para_into,624.1.1.2.2,618.1.1] (x+y)*x*y=0.
+1451: ** KEPT (pick-wt=13): 716 [para_into,670.1.1.1,24.1.1,demod,11,11] x* (y+x)*x*y*x=0.
+1452: ---> New Demodulator: 717 [new_demod,716] x* (y+x)*x*y*x=0.
+1453: ** KEPT (pick-wt=15): 718 [para_into,670.1.1.1,16.1.1,demod,11,11] (x+y)*z*x*z*y*z=0.
+1454: ---> New Demodulator: 719 [new_demod,718] (x+y)*z*x*z*y*z=0.
+1455: ** KEPT (pick-wt=15): 720 [para_into,670.1.1.1,13.1.1,demod,11,11] x* (y+z)*x*y*x*z=0.
+1456: ---> New Demodulator: 721 [new_demod,720] x* (y+z)*x*y*x*z=0.
+1457: ** KEPT (pick-wt=13): 722 [para_into,670.1.1.1,3.1.1] (x+y+z)* (x+y)*z=0.
+1458: ---> New Demodulator: 723 [new_demod,722] (x+y+z)* (x+y)*z=0.
+1459: ** KEPT (pick-wt=13): 724 [para_into,670.1.1.2,20.1.1] (x+y*x*y)*x*y=0.
+1460: ---> New Demodulator: 725 [new_demod,724] (x+y*x*y)*x*y=0.
+1461: ** KEPT (pick-wt=13): 726 [para_into,670.1.1.2,10.1.1] (x*y+z)*x*y*z=0.
+1462: ---> New Demodulator: 727 [new_demod,726] (x*y+z)*x*y*z=0.
+1463: >>>> Starting back demodulation with 717.
+1464: >>>> Starting back demodulation with 719.
+1465: >>>> Starting back demodulation with 721.
+1466: >>>> Starting back demodulation with 723.
+1467: >>>> Starting back demodulation with 725.
+1468: >>>> Starting back demodulation with 727.
+1469: ** KEPT (pick-wt=15): 728 [para_from,670.1.1,16.1.1.2,demod,197,flip.1] (x+y+z)*y*z=x*y*z.
+1470: ---> New Demodulator: 729 [new_demod,728] (x+y+z)*y*z=x*y*z.
+1471: ** KEPT (pick-wt=15): 730 [para_from,670.1.1,13.1.1.2,demod,197,flip.1] (x+y)* (z+x*y)= (x+y)*z.
+1472: ---> New Demodulator: 731 [new_demod,730] (x+y)* (z+x*y)= (x+y)*z.
+1473: ** KEPT (pick-wt=15): 732 [para_from,670.1.1,28.1.1.2,demod,197,4,649,flip.1] (x+y)* (x+y* (y+x))=x+y.
+1474: ---> New Demodulator: 733 [new_demod,732] (x+y)* (x+y* (y+x))=x+y.
+1475: ** KEPT (pick-wt=15): 734 [para_from,670.1.1,24.1.1.1,demod,6,flip.1] (x+y)* (x*y+x+y)=x+y.
+1476: ---> New Demodulator: 735 [new_demod,734] (x+y)* (x*y+x+y)=x+y.
+1477: ** KEPT (pick-wt=15): 736 [para_from,670.1.1,16.1.1.1,demod,6,4,flip.1] (x+y+z)*x*y=z*x*y.
+1478: ---> New Demodulator: 737 [new_demod,736] (x+y+z)*x*y=z*x*y.
+1479: ** KEPT (pick-wt=15): 738 [para_from,670.1.1,13.1.1.1,demod,6,flip.1] (x+y)* (x*y+z)= (x+y)*z.
+1480: ---> New Demodulator: 739 [new_demod,738] (x+y)* (x*y+z)= (x+y)*z.
+1481: ** KEPT (pick-wt=11): 740 [para_from,670.1.1,10.1.1.1,demod,503,11,flip.1] (x+y)*x*y*z=0.
+1482: ---> New Demodulator: 741 [new_demod,740] (x+y)*x*y*z=0.
+1483: >>>> Starting back demodulation with 729.
+1484: >>>> Starting back demodulation with 731.
+1485: >>>> Starting back demodulation with 733.
+1486: >>>> Starting back demodulation with 735.
+1487: >>>> Starting back demodulation with 737.
+1488: >>>> Starting back demodulation with 739.
+1489:     >> back demodulating 734 with 739.
+1490: >>>> Starting back demodulation with 741.
+1491: 
+1492: given clause #47: (wt=9) 672 [para_into,624.1.1.2.2,616.1.1] (x+y)*y*x=0.
+1493: ** KEPT (pick-wt=15): 742 [para_into,672.1.1.1,16.1.1,demod,11,11] (x+y)*z*y*z*x*z=0.
+1494: ---> New Demodulator: 743 [new_demod,742] (x+y)*z*y*z*x*z=0.
+1495: ** KEPT (pick-wt=15): 744 [para_into,672.1.1.1,13.1.1,demod,11,11] x* (y+z)*x*z*x*y=0.
+1496: ---> New Demodulator: 745 [new_demod,744] x* (y+z)*x*z*x*y=0.
+1497: ** KEPT (pick-wt=13): 746 [para_into,672.1.1.1,3.1.1] (x+y+z)*z* (x+y)=0.
+1498: ---> New Demodulator: 747 [new_demod,746] (x+y+z)*z* (x+y)=0.
+1499: ** KEPT (pick-wt=13): 748 [para_into,672.1.1.2,20.1.1] (x*y*x+y)*y*x=0.
+1500: ---> New Demodulator: 749 [new_demod,748] (x*y*x+y)*y*x=0.
+1501: ** KEPT (pick-wt=13): 750 [para_into,672.1.1.2,10.1.1] (x+y*z)*y*z*x=0.
+1502: ---> New Demodulator: 751 [new_demod,750] (x+y*z)*y*z*x=0.
+1503: >>>> Starting back demodulation with 743.
+1504: >>>> Starting back demodulation with 745.
+1505: >>>> Starting back demodulation with 747.
+1506: >>>> Starting back demodulation with 749.
+1507: >>>> Starting back demodulation with 751.
+1508: ** KEPT (pick-wt=15): 752 [para_from,672.1.1,16.1.1.2,demod,197,flip.1] (x+y+z)*z*y=x*z*y.
+1509: ---> New Demodulator: 753 [new_demod,752] (x+y+z)*z*y=x*z*y.
+1510: ** KEPT (pick-wt=15): 754 [para_from,672.1.1,13.1.1.2,demod,197,flip.1] (x+y)* (z+y*x)= (x+y)*z.
+1511: ---> New Demodulator: 755 [new_demod,754] (x+y)* (z+y*x)= (x+y)*z.
+1512: ** KEPT (pick-wt=15): 756 [para_from,672.1.1,24.1.1.1,demod,6,flip.1] (x+y)* (y*x+x+y)=x+y.
+1513: ---> New Demodulator: 757 [new_demod,756] (x+y)* (y*x+x+y)=x+y.
+1514: ** KEPT (pick-wt=15): 758 [para_from,672.1.1,16.1.1.1,demod,6,4,flip.1] (x+y+z)*y*x=z*y*x.
+1515: ---> New Demodulator: 759 [new_demod,758] (x+y+z)*y*x=z*y*x.
+1516: ** KEPT (pick-wt=15): 760 [para_from,672.1.1,13.1.1.1,demod,6,flip.1] (x+y)* (y*x+z)= (x+y)*z.
+1517: ---> New Demodulator: 761 [new_demod,760] (x+y)* (y*x+z)= (x+y)*z.
+1518: ** KEPT (pick-wt=11): 762 [para_from,672.1.1,10.1.1.1,demod,503,11,flip.1] (x+y)*y*x*z=0.
+1519: ---> New Demodulator: 763 [new_demod,762] (x+y)*y*x*z=0.
+1520: >>>> Starting back demodulation with 753.
+1521: >>>> Starting back demodulation with 755.
+1522: >>>> Starting back demodulation with 757.
+1523: >>>> Starting back demodulation with 759.
+1524: >>>> Starting back demodulation with 761.
+1525:     >> back demodulating 756 with 761.
+1526: >>>> Starting back demodulation with 763.
+1527:     >> back demodulating 716 with 763.
+1528: 
+1529: given clause #48: (wt=11) 606 [back_demod,570,demod,595] x+y+x+z=y+z.
+1530: ** KEPT (pick-wt=11): 764 [para_into,606.1.1.2.2,618.1.1] x+y+z=y+x+z.
+1531: ** KEPT (pick-wt=11): 765 [para_into,606.1.1.2.2,616.1.1] x+y+z=y+z+x.
+1532: ** KEPT (pick-wt=15): 766 [para_into,606.1.1.2.2,606.1.1] x+y+z+u=y+z+x+u.
+1533: ** KEPT (pick-wt=15): 767 [para_into,606.1.1.2.2,28.1.1] x+y+x* (x+z)=y+x*z.
+1534: ---> New Demodulator: 768 [new_demod,767] x+y+x* (x+z)=y+x*z.
+1535: ** KEPT (pick-wt=15): 769 [para_into,606.1.1.2.2,24.1.1] x*y+z+x* (y+x)=z+x.
+1536: ---> New Demodulator: 770 [new_demod,769] x*y+z+x* (y+x)=z+x.
+1537: ** KEPT (pick-wt=17): 771 [para_into,606.1.1.2.2,16.1.1] x*y+z+ (x+u)*y=z+u*y.
+1538: ---> New Demodulator: 772 [new_demod,771] x*y+z+ (x+u)*y=z+u*y.
+1539: ** KEPT (pick-wt=17): 773 [para_into,606.1.1.2.2,13.1.1] x*y+z+x* (y+u)=z+x*u.
+1540: ---> New Demodulator: 774 [new_demod,773] x*y+z+x* (y+u)=z+x*u.
+1541: ** KEPT (pick-wt=15): 775 [para_into,606.1.1.2.2,3.1.1,demod,4] x+y+z+x+y+u=z+u.
+1542: ---> New Demodulator: 776 [new_demod,775] x+y+z+x+y+u=z+u.
+1543: ** KEPT (pick-wt=19): 777 [para_into,606.1.1.2,24.1.1,flip.1] (x+y)*z+y=x+ (x+y)* (z+x+y).
+1544: ---> New Demodulator: 778 [new_demod,777] (x+y)*z+y=x+ (x+y)* (z+x+y).
+1545: ** KEPT (pick-wt=15): 779 [para_into,606.1.1.2,3.1.1,demod,4] x+y+z+x+u=y+z+u.
+1546: ---> New Demodulator: 780 [new_demod,779] x+y+z+x+u=y+z+u.
+1547: ** KEPT (pick-wt=11): 781 [copy,765,flip.1] x+y+z=z+x+y.
+1548: ** KEPT (pick-wt=15): 782 [copy,766,flip.1] x+y+z+u=z+x+y+u.
+1549: >>>> Starting back demodulation with 768.
+1550: >>>> Starting back demodulation with 770.
+1551: >>>> Starting back demodulation with 772.
+1552: >>>> Starting back demodulation with 774.
+1553:     >> back demodulating 769 with 774.
+1554: >>>> Starting back demodulation with 776.
+1555: >>>> Starting back demodulation with 778.
+1556: >>>> Starting back demodulation with 780.
+1557:     >> back demodulating 775 with 780.
+1558: ** KEPT (pick-wt=13): 783 [para_from,606.1.1,624.1.1.2.2] (x+y+z)*y* (x+z)=0.
+1559: ---> New Demodulator: 784 [new_demod,783] (x+y+z)*y* (x+z)=0.
+1560: ** KEPT (pick-wt=13): 785 [para_from,606.1.1,672.1.1.1] (x+y)* (x+z+y)*z=0.
+1561: ---> New Demodulator: 786 [new_demod,785] (x+y)* (x+z+y)*z=0.
+1562: ** KEPT (pick-wt=13): 787 [para_from,606.1.1,670.1.1.1] (x+y)*z* (x+z+y)=0.
+1563: ---> New Demodulator: 788 [new_demod,787] (x+y)*z* (x+z+y)=0.
+1564: ** KEPT (pick-wt=13): 789 [para_from,606.1.1,652.1.1.2.2] x* (y+x+z)* (y+z)=0.
+1565: ---> New Demodulator: 790 [new_demod,789] x* (y+x+z)* (y+z)=0.
+1566: >>>> Starting back demodulation with 784.
+1567: >>>> Starting back demodulation with 786.
+1568: >>>> Starting back demodulation with 788.
+1569: >>>> Starting back demodulation with 790.
+1570: 
+1571: given clause #49: (wt=11) 610 [back_demod,564,demod,595] x+y+z+x=y+z.
+1572: ** KEPT (pick-wt=15): 791 [para_into,610.1.1.2.2,610.1.1,demod,4,4] x+y+z+u+x+y=u+z.
+1573: ** KEPT (pick-wt=15): 792 [para_into,610.1.1.2.2,28.1.1] x*y+z+x* (x+y)=z+x.
+1574: ---> New Demodulator: 793 [new_demod,792] x*y+z+x* (x+y)=z+x.
+1575: ** KEPT (pick-wt=15): 794 [para_into,610.1.1.2.2,24.1.1] x+y+x* (z+x)=y+x*z.
+1576: ---> New Demodulator: 795 [new_demod,794] x+y+x* (z+x)=y+x*z.
+1577: ** KEPT (pick-wt=17): 796 [para_into,610.1.1.2.2,16.1.1] x*y+z+ (u+x)*y=z+u*y.
+1578: ---> New Demodulator: 797 [new_demod,796] x*y+z+ (u+x)*y=z+u*y.
+1579: ** KEPT (pick-wt=17): 798 [para_into,610.1.1.2.2,13.1.1] x*y+z+x* (u+y)=z+x*u.
+1580: ---> New Demodulator: 799 [new_demod,798] x*y+z+x* (u+y)=z+x*u.
+1581: ** KEPT (pick-wt=15): 800 [para_into,610.1.1.2.2,3.1.1] x+y+z+u+x=y+z+u.
+1582: ---> New Demodulator: 801 [new_demod,800] x+y+z+u+x=y+z+u.
+1583: ** KEPT (pick-wt=19): 802 [para_into,610.1.1.2,24.1.1,flip.1] (x+y)*z+x=y+ (x+y)* (z+x+y).
+1584: ---> New Demodulator: 803 [new_demod,802] (x+y)*z+x=y+ (x+y)* (z+x+y).
+1585: >>>> Starting back demodulation with 793.
+1586: >>>> Starting back demodulation with 795.
+1587:     >> back demodulating 630 with 795.
+1588: >>>> Starting back demodulation with 797.
+1589: >>>> Starting back demodulation with 799.
+1590:     >> back demodulating 792 with 799.
+1591: >>>> Starting back demodulation with 801.
+1592:     >> back demodulating 791 with 801.
+1593: >>>> Starting back demodulation with 803.
+1594: ** KEPT (pick-wt=15): 804 [para_from,610.1.1,606.1.1.2.2] x+y+z+u=y+z+u+x.
+1595: ** KEPT (pick-wt=13): 805 [para_from,610.1.1,672.1.1.1] (x+y)* (x+y+z)*z=0.
+1596: ---> New Demodulator: 806 [new_demod,805] (x+y)* (x+y+z)*z=0.
+1597: ** KEPT (pick-wt=13): 807 [para_from,610.1.1,652.1.1.2.2] x* (y+z+x)* (y+z)=0.
+1598: ---> New Demodulator: 808 [new_demod,807] x* (y+z+x)* (y+z)=0.
+1599: ** KEPT (pick-wt=15): 809 [copy,804,flip.1] x+y+z+u=u+x+y+z.
+1600: >>>> Starting back demodulation with 806.
+1601: >>>> Starting back demodulation with 808.
+1602: 
+1603: given clause #50: (wt=11) 622 [back_demod,278,demod,619,27,599,197] (x+y)*x=x* (x+y).
+1604: ** KEPT (pick-wt=7): 810 [para_into,622.1.1.1,618.1.1,demod,619] x*y=y*x.
+1605: 
+1606: ----> UNIT CONFLICT at   0.03 sec ----> 811 [binary,810.1,2.1] $F.
+1607: 
+1608: Length of proof is 34.  Level of proof is 17.
+1609: 
+1610: ---------------- PROOF ----------------
+1611: 
+1612: 2 [] a*b!=b*a.
+1613: 4,3 [] (x+y)+z=x+y+z.
+1614: 6,5 [] 0+x=x.
+1615: 8,7 [] (-x)+x=0.
+1616: 9 [] x+y=y+x.
+1617: 12 [] x* (y+z)=x*y+x*z.
+1618: 13 [copy,12,flip.1] x*y+x*z=x* (y+z).
+1619: 15 [] (x+y)*z=x*z+y*z.
+1620: 16 [copy,15,flip.1] x*y+z*y= (x+z)*y.
+1621: 19,18 [] x*x=x.
+1622: 23,22 [para_from,18.1.1,16.1.1.2] x*y+y= (x+y)*y.
+1623: 24 [para_from,18.1.1,13.1.1.2] x*y+x=x* (y+x).
+1624: 27,26 [para_from,18.1.1,16.1.1.1] x+y*x= (x+y)*x.
+1625: 29,28 [para_from,18.1.1,13.1.1.1] x+x*y=x* (x+y).
+1626: 53 [para_into,22.1.1.1,18.1.1,flip.1] (x+x)*x=x+x.
+1627: 59 [para_into,22.1.1,9.1.1,demod,27] (x+y)*x= (y+x)*x.
+1628: 62 [copy,59,flip.1] (x+y)*y= (y+x)*y.
+1629: 80,79 [para_from,53.1.1,13.1.1.1,demod,29,4] (x+x)* (x+x+y)= (x+x)* (x+y).
+1630: 83 [para_into,24.1.1.1,53.1.1,demod,4,80,19] x+x+x+x=x+x.
+1631: 91 [para_into,24.1.1,9.1.1,demod,29] x* (x+y)=x* (y+x).
+1632: 92 [copy,91,flip.1] x* (y+x)=x* (x+y).
+1633: 137 [para_into,59.1.1.1,5.1.1,flip.1] (x+0)*0=x*0.
+1634: 176 [para_from,137.1.1,28.1.1.2,demod,4,27,6,29,4,6,19] x* (x+0)=x+0.
+1635: 197,196 [para_into,176.1.1.2,9.1.1,demod,6,19,flip.1] x+0=x.
+1636: 201,200 [para_into,62.1.1.1,7.1.1,flip.1] (x+ -x)*x=0*x.
+1637: 226 [para_from,200.1.1,28.1.1.2,demod,4,4,8,197,201] x+ (-x)+0*x=0*x.
+1638: 278 [para_from,92.1.1,26.1.1.2,demod,4,29,4] x+y* (y+y+x)= (x+y+y)* (x+y).
+1639: 500 [para_into,226.1.1.2,9.1.1] x+0*x+ -x=0*x.
+1640: 503,502 [para_into,226.1.1,9.1.1,demod,4,23,6,19,8,flip.1] 0*x=0.
+1641: 507,506 [back_demod,500,demod,503,6,503] x+ -x=0.
+1642: 516 [para_from,506.1.1,3.1.1.1,demod,6,flip.1] x+ (-x)+y=y.
+1643: 520 [para_into,516.1.1.2,506.1.1,demod,197,flip.1] -(-x)=x.
+1644: 530 [para_into,516.1.1,9.1.1,demod,4] (-x)+y+x=y.
+1645: 535,534 [para_from,520.1.1,516.1.1.2.1] (-x)+x+y=y.
+1646: 547,546 [para_into,530.1.1.2,530.1.1] (-(x+y))+x= -y.
+1647: 572 [para_into,534.1.1.2,83.1.1,demod,535,flip.1] x+x+x=x.
+1648: 592 [para_from,572.1.1,516.1.1.2,demod,507,flip.1] (-x)+ -x=0.
+1649: 595,594 [para_from,572.1.1,530.1.1.2,demod,547] -x=x.
+1650: 599,598 [back_demod,592,demod,595,595] x+x=0.
+1651: 619,618 [back_demod,534,demod,595] x+x+y=y.
+1652: 622 [back_demod,278,demod,619,27,599,197] (x+y)*x=x* (x+y).
+1653: 810 [para_into,622.1.1.1,618.1.1,demod,619] x*y=y*x.
+1654: 811 [binary,810.1,2.1] $F.
+1655: 
+1656: ------------ end of proof -------------
+1657: 
+1658: 
+1659: Search stopped by max_proofs option.
+1660: 
+1661: ============ end of search ============
+1662: 
+1663: -------------- statistics -------------
+1664: clauses given                 50
+1665: clauses generated           1115
+1666:   para_from generated        544
+1667:   para_into generated        571
+1668: demod & eval rewrites       2867
+1669: clauses wt,lit,sk delete       0
+1670: tautologies deleted            0
+1671: clauses forward subsumed    1056
+1672:   (subsumed by sos)           99
+1673: unit deletions                 0
+1674: factor simplifications         0
+1675: clauses kept                 456
+1676: new demodulators             350
+1677: empty clauses                  1
+1678: clauses back demodulated     284
+1679: clauses back subsumed         17
+1680: usable size                   27
+1681: sos size                     128
+1682: demodulators size            106
+1683: passive size                   2
+1684: hot size                       0
+1685: Kbytes malloced             4882
+1686: 
+1687: ----------- times (seconds) -----------
+1688: user CPU time          0.03          (0 hr, 0 min, 0 sec)
+1689: system CPU time        0.01          (0 hr, 0 min, 0 sec)
+1690: wall-clock time        0             (0 hr, 0 min, 0 sec)
+1691: 
+1692: That finishes the proof of the theorem.
+1693: 
+1694: Process 6413 finished Sat Dec 31 20:28:32 2016
