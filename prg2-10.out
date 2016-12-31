@@ -1,0 +1,136 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on flare-OptiPlex-3020M,
+Sat Dec 31 19:36:31 2016
+The command was "otter".  The process ID is 3969.
+
+set(hyper_res).
+
+list(usable).
+1 [] -P(T(x))| -P(Says(x,y))|P(y).
+2 [] -P(L(x))| -P(Says(x,y))|Q(y).
+3 [] P(T(x))|P(L(x))|P(N(x)).
+4 [] -P(T(x))| -P(L(x)).
+5 [] -P(T(x))| -P(N(x)).
+6 [] -P(L(x))| -P(N(x)).
+7 [] -P(n(T(x)))|P(L(x))|P(N(x)).
+8 [] -P(n(L(x)))|P(T(x))|P(N(x)).
+9 [] -Q(n(y))|P(y).
+end_of_list.
+
+list(sos).
+10 [] P(Says(A,n(L(B)))).
+11 [] P(Says(B,n(T(A)))).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=6) 10 [] P(Says(A,n(L(B)))).
+** KEPT (pick-wt=10): 12 [hyper,10,2,3] Q(n(L(B)))|P(T(A))|P(N(A)).
+** KEPT (pick-wt=10): 13 [hyper,10,1,3] P(n(L(B)))|P(L(A))|P(N(A)).
+
+given clause #2: (wt=6) 11 [] P(Says(B,n(T(A)))).
+** KEPT (pick-wt=10): 14 [hyper,11,2,3] Q(n(T(A)))|P(T(B))|P(N(B)).
+** KEPT (pick-wt=10): 15 [hyper,11,1,3] P(n(T(A)))|P(L(B))|P(N(B)).
+
+given clause #3: (wt=10) 12 [hyper,10,2,3] Q(n(L(B)))|P(T(A))|P(N(A)).
+** KEPT (pick-wt=9): 16 [hyper,12,9] P(T(A))|P(N(A))|P(L(B)).
+
+given clause #4: (wt=9) 16 [hyper,12,9] P(T(A))|P(N(A))|P(L(B)).
+** KEPT (pick-wt=10): 17 [hyper,16,1,10] P(N(A))|P(L(B))|P(n(L(B))).
+** KEPT (pick-wt=10): 18 [hyper,16,2,11] P(T(A))|P(N(A))|Q(n(T(A))).
+
+given clause #5: (wt=10) 13 [hyper,10,1,3] P(n(L(B)))|P(L(A))|P(N(A)).
+** KEPT (pick-wt=12): 19 [hyper,13,8] P(L(A))|P(N(A))|P(T(B))|P(N(B)).
+** KEPT (pick-wt=11): 20 [hyper,13,2,10] P(n(L(B)))|P(N(A))|Q(n(L(B))).
+
+given clause #6: (wt=10) 14 [hyper,11,2,3] Q(n(T(A)))|P(T(B))|P(N(B)).
+** KEPT (pick-wt=9): 21 [hyper,14,9] P(T(B))|P(N(B))|P(T(A)).
+
+given clause #7: (wt=9) 21 [hyper,14,9] P(T(B))|P(N(B))|P(T(A)).
+** KEPT (pick-wt=9): 22 [hyper,21,4,16] P(N(B))|P(T(A))|P(N(A)).
+** KEPT (pick-wt=10): 23 [hyper,21,1,11] P(N(B))|P(T(A))|P(n(T(A))).
+** KEPT (pick-wt=9): 24 [hyper,21,6,16] P(T(B))|P(T(A))|P(N(A)).
+** KEPT (pick-wt=13): 25 [hyper,21,5,13] P(T(B))|P(N(B))|P(n(L(B)))|P(L(A)).
+** KEPT (pick-wt=13): 26 [hyper,21,4,13] P(T(B))|P(N(B))|P(n(L(B)))|P(N(A)).
+** KEPT (pick-wt=10): 27 [hyper,21,1,10] P(T(B))|P(N(B))|P(n(L(B))).
+27 back subsumes 26.
+27 back subsumes 25.
+
+given clause #8: (wt=9) 22 [hyper,21,4,16] P(N(B))|P(T(A))|P(N(A)).
+** KEPT (pick-wt=6): 28 [hyper,22,6,16] P(T(A))|P(N(A)).
+** KEPT (pick-wt=10): 29 [hyper,22,4,13] P(N(B))|P(N(A))|P(n(L(B))).
+28 back subsumes 24.
+28 back subsumes 22.
+28 back subsumes 18.
+28 back subsumes 16.
+28 back subsumes 12.
+
+given clause #9: (wt=6) 28 [hyper,22,6,16] P(T(A))|P(N(A)).
+** KEPT (pick-wt=7): 30 [hyper,28,4,13] P(N(A))|P(n(L(B))).
+30 back subsumes 29.
+30 back subsumes 20.
+30 back subsumes 17.
+30 back subsumes 13.
+
+given clause #10: (wt=7) 30 [hyper,28,4,13] P(N(A))|P(n(L(B))).
+** KEPT (pick-wt=9): 31 [hyper,30,8] P(N(A))|P(T(B))|P(N(B)).
+31 back subsumes 19.
+
+given clause #11: (wt=9) 31 [hyper,30,8] P(N(A))|P(T(B))|P(N(B)).
+** KEPT (pick-wt=6): 32 [hyper,31,5,21] P(T(B))|P(N(B)).
+** KEPT (pick-wt=10): 33 [hyper,31,1,11] P(N(A))|P(N(B))|P(n(T(A))).
+32 back subsumes 31.
+32 back subsumes 27.
+32 back subsumes 21.
+32 back subsumes 14.
+
+given clause #12: (wt=6) 32 [hyper,31,5,21] P(T(B))|P(N(B)).
+** KEPT (pick-wt=7): 34 [hyper,32,1,11] P(N(B))|P(n(T(A))).
+34 back subsumes 33.
+34 back subsumes 23.
+34 back subsumes 15.
+
+given clause #13: (wt=7) 34 [hyper,32,1,11] P(N(B))|P(n(T(A))).
+** KEPT (pick-wt=9): 35 [hyper,34,7] P(N(B))|P(L(A))|P(N(A)).
+
+given clause #14: (wt=9) 35 [hyper,34,7] P(N(B))|P(L(A))|P(N(A)).
+** KEPT (pick-wt=6): 36 [hyper,35,4,28] P(N(B))|P(N(A)).
+36 back subsumes 35.
+
+given clause #15: (wt=6) 36 [hyper,35,4,28] P(N(B))|P(N(A)).
+
+Search stopped because sos empty.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                 15
+clauses generated            119
+  hyper_res generated        119
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed      94
+  (subsumed by sos)           17
+unit deletions                 0
+factor simplifications         0
+clauses kept                  25
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed         20
+usable size                   16
+sos size                       0
+demodulators size              0
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+Process 3969 finished Sat Dec 31 19:36:31 2016
