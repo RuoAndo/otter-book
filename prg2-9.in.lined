@@ -1,0 +1,14 @@
+  1:  set(hyper_res). 
+  2:  
+  3:  list(usable).
+  4:          -P(T(x)) | -P(Says(x,y)) | P(y).
+  5:          -P(L(x)) | -P(Says(x,y)) | -P(y).
+  6:          P(T(x)) | P(L(x)) | P(N(x)).
+  7:          -P(T(x)) | -P(L(x)).
+  8:          -P(T(x)) | -P(N(x)).
+  9:          -P(L(x)) | -P(N(x)).
+ 10:  end_of_list.
+ 11:  
+ 12:  list(sos).
+ 13:          P(Says(A,L(A))).
+ 14:  end_of_list.

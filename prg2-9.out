@@ -1,0 +1,70 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on flare-OptiPlex-3020M,
+Sat Dec 31 19:32:30 2016
+The command was "otter".  The process ID is 3807.
+
+set(hyper_res).
+
+list(usable).
+1 [] -P(T(x))| -P(Says(x,y))|P(y).
+2 [] -P(L(x))| -P(Says(x,y))| -P(y).
+3 [] P(T(x))|P(L(x))|P(N(x)).
+4 [] -P(T(x))| -P(L(x)).
+5 [] -P(T(x))| -P(N(x)).
+6 [] -P(L(x))| -P(N(x)).
+end_of_list.
+
+list(sos).
+7 [] P(Says(A,L(A))).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=5) 7 [] P(Says(A,L(A))).
+** KEPT (pick-wt=6): 8 [hyper,7,2,3,3] P(T(A))|P(N(A)).
+** KEPT (pick-wt=6): 9 [hyper,7,1,3] P(L(A))|P(N(A)).
+
+given clause #2: (wt=6) 8 [hyper,7,2,3,3] P(T(A))|P(N(A)).
+
+given clause #3: (wt=6) 9 [hyper,7,1,3] P(L(A))|P(N(A)).
+** KEPT (pick-wt=3): 10 [hyper,9,4,8] P(N(A)).
+10 back subsumes 9.
+10 back subsumes 8.
+
+given clause #4: (wt=3) 10 [hyper,9,4,8] P(N(A)).
+
+Search stopped because sos empty.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  4
+clauses generated             24
+  hyper_res generated         24
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed      21
+  (subsumed by sos)            6
+unit deletions                 0
+factor simplifications         0
+clauses kept                   3
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed          2
+usable size                    8
+sos size                       0
+demodulators size              0
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+Process 3807 finished Sat Dec 31 19:32:30 2016
