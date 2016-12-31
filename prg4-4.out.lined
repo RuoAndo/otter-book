@@ -1,0 +1,61 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Sat Dec 31 20:24:31 2016
+  4: The command was "otter".  The process ID is 6241.
+  5: 
+  6: set(para_into).
+  7: 
+  8: list(usable).
+  9: 1 [] father(ichiro)=taro.
+ 10: 2 [] mother(taro)=hanako.
+ 11: end_of_list.
+ 12: 
+ 13: list(sos).
+ 14: 3 [] Grandmother(mother(father(x)),x).
+ 15: end_of_list.
+ 16: 
+ 17: ======= end of input processing =======
+ 18: 
+ 19: =========== start of search ===========
+ 20: 
+ 21: given clause #1: (wt=5) 3 [] Grandmother(mother(father(x)),x).
+ 22: ** KEPT (pick-wt=4): 4 [para_into,3.1.1.1,1.1.1] Grandmother(mother(taro),ichiro).
+ 23: 
+ 24: given clause #2: (wt=4) 4 [para_into,3.1.1.1,1.1.1] Grandmother(mother(taro),ichiro).
+ 25: ** KEPT (pick-wt=3): 5 [para_into,4.1.1,2.1.1] Grandmother(hanako,ichiro).
+ 26: 
+ 27: given clause #3: (wt=3) 5 [para_into,4.1.1,2.1.1] Grandmother(hanako,ichiro).
+ 28: 
+ 29: Search stopped because sos empty.
+ 30: 
+ 31: ============ end of search ============
+ 32: 
+ 33: -------------- statistics -------------
+ 34: clauses given                  3
+ 35: clauses generated              4
+ 36:   para_into generated          4
+ 37: demod & eval rewrites          0
+ 38: clauses wt,lit,sk delete       0
+ 39: tautologies deleted            0
+ 40: clauses forward subsumed       2
+ 41:   (subsumed by sos)            0
+ 42: unit deletions                 0
+ 43: factor simplifications         0
+ 44: clauses kept                   2
+ 45: new demodulators               0
+ 46: empty clauses                  0
+ 47: clauses back demodulated       0
+ 48: clauses back subsumed          0
+ 49: usable size                    5
+ 50: sos size                       0
+ 51: demodulators size              0
+ 52: passive size                   0
+ 53: hot size                       0
+ 54: Kbytes malloced              976
+ 55: 
+ 56: ----------- times (seconds) -----------
+ 57: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+ 58: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+ 59: wall-clock time        0             (0 hr, 0 min, 0 sec)
+ 60: 
+ 61: Process 6241 finished Sat Dec 31 20:24:31 2016
