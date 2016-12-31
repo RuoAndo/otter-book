@@ -1,0 +1,654 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Sat Dec 31 20:34:05 2016
+  4: The command was "otter".  The process ID is 6629.
+  5: 
+  6: set(para_into).
+  7: 
+  8: list(usable).
+  9: 1 [] EQUAL(l(hole,l(n(x),y)),l(n(x),l(hole,y))).
+ 10: 2 [] EQUAL(l(hole,l(x,l(y,l(z,l(u,l(n(w),v)))))),l(n(w),l(x,l(y,l(z,l(u,l(hole,v))))))).
+ 11: 3 [] -STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+ 12: end_of_list.
+ 13: 
+ 14: list(sos).
+ 15: 4 [] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 16: end_of_list.
+ 17: 
+ 18: ======= end of input processing =======
+ 19: 
+ 20: =========== start of search ===========
+ 21: 
+ 22: given clause #1: (wt=55) 4 [] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 23: ** KEPT (pick-wt=55): 5 [para_into,4.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 24: ** KEPT (pick-wt=55): 6 [para_into,4.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 25: ** KEPT (pick-wt=55): 7 [para_into,4.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(5),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 26: ** KEPT (pick-wt=55): 8 [para_into,4.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 27: 
+ 28: given clause #2: (wt=55) 5 [para_into,4.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 29: ** KEPT (pick-wt=55): 9 [para_into,5.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+ 30: ** KEPT (pick-wt=55): 10 [para_into,5.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 31: ** KEPT (pick-wt=55): 11 [para_into,5.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(hole,l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 32: 
+ 33: given clause #3: (wt=55) 6 [para_into,4.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 34: ** KEPT (pick-wt=55): 12 [para_into,6.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 35: ** KEPT (pick-wt=55): 13 [para_into,6.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 36: ** KEPT (pick-wt=55): 14 [para_into,6.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(5),l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 37: 
+ 38: given clause #4: (wt=55) 7 [para_into,4.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(5),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 39: ** KEPT (pick-wt=55): 15 [para_into,7.1.1.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(hole,l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 40: ** KEPT (pick-wt=55): 16 [para_into,7.1.1,2.1.2] STATE(l(hole,l(n(6),l(n(2),l(n(4),l(end,l(n(1),l(n(5),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 41: 
+ 42: given clause #5: (wt=55) 8 [para_into,4.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 43: ** KEPT (pick-wt=55): 17 [para_into,8.1.1.2,1.1.1] STATE(l(n(1),l(n(2),l(hole,l(n(4),l(end,l(n(5),l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 44: ** KEPT (pick-wt=55): 18 [para_into,8.1.1,1.1.2] STATE(l(hole,l(n(1),l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 45: 
+ 46: given clause #6: (wt=55) 9 [para_into,5.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+ 47: ** KEPT (pick-wt=55): 19 [para_into,9.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(n(15),l(hole,l(n(12),end)))))))))))))))))))).
+ 48: ** KEPT (pick-wt=55): 20 [para_into,9.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(n(11),l(end,l(hole,l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+ 49: 
+ 50: given clause #7: (wt=55) 10 [para_into,5.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 51: ** KEPT (pick-wt=55): 21 [para_into,10.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(hole,l(n(12),end)))))))))))))))))))).
+ 52: ** KEPT (pick-wt=55): 22 [para_into,10.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(11),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 53: ** KEPT (pick-wt=55): 23 [para_into,10.1.1.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(hole,l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 54: 
+ 55: given clause #8: (wt=55) 11 [para_into,5.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(hole,l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 56: ** KEPT (pick-wt=55): 24 [para_into,11.1.1.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(n(9),l(n(7),l(n(11),l(end,l(hole,l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 57: ** KEPT (pick-wt=55): 25 [para_into,11.1.1.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(10),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 58: 
+ 59: given clause #9: (wt=55) 12 [para_into,6.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 60: ** KEPT (pick-wt=55): 26 [para_into,12.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(hole,l(n(12),end)))))))))))))))))))).
+ 61: ** KEPT (pick-wt=55): 27 [para_into,12.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 62: ** KEPT (pick-wt=55): 28 [para_into,12.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(hole,l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 63: 
+ 64: given clause #10: (wt=55) 13 [para_into,6.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 65: ** KEPT (pick-wt=55): 29 [para_into,13.1.1.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 66: ** KEPT (pick-wt=55): 30 [para_into,13.1.1.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(hole,l(end,l(n(5),l(n(3),l(n(8),l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 67: 
+ 68: given clause #11: (wt=55) 14 [para_into,6.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(5),l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 69: ** KEPT (pick-wt=55): 31 [para_into,14.1.1.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(4),l(hole,l(end,l(n(5),l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 70: ** KEPT (pick-wt=55): 32 [para_into,14.1.1.2,1.1.2] STATE(l(n(1),l(hole,l(n(6),l(n(4),l(end,l(n(5),l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 71: 
+ 72: given clause #12: (wt=55) 15 [para_into,7.1.1.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(hole,l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 73: ** KEPT (pick-wt=55): 33 [para_into,15.1.1.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(n(10),l(n(7),l(n(11),l(end,l(hole,l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 74: ** KEPT (pick-wt=55): 34 [para_into,15.1.1.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 75: 
+ 76: given clause #13: (wt=55) 16 [para_into,7.1.1,2.1.2] STATE(l(hole,l(n(6),l(n(2),l(n(4),l(end,l(n(1),l(n(5),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 77: ** KEPT (pick-wt=55): 35 [para_into,16.1.1,1.1.1] STATE(l(n(6),l(hole,l(n(2),l(n(4),l(end,l(n(1),l(n(5),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 78: 
+ 79: given clause #14: (wt=55) 17 [para_into,8.1.1.2,1.1.1] STATE(l(n(1),l(n(2),l(hole,l(n(4),l(end,l(n(5),l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 80: ** KEPT (pick-wt=55): 36 [para_into,17.1.1.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 81: ** KEPT (pick-wt=55): 37 [para_into,17.1.1.2.2,1.1.1] STATE(l(n(1),l(n(2),l(n(4),l(hole,l(end,l(n(5),l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 82: 
+ 83: given clause #15: (wt=55) 18 [para_into,8.1.1,1.1.2] STATE(l(hole,l(n(1),l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 84: ** KEPT (pick-wt=55): 38 [para_into,18.1.1,2.1.1] STATE(l(n(5),l(n(1),l(n(2),l(n(4),l(end,l(hole,l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 85: 
+ 86: given clause #16: (wt=55) 19 [para_into,9.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(n(15),l(hole,l(n(12),end)))))))))))))))))))).
+ 87: ** KEPT (pick-wt=55): 39 [para_into,19.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(n(15),l(n(12),l(hole,end)))))))))))))))))))).
+ 88: ** KEPT (pick-wt=55): 40 [para_into,19.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(hole,l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+ 89: 
+ 90: given clause #17: (wt=55) 20 [para_into,9.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(n(11),l(end,l(hole,l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+ 91: ** KEPT (pick-wt=55): 41 [para_into,20.1.1.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(hole,l(n(14),l(n(7),l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+ 92: 
+ 93: given clause #18: (wt=55) 21 [para_into,10.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(hole,l(n(12),end)))))))))))))))))))).
+ 94: ** KEPT (pick-wt=55): 42 [para_into,21.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(n(12),l(hole,end)))))))))))))))))))).
+ 95: ** KEPT (pick-wt=55): 43 [para_into,21.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(15),l(n(11),l(end,l(n(13),l(hole,l(n(14),l(n(12),end)))))))))))))))))))).
+ 96: 
+ 97: given clause #19: (wt=55) 22 [para_into,10.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(11),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+ 98: ** KEPT (pick-wt=55): 44 [para_into,22.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+ 99: ** KEPT (pick-wt=55): 45 [para_into,22.1.1.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(hole,l(end,l(n(9),l(n(7),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+100: 
+101: given clause #20: (wt=55) 23 [para_into,10.1.1.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(hole,l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+102: ** KEPT (pick-wt=55): 46 [para_into,23.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(8),l(hole,l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+103: ** KEPT (pick-wt=55): 47 [para_into,23.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(10),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+104: ** KEPT (pick-wt=55): 48 [para_into,23.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+105: 
+106: given clause #21: (wt=55) 24 [para_into,11.1.1.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(n(9),l(n(7),l(n(11),l(end,l(hole,l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+107: ** KEPT (pick-wt=55): 49 [para_into,24.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(n(9),l(n(7),l(n(11),l(end,l(n(14),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+108: 
+109: given clause #22: (wt=55) 25 [para_into,11.1.1.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(10),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+110: ** KEPT (pick-wt=55): 50 [para_into,25.1.1.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(hole,l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+111: ** KEPT (pick-wt=55): 51 [para_into,25.1.1,2.1.2] STATE(l(hole,l(n(6),l(n(2),l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+112: 
+113: given clause #23: (wt=55) 26 [para_into,12.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(hole,l(n(12),end)))))))))))))))))))).
+114: ** KEPT (pick-wt=55): 52 [para_into,26.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(n(12),l(hole,end)))))))))))))))))))).
+115: ** KEPT (pick-wt=55): 53 [para_into,26.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(hole,l(n(14),l(n(12),end)))))))))))))))))))).
+116: 
+117: given clause #24: (wt=55) 27 [para_into,12.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+118: ** KEPT (pick-wt=55): 54 [para_into,27.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+119: ** KEPT (pick-wt=55): 55 [para_into,27.1.1.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(hole,l(end,l(n(9),l(n(10),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+120: 
+121: given clause #25: (wt=55) 28 [para_into,12.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(hole,l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+122: ** KEPT (pick-wt=55): 56 [para_into,28.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(14),l(n(10),l(n(11),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+123: ** KEPT (pick-wt=55): 57 [para_into,28.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(hole,l(n(9),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+124: ** KEPT (pick-wt=55): 58 [para_into,28.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(7),l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+125: 
+126: given clause #26: (wt=55) 29 [para_into,13.1.1.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+127: ** KEPT (pick-wt=55): 59 [para_into,29.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+128: ** KEPT (pick-wt=55): 60 [para_into,29.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(hole,l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+129: 
+130: given clause #27: (wt=55) 30 [para_into,13.1.1.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(hole,l(end,l(n(5),l(n(3),l(n(8),l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+131: ** KEPT (pick-wt=55): 61 [para_into,30.1.1.2.2,1.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(2),l(end,l(n(5),l(n(3),l(n(8),l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+132: 
+133: given clause #28: (wt=55) 31 [para_into,14.1.1.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(4),l(hole,l(end,l(n(5),l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+134: ** KEPT (pick-wt=55): 62 [para_into,31.1.1.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(n(3),l(n(2),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+135: 
+136: given clause #29: (wt=55) 32 [para_into,14.1.1.2,1.1.2] STATE(l(n(1),l(hole,l(n(6),l(n(4),l(end,l(n(5),l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+137: ** KEPT (pick-wt=55): 63 [para_into,32.1.1.2,2.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(hole,l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+138: ** KEPT (pick-wt=55): 64 [para_into,32.1.1,1.1.2] STATE(l(hole,l(n(1),l(n(6),l(n(4),l(end,l(n(5),l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+139: 
+140: given clause #30: (wt=55) 33 [para_into,15.1.1.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(n(10),l(n(7),l(n(11),l(end,l(hole,l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+141: ** KEPT (pick-wt=55): 65 [para_into,33.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(n(10),l(n(7),l(n(11),l(end,l(n(14),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+142: 
+143: given clause #31: (wt=55) 34 [para_into,15.1.1.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+144: ** KEPT (pick-wt=55): 66 [para_into,34.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+145: ** KEPT (pick-wt=55): 67 [para_into,34.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(7),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+146: ** KEPT (pick-wt=55): 68 [para_into,34.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(hole,l(n(3),l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+147: 
+148: given clause #32: (wt=55) 35 [para_into,16.1.1,1.1.1] STATE(l(n(6),l(hole,l(n(2),l(n(4),l(end,l(n(1),l(n(5),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+149: ** KEPT (pick-wt=55): 69 [para_into,35.1.1.2,2.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(hole,l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+150: ** KEPT (pick-wt=55): 70 [para_into,35.1.1.2,1.1.1] STATE(l(n(6),l(n(2),l(hole,l(n(4),l(end,l(n(1),l(n(5),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+151: 
+152: given clause #33: (wt=55) 36 [para_into,17.1.1.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+153: ** KEPT (pick-wt=55): 71 [para_into,36.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+154: ** KEPT (pick-wt=55): 72 [para_into,36.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(8),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+155: ** KEPT (pick-wt=55): 73 [para_into,36.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(hole,l(n(6),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+156: 
+157: given clause #34: (wt=55) 37 [para_into,17.1.1.2.2,1.1.1] STATE(l(n(1),l(n(2),l(n(4),l(hole,l(end,l(n(5),l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+158: ** KEPT (pick-wt=55): 74 [para_into,37.1.1.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(4),l(n(8),l(end,l(n(5),l(n(6),l(n(3),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+159: 
+160: given clause #35: (wt=55) 38 [para_into,18.1.1,2.1.1] STATE(l(n(5),l(n(1),l(n(2),l(n(4),l(end,l(hole,l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+161: ** KEPT (pick-wt=55): 75 [para_into,38.1.1.2.2.2.2.2,2.1.1] STATE(l(n(5),l(n(1),l(n(2),l(n(4),l(end,l(n(9),l(n(6),l(n(3),l(n(8),l(end,l(hole,l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+162: ** KEPT (pick-wt=55): 76 [para_into,38.1.1.2.2.2.2.2,1.1.1] STATE(l(n(5),l(n(1),l(n(2),l(n(4),l(end,l(n(6),l(hole,l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+163: 
+164: given clause #36: (wt=55) 39 [para_into,19.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(n(15),l(n(12),l(hole,end)))))))))))))))))))).
+165: ** KEPT (pick-wt=55): 77 [para_into,39.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(hole,l(end,l(n(13),l(n(15),l(n(12),l(n(11),end)))))))))))))))))))).
+166: 
+167: given clause #37: (wt=55) 40 [para_into,19.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(hole,l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+168: ** KEPT (pick-wt=55): 78 [para_into,40.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(11),l(hole,l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+169: ** KEPT (pick-wt=55): 79 [para_into,40.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(hole,l(n(14),l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+170: ** KEPT (pick-wt=55): 80 [para_into,40.1.1.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(hole,l(n(8),l(end,l(n(9),l(n(14),l(n(3),l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+171: 
+172: given clause #38: (wt=55) 41 [para_into,20.1.1.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(hole,l(n(14),l(n(7),l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+173: ** KEPT (pick-wt=55): 81 [para_into,41.1.1.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(14),l(hole,l(n(7),l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+174: ** KEPT (pick-wt=55): 82 [para_into,41.1.1.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(10),l(n(3),l(n(8),l(end,l(n(5),l(n(14),l(n(7),l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+175: 
+176: given clause #39: (wt=55) 42 [para_into,21.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(n(12),l(hole,end)))))))))))))))))))).
+177: ** KEPT (pick-wt=55): 83 [para_into,42.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(15),l(hole,l(end,l(n(13),l(n(14),l(n(12),l(n(11),end)))))))))))))))))))).
+178: 
+179: given clause #40: (wt=55) 43 [para_into,21.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(15),l(n(11),l(end,l(n(13),l(hole,l(n(14),l(n(12),end)))))))))))))))))))).
+180: ** KEPT (pick-wt=55): 84 [para_into,43.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(15),l(n(11),l(end,l(hole,l(n(13),l(n(14),l(n(12),end)))))))))))))))))))).
+181: ** KEPT (pick-wt=55): 85 [para_into,43.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(hole,l(n(15),l(n(11),l(end,l(n(13),l(n(7),l(n(14),l(n(12),end)))))))))))))))))))).
+182: 
+183: given clause #41: (wt=55) 44 [para_into,22.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+184: ** KEPT (pick-wt=55): 86 [para_into,44.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(hole,l(n(15),end)))))))))))))))))))).
+185: 
+186: given clause #42: (wt=55) 45 [para_into,22.1.1.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(hole,l(end,l(n(9),l(n(7),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+187: ** KEPT (pick-wt=55): 87 [para_into,45.1.1.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(hole,l(n(3),l(end,l(n(9),l(n(7),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+188: ** KEPT (pick-wt=55): 88 [para_into,45.1.1.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(hole,l(end,l(n(5),l(n(10),l(n(3),l(n(4),l(end,l(n(9),l(n(7),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+189: 
+190: given clause #43: (wt=55) 46 [para_into,23.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(8),l(hole,l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+191: ** KEPT (pick-wt=55): 89 [para_into,46.1.1.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(8),l(n(11),l(end,l(n(9),l(n(7),l(n(3),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+192: ** KEPT (pick-wt=55): 90 [para_into,46.1.1.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(hole,l(end,l(n(5),l(n(10),l(n(8),l(n(4),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+193: 
+194: given clause #44: (wt=55) 47 [para_into,23.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(10),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+195: ** KEPT (pick-wt=55): 91 [para_into,47.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(7),l(n(10),l(n(8),l(end,l(n(9),l(hole,l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+196: ** KEPT (pick-wt=55): 92 [para_into,47.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(5),l(n(10),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+197: ** KEPT (pick-wt=55): 93 [para_into,47.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(10),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+198: 
+199: given clause #45: (wt=55) 48 [para_into,23.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+200: ** KEPT (pick-wt=55): 94 [para_into,48.1.1.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(4),l(hole,l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+201: ** KEPT (pick-wt=55): 95 [para_into,48.1.1.2,1.1.2] STATE(l(n(1),l(hole,l(n(6),l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+202: 
+203: given clause #46: (wt=55) 49 [para_into,24.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(n(9),l(n(7),l(n(11),l(end,l(n(14),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+204: ** KEPT (pick-wt=55): 96 [para_into,49.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(n(9),l(n(7),l(n(11),l(end,l(n(14),l(n(15),l(hole,l(n(12),end)))))))))))))))))))).
+205: ** KEPT (pick-wt=55): 97 [para_into,49.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(hole,l(n(7),l(n(11),l(end,l(n(14),l(n(9),l(n(15),l(n(12),end)))))))))))))))))))).
+206: 
+207: given clause #47: (wt=55) 50 [para_into,25.1.1.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(hole,l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+208: ** KEPT (pick-wt=55): 98 [para_into,50.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(n(9),l(n(3),l(n(8),l(end,l(n(5),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+209: ** KEPT (pick-wt=55): 99 [para_into,50.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(n(3),l(hole,l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+210: ** KEPT (pick-wt=55): 100 [para_into,50.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(10),l(n(6),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+211: 
+212: given clause #48: (wt=55) 51 [para_into,25.1.1,2.1.2] STATE(l(hole,l(n(6),l(n(2),l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+213: ** KEPT (pick-wt=55): 101 [para_into,51.1.1,1.1.1] STATE(l(n(6),l(hole,l(n(2),l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+214: 
+215: given clause #49: (wt=55) 52 [para_into,26.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(n(12),l(hole,end)))))))))))))))))))).
+216: ** KEPT (pick-wt=55): 102 [para_into,52.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(hole,l(end,l(n(13),l(n(14),l(n(12),l(n(11),end)))))))))))))))))))).
+217: 
+218: given clause #50: (wt=55) 53 [para_into,26.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(hole,l(n(14),l(n(12),end)))))))))))))))))))).
+219: ** KEPT (pick-wt=55): 103 [para_into,53.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(hole,l(n(13),l(n(14),l(n(12),end)))))))))))))))))))).
+220: ** KEPT (pick-wt=55): 104 [para_into,53.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(hole,l(n(15),l(n(11),l(end,l(n(13),l(n(10),l(n(14),l(n(12),end)))))))))))))))))))).
+221: 
+222: given clause #51: (wt=55) 54 [para_into,27.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+223: ** KEPT (pick-wt=55): 105 [para_into,54.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(hole,l(n(15),end)))))))))))))))))))).
+224: 
+225: given clause #52: (wt=55) 55 [para_into,27.1.1.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(hole,l(end,l(n(9),l(n(10),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+226: ** KEPT (pick-wt=55): 106 [para_into,55.1.1.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(hole,l(n(7),l(end,l(n(9),l(n(10),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+227: ** KEPT (pick-wt=55): 107 [para_into,55.1.1.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(hole,l(end,l(n(5),l(n(3),l(n(7),l(n(4),l(end,l(n(9),l(n(10),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+228: 
+229: given clause #53: (wt=55) 56 [para_into,28.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(14),l(n(10),l(n(11),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+230: ** KEPT (pick-wt=55): 108 [para_into,56.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(14),l(n(10),l(n(11),l(end,l(n(13),l(n(15),l(hole,l(n(12),end)))))))))))))))))))).
+231: ** KEPT (pick-wt=55): 109 [para_into,56.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(14),l(n(10),l(n(11),l(end,l(hole,l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+232: 
+233: given clause #54: (wt=55) 57 [para_into,28.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(hole,l(n(9),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+234: ** KEPT (pick-wt=55): 110 [para_into,57.1.1.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(13),l(n(9),l(n(10),l(n(11),l(end,l(hole,l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+235: ** KEPT (pick-wt=55): 111 [para_into,57.1.1.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(3),l(n(7),l(n(8),l(end,l(n(5),l(n(9),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+236: 
+237: given clause #55: (wt=55) 58 [para_into,28.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(7),l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+238: ** KEPT (pick-wt=55): 112 [para_into,58.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(7),l(hole,l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+239: ** KEPT (pick-wt=55): 113 [para_into,58.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(5),l(n(7),l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+240: ** KEPT (pick-wt=55): 114 [para_into,58.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+241: 
+242: given clause #56: (wt=55) 59 [para_into,29.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+243: ** KEPT (pick-wt=55): 115 [para_into,59.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(n(12),l(end,l(n(13),l(n(14),l(hole,l(n(15),end)))))))))))))))))))).
+244: 
+245: given clause #57: (wt=55) 60 [para_into,29.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(hole,l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+246: ** KEPT (pick-wt=55): 116 [para_into,60.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(15),l(n(7),l(end,l(n(13),l(n(14),l(hole,l(n(12),end)))))))))))))))))))).
+247: ** KEPT (pick-wt=55): 117 [para_into,60.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(hole,l(n(10),l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+248: ** KEPT (pick-wt=55): 118 [para_into,60.1.1.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(hole,l(n(11),l(end,l(n(9),l(n(10),l(n(8),l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+249: 
+250: given clause #58: (wt=55) 61 [para_into,30.1.1.2.2,1.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(2),l(end,l(n(5),l(n(3),l(n(8),l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+251: ** KEPT (pick-wt=55): 119 [para_into,61.1.1.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(8),l(n(2),l(end,l(n(5),l(n(3),l(hole,l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+252: ** KEPT (pick-wt=55): 120 [para_into,61.1.1.2,1.1.2] STATE(l(n(1),l(hole,l(n(6),l(n(2),l(end,l(n(5),l(n(3),l(n(8),l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+253: 
+254: given clause #59: (wt=55) 62 [para_into,31.1.1.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(n(3),l(n(2),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+255: ** KEPT (pick-wt=55): 121 [para_into,62.1.1.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(n(3),l(n(2),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+256: ** KEPT (pick-wt=55): 122 [para_into,62.1.1.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(n(3),l(hole,l(n(2),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+257: 
+258: given clause #60: (wt=55) 63 [para_into,32.1.1.2,2.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(hole,l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+259: ** KEPT (pick-wt=55): 123 [para_into,63.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+260: ** KEPT (pick-wt=55): 124 [para_into,63.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(n(2),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+261: ** KEPT (pick-wt=55): 125 [para_into,63.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(hole,l(n(5),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+262: 
+263: given clause #61: (wt=55) 64 [para_into,32.1.1,1.1.2] STATE(l(hole,l(n(1),l(n(6),l(n(4),l(end,l(n(5),l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+264: ** KEPT (pick-wt=55): 126 [para_into,64.1.1,2.1.1] STATE(l(n(5),l(n(1),l(n(6),l(n(4),l(end,l(hole,l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+265: 
+266: given clause #62: (wt=55) 65 [para_into,33.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(n(10),l(n(7),l(n(11),l(end,l(n(14),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+267: ** KEPT (pick-wt=55): 127 [para_into,65.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(n(10),l(n(7),l(n(11),l(end,l(n(14),l(n(15),l(hole,l(n(12),end)))))))))))))))))))).
+268: ** KEPT (pick-wt=55): 128 [para_into,65.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(hole,l(n(7),l(n(11),l(end,l(n(14),l(n(10),l(n(15),l(n(12),end)))))))))))))))))))).
+269: 
+270: given clause #63: (wt=55) 66 [para_into,34.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+271: ** KEPT (pick-wt=55): 129 [para_into,66.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(n(15),l(hole,l(n(12),end)))))))))))))))))))).
+272: ** KEPT (pick-wt=55): 130 [para_into,66.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(14),l(n(7),l(n(11),l(end,l(hole,l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+273: 
+274: given clause #64: (wt=55) 67 [para_into,34.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(7),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+275: ** KEPT (pick-wt=55): 131 [para_into,67.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(7),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(hole,l(n(12),end)))))))))))))))))))).
+276: ** KEPT (pick-wt=55): 132 [para_into,67.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(7),l(n(11),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+277: ** KEPT (pick-wt=55): 133 [para_into,67.1.1.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(hole,l(n(8),l(end,l(n(10),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+278: 
+279: given clause #65: (wt=55) 68 [para_into,34.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(hole,l(n(3),l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+280: ** KEPT (pick-wt=55): 134 [para_into,68.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(3),l(hole,l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+281: ** KEPT (pick-wt=55): 135 [para_into,68.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(9),l(n(3),l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+282: ** KEPT (pick-wt=55): 136 [para_into,68.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(9),l(n(6),l(n(3),l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+283: 
+284: given clause #66: (wt=55) 69 [para_into,35.1.1.2,2.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(hole,l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+285: ** KEPT (pick-wt=55): 137 [para_into,69.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+286: ** KEPT (pick-wt=55): 138 [para_into,69.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(n(3),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+287: ** KEPT (pick-wt=55): 139 [para_into,69.1.1.2.2.2.2.2,1.1.2] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(hole,l(n(1),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+288: 
+289: given clause #67: (wt=55) 70 [para_into,35.1.1.2,1.1.1] STATE(l(n(6),l(n(2),l(hole,l(n(4),l(end,l(n(1),l(n(5),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+290: ** KEPT (pick-wt=55): 140 [para_into,70.1.1.2.2,2.1.1] STATE(l(n(6),l(n(2),l(n(3),l(n(4),l(end,l(n(1),l(n(5),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+291: ** KEPT (pick-wt=55): 141 [para_into,70.1.1.2.2,1.1.1] STATE(l(n(6),l(n(2),l(n(4),l(hole,l(end,l(n(1),l(n(5),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+292: 
+293: given clause #68: (wt=55) 71 [para_into,36.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+294: ** KEPT (pick-wt=55): 142 [para_into,71.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(hole,l(n(12),end)))))))))))))))))))).
+295: ** KEPT (pick-wt=55): 143 [para_into,71.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+296: ** KEPT (pick-wt=55): 144 [para_into,71.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(hole,l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+297: 
+298: given clause #69: (wt=55) 72 [para_into,36.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(8),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+299: ** KEPT (pick-wt=55): 145 [para_into,72.1.1.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+300: ** KEPT (pick-wt=55): 146 [para_into,72.1.1.2.2.2,2.1.2] STATE(l(n(1),l(n(2),l(n(3),l(hole,l(end,l(n(5),l(n(6),l(n(8),l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+301: 
+302: given clause #70: (wt=55) 73 [para_into,36.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(hole,l(n(6),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+303: ** KEPT (pick-wt=55): 147 [para_into,73.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(10),l(n(6),l(n(8),l(end,l(n(9),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+304: ** KEPT (pick-wt=55): 148 [para_into,73.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(hole,l(n(5),l(n(6),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+305: ** KEPT (pick-wt=55): 149 [para_into,73.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(3),l(n(4),l(end,l(n(5),l(n(2),l(n(6),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+306: 
+307: given clause #71: (wt=55) 74 [para_into,37.1.1.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(4),l(n(8),l(end,l(n(5),l(n(6),l(n(3),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+308: ** KEPT (pick-wt=55): 150 [para_into,74.1.1.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(4),l(n(8),l(end,l(n(5),l(n(6),l(n(3),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+309: ** KEPT (pick-wt=55): 151 [para_into,74.1.1.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(2),l(n(4),l(n(8),l(end,l(n(5),l(n(6),l(hole,l(n(3),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+310: 
+311: given clause #72: (wt=55) 75 [para_into,38.1.1.2.2.2.2.2,2.1.1] STATE(l(n(5),l(n(1),l(n(2),l(n(4),l(end,l(n(9),l(n(6),l(n(3),l(n(8),l(end,l(hole,l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+312: ** KEPT (pick-wt=55): 152 [para_into,75.1.1.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(5),l(n(1),l(n(2),l(n(4),l(end,l(n(9),l(n(6),l(n(3),l(n(8),l(end,l(n(13),l(n(10),l(n(7),l(n(11),l(end,l(hole,l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+313: ** KEPT (pick-wt=55): 153 [para_into,75.1.1.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(5),l(n(1),l(n(2),l(n(4),l(end,l(n(9),l(n(6),l(n(3),l(n(8),l(end,l(n(10),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+314: 
+315: given clause #73: (wt=55) 76 [para_into,38.1.1.2.2.2.2.2,1.1.1] STATE(l(n(5),l(n(1),l(n(2),l(n(4),l(end,l(n(6),l(hole,l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+316: ** KEPT (pick-wt=55): 154 [para_into,76.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(5),l(n(1),l(n(2),l(n(4),l(end,l(n(6),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+317: ** KEPT (pick-wt=55): 155 [para_into,76.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(5),l(n(1),l(n(2),l(n(4),l(end,l(n(6),l(n(3),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+318: ** KEPT (pick-wt=55): 156 [para_into,76.1.1.2,2.1.2] STATE(l(n(5),l(hole,l(n(2),l(n(4),l(end,l(n(6),l(n(1),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+319: 
+320: given clause #74: (wt=55) 77 [para_into,39.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(hole,l(end,l(n(13),l(n(15),l(n(12),l(n(11),end)))))))))))))))))))).
+321: ** KEPT (pick-wt=55): 157 [para_into,77.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(hole,l(n(7),l(end,l(n(13),l(n(15),l(n(12),l(n(11),end)))))))))))))))))))).
+322: ** KEPT (pick-wt=55): 158 [para_into,77.1.1.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(hole,l(end,l(n(9),l(n(14),l(n(7),l(n(8),l(end,l(n(13),l(n(15),l(n(12),l(n(11),end)))))))))))))))))))).
+323: 
+324: given clause #75: (wt=55) 78 [para_into,40.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(11),l(hole,l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+325: ** KEPT (pick-wt=55): 159 [para_into,78.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(11),l(n(12),l(end,l(n(13),l(n(15),l(n(7),l(hole,end)))))))))))))))))))).
+326: ** KEPT (pick-wt=55): 160 [para_into,78.1.1.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(hole,l(end,l(n(9),l(n(14),l(n(11),l(n(8),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+327: 
+328: given clause #76: (wt=55) 79 [para_into,40.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(hole,l(n(14),l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+329: ** KEPT (pick-wt=55): 161 [para_into,79.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(15),l(n(14),l(n(11),l(end,l(n(13),l(hole,l(n(7),l(n(12),end)))))))))))))))))))).
+330: ** KEPT (pick-wt=55): 162 [para_into,79.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(hole,l(n(9),l(n(14),l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+331: ** KEPT (pick-wt=55): 163 [para_into,79.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(14),l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+332: 
+333: given clause #77: (wt=55) 80 [para_into,40.1.1.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(hole,l(n(8),l(end,l(n(9),l(n(14),l(n(3),l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+334: ** KEPT (pick-wt=55): 164 [para_into,80.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(8),l(hole,l(end,l(n(9),l(n(14),l(n(3),l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+335: ** KEPT (pick-wt=55): 165 [para_into,80.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(10),l(n(8),l(end,l(n(9),l(n(14),l(n(3),l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+336: ** KEPT (pick-wt=55): 166 [para_into,80.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(n(14),l(n(3),l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+337: 
+338: given clause #78: (wt=55) 81 [para_into,41.1.1.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(14),l(hole,l(n(7),l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+339: ** KEPT (pick-wt=55): 167 [para_into,81.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(14),l(n(13),l(n(7),l(n(11),l(end,l(n(9),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+340: ** KEPT (pick-wt=55): 168 [para_into,81.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(14),l(n(7),l(hole,l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+341: ** KEPT (pick-wt=55): 169 [para_into,81.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(3),l(n(8),l(end,l(n(14),l(n(10),l(n(7),l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+342: 
+343: given clause #79: (wt=55) 82 [para_into,41.1.1.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(10),l(n(3),l(n(8),l(end,l(n(5),l(n(14),l(n(7),l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+344: ** KEPT (pick-wt=55): 170 [para_into,82.1.1.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(hole,l(n(3),l(n(8),l(end,l(n(5),l(n(14),l(n(7),l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+345: ** KEPT (pick-wt=55): 171 [para_into,82.1.1,2.1.2] STATE(l(hole,l(n(6),l(n(2),l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(n(5),l(n(14),l(n(7),l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+346: 
+347: given clause #80: (wt=55) 83 [para_into,42.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(15),l(hole,l(end,l(n(13),l(n(14),l(n(12),l(n(11),end)))))))))))))))))))).
+348: ** KEPT (pick-wt=55): 172 [para_into,83.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(hole,l(n(15),l(end,l(n(13),l(n(14),l(n(12),l(n(11),end)))))))))))))))))))).
+349: ** KEPT (pick-wt=55): 173 [para_into,83.1.1.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(hole,l(end,l(n(9),l(n(7),l(n(15),l(n(8),l(end,l(n(13),l(n(14),l(n(12),l(n(11),end)))))))))))))))))))).
+350: 
+351: given clause #81: (wt=55) 84 [para_into,43.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(15),l(n(11),l(end,l(hole,l(n(13),l(n(14),l(n(12),end)))))))))))))))))))).
+352: ** KEPT (pick-wt=55): 174 [para_into,84.1.1.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(hole,l(n(7),l(n(15),l(n(11),l(end,l(n(9),l(n(13),l(n(14),l(n(12),end)))))))))))))))))))).
+353: 
+354: given clause #82: (wt=55) 85 [para_into,43.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(hole,l(n(15),l(n(11),l(end,l(n(13),l(n(7),l(n(14),l(n(12),end)))))))))))))))))))).
+355: ** KEPT (pick-wt=55): 175 [para_into,85.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(15),l(hole,l(n(11),l(end,l(n(13),l(n(7),l(n(14),l(n(12),end)))))))))))))))))))).
+356: ** KEPT (pick-wt=55): 176 [para_into,85.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(hole,l(n(9),l(n(15),l(n(11),l(end,l(n(13),l(n(7),l(n(14),l(n(12),end)))))))))))))))))))).
+357: ** KEPT (pick-wt=55): 177 [para_into,85.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(n(7),l(n(14),l(n(12),end)))))))))))))))))))).
+358: 
+359: given clause #83: (wt=55) 86 [para_into,44.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(hole,l(n(15),end)))))))))))))))))))).
+360: ** KEPT (pick-wt=55): 178 [para_into,86.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(n(11),l(n(12),l(end,l(n(13),l(hole,l(n(14),l(n(15),end)))))))))))))))))))).
+361: ** KEPT (pick-wt=55): 179 [para_into,86.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(hole,l(n(12),l(end,l(n(13),l(n(14),l(n(11),l(n(15),end)))))))))))))))))))).
+362: 
+363: given clause #84: (wt=55) 87 [para_into,45.1.1.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(hole,l(n(3),l(end,l(n(9),l(n(7),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+364: ** KEPT (pick-wt=55): 180 [para_into,87.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(11),l(n(3),l(end,l(n(9),l(n(7),l(hole,l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+365: ** KEPT (pick-wt=55): 181 [para_into,87.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(10),l(n(3),l(end,l(n(9),l(n(7),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+366: ** KEPT (pick-wt=55): 182 [para_into,87.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(3),l(end,l(n(9),l(n(7),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+367: 
+368: given clause #85: (wt=55) 88 [para_into,45.1.1.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(hole,l(end,l(n(5),l(n(10),l(n(3),l(n(4),l(end,l(n(9),l(n(7),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+369: ** KEPT (pick-wt=55): 183 [para_into,88.1.1.2.2,1.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(2),l(end,l(n(5),l(n(10),l(n(3),l(n(4),l(end,l(n(9),l(n(7),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+370: 
+371: given clause #86: (wt=55) 89 [para_into,46.1.1.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(8),l(n(11),l(end,l(n(9),l(n(7),l(n(3),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+372: ** KEPT (pick-wt=55): 184 [para_into,89.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(8),l(n(11),l(end,l(n(9),l(n(7),l(n(3),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+373: ** KEPT (pick-wt=55): 185 [para_into,89.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(8),l(n(11),l(end,l(n(9),l(n(7),l(hole,l(n(3),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+374: 
+375: given clause #87: (wt=55) 90 [para_into,46.1.1.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(hole,l(end,l(n(5),l(n(10),l(n(8),l(n(4),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+376: ** KEPT (pick-wt=55): 186 [para_into,90.1.1.2.2,1.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(2),l(end,l(n(5),l(n(10),l(n(8),l(n(4),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+377: 
+378: given clause #88: (wt=55) 91 [para_into,47.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(7),l(n(10),l(n(8),l(end,l(n(9),l(hole,l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+379: ** KEPT (pick-wt=55): 187 [para_into,91.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(7),l(n(10),l(n(8),l(end,l(n(9),l(n(14),l(n(3),l(n(11),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+380: ** KEPT (pick-wt=55): 188 [para_into,91.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(7),l(n(10),l(n(8),l(end,l(n(9),l(n(3),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+381: ** KEPT (pick-wt=55): 189 [para_into,91.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(7),l(n(10),l(n(8),l(end,l(hole,l(n(9),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+382: 
+383: given clause #89: (wt=55) 92 [para_into,47.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(5),l(n(10),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+384: ** KEPT (pick-wt=55): 190 [para_into,92.1.1.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(10),l(n(8),l(end,l(hole,l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+385: ** KEPT (pick-wt=55): 191 [para_into,92.1.1,2.1.2] STATE(l(hole,l(n(6),l(n(2),l(n(4),l(end,l(n(1),l(n(5),l(n(10),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+386: 
+387: given clause #90: (wt=55) 93 [para_into,47.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(10),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+388: ** KEPT (pick-wt=55): 192 [para_into,93.1.1.2,1.1.1] STATE(l(n(1),l(n(2),l(hole,l(n(4),l(end,l(n(5),l(n(6),l(n(10),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+389: ** KEPT (pick-wt=55): 193 [para_into,93.1.1,1.1.2] STATE(l(hole,l(n(1),l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(10),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+390: 
+391: given clause #91: (wt=55) 94 [para_into,48.1.1.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(4),l(hole,l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+392: ** KEPT (pick-wt=55): 194 [para_into,94.1.1.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(n(10),l(n(2),l(hole,l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+393: 
+394: given clause #92: (wt=55) 95 [para_into,48.1.1.2,1.1.2] STATE(l(n(1),l(hole,l(n(6),l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+395: ** KEPT (pick-wt=55): 195 [para_into,95.1.1.2,2.1.1] STATE(l(n(1),l(n(10),l(n(6),l(n(4),l(end,l(n(5),l(hole,l(n(2),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+396: ** KEPT (pick-wt=55): 196 [para_into,95.1.1,1.1.2] STATE(l(hole,l(n(1),l(n(6),l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+397: 
+398: given clause #93: (wt=55) 96 [para_into,49.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(n(9),l(n(7),l(n(11),l(end,l(n(14),l(n(15),l(hole,l(n(12),end)))))))))))))))))))).
+399: ** KEPT (pick-wt=55): 197 [para_into,96.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(n(9),l(n(7),l(n(11),l(end,l(n(14),l(n(15),l(n(12),l(hole,end)))))))))))))))))))).
+400: ** KEPT (pick-wt=55): 198 [para_into,96.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(n(9),l(hole,l(n(11),l(end,l(n(14),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+401: 
+402: given clause #94: (wt=55) 97 [para_into,49.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(hole,l(n(7),l(n(11),l(end,l(n(14),l(n(9),l(n(15),l(n(12),end)))))))))))))))))))).
+403: ** KEPT (pick-wt=55): 199 [para_into,97.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(n(13),l(n(7),l(hole,l(n(11),l(end,l(n(14),l(n(9),l(n(15),l(n(12),end)))))))))))))))))))).
+404: ** KEPT (pick-wt=55): 200 [para_into,97.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(10),l(n(3),l(n(8),l(end,l(hole,l(n(13),l(n(7),l(n(11),l(end,l(n(14),l(n(9),l(n(15),l(n(12),end)))))))))))))))))))).
+405: ** KEPT (pick-wt=55): 201 [para_into,97.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(3),l(n(8),l(end,l(n(13),l(n(10),l(n(7),l(n(11),l(end,l(n(14),l(n(9),l(n(15),l(n(12),end)))))))))))))))))))).
+406: 
+407: given clause #95: (wt=55) 98 [para_into,50.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(n(9),l(n(3),l(n(8),l(end,l(n(5),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+408: ** KEPT (pick-wt=55): 202 [para_into,98.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(n(9),l(n(3),l(n(8),l(end,l(n(5),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+409: ** KEPT (pick-wt=55): 203 [para_into,98.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(n(9),l(n(3),l(n(8),l(end,l(n(5),l(n(7),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+410: ** KEPT (pick-wt=55): 204 [para_into,98.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(n(9),l(n(3),l(n(8),l(end,l(hole,l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+411: 
+412: given clause #96: (wt=55) 99 [para_into,50.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(n(3),l(hole,l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+413: ** KEPT (pick-wt=55): 205 [para_into,99.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(n(3),l(n(7),l(n(8),l(end,l(n(5),l(n(9),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+414: ** KEPT (pick-wt=55): 206 [para_into,99.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(10),l(n(3),l(n(8),l(hole,l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+415: ** KEPT (pick-wt=55): 207 [para_into,99.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(10),l(n(3),l(n(2),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+416: 
+417: given clause #97: (wt=55) 100 [para_into,50.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(10),l(n(6),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+418: ** KEPT (pick-wt=55): 208 [para_into,100.1.1.2,1.1.1] STATE(l(n(1),l(n(2),l(hole,l(n(4),l(end,l(n(10),l(n(6),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+419: ** KEPT (pick-wt=55): 209 [para_into,100.1.1,1.1.2] STATE(l(hole,l(n(1),l(n(2),l(n(4),l(end,l(n(10),l(n(6),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+420: 
+421: given clause #98: (wt=55) 101 [para_into,51.1.1,1.1.1] STATE(l(n(6),l(hole,l(n(2),l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+422: ** KEPT (pick-wt=55): 210 [para_into,101.1.1.2,2.1.1] STATE(l(n(6),l(n(10),l(n(2),l(n(4),l(end,l(n(1),l(hole,l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+423: ** KEPT (pick-wt=55): 211 [para_into,101.1.1.2,1.1.1] STATE(l(n(6),l(n(2),l(hole,l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(n(5),l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+424: 
+425: given clause #99: (wt=55) 102 [para_into,52.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(hole,l(end,l(n(13),l(n(14),l(n(12),l(n(11),end)))))))))))))))))))).
+426: ** KEPT (pick-wt=55): 212 [para_into,102.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(hole,l(n(15),l(end,l(n(13),l(n(14),l(n(12),l(n(11),end)))))))))))))))))))).
+427: ** KEPT (pick-wt=55): 213 [para_into,102.1.1.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(hole,l(end,l(n(9),l(n(10),l(n(15),l(n(8),l(end,l(n(13),l(n(14),l(n(12),l(n(11),end)))))))))))))))))))).
+428: 
+429: given clause #100: (wt=55) 103 [para_into,53.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(hole,l(n(13),l(n(14),l(n(12),end)))))))))))))))))))).
+430: ** KEPT (pick-wt=55): 214 [para_into,103.1.1.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(hole,l(n(10),l(n(15),l(n(11),l(end,l(n(9),l(n(13),l(n(14),l(n(12),end)))))))))))))))))))).
+431: 
+432: given clause #101: (wt=55) 104 [para_into,53.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(hole,l(n(15),l(n(11),l(end,l(n(13),l(n(10),l(n(14),l(n(12),end)))))))))))))))))))).
+433: ** KEPT (pick-wt=55): 215 [para_into,104.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(15),l(hole,l(n(11),l(end,l(n(13),l(n(10),l(n(14),l(n(12),end)))))))))))))))))))).
+434: ** KEPT (pick-wt=55): 216 [para_into,104.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(hole,l(n(9),l(n(15),l(n(11),l(end,l(n(13),l(n(10),l(n(14),l(n(12),end)))))))))))))))))))).
+435: ** KEPT (pick-wt=55): 217 [para_into,104.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(7),l(n(8),l(end,l(n(9),l(n(3),l(n(15),l(n(11),l(end,l(n(13),l(n(10),l(n(14),l(n(12),end)))))))))))))))))))).
+436: 
+437: given clause #102: (wt=55) 105 [para_into,54.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(hole,l(n(15),end)))))))))))))))))))).
+438: ** KEPT (pick-wt=55): 218 [para_into,105.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(hole,l(n(14),l(n(15),end)))))))))))))))))))).
+439: ** KEPT (pick-wt=55): 219 [para_into,105.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(hole,l(n(12),l(end,l(n(13),l(n(14),l(n(11),l(n(15),end)))))))))))))))))))).
+440: 
+441: given clause #103: (wt=55) 106 [para_into,55.1.1.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(hole,l(n(7),l(end,l(n(9),l(n(10),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+442: ** KEPT (pick-wt=55): 220 [para_into,106.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(11),l(n(7),l(end,l(n(9),l(n(10),l(hole,l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+443: ** KEPT (pick-wt=55): 221 [para_into,106.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(3),l(n(7),l(end,l(n(9),l(n(10),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+444: ** KEPT (pick-wt=55): 222 [para_into,106.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(5),l(n(3),l(n(2),l(n(7),l(end,l(n(9),l(n(10),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+445: 
+446: given clause #104: (wt=55) 107 [para_into,55.1.1.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(hole,l(end,l(n(5),l(n(3),l(n(7),l(n(4),l(end,l(n(9),l(n(10),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+447: ** KEPT (pick-wt=55): 223 [para_into,107.1.1.2.2,1.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(2),l(end,l(n(5),l(n(3),l(n(7),l(n(4),l(end,l(n(9),l(n(10),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+448: 
+449: given clause #105: (wt=55) 108 [para_into,56.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(14),l(n(10),l(n(11),l(end,l(n(13),l(n(15),l(hole,l(n(12),end)))))))))))))))))))).
+450: ** KEPT (pick-wt=55): 224 [para_into,108.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(14),l(n(10),l(n(11),l(end,l(n(13),l(n(15),l(n(12),l(hole,end)))))))))))))))))))).
+451: ** KEPT (pick-wt=55): 225 [para_into,108.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(14),l(hole,l(n(11),l(end,l(n(13),l(n(15),l(n(10),l(n(12),end)))))))))))))))))))).
+452: 
+453: given clause #106: (wt=55) 109 [para_into,56.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(14),l(n(10),l(n(11),l(end,l(hole,l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+454: ** KEPT (pick-wt=55): 226 [para_into,109.1.1.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(hole,l(n(14),l(n(10),l(n(11),l(end,l(n(9),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+455: 
+456: given clause #107: (wt=55) 110 [para_into,57.1.1.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(13),l(n(9),l(n(10),l(n(11),l(end,l(hole,l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+457: ** KEPT (pick-wt=55): 227 [para_into,110.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(7),l(n(8),l(end,l(n(13),l(n(9),l(n(10),l(n(11),l(end,l(n(14),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+458: 
+459: given clause #108: (wt=55) 111 [para_into,57.1.1.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(3),l(n(7),l(n(8),l(end,l(n(5),l(n(9),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+460: ** KEPT (pick-wt=55): 228 [para_into,111.1.1.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(3),l(hole,l(n(7),l(n(8),l(end,l(n(5),l(n(9),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+461: ** KEPT (pick-wt=55): 229 [para_into,111.1.1,2.1.2] STATE(l(hole,l(n(6),l(n(2),l(n(4),l(end,l(n(1),l(n(3),l(n(7),l(n(8),l(end,l(n(5),l(n(9),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+462: 
+463: given clause #109: (wt=55) 112 [para_into,58.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(7),l(hole,l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+464: ** KEPT (pick-wt=55): 230 [para_into,112.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(7),l(n(8),l(hole,l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+465: ** KEPT (pick-wt=55): 231 [para_into,112.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(5),l(n(7),l(n(2),l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+466: 
+467: given clause #110: (wt=55) 113 [para_into,58.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(5),l(n(7),l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+468: ** KEPT (pick-wt=55): 232 [para_into,113.1.1.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(7),l(n(8),l(end,l(hole,l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+469: ** KEPT (pick-wt=55): 233 [para_into,113.1.1,2.1.2] STATE(l(hole,l(n(6),l(n(2),l(n(4),l(end,l(n(1),l(n(5),l(n(7),l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+470: 
+471: given clause #111: (wt=55) 114 [para_into,58.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+472: ** KEPT (pick-wt=55): 234 [para_into,114.1.1.2,1.1.1] STATE(l(n(1),l(n(2),l(hole,l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+473: ** KEPT (pick-wt=55): 235 [para_into,114.1.1,1.1.2] STATE(l(hole,l(n(1),l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(3),l(n(10),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+474: 
+475: given clause #112: (wt=55) 115 [para_into,59.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(n(12),l(end,l(n(13),l(n(14),l(hole,l(n(15),end)))))))))))))))))))).
+476: ** KEPT (pick-wt=55): 236 [para_into,115.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(n(12),l(end,l(n(13),l(hole,l(n(14),l(n(15),end)))))))))))))))))))).
+477: ** KEPT (pick-wt=55): 237 [para_into,115.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(hole,l(n(12),l(end,l(n(13),l(n(14),l(n(7),l(n(15),end)))))))))))))))))))).
+478: 
+479: given clause #113: (wt=55) 116 [para_into,60.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(15),l(n(7),l(end,l(n(13),l(n(14),l(hole,l(n(12),end)))))))))))))))))))).
+480: ** KEPT (pick-wt=55): 238 [para_into,116.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(15),l(n(7),l(end,l(n(13),l(n(14),l(n(12),l(hole,end)))))))))))))))))))).
+481: ** KEPT (pick-wt=55): 239 [para_into,116.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(10),l(n(15),l(n(7),l(end,l(n(13),l(hole,l(n(14),l(n(12),end)))))))))))))))))))).
+482: 
+483: given clause #114: (wt=55) 117 [para_into,60.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(hole,l(n(10),l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+484: ** KEPT (pick-wt=55): 240 [para_into,117.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(n(9),l(n(14),l(n(10),l(n(7),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+485: ** KEPT (pick-wt=55): 241 [para_into,117.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(8),l(n(11),l(end,l(hole,l(n(9),l(n(10),l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+486: ** KEPT (pick-wt=55): 242 [para_into,117.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(8),l(n(11),l(end,l(n(9),l(n(3),l(n(10),l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+487: 
+488: given clause #115: (wt=55) 118 [para_into,60.1.1.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(hole,l(n(11),l(end,l(n(9),l(n(10),l(n(8),l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+489: ** KEPT (pick-wt=55): 243 [para_into,118.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(n(3),l(n(11),l(hole,l(end,l(n(9),l(n(10),l(n(8),l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+490: ** KEPT (pick-wt=55): 244 [para_into,118.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(3),l(n(11),l(end,l(n(9),l(n(10),l(n(8),l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+491: ** KEPT (pick-wt=55): 245 [para_into,118.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(5),l(n(3),l(n(2),l(n(11),l(end,l(n(9),l(n(10),l(n(8),l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+492: 
+493: given clause #116: (wt=55) 119 [para_into,61.1.1.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(8),l(n(2),l(end,l(n(5),l(n(3),l(hole,l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+494: ** KEPT (pick-wt=55): 246 [para_into,119.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(8),l(n(2),l(end,l(n(5),l(n(3),l(n(7),l(n(4),l(end,l(n(9),l(n(10),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+495: ** KEPT (pick-wt=55): 247 [para_into,119.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(8),l(n(2),l(end,l(n(5),l(n(3),l(n(4),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+496: ** KEPT (pick-wt=55): 248 [para_into,119.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(8),l(n(2),l(end,l(n(5),l(hole,l(n(3),l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+497: 
+498: given clause #117: (wt=55) 120 [para_into,61.1.1.2,1.1.2] STATE(l(n(1),l(hole,l(n(6),l(n(2),l(end,l(n(5),l(n(3),l(n(8),l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+499: ** KEPT (pick-wt=55): 249 [para_into,120.1.1.2,2.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(2),l(end,l(n(5),l(hole,l(n(8),l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+500: ** KEPT (pick-wt=55): 250 [para_into,120.1.1,1.1.2] STATE(l(hole,l(n(1),l(n(6),l(n(2),l(end,l(n(5),l(n(3),l(n(8),l(n(4),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+501: 
+502: given clause #118: (wt=55) 121 [para_into,62.1.1.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(n(3),l(n(2),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+503: ** KEPT (pick-wt=55): 251 [para_into,121.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(n(3),l(n(2),l(n(11),l(end,l(n(9),l(n(10),l(n(7),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+504: ** KEPT (pick-wt=55): 252 [para_into,121.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(n(3),l(n(2),l(n(11),l(end,l(n(9),l(n(10),l(hole,l(n(7),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+505: 
+506: given clause #119: (wt=55) 122 [para_into,62.1.1.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(n(3),l(hole,l(n(2),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+507: ** KEPT (pick-wt=55): 253 [para_into,122.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(n(3),l(n(7),l(n(2),l(end,l(n(9),l(n(10),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+508: ** KEPT (pick-wt=55): 254 [para_into,122.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(4),l(n(8),l(end,l(n(5),l(hole,l(n(3),l(n(2),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+509: ** KEPT (pick-wt=55): 255 [para_into,122.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(8),l(end,l(n(5),l(n(3),l(n(4),l(n(2),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+510: 
+511: given clause #120: (wt=55) 123 [para_into,63.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+512: ** KEPT (pick-wt=55): 256 [para_into,123.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+513: ** KEPT (pick-wt=55): 257 [para_into,123.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(n(9),l(n(7),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+514: ** KEPT (pick-wt=55): 258 [para_into,123.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(n(10),l(n(2),l(n(8),l(end,l(hole,l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+515: 
+516: given clause #121: (wt=55) 124 [para_into,63.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(n(2),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+517: ** KEPT (pick-wt=55): 259 [para_into,124.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(n(2),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+518: ** KEPT (pick-wt=55): 260 [para_into,124.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(5),l(n(2),l(n(8),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+519: ** KEPT (pick-wt=55): 261 [para_into,124.1.1.2.2,2.1.2] STATE(l(n(1),l(n(3),l(hole,l(n(4),l(end,l(n(5),l(n(2),l(n(6),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+520: 
+521: given clause #122: (wt=55) 125 [para_into,63.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(hole,l(n(5),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+522: ** KEPT (pick-wt=55): 262 [para_into,125.1.1.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(3),l(n(6),l(n(4),l(end,l(n(9),l(n(5),l(n(2),l(n(8),l(end,l(hole,l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+523: ** KEPT (pick-wt=55): 263 [para_into,125.1.1,2.1.2] STATE(l(hole,l(n(3),l(n(6),l(n(4),l(end,l(n(1),l(n(5),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+524: 
+525: given clause #123: (wt=55) 126 [para_into,64.1.1,2.1.1] STATE(l(n(5),l(n(1),l(n(6),l(n(4),l(end,l(hole,l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+526: ** KEPT (pick-wt=55): 264 [para_into,126.1.1.2.2.2.2.2,2.1.1] STATE(l(n(5),l(n(1),l(n(6),l(n(4),l(end,l(n(9),l(n(3),l(n(2),l(n(8),l(end,l(hole,l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+527: ** KEPT (pick-wt=55): 265 [para_into,126.1.1.2.2.2.2.2,1.1.1] STATE(l(n(5),l(n(1),l(n(6),l(n(4),l(end,l(n(3),l(hole,l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+528: 
+529: given clause #124: (wt=55) 127 [para_into,65.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(n(10),l(n(7),l(n(11),l(end,l(n(14),l(n(15),l(hole,l(n(12),end)))))))))))))))))))).
+530: ** KEPT (pick-wt=55): 266 [para_into,127.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(n(10),l(n(7),l(n(11),l(end,l(n(14),l(n(15),l(n(12),l(hole,end)))))))))))))))))))).
+531: ** KEPT (pick-wt=55): 267 [para_into,127.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(n(10),l(hole,l(n(11),l(end,l(n(14),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+532: 
+533: given clause #125: (wt=55) 128 [para_into,65.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(hole,l(n(7),l(n(11),l(end,l(n(14),l(n(10),l(n(15),l(n(12),end)))))))))))))))))))).
+534: ** KEPT (pick-wt=55): 268 [para_into,128.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(13),l(n(7),l(hole,l(n(11),l(end,l(n(14),l(n(10),l(n(15),l(n(12),end)))))))))))))))))))).
+535: ** KEPT (pick-wt=55): 269 [para_into,128.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(hole,l(n(13),l(n(7),l(n(11),l(end,l(n(14),l(n(10),l(n(15),l(n(12),end)))))))))))))))))))).
+536: ** KEPT (pick-wt=55): 270 [para_into,128.1.1.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(hole,l(n(3),l(n(8),l(end,l(n(13),l(n(5),l(n(7),l(n(11),l(end,l(n(14),l(n(10),l(n(15),l(n(12),end)))))))))))))))))))).
+537: 
+538: given clause #126: (wt=55) 129 [para_into,66.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(n(15),l(hole,l(n(12),end)))))))))))))))))))).
+539: ** KEPT (pick-wt=55): 271 [para_into,129.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(n(15),l(n(12),l(hole,end)))))))))))))))))))).
+540: ** KEPT (pick-wt=55): 272 [para_into,129.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(14),l(hole,l(n(11),l(end,l(n(13),l(n(15),l(n(7),l(n(12),end)))))))))))))))))))).
+541: 
+542: given clause #127: (wt=55) 130 [para_into,66.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(14),l(n(7),l(n(11),l(end,l(hole,l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+543: ** KEPT (pick-wt=55): 273 [para_into,130.1.1.2.2.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(hole,l(n(14),l(n(7),l(n(11),l(end,l(n(10),l(n(13),l(n(15),l(n(12),end)))))))))))))))))))).
+544: 
+545: given clause #128: (wt=55) 131 [para_into,67.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(7),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(hole,l(n(12),end)))))))))))))))))))).
+546: ** KEPT (pick-wt=55): 274 [para_into,131.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(7),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(n(12),l(hole,end)))))))))))))))))))).
+547: ** KEPT (pick-wt=55): 275 [para_into,131.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(7),l(n(15),l(n(11),l(end,l(n(13),l(hole,l(n(14),l(n(12),end)))))))))))))))))))).
+548: 
+549: given clause #129: (wt=55) 132 [para_into,67.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(7),l(n(11),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+550: ** KEPT (pick-wt=55): 276 [para_into,132.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(n(8),l(end,l(n(10),l(n(7),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+551: ** KEPT (pick-wt=55): 277 [para_into,132.1.1.2.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(3),l(hole,l(end,l(n(10),l(n(7),l(n(11),l(n(8),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+552: 
+553: given clause #130: (wt=55) 133 [para_into,67.1.1.2.2.2.2.2.2.2,2.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(hole,l(n(8),l(end,l(n(10),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+554: ** KEPT (pick-wt=55): 278 [para_into,133.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(5),l(n(8),l(hole,l(end,l(n(10),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+555: ** KEPT (pick-wt=55): 279 [para_into,133.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(hole,l(n(5),l(n(8),l(end,l(n(10),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+556: ** KEPT (pick-wt=55): 280 [para_into,133.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(9),l(n(5),l(n(2),l(n(8),l(end,l(n(10),l(n(7),l(n(3),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+557: 
+558: given clause #131: (wt=55) 134 [para_into,68.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(3),l(hole,l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+559: ** KEPT (pick-wt=55): 281 [para_into,134.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(3),l(n(7),l(n(8),l(end,l(n(10),l(n(5),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+560: ** KEPT (pick-wt=55): 282 [para_into,134.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(9),l(n(3),l(n(8),l(hole,l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+561: ** KEPT (pick-wt=55): 283 [para_into,134.1.1.2.2,2.1.2] STATE(l(n(1),l(n(6),l(hole,l(n(4),l(end,l(n(9),l(n(3),l(n(2),l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+562: 
+563: given clause #132: (wt=55) 135 [para_into,68.1.1.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(hole,l(n(9),l(n(3),l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+564: ** KEPT (pick-wt=55): 284 [para_into,135.1.1,2.1.2] STATE(l(hole,l(n(6),l(n(2),l(n(4),l(end,l(n(1),l(n(9),l(n(3),l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+565: 
+566: given clause #133: (wt=55) 136 [para_into,68.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(9),l(n(6),l(n(3),l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+567: ** KEPT (pick-wt=55): 285 [para_into,136.1.1.2,1.1.1] STATE(l(n(1),l(n(2),l(hole,l(n(4),l(end,l(n(9),l(n(6),l(n(3),l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+568: ** KEPT (pick-wt=55): 286 [para_into,136.1.1,1.1.2] STATE(l(hole,l(n(1),l(n(2),l(n(4),l(end,l(n(9),l(n(6),l(n(3),l(n(8),l(end,l(n(10),l(n(5),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+569: 
+570: given clause #134: (wt=55) 137 [para_into,69.1.1.2.2.2.2.2.2,2.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(hole,l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+571: ** KEPT (pick-wt=55): 287 [para_into,137.1.1.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(14),l(n(7),l(n(11),l(end,l(n(13),l(hole,l(n(15),l(n(12),end)))))))))))))))))))).
+572: ** KEPT (pick-wt=55): 288 [para_into,137.1.1.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(n(9),l(n(7),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+573: ** KEPT (pick-wt=55): 289 [para_into,137.1.1.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(n(10),l(n(3),l(n(8),l(end,l(hole,l(n(9),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+574: 
+575: given clause #135: (wt=55) 138 [para_into,69.1.1.2.2.2.2.2.2,1.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(n(3),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+576: ** KEPT (pick-wt=55): 290 [para_into,138.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(n(3),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+577: ** KEPT (pick-wt=55): 291 [para_into,138.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(1),l(n(3),l(n(8),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+578: ** KEPT (pick-wt=55): 292 [para_into,138.1.1.2.2,2.1.2] STATE(l(n(6),l(n(5),l(hole,l(n(4),l(end,l(n(1),l(n(3),l(n(2),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+579: 
+580: given clause #136: (wt=55) 139 [para_into,69.1.1.2.2.2.2.2,1.1.2] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(hole,l(n(1),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+581: ** KEPT (pick-wt=55): 293 [para_into,139.1.1.2.2.2.2.2,2.1.1] STATE(l(n(6),l(n(5),l(n(2),l(n(4),l(end,l(n(9),l(n(1),l(n(3),l(n(8),l(end,l(hole,l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+582: ** KEPT (pick-wt=55): 294 [para_into,139.1.1,2.1.2] STATE(l(hole,l(n(5),l(n(2),l(n(4),l(end,l(n(6),l(n(1),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+583: 
+584: given clause #137: (wt=55) 140 [para_into,70.1.1.2.2,2.1.1] STATE(l(n(6),l(n(2),l(n(3),l(n(4),l(end,l(n(1),l(n(5),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+585: ** KEPT (pick-wt=55): 295 [para_into,140.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(6),l(n(2),l(n(3),l(n(4),l(end,l(n(1),l(n(5),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+586: ** KEPT (pick-wt=55): 296 [para_into,140.1.1.2.2.2.2.2.2.2,1.1.1] STATE(l(n(6),l(n(2),l(n(3),l(n(4),l(end,l(n(1),l(n(5),l(n(8),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+587: ** KEPT (pick-wt=55): 297 [para_into,140.1.1.2.2.2.2.2.2,1.1.2] STATE(l(n(6),l(n(2),l(n(3),l(n(4),l(end,l(n(1),l(hole,l(n(5),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+588: 
+589: given clause #138: (wt=55) 141 [para_into,70.1.1.2.2,1.1.1] STATE(l(n(6),l(n(2),l(n(4),l(hole,l(end,l(n(1),l(n(5),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+590: ** KEPT (pick-wt=55): 298 [para_into,141.1.1.2.2.2,2.1.1] STATE(l(n(6),l(n(2),l(n(4),l(n(8),l(end,l(n(1),l(n(5),l(n(3),l(hole,l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+591: 
+592: given clause #139: (wt=55) 142 [para_into,71.1.1.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(hole,l(n(12),end)))))))))))))))))))).
+593: ** KEPT (pick-wt=55): 299 [para_into,142.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(n(14),l(n(12),l(hole,end)))))))))))))))))))).
+594: ** KEPT (pick-wt=55): 300 [para_into,142.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2,1.1.2] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(15),l(n(11),l(end,l(n(13),l(hole,l(n(14),l(n(12),end)))))))))))))))))))).
+595: 
+596: given clause #140: (wt=55) 143 [para_into,71.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+597: ** KEPT (pick-wt=55): 301 [para_into,143.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+598: 
+599: ----> UNIT CONFLICT at   0.04 sec ----> 302 [binary,301.1,3.1] $F.
+600: 
+601: Length of proof is 6.  Level of proof is 6.
+602: 
+603: ---------------- PROOF ----------------
+604: 
+605: 1 [] EQUAL(l(hole,l(n(x),y)),l(n(x),l(hole,y))).
+606: 2 [] EQUAL(l(hole,l(x,l(y,l(z,l(u,l(n(w),v)))))),l(n(w),l(x,l(y,l(z,l(u,l(hole,v))))))).
+607: 3 [] -STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+608: 4 [] STATE(l(n(1),l(n(6),l(n(2),l(n(4),l(end,l(n(5),l(hole,l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+609: 8 [para_into,4.1.1.2,2.1.2] STATE(l(n(1),l(hole,l(n(2),l(n(4),l(end,l(n(5),l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+610: 17 [para_into,8.1.1.2,1.1.1] STATE(l(n(1),l(n(2),l(hole,l(n(4),l(end,l(n(5),l(n(6),l(n(3),l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+611: 36 [para_into,17.1.1.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(hole,l(n(8),l(end,l(n(9),l(n(10),l(n(7),l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+612: 71 [para_into,36.1.1.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(hole,l(n(11),l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+613: 143 [para_into,71.1.1.2.2.2.2.2.2.2.2.2.2.2.2,1.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(hole,l(end,l(n(13),l(n(14),l(n(15),l(n(12),end)))))))))))))))))))).
+614: 301 [para_into,143.1.1.2.2.2.2.2.2.2.2.2.2.2.2.2,2.1.1] STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+615: 302 [binary,301.1,3.1] $F.
+616: 
+617: ------------ end of proof -------------
+618: 
+619: 
+620: Search stopped by max_proofs option.
+621: 
+622: ============ end of search ============
+623: 
+624: -------------- statistics -------------
+625: clauses given                140
+626: clauses generated            437
+627:   para_into generated        437
+628: demod & eval rewrites          0
+629: clauses wt,lit,sk delete       0
+630: tautologies deleted            0
+631: clauses forward subsumed     140
+632:   (subsumed by sos)            2
+633: unit deletions                 0
+634: factor simplifications         0
+635: clauses kept                 297
+636: new demodulators               0
+637: empty clauses                  1
+638: clauses back demodulated       0
+639: clauses back subsumed          0
+640: usable size                  143
+641: sos size                     158
+642: demodulators size              0
+643: passive size                   0
+644: hot size                       0
+645: Kbytes malloced             1953
+646: 
+647: ----------- times (seconds) -----------
+648: user CPU time          0.04          (0 hr, 0 min, 0 sec)
+649: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+650: wall-clock time        0             (0 hr, 0 min, 0 sec)
+651: 
+652: That finishes the proof of the theorem.
+653: 
+654: Process 6629 finished Sat Dec 31 20:34:05 2016
