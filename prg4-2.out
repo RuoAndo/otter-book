@@ -1,0 +1,68 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on flare-OptiPlex-3020M,
+Sat Dec 31 20:19:49 2016
+The command was "otter".  The process ID is 6061.
+
+set(para_into).
+assign(max_given,1).
+set(very_verbose).
+
+list(usable).
+1 [] a=b|c=d.
+end_of_list.
+
+list(sos).
+2 [] P(a)|Q(b,f(c,g(d))).
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=8) 2 [] P(a)|Q(b,f(c,g(d))).
+
+  0 [para_into,2.1.1,1.1.1] P(b)|Q(b,f(c,g(d)))|c=d.
+** KEPT (pick-wt=11): 3 [para_into,2.1.1,1.1.1] P(b)|Q(b,f(c,g(d)))|c=d.
+
+  0 [para_into,2.2.1,1.1.2] P(a)|Q(a,f(c,g(d)))|c=d.
+** KEPT (pick-wt=11): 4 [para_into,2.2.1,1.1.2] P(a)|Q(a,f(c,g(d)))|c=d.
+
+  0 [para_into,2.2.2.1,1.2.1] P(a)|Q(b,f(d,g(d)))|a=b.
+** KEPT (pick-wt=11): 5 [para_into,2.2.2.1,1.2.1] P(a)|Q(b,f(d,g(d)))|a=b.
+
+  0 [para_into,2.2.2.2.1,1.2.2] P(a)|Q(b,f(c,g(c)))|a=b.
+** KEPT (pick-wt=11): 6 [para_into,2.2.2.2.1,1.2.2] P(a)|Q(b,f(c,g(c)))|a=b.
+
+Search stopped by max_given option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  1
+clauses generated              4
+  para_into generated          4
+demod & eval rewrites          0
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed       0
+  (subsumed by sos)            0
+unit deletions                 0
+factor simplifications         0
+clauses kept                   4
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                    2
+sos size                       4
+demodulators size              0
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+Process 6061 finished Sat Dec 31 20:19:49 2016
