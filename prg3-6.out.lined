@@ -1,0 +1,89 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Mon Jul 25 11:36:37 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 3417.
+  5: 
+  6: set(hyper_res).
+  7: 
+  8: list(sos).
+  9: 1 [] n([G,R,N,G,N,G,R,N],[]).
+ 10: 2 [] n([G,N,G,R,N,G,N,G,R,N],[]).
+ 11: end_of_list.
+ 12: 
+ 13: list(usable).
+ 14: 3 [] -n([G|x],[])|n(G*x,[]).
+ 15: 4 [] -n(G*[N|x],[])|n(GN*x,[]).
+ 16: 5 [] -n(G*[R|x],[])|n(G*R*x,[]).
+ 17: 6 [] -n(G*R*[N|x],[])|n(GRN*x,[]).
+ 18: 7 [] -n(GN*x,[])|m([],x).
+ 19: 8 [] -n(GRN*x,[])|m([],[x,x]).
+ 20: end_of_list.
+ 21: 
+ 22: list(demodulators).
+ 23: 9 [] [[x]*[y]]=[x,y].
+ 24: 10 [] [x]*[y]=[x,y].
+ 25: 11 [] [[x],[y]]=[x,y].
+ 26: end_of_list.
+ 27: 
+ 28: ======= end of input processing =======
+ 29: 
+ 30: =========== start of search ===========
+ 31: 
+ 32: given clause #1: (wt=19) 1 [] n([G,R,N,G,N,G,R,N],[]).
+ 33: ** KEPT (pick-wt=19): 12 [hyper,1,3] n(G*[R,N,G,N,G,R,N],[]).
+ 34: 
+ 35: given clause #2: (wt=19) 12 [hyper,1,3] n(G*[R,N,G,N,G,R,N],[]).
+ 36: ** KEPT (pick-wt=19): 13 [hyper,12,5] n(G*R*[N,G,N,G,R,N],[]).
+ 37: 
+ 38: given clause #3: (wt=19) 13 [hyper,12,5] n(G*R*[N,G,N,G,R,N],[]).
+ 39: ** KEPT (pick-wt=15): 14 [hyper,13,6] n(GRN*[G,N,G,R,N],[]).
+ 40: 
+ 41: given clause #4: (wt=15) 14 [hyper,13,6] n(GRN*[G,N,G,R,N],[]).
+ 42: ** KEPT (pick-wt=27): 15 [hyper,14,8] m([],[[G,N,G,R,N],[G,N,G,R,N]]).
+ 43: 
+ 44: given clause #5: (wt=23) 2 [] n([G,N,G,R,N,G,N,G,R,N],[]).
+ 45: ** KEPT (pick-wt=23): 16 [hyper,2,3] n(G*[N,G,R,N,G,N,G,R,N],[]).
+ 46: 
+ 47: given clause #6: (wt=23) 16 [hyper,2,3] n(G*[N,G,R,N,G,N,G,R,N],[]).
+ 48: ** KEPT (pick-wt=21): 17 [hyper,16,4] n(GN*[G,R,N,G,N,G,R,N],[]).
+ 49: 
+ 50: given clause #7: (wt=21) 17 [hyper,16,4] n(GN*[G,R,N,G,N,G,R,N],[]).
+ 51: ** KEPT (pick-wt=19): 18 [hyper,17,7] m([],[G,R,N,G,N,G,R,N]).
+ 52: 
+ 53: given clause #8: (wt=19) 18 [hyper,17,7] m([],[G,R,N,G,N,G,R,N]).
+ 54: 
+ 55: given clause #9: (wt=27) 15 [hyper,14,8] m([],[[G,N,G,R,N],[G,N,G,R,N]]).
+ 56: 
+ 57: Search stopped because sos empty.
+ 58: 
+ 59: ============ end of search ============
+ 60: 
+ 61: -------------- statistics -------------
+ 62: clauses given                  9
+ 63: clauses generated              7
+ 64:   hyper_res generated          7
+ 65: demod & eval rewrites          0
+ 66: clauses wt,lit,sk delete       0
+ 67: tautologies deleted            0
+ 68: clauses forward subsumed       0
+ 69:   (subsumed by sos)            0
+ 70: unit deletions                 0
+ 71: factor simplifications         0
+ 72: clauses kept                   7
+ 73: new demodulators               0
+ 74: empty clauses                  0
+ 75: clauses back demodulated       0
+ 76: clauses back subsumed          0
+ 77: usable size                   15
+ 78: sos size                       0
+ 79: demodulators size              3
+ 80: passive size                   0
+ 81: hot size                       0
+ 82: Kbytes malloced             1953
+ 83: 
+ 84: ----------- times (seconds) -----------
+ 85: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+ 86: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+ 87: wall-clock time        0             (0 hr, 0 min, 0 sec)
+ 88: 
+ 89: Process 3417 finished Mon Jul 25 11:36:37 2016
