@@ -1,0 +1,121 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Mon Jul 25 11:13:21 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 2594.
+  5: 
+  6: set(demod_inf).
+  7: set(hyper_res).
+  8: set(very_verbose).
+  9: 
+ 10: list(sos).
+ 11: 1 [] q([G,R,N,G,R,N]).
+ 12: end_of_list.
+ 13: 
+ 14: list(demodulators).
+ 15: 2 [] [R|y]=repeat(y).
+ 16: 3 [] [N|y]=name(y).
+ 17: 4 [] [G|x]=create(x).
+ 18: 5 [] name([])=N.
+ 19: 6 [] repeat(N)=[RN].
+ 20: 7 [] create([RN])=[GRN].
+ 21: 8 [] create(repeat(name([x])))=[x*x].
+ 22: 9 [] create(name([x]))=[GN*x].
+ 23: 10 [] [(x*y)*z]=[x*y*z].
+ 24: end_of_list.
+ 25: 
+ 26: ======= end of input processing =======
+ 27: 
+ 28: =========== start of search ===========
+ 29: 
+ 30: given clause #1: (wt=14) 1 [] q([G,R,N,G,R,N]).
+ 31: 
+ 32:   0 [1] q([G,R,N,G,R,N]).
+ 33:    demod term: G.
+ 34:    demod term: R.
+ 35:    demod term: N.
+ 36:    demod term: G.
+ 37:    demod term: R.
+ 38:    demod term: N.
+ 39:    demod term: [].
+ 40:    demod term: [N].
+ 41:    --> result: name([])   demod<3>
+ 42:    demod term: name([]).
+ 43:    --> result: N   demod<5>
+ 44:    demod term: N.
+ 45:    demod term: [R|N].
+ 46:    --> result: repeat(N)   demod<2>
+ 47:    demod term: repeat(N).
+ 48:    --> result: [RN]   demod<6>
+ 49:    demod term: RN.
+ 50:    demod term: [].
+ 51:    demod term: [RN].
+ 52:    demod term: [G,RN].
+ 53:    --> result: create([RN])   demod<4>
+ 54:    demod term: create([RN]).
+ 55:    --> result: [GRN]   demod<7>
+ 56:    demod term: GRN.
+ 57:    demod term: [].
+ 58:    demod term: [GRN].
+ 59:    demod term: [N,GRN].
+ 60:    --> result: name([GRN])   demod<3>
+ 61:    demod term: name([GRN]).
+ 62:    demod term: [R|name([GRN])].
+ 63:    --> result: repeat(name([GRN]))   demod<2>
+ 64:    demod term: repeat(name([GRN])).
+ 65:    demod term: [G|repeat(name([GRN]))].
+ 66:    --> result: create(repeat(name([GRN])))   demod<4>
+ 67:    demod term: create(repeat(name([GRN]))).
+ 68:    --> result: [GRN*GRN]   demod<8>
+ 69:    demod term: GRN*GRN.
+ 70:    demod term: [].
+ 71:    demod term: [GRN*GRN].
+ 72:    demod term: q([GRN*GRN]).
+ 73:   after demodulation: 0 [1,demod,3,5,2,6,4,7,3,2,4,8] q([GRN*GRN]).
+ 74: ** KEPT (pick-wt=6): 11 [1,demod,3,5,2,6,4,7,3,2,4,8] q([GRN*GRN]).
+ 75: 
+ 76: given clause #2: (wt=6) 11 [1,demod,3,5,2,6,4,7,3,2,4,8] q([GRN*GRN]).
+ 77: 
+ 78:   0 [11] q([GRN*GRN]).
+ 79:    demod term: GRN.
+ 80:    demod term: GRN.
+ 81:    demod term: GRN*GRN.
+ 82:    demod term: [].
+ 83:    demod term: [GRN*GRN].
+ 84:    demod term: q([GRN*GRN]).
+ 85:   after demodulation: 0 [11] q([GRN*GRN]).
+ 86:   Subsumed by 11.
+ 87: 
+ 88: Search stopped because sos empty.
+ 89: 
+ 90: ============ end of search ============
+ 91: 
+ 92: -------------- statistics -------------
+ 93: clauses given                  2
+ 94: clauses generated              2
+ 95:   hyper_res generated          0
+ 96:   demod_inf generated          2
+ 97: demod & eval rewrites         10
+ 98: clauses wt,lit,sk delete       0
+ 99: tautologies deleted            0
+100: clauses forward subsumed       1
+101:   (subsumed by sos)            0
+102: unit deletions                 0
+103: factor simplifications         0
+104: clauses kept                   1
+105: new demodulators               0
+106: empty clauses                  0
+107: clauses back demodulated       0
+108: clauses back subsumed          0
+109: usable size                    2
+110: sos size                       0
+111: demodulators size              9
+112: passive size                   0
+113: hot size                       0
+114: Kbytes malloced              976
+115: 
+116: ----------- times (seconds) -----------
+117: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+118: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+119: wall-clock time        0             (0 hr, 0 min, 0 sec)
+120: 
+121: Process 2594 finished Mon Jul 25 11:13:21 2016

@@ -1,0 +1,22 @@
+  1: set(demod_inf). 
+  2: set(hyper_res).
+  3: set(very_verbose).
+  4: 
+  5: list(sos).
+  6:         q([G,R,N,G,R,N]).
+  7: end_of_list.
+  8: 
+  9: list(demodulators).
+ 10:         [R|y] = repeat(y).
+ 11:         [N|y] = name(y).
+ 12:         [G|x] = create(x).
+ 13: 
+ 14:         name([]) = N. 
+ 15: 	repeat(N) = [RN].
+ 16: 	create([RN]) = [GRN].
+ 17: 
+ 18: 	create(repeat(name([x]))) = [x*x].
+ 19: 	create(name([x])) = [GN*x].
+ 20:         [(x*y)*z] = [x*y*z].
+ 21: 	
+ 22: end_of_list.
