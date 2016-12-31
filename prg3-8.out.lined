@@ -1,0 +1,78 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Mon Jul 25 12:25:59 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 4219.
+  5: 
+  6: set(demod_inf).
+  7: set(hyper_res).
+  8: 
+  9: list(sos).
+ 10: 1 [] n([G,R,N,D,G,N,G,R,N]).
+ 11: 2 [] n([D,G,R,N,G,N,D,G,R,N]).
+ 12: end_of_list.
+ 13: 
+ 14: list(demodulators).
+ 15: 3 [] [R|y]=repeat(y).
+ 16: 4 [] [N|y]=name(y).
+ 17: 5 [] [G|x]=create([x]).
+ 18: 6 [] [D|x]=destroy([x]).
+ 19: 7 [] name([])=N.
+ 20: 8 [] repeat(N)=RN.
+ 21: 9 [] repeat([x|y])=[x,y,x,y].
+ 22: 10 [] create([x])=G*x.
+ 23: 11 [] name([x])=N*x.
+ 24: 12 [] [name(x*y)]=[N*x*y].
+ 25: 13 [] destroy([G*x])=D*G*x.
+ 26: 14 [] create([x,x])=[x,x].
+ 27: 15 [] repeat(name(x))=[x,x].
+ 28: 16 [] [[x,x]]=[x,x].
+ 29: end_of_list.
+ 30: 
+ 31: ======= end of input processing =======
+ 32: 
+ 33: =========== start of search ===========
+ 34: 
+ 35: given clause #1: (wt=20) 1 [] n([G,R,N,D,G,N,G,R,N]).
+ 36: ** KEPT (pick-wt=22): 17 [1,demod,4,7,3,8,5,10,4,5,12,10,6,13,4,3,15,5,16,14] n([D*G*N*G*RN,D*G*N*G*RN]).
+ 37: 
+ 38: given clause #2: (wt=22) 2 [] n([D,G,R,N,G,N,D,G,R,N]).
+ 39: ** KEPT (pick-wt=23): 18 [2,demod,4,7,3,8,5,10,6,13,4,5,12,10,4,3,15,5,16,14,6,16] n(destroy([G*N*D*G*RN,G*N*D*G*RN])).
+ 40: 
+ 41: given clause #3: (wt=22) 17 [1,demod,4,7,3,8,5,10,4,5,12,10,6,13,4,3,15,5,16,14] n([D*G*N*G*RN,D*G*N*G*RN]).
+ 42: 
+ 43: given clause #4: (wt=23) 18 [2,demod,4,7,3,8,5,10,6,13,4,5,12,10,4,3,15,5,16,14,6,16] n(destroy([G*N*D*G*RN,G*N*D*G*RN])).
+ 44: 
+ 45: Search stopped because sos empty.
+ 46: 
+ 47: ============ end of search ============
+ 48: 
+ 49: -------------- statistics -------------
+ 50: clauses given                  4
+ 51: clauses generated              4
+ 52:   hyper_res generated          0
+ 53:   demod_inf generated          4
+ 54: demod & eval rewrites         38
+ 55: clauses wt,lit,sk delete       0
+ 56: tautologies deleted            0
+ 57: clauses forward subsumed       2
+ 58:   (subsumed by sos)            0
+ 59: unit deletions                 0
+ 60: factor simplifications         0
+ 61: clauses kept                   2
+ 62: new demodulators               0
+ 63: empty clauses                  0
+ 64: clauses back demodulated       0
+ 65: clauses back subsumed          0
+ 66: usable size                    4
+ 67: sos size                       0
+ 68: demodulators size             14
+ 69: passive size                   0
+ 70: hot size                       0
+ 71: Kbytes malloced              976
+ 72: 
+ 73: ----------- times (seconds) -----------
+ 74: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+ 75: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+ 76: wall-clock time        0             (0 hr, 0 min, 0 sec)
+ 77: 
+ 78: Process 4219 finished Mon Jul 25 12:25:59 2016
