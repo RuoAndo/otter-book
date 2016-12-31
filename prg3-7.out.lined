@@ -1,0 +1,165 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on www20363ui.sakura.ne.jp,
+  3: Mon Jul 25 11:56:54 2016
+  4: The command was "/root/automated_reasoning_puzzles/otter-scripts/otter".  The process ID is 3475.
+  5: 
+  6: set(demod_inf).
+  7: set(hyper_res).
+  8: set(very_verbose).
+  9: 
+ 10: list(sos).
+ 11: 1 [] n([D,G,R,N,D,G,R,N]).
+ 12: end_of_list.
+ 13: 
+ 14: list(demodulators).
+ 15: 2 [] [R|y]=repeat(y).
+ 16: 3 [] [N|y]=name(y).
+ 17: 4 [] [G|x]=generate([x]).
+ 18: 5 [] [D|x]=destroy([x]).
+ 19: 6 [] name([])=N.
+ 20: 7 [] repeat(N)=RN.
+ 21: 8 [] repeat([x|y])=[x,y,x,y].
+ 22: 9 [] generate([x])=G*x.
+ 23: 10 [] name([x])=N*x.
+ 24: 11 [] [name(x*y)]=[N*x*y].
+ 25: 12 [] destroy([G*x])=D*G*x.
+ 26: 13 [] generate([x,x])=[x,x].
+ 27: 14 [] repeat(name(x))=[x,x].
+ 28: 15 [] [[x,x]]=[x,x].
+ 29: end_of_list.
+ 30: 
+ 31: ======= end of input processing =======
+ 32: 
+ 33: =========== start of search ===========
+ 34: 
+ 35: given clause #1: (wt=18) 1 [] n([D,G,R,N,D,G,R,N]).
+ 36: 
+ 37:   0 [1] n([D,G,R,N,D,G,R,N]).
+ 38:    demod term: D.
+ 39:    demod term: G.
+ 40:    demod term: R.
+ 41:    demod term: N.
+ 42:    demod term: D.
+ 43:    demod term: G.
+ 44:    demod term: R.
+ 45:    demod term: N.
+ 46:    demod term: [].
+ 47:    demod term: [N].
+ 48:    --> result: name([])   demod<3>
+ 49:    demod term: name([]).
+ 50:    --> result: N   demod<6>
+ 51:    demod term: N.
+ 52:    demod term: [R|N].
+ 53:    --> result: repeat(N)   demod<2>
+ 54:    demod term: repeat(N).
+ 55:    --> result: RN   demod<7>
+ 56:    demod term: RN.
+ 57:    demod term: [G|RN].
+ 58:    --> result: generate([RN])   demod<4>
+ 59:    demod term: [].
+ 60:    demod term: [RN].
+ 61:    demod term: generate([RN]).
+ 62:    --> result: G*RN   demod<9>
+ 63:    demod term: G.
+ 64:    demod term: G*RN.
+ 65:    demod term: [D|G*RN].
+ 66:    --> result: destroy([G*RN])   demod<5>
+ 67:    demod term: [].
+ 68:    demod term: [G*RN].
+ 69:    demod term: destroy([G*RN]).
+ 70:    --> result: D*G*RN   demod<12>
+ 71:    demod term: D.
+ 72:    demod term: G.
+ 73:    demod term: G*RN.
+ 74:    demod term: D*G*RN.
+ 75:    demod term: [N|D*G*RN].
+ 76:    --> result: name(D*G*RN)   demod<3>
+ 77:    demod term: name(D*G*RN).
+ 78:    demod term: [R|name(D*G*RN)].
+ 79:    --> result: repeat(name(D*G*RN))   demod<2>
+ 80:    demod term: repeat(name(D*G*RN)).
+ 81:    --> result: [D*G*RN,D*G*RN]   demod<14>
+ 82:    demod term: [].
+ 83:    demod term: [D*G*RN].
+ 84:    demod term: [D*G*RN,D*G*RN].
+ 85:    demod term: [G,D*G*RN,D*G*RN].
+ 86:    --> result: generate([[D*G*RN,D*G*RN]])   demod<4>
+ 87:    demod term: [].
+ 88:    demod term: [[D*G*RN,D*G*RN]].
+ 89:    --> result: [D*G*RN,D*G*RN]   demod<15>
+ 90:    demod term: [].
+ 91:    demod term: [D*G*RN].
+ 92:    demod term: [D*G*RN,D*G*RN].
+ 93:    demod term: generate([D*G*RN,D*G*RN]).
+ 94:    --> result: [D*G*RN,D*G*RN]   demod<13>
+ 95:    demod term: [].
+ 96:    demod term: [D*G*RN].
+ 97:    demod term: [D*G*RN,D*G*RN].
+ 98:    demod term: [D,D*G*RN,D*G*RN].
+ 99:    --> result: destroy([[D*G*RN,D*G*RN]])   demod<5>
+100:    demod term: [].
+101:    demod term: [[D*G*RN,D*G*RN]].
+102:    --> result: [D*G*RN,D*G*RN]   demod<15>
+103:    demod term: [].
+104:    demod term: [D*G*RN].
+105:    demod term: [D*G*RN,D*G*RN].
+106:    demod term: destroy([D*G*RN,D*G*RN]).
+107:    demod term: n(destroy([D*G*RN,D*G*RN])).
+108:   after demodulation: 0 [1,demod,3,6,2,7,4,9,5,12,3,2,14,4,15,13,5,15] n(destroy([D*G*RN,D*G*RN])).
+109: ** KEPT (pick-wt=15): 16 [1,demod,3,6,2,7,4,9,5,12,3,2,14,4,15,13,5,15] n(destroy([D*G*RN,D*G*RN])).
+110: 
+111: given clause #2: (wt=15) 16 [1,demod,3,6,2,7,4,9,5,12,3,2,14,4,15,13,5,15] n(destroy([D*G*RN,D*G*RN])).
+112: 
+113:   0 [16] n(destroy([D*G*RN,D*G*RN])).
+114:    demod term: D.
+115:    demod term: G.
+116:    demod term: RN.
+117:    demod term: G*RN.
+118:    demod term: D*G*RN.
+119:    demod term: D.
+120:    demod term: G.
+121:    demod term: RN.
+122:    demod term: G*RN.
+123:    demod term: D*G*RN.
+124:    demod term: [].
+125:    demod term: [D*G*RN].
+126:    demod term: [D*G*RN,D*G*RN].
+127:    demod term: destroy([D*G*RN,D*G*RN]).
+128:    demod term: n(destroy([D*G*RN,D*G*RN])).
+129:   after demodulation: 0 [16] n(destroy([D*G*RN,D*G*RN])).
+130:   Subsumed by 16.
+131: 
+132: Search stopped because sos empty.
+133: 
+134: ============ end of search ============
+135: 
+136: -------------- statistics -------------
+137: clauses given                  2
+138: clauses generated              2
+139:   hyper_res generated          0
+140:   demod_inf generated          2
+141: demod & eval rewrites         16
+142: clauses wt,lit,sk delete       0
+143: tautologies deleted            0
+144: clauses forward subsumed       1
+145:   (subsumed by sos)            0
+146: unit deletions                 0
+147: factor simplifications         0
+148: clauses kept                   1
+149: new demodulators               0
+150: empty clauses                  0
+151: clauses back demodulated       0
+152: clauses back subsumed          0
+153: usable size                    2
+154: sos size                       0
+155: demodulators size             14
+156: passive size                   0
+157: hot size                       0
+158: Kbytes malloced              976
+159: 
+160: ----------- times (seconds) -----------
+161: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+162: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+163: wall-clock time        0             (0 hr, 0 min, 0 sec)
+164: 
+165: Process 3475 finished Mon Jul 25 11:56:54 2016
