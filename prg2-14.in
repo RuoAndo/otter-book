@@ -1,0 +1,40 @@
+set(hyper_res).
+set(demod_inf).
+
+op(900,xfx,||).
+op(900,xfx,&&).
+
+make_evaluable(_&&_,$AND(_,_)).
+make_evaluable(_||_,$OR(_,_)).
+
+list(usable).
+	-vampire(x) | -sane(x) | -says(x,P(y)) | lie(P(y)).
+        -vampire(x) | -mad(x) | -says(x,P(y)) | true(P(y)).
+	-human(x) | -sane(x) | -says(x,P(y)) | true(P(y)).
+	-human(x) |  -mad(x) | -says(x,P(y)) | lie(P(y)).
+ 
+        -vampire(x) | human(not(x)).        
+        -human(x) | vampire(not(x)).        
+        
+        -says(x,P(z)) | -says(y,P(z)) | sane(x) | mad(not(x)).
+        -says(x,P(z)) | -says(y,P(z)) | mad(x) | mad(not(x)).
+        -true(P($OR(mad(x),mad(y)))) | mad(x) | mad(not(x)).
+        -true(P($OR(mad(x),mad(y)))) | sane(x) | sane(not(x)).
+
+        -mad(x) | -true(P(y)) | vampire(x).
+        -sane(x) | -true(P(y)) | human(x).
+
+end_of_list.
+
+list(sos).
+        says(A, P($OR(mad(A),mad(B)))).
+        says(B, P($OR(mad(A),mad(B)))).
+	says(A, sane(A)).
+        human(A) | vampire(A).
+        human(B) | vampire(B).
+end_of_list.
+
+list(demodulators).
+        not(A) = B.
+        not(B) = A.
+end_of_list.

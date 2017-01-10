@@ -1,0 +1,210 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on flare-OptiPlex-3020M,
+Mon Jan  9 22:59:08 2017
+The command was "otter".  The process ID is 7102.
+
+set(hyper_res).
+set(demod_inf).
+op(900,xfx,||).
+op(900,xfx,&&).
+make_evaluable(_&&_,$AND(_,_)).
+make_evaluable(_||_,$OR(_,_)).
+
+list(usable).
+1 [] -vampire(x)| -sane(x)| -says(x,P(y))|lie(P(y)).
+2 [] -vampire(x)| -mad(x)| -says(x,P(y))|true(P(y)).
+3 [] -human(x)| -sane(x)| -says(x,P(y))|true(P(y)).
+4 [] -human(x)| -mad(x)| -says(x,P(y))|lie(P(y)).
+5 [] -vampire(x)|human(not(x)).
+6 [] -human(x)|vampire(not(x)).
+7 [] -says(x,P(z))| -says(y,P(z))|sane(x)|mad(not(x)).
+8 [] -says(x,P(z))| -says(y,P(z))|mad(x)|mad(not(x)).
+9 [] -true(P($OR(mad(x),mad(y))))|mad(x)|mad(not(x)).
+10 [] -true(P($OR(mad(x),mad(y))))|sane(x)|sane(not(x)).
+11 [] -mad(x)| -true(P(y))|vampire(x).
+12 [] -sane(x)| -true(P(y))|human(x).
+end_of_list.
+
+list(sos).
+13 [] says(A,P($OR(mad(A),mad(B)))).
+14 [] says(B,P($OR(mad(A),mad(B)))).
+15 [] says(A,sane(A)).
+16 [] human(A)|vampire(A).
+17 [] human(B)|vampire(B).
+end_of_list.
+
+list(demodulators).
+18 [] not(A)=B.
+19 [] not(B)=A.
+end_of_list.
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=4) 15 [] says(A,sane(A)).
+
+given clause #2: (wt=4) 16 [] human(A)|vampire(A).
+** KEPT (pick-wt=4): 20 [hyper,16,5,demod,18] human(A)|human(B).
+
+given clause #3: (wt=4) 17 [] human(B)|vampire(B).
+
+given clause #4: (wt=4) 20 [hyper,16,5,demod,18] human(A)|human(B).
+
+given clause #5: (wt=8) 13 [] says(A,P($OR(mad(A),mad(B)))).
+** KEPT (pick-wt=4): 21 [hyper,13,8,13,demod,18] mad(A)|mad(B).
+** KEPT (pick-wt=4): 22 [hyper,13,7,13,demod,18] sane(A)|mad(B).
+
+given clause #6: (wt=4) 21 [hyper,13,8,13,demod,18] mad(A)|mad(B).
+** KEPT (pick-wt=11): 23 [hyper,21,4,20,13] mad(B)|lie(P($OR(mad(A),mad(B))))|human(B).
+** KEPT (pick-wt=11): 24 [hyper,21,2,16,13] mad(B)|true(P($OR(mad(A),mad(B))))|human(A).
+
+given clause #7: (wt=4) 22 [hyper,13,7,13,demod,18] sane(A)|mad(B).
+** KEPT (pick-wt=11): 25 [hyper,22,3,20,13] mad(B)|true(P($OR(mad(A),mad(B))))|human(B).
+** KEPT (pick-wt=11): 26 [hyper,22,1,16,13] mad(B)|lie(P($OR(mad(A),mad(B))))|human(A).
+
+given clause #8: (wt=8) 14 [] says(B,P($OR(mad(A),mad(B)))).
+** KEPT (pick-wt=4): 27 [hyper,14,7,14,demod,19] sane(B)|mad(A).
+** KEPT (pick-wt=11): 28 [hyper,14,4,20,21] lie(P($OR(mad(A),mad(B))))|human(A)|mad(A).
+** KEPT (pick-wt=11): 29 [hyper,14,2,17,21] true(P($OR(mad(A),mad(B))))|human(B)|mad(A).
+
+given clause #9: (wt=4) 27 [hyper,14,7,14,demod,19] sane(B)|mad(A).
+** KEPT (pick-wt=11): 30 [hyper,27,3,20,14] mad(A)|true(P($OR(mad(A),mad(B))))|human(A).
+** KEPT (pick-wt=11): 31 [hyper,27,1,17,14] mad(A)|lie(P($OR(mad(A),mad(B))))|human(B).
+
+given clause #10: (wt=11) 23 [hyper,21,4,20,13] mad(B)|lie(P($OR(mad(A),mad(B))))|human(B).
+** KEPT (pick-wt=16): 32 [hyper,23,2,17,14] lie(P($OR(mad(A),mad(B))))|human(B)|true(P($OR(mad(A),mad(B)))).
+
+given clause #11: (wt=11) 24 [hyper,21,2,16,13] mad(B)|true(P($OR(mad(A),mad(B))))|human(A).
+** KEPT (pick-wt=4): 33 [hyper,24,12,22] mad(B)|human(A).
+33 back subsumes 26.
+33 back subsumes 24.
+
+given clause #12: (wt=4) 33 [hyper,24,12,22] mad(B)|human(A).
+** KEPT (pick-wt=9): 34 [hyper,33,4,20,14] human(A)|lie(P($OR(mad(A),mad(B)))).
+34 back subsumes 28.
+
+given clause #13: (wt=9) 34 [hyper,33,4,20,14] human(A)|lie(P($OR(mad(A),mad(B)))).
+
+given clause #14: (wt=11) 25 [hyper,22,3,20,13] mad(B)|true(P($OR(mad(A),mad(B))))|human(B).
+** KEPT (pick-wt=6): 35 [hyper,25,11,21] mad(B)|human(B)|vampire(A).
+
+given clause #15: (wt=6) 35 [hyper,25,11,21] mad(B)|human(B)|vampire(A).
+** KEPT (pick-wt=4): 36 [hyper,35,5,demod,18] mad(B)|human(B).
+36 back subsumes 35.
+36 back subsumes 25.
+36 back subsumes 23.
+
+given clause #16: (wt=4) 36 [hyper,35,5,demod,18] mad(B)|human(B).
+** KEPT (pick-wt=9): 37 [hyper,36,2,17,14] human(B)|true(P($OR(mad(A),mad(B)))).
+37 back subsumes 32.
+37 back subsumes 29.
+
+given clause #17: (wt=9) 37 [hyper,36,2,17,14] human(B)|true(P($OR(mad(A),mad(B)))).
+** KEPT (pick-wt=4): 38 [hyper,37,12,27] human(B)|mad(A).
+** KEPT (pick-wt=6): 39 [hyper,37,10,demod,18] human(B)|sane(A)|sane(B).
+38 back subsumes 31.
+
+given clause #18: (wt=4) 38 [hyper,37,12,27] human(B)|mad(A).
+** KEPT (pick-wt=4): 40 [hyper,38,11,37] human(B)|vampire(A).
+** KEPT (pick-wt=9): 41 [hyper,38,4,20,13] human(B)|lie(P($OR(mad(A),mad(B)))).
+
+given clause #19: (wt=4) 40 [hyper,38,11,37] human(B)|vampire(A).
+** KEPT (pick-wt=2): 42 [hyper,40,5,demod,18] human(B).
+42 back subsumes 41.
+42 back subsumes 40.
+42 back subsumes 39.
+42 back subsumes 38.
+42 back subsumes 37.
+42 back subsumes 36.
+42 back subsumes 20.
+42 back subsumes 17.
+
+given clause #20: (wt=2) 42 [hyper,40,5,demod,18] human(B).
+** KEPT (pick-wt=2): 43 [hyper,42,6,demod,19] vampire(A).
+** KEPT (pick-wt=9): 44 [hyper,42,4,21,14] lie(P($OR(mad(A),mad(B))))|mad(A).
+** KEPT (pick-wt=9): 45 [hyper,42,3,27,14] true(P($OR(mad(A),mad(B))))|mad(A).
+43 back subsumes 16.
+45 back subsumes 30.
+
+given clause #21: (wt=2) 43 [hyper,42,6,demod,19] vampire(A).
+** KEPT (pick-wt=9): 46 [hyper,43,2,21,13] true(P($OR(mad(A),mad(B))))|mad(B).
+** KEPT (pick-wt=9): 47 [hyper,43,1,22,13] lie(P($OR(mad(A),mad(B))))|mad(B).
+
+given clause #22: (wt=9) 44 [hyper,42,4,21,14] lie(P($OR(mad(A),mad(B))))|mad(A).
+** KEPT (pick-wt=14): 48 [hyper,44,2,43,13] lie(P($OR(mad(A),mad(B))))|true(P($OR(mad(A),mad(B)))).
+
+given clause #23: (wt=9) 45 [hyper,42,3,27,14] true(P($OR(mad(A),mad(B))))|mad(A).
+** KEPT (pick-wt=6): 49 [hyper,45,11,33] mad(A)|vampire(B)|human(A).
+** KEPT (pick-wt=4): 50 [hyper,45,11,21] mad(A)|vampire(B).
+50 back subsumes 49.
+
+given clause #24: (wt=4) 50 [hyper,45,11,21] mad(A)|vampire(B).
+** KEPT (pick-wt=4): 51 [hyper,50,5,demod,19] mad(A)|human(A).
+
+given clause #25: (wt=4) 51 [hyper,50,5,demod,19] mad(A)|human(A).
+** KEPT (pick-wt=9): 52 [hyper,51,2,43,13] human(A)|true(P($OR(mad(A),mad(B)))).
+
+given clause #26: (wt=9) 46 [hyper,43,2,21,13] true(P($OR(mad(A),mad(B))))|mad(B).
+
+given clause #27: (wt=9) 47 [hyper,43,1,22,13] lie(P($OR(mad(A),mad(B))))|mad(B).
+** KEPT (pick-wt=7): 53 [hyper,47,4,42,14] lie(P($OR(mad(A),mad(B)))).
+53 back subsumes 48.
+53 back subsumes 47.
+53 back subsumes 44.
+53 back subsumes 34.
+
+given clause #28: (wt=7) 53 [hyper,47,4,42,14] lie(P($OR(mad(A),mad(B)))).
+
+given clause #29: (wt=9) 52 [hyper,51,2,43,13] human(A)|true(P($OR(mad(A),mad(B)))).
+** KEPT (pick-wt=4): 54 [hyper,52,11,33] human(A)|vampire(B).
+** KEPT (pick-wt=6): 55 [hyper,52,10,demod,18] human(A)|sane(A)|sane(B).
+
+given clause #30: (wt=4) 54 [hyper,52,11,33] human(A)|vampire(B).
+** KEPT (pick-wt=2): 56 [hyper,54,5,demod,19] human(A).
+56 back subsumes 55.
+56 back subsumes 54.
+56 back subsumes 52.
+56 back subsumes 51.
+56 back subsumes 33.
+
+given clause #31: (wt=2) 56 [hyper,54,5,demod,19] human(A).
+** KEPT (pick-wt=2): 57 [hyper,56,6,demod,18] vampire(B).
+57 back subsumes 50.
+
+given clause #32: (wt=2) 57 [hyper,56,6,demod,18] vampire(B).
+
+Search stopped because sos empty.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                 32
+clauses generated            143
+  hyper_res generated        116
+  demod_inf generated         27
+demod & eval rewrites         36
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed     105
+  (subsumed by sos)           23
+unit deletions                 0
+factor simplifications         0
+clauses kept                  38
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed         30
+usable size                   25
+sos size                       0
+demodulators size              2
+passive size                   0
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.00          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+Process 7102 finished Mon Jan  9 22:59:08 2017

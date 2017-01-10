@@ -1,0 +1,210 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Mon Jan  9 22:59:08 2017
+  4: The command was "otter".  The process ID is 7102.
+  5: 
+  6: set(hyper_res).
+  7: set(demod_inf).
+  8: op(900,xfx,||).
+  9: op(900,xfx,&&).
+ 10: make_evaluable(_&&_,$AND(_,_)).
+ 11: make_evaluable(_||_,$OR(_,_)).
+ 12: 
+ 13: list(usable).
+ 14: 1 [] -vampire(x)| -sane(x)| -says(x,P(y))|lie(P(y)).
+ 15: 2 [] -vampire(x)| -mad(x)| -says(x,P(y))|true(P(y)).
+ 16: 3 [] -human(x)| -sane(x)| -says(x,P(y))|true(P(y)).
+ 17: 4 [] -human(x)| -mad(x)| -says(x,P(y))|lie(P(y)).
+ 18: 5 [] -vampire(x)|human(not(x)).
+ 19: 6 [] -human(x)|vampire(not(x)).
+ 20: 7 [] -says(x,P(z))| -says(y,P(z))|sane(x)|mad(not(x)).
+ 21: 8 [] -says(x,P(z))| -says(y,P(z))|mad(x)|mad(not(x)).
+ 22: 9 [] -true(P($OR(mad(x),mad(y))))|mad(x)|mad(not(x)).
+ 23: 10 [] -true(P($OR(mad(x),mad(y))))|sane(x)|sane(not(x)).
+ 24: 11 [] -mad(x)| -true(P(y))|vampire(x).
+ 25: 12 [] -sane(x)| -true(P(y))|human(x).
+ 26: end_of_list.
+ 27: 
+ 28: list(sos).
+ 29: 13 [] says(A,P($OR(mad(A),mad(B)))).
+ 30: 14 [] says(B,P($OR(mad(A),mad(B)))).
+ 31: 15 [] says(A,sane(A)).
+ 32: 16 [] human(A)|vampire(A).
+ 33: 17 [] human(B)|vampire(B).
+ 34: end_of_list.
+ 35: 
+ 36: list(demodulators).
+ 37: 18 [] not(A)=B.
+ 38: 19 [] not(B)=A.
+ 39: end_of_list.
+ 40: 
+ 41: ======= end of input processing =======
+ 42: 
+ 43: =========== start of search ===========
+ 44: 
+ 45: given clause #1: (wt=4) 15 [] says(A,sane(A)).
+ 46: 
+ 47: given clause #2: (wt=4) 16 [] human(A)|vampire(A).
+ 48: ** KEPT (pick-wt=4): 20 [hyper,16,5,demod,18] human(A)|human(B).
+ 49: 
+ 50: given clause #3: (wt=4) 17 [] human(B)|vampire(B).
+ 51: 
+ 52: given clause #4: (wt=4) 20 [hyper,16,5,demod,18] human(A)|human(B).
+ 53: 
+ 54: given clause #5: (wt=8) 13 [] says(A,P($OR(mad(A),mad(B)))).
+ 55: ** KEPT (pick-wt=4): 21 [hyper,13,8,13,demod,18] mad(A)|mad(B).
+ 56: ** KEPT (pick-wt=4): 22 [hyper,13,7,13,demod,18] sane(A)|mad(B).
+ 57: 
+ 58: given clause #6: (wt=4) 21 [hyper,13,8,13,demod,18] mad(A)|mad(B).
+ 59: ** KEPT (pick-wt=11): 23 [hyper,21,4,20,13] mad(B)|lie(P($OR(mad(A),mad(B))))|human(B).
+ 60: ** KEPT (pick-wt=11): 24 [hyper,21,2,16,13] mad(B)|true(P($OR(mad(A),mad(B))))|human(A).
+ 61: 
+ 62: given clause #7: (wt=4) 22 [hyper,13,7,13,demod,18] sane(A)|mad(B).
+ 63: ** KEPT (pick-wt=11): 25 [hyper,22,3,20,13] mad(B)|true(P($OR(mad(A),mad(B))))|human(B).
+ 64: ** KEPT (pick-wt=11): 26 [hyper,22,1,16,13] mad(B)|lie(P($OR(mad(A),mad(B))))|human(A).
+ 65: 
+ 66: given clause #8: (wt=8) 14 [] says(B,P($OR(mad(A),mad(B)))).
+ 67: ** KEPT (pick-wt=4): 27 [hyper,14,7,14,demod,19] sane(B)|mad(A).
+ 68: ** KEPT (pick-wt=11): 28 [hyper,14,4,20,21] lie(P($OR(mad(A),mad(B))))|human(A)|mad(A).
+ 69: ** KEPT (pick-wt=11): 29 [hyper,14,2,17,21] true(P($OR(mad(A),mad(B))))|human(B)|mad(A).
+ 70: 
+ 71: given clause #9: (wt=4) 27 [hyper,14,7,14,demod,19] sane(B)|mad(A).
+ 72: ** KEPT (pick-wt=11): 30 [hyper,27,3,20,14] mad(A)|true(P($OR(mad(A),mad(B))))|human(A).
+ 73: ** KEPT (pick-wt=11): 31 [hyper,27,1,17,14] mad(A)|lie(P($OR(mad(A),mad(B))))|human(B).
+ 74: 
+ 75: given clause #10: (wt=11) 23 [hyper,21,4,20,13] mad(B)|lie(P($OR(mad(A),mad(B))))|human(B).
+ 76: ** KEPT (pick-wt=16): 32 [hyper,23,2,17,14] lie(P($OR(mad(A),mad(B))))|human(B)|true(P($OR(mad(A),mad(B)))).
+ 77: 
+ 78: given clause #11: (wt=11) 24 [hyper,21,2,16,13] mad(B)|true(P($OR(mad(A),mad(B))))|human(A).
+ 79: ** KEPT (pick-wt=4): 33 [hyper,24,12,22] mad(B)|human(A).
+ 80: 33 back subsumes 26.
+ 81: 33 back subsumes 24.
+ 82: 
+ 83: given clause #12: (wt=4) 33 [hyper,24,12,22] mad(B)|human(A).
+ 84: ** KEPT (pick-wt=9): 34 [hyper,33,4,20,14] human(A)|lie(P($OR(mad(A),mad(B)))).
+ 85: 34 back subsumes 28.
+ 86: 
+ 87: given clause #13: (wt=9) 34 [hyper,33,4,20,14] human(A)|lie(P($OR(mad(A),mad(B)))).
+ 88: 
+ 89: given clause #14: (wt=11) 25 [hyper,22,3,20,13] mad(B)|true(P($OR(mad(A),mad(B))))|human(B).
+ 90: ** KEPT (pick-wt=6): 35 [hyper,25,11,21] mad(B)|human(B)|vampire(A).
+ 91: 
+ 92: given clause #15: (wt=6) 35 [hyper,25,11,21] mad(B)|human(B)|vampire(A).
+ 93: ** KEPT (pick-wt=4): 36 [hyper,35,5,demod,18] mad(B)|human(B).
+ 94: 36 back subsumes 35.
+ 95: 36 back subsumes 25.
+ 96: 36 back subsumes 23.
+ 97: 
+ 98: given clause #16: (wt=4) 36 [hyper,35,5,demod,18] mad(B)|human(B).
+ 99: ** KEPT (pick-wt=9): 37 [hyper,36,2,17,14] human(B)|true(P($OR(mad(A),mad(B)))).
+100: 37 back subsumes 32.
+101: 37 back subsumes 29.
+102: 
+103: given clause #17: (wt=9) 37 [hyper,36,2,17,14] human(B)|true(P($OR(mad(A),mad(B)))).
+104: ** KEPT (pick-wt=4): 38 [hyper,37,12,27] human(B)|mad(A).
+105: ** KEPT (pick-wt=6): 39 [hyper,37,10,demod,18] human(B)|sane(A)|sane(B).
+106: 38 back subsumes 31.
+107: 
+108: given clause #18: (wt=4) 38 [hyper,37,12,27] human(B)|mad(A).
+109: ** KEPT (pick-wt=4): 40 [hyper,38,11,37] human(B)|vampire(A).
+110: ** KEPT (pick-wt=9): 41 [hyper,38,4,20,13] human(B)|lie(P($OR(mad(A),mad(B)))).
+111: 
+112: given clause #19: (wt=4) 40 [hyper,38,11,37] human(B)|vampire(A).
+113: ** KEPT (pick-wt=2): 42 [hyper,40,5,demod,18] human(B).
+114: 42 back subsumes 41.
+115: 42 back subsumes 40.
+116: 42 back subsumes 39.
+117: 42 back subsumes 38.
+118: 42 back subsumes 37.
+119: 42 back subsumes 36.
+120: 42 back subsumes 20.
+121: 42 back subsumes 17.
+122: 
+123: given clause #20: (wt=2) 42 [hyper,40,5,demod,18] human(B).
+124: ** KEPT (pick-wt=2): 43 [hyper,42,6,demod,19] vampire(A).
+125: ** KEPT (pick-wt=9): 44 [hyper,42,4,21,14] lie(P($OR(mad(A),mad(B))))|mad(A).
+126: ** KEPT (pick-wt=9): 45 [hyper,42,3,27,14] true(P($OR(mad(A),mad(B))))|mad(A).
+127: 43 back subsumes 16.
+128: 45 back subsumes 30.
+129: 
+130: given clause #21: (wt=2) 43 [hyper,42,6,demod,19] vampire(A).
+131: ** KEPT (pick-wt=9): 46 [hyper,43,2,21,13] true(P($OR(mad(A),mad(B))))|mad(B).
+132: ** KEPT (pick-wt=9): 47 [hyper,43,1,22,13] lie(P($OR(mad(A),mad(B))))|mad(B).
+133: 
+134: given clause #22: (wt=9) 44 [hyper,42,4,21,14] lie(P($OR(mad(A),mad(B))))|mad(A).
+135: ** KEPT (pick-wt=14): 48 [hyper,44,2,43,13] lie(P($OR(mad(A),mad(B))))|true(P($OR(mad(A),mad(B)))).
+136: 
+137: given clause #23: (wt=9) 45 [hyper,42,3,27,14] true(P($OR(mad(A),mad(B))))|mad(A).
+138: ** KEPT (pick-wt=6): 49 [hyper,45,11,33] mad(A)|vampire(B)|human(A).
+139: ** KEPT (pick-wt=4): 50 [hyper,45,11,21] mad(A)|vampire(B).
+140: 50 back subsumes 49.
+141: 
+142: given clause #24: (wt=4) 50 [hyper,45,11,21] mad(A)|vampire(B).
+143: ** KEPT (pick-wt=4): 51 [hyper,50,5,demod,19] mad(A)|human(A).
+144: 
+145: given clause #25: (wt=4) 51 [hyper,50,5,demod,19] mad(A)|human(A).
+146: ** KEPT (pick-wt=9): 52 [hyper,51,2,43,13] human(A)|true(P($OR(mad(A),mad(B)))).
+147: 
+148: given clause #26: (wt=9) 46 [hyper,43,2,21,13] true(P($OR(mad(A),mad(B))))|mad(B).
+149: 
+150: given clause #27: (wt=9) 47 [hyper,43,1,22,13] lie(P($OR(mad(A),mad(B))))|mad(B).
+151: ** KEPT (pick-wt=7): 53 [hyper,47,4,42,14] lie(P($OR(mad(A),mad(B)))).
+152: 53 back subsumes 48.
+153: 53 back subsumes 47.
+154: 53 back subsumes 44.
+155: 53 back subsumes 34.
+156: 
+157: given clause #28: (wt=7) 53 [hyper,47,4,42,14] lie(P($OR(mad(A),mad(B)))).
+158: 
+159: given clause #29: (wt=9) 52 [hyper,51,2,43,13] human(A)|true(P($OR(mad(A),mad(B)))).
+160: ** KEPT (pick-wt=4): 54 [hyper,52,11,33] human(A)|vampire(B).
+161: ** KEPT (pick-wt=6): 55 [hyper,52,10,demod,18] human(A)|sane(A)|sane(B).
+162: 
+163: given clause #30: (wt=4) 54 [hyper,52,11,33] human(A)|vampire(B).
+164: ** KEPT (pick-wt=2): 56 [hyper,54,5,demod,19] human(A).
+165: 56 back subsumes 55.
+166: 56 back subsumes 54.
+167: 56 back subsumes 52.
+168: 56 back subsumes 51.
+169: 56 back subsumes 33.
+170: 
+171: given clause #31: (wt=2) 56 [hyper,54,5,demod,19] human(A).
+172: ** KEPT (pick-wt=2): 57 [hyper,56,6,demod,18] vampire(B).
+173: 57 back subsumes 50.
+174: 
+175: given clause #32: (wt=2) 57 [hyper,56,6,demod,18] vampire(B).
+176: 
+177: Search stopped because sos empty.
+178: 
+179: ============ end of search ============
+180: 
+181: -------------- statistics -------------
+182: clauses given                 32
+183: clauses generated            143
+184:   hyper_res generated        116
+185:   demod_inf generated         27
+186: demod & eval rewrites         36
+187: clauses wt,lit,sk delete       0
+188: tautologies deleted            0
+189: clauses forward subsumed     105
+190:   (subsumed by sos)           23
+191: unit deletions                 0
+192: factor simplifications         0
+193: clauses kept                  38
+194: new demodulators               0
+195: empty clauses                  0
+196: clauses back demodulated       0
+197: clauses back subsumed         30
+198: usable size                   25
+199: sos size                       0
+200: demodulators size              2
+201: passive size                   0
+202: hot size                       0
+203: Kbytes malloced              976
+204: 
+205: ----------- times (seconds) -----------
+206: user CPU time          0.00          (0 hr, 0 min, 0 sec)
+207: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+208: wall-clock time        0             (0 hr, 0 min, 0 sec)
+209: 
+210: Process 7102 finished Mon Jan  9 22:59:08 2017
