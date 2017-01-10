@@ -27,9 +27,9 @@ list(usable).
 end_of_list.
 
 list(sos).
-        says(A, P(human(A))).
-        says(B, P(human(B))).
-        says(A, mad(B)).
+        says(A, P($OR(mad(A),mad(B)))).
+        says(B, P($OR(mad(A),mad(B)))).
+	says(A, sane(A)).
         human(A) | vampire(A).
         human(B) | vampire(B).
 end_of_list.
