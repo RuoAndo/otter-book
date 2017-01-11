@@ -1,0 +1,562 @@
+----- Otter 3.3f, August 2004 -----
+The process was started by root on flare-OptiPlex-3020M,
+Wed Jan 11 13:16:49 2017
+The command was "otter".  The process ID is 15390.
+
+op(400,xfx,*).
+set(para_into).
+set(para_from).
+set(order_eq).
+set(dynamic_demod).
+set(process_input).
+set(demod_out_in).
+set(lrpo).
+
+lex([$T,A,B,C,D,E,1,_*_,rs(_,_),ls(_,_),_=_]).
+assign(max_weight,20).
+assign(pick_given_ratio,3).
+assign(max_proofs,2).
+assign(max_mem,20000).
+clear(print_kept).
+clear(print_new_demod).
+
+list(usable).
+0 [] x=x.
+0 [] x*rs(x,y)=y.
+0 [] rs(x,x*y)=y.
+0 [] ls(x,y)*y=x.
+0 [] ls(x*y,y)=x.
+0 [] 1*x=x.
+0 [] x*1=x.
+end_of_list.
+
+list(sos).
+0 [] (x*y)* (z*x)= (x* (y*z))*x.
+0 [] A* (B* (A*C))!= ((A*B)*A)*C|$ANS(Moufang_3).
+end_of_list.
+
+list(demodulators).
+1 [] EQ(((x*y)*z)*y=x* (y* (z*y)),$T).
+2 [] EQ(x* (y* (z*y))= ((x*y)*z)*y,$T).
+end_of_list.
+
+list(hot).
+end_of_list.
+
+------------> process usable:
+** KEPT (pick-wt=3): 3 [] x=x.
+** KEPT (pick-wt=7): 4 [] x*rs(x,y)=y.
+---> New Demodulator: 5 [new_demod,4] x*rs(x,y)=y.
+** KEPT (pick-wt=7): 6 [] rs(x,x*y)=y.
+---> New Demodulator: 7 [new_demod,6] rs(x,x*y)=y.
+** KEPT (pick-wt=7): 8 [] ls(x,y)*y=x.
+---> New Demodulator: 9 [new_demod,8] ls(x,y)*y=x.
+** KEPT (pick-wt=7): 10 [] ls(x*y,y)=x.
+---> New Demodulator: 11 [new_demod,10] ls(x*y,y)=x.
+** KEPT (pick-wt=5): 12 [] 1*x=x.
+---> New Demodulator: 13 [new_demod,12] 1*x=x.
+** KEPT (pick-wt=5): 14 [] x*1=x.
+---> New Demodulator: 15 [new_demod,14] x*1=x.
+
+------------> process sos:
+** KEPT (pick-wt=15): 17 [copy,16,flip.1] (x* (y*z))*x= (x*y)* (z*x).
+---> New Demodulator: 18 [new_demod,17] (x* (y*z))*x= (x*y)* (z*x).
+** KEPT (pick-wt=15): 20 [copy,19,flip.1] ((A*B)*A)*C!=A* (B* (A*C))|$ANS(Moufang_3).
+
+======= end of input processing =======
+
+=========== start of search ===========
+
+given clause #1: (wt=15) 17 [copy,16,flip.1] (x* (y*z))*x= (x*y)* (z*x).
+
+given clause #2: (wt=11) 21 [para_into,17.1.1.1.2,12.1.1,demod,15] (x*y)*x=x* (y*x).
+
+given clause #3: (wt=11) 45 [para_into,21.1.1.1,4.1.1,flip.1] x* (rs(x,y)*x)=y*x.
+
+given clause #4: (wt=5) 56 [para_into,45.1.1,12.1.1,demod,15,15] rs(1,x)=x.
+
+given clause #5: (wt=15) 20 [copy,19,flip.1] ((A*B)*A)*C!=A* (B* (A*C))|$ANS(Moufang_3).
+
+given clause #6: (wt=11) 52 [para_from,21.1.1,10.1.1.1] ls(x* (y*x),x)=x*y.
+
+given clause #7: (wt=5) 73 [para_into,52.1.1.1.2,14.1.1,demod,13,13] ls(x,1)=x.
+
+given clause #8: (wt=11) 54 [para_from,21.1.1,6.1.1.2] rs(x*y,x* (y*x))=x.
+
+given clause #9: (wt=15) 23 [para_into,17.1.1.1.2,8.1.1,demod,22,flip.1] (x*ls(y,z))* (z*x)=x* (y*x).
+
+given clause #10: (wt=7) 89 [para_into,54.1.1.2.2,14.1.1,demod,13,67] rs(x,1)*x=1.
+
+given clause #11: (wt=7) 108 [para_from,89.1.1,52.1.1.1.2,demod,76,5] x*ls(1,x)=1.
+
+given clause #12: (wt=7) 118 [para_from,89.1.1,10.1.1.1] ls(1,x)=rs(x,1).
+
+given clause #13: (wt=15) 25 [para_into,17.1.1.1.2,4.1.1,demod,22,flip.1] (x*y)* (rs(y,z)*x)=x* (z*x).
+134 back subsumes 77.
+
+given clause #14: (wt=7) 120 [para_from,89.1.1,6.1.1.2] rs(rs(x,1),1)=x.
+
+given clause #15: (wt=11) 60 [para_from,45.1.1,17.1.1.1,demod,5] (x*y)*y=x* (y*y).
+
+given clause #16: (wt=9) 142 [para_into,60.1.1.1,89.1.1,demod,13,flip.1] rs(x,1)* (x*x)=x.
+
+given clause #17: (wt=19) 27 [para_into,17.1.2.1,8.1.1,demod,22] ls(x,y)* ((y*z)*ls(x,y))=x* (z*ls(x,y)).
+
+given clause #18: (wt=9) 166 [para_into,142.1.1.2,52.1.2,demod,123,117] (x*x)*rs(x,1)=x.
+
+given clause #19: (wt=9) 176 [para_from,142.1.1,10.1.1.1] ls(x,x*x)=rs(x,1).
+
+given clause #20: (wt=9) 178 [para_from,142.1.1,6.1.1.2] rs(rs(x,1),x)=x*x.
+
+given clause #21: (wt=15) 29 [para_into,17.1.2.1,4.1.1,demod,22] x* ((rs(x,y)*z)*x)=y* (z*x).
+224 back subsumes 48.
+
+given clause #22: (wt=7) 219 [para_from,178.1.2,10.1.1.1,demod,179,76] x*ls(x,x)=x.
+
+given clause #23: (wt=7) 257 [para_from,219.1.1,10.1.1.1] ls(x,ls(x,x))=x.
+
+given clause #24: (wt=7) 259 [para_from,219.1.1,6.1.1.2,flip.1] ls(x,x)=rs(x,x).
+
+given clause #25: (wt=15) 31 [para_into,17.1.2.2,8.1.1,demod,22] x* ((y*ls(z,x))*x)= (x*y)*z.
+275 back subsumes 217.
+288 back subsumes 286.
+288 back subsumes 280.
+302 back subsumes 301.
+308 back subsumes 307.
+
+given clause #26: (wt=7) 261 [para_from,259.1.1,257.1.1.2] ls(x,rs(x,x))=x.
+
+given clause #27: (wt=7) 267 [para_from,259.1.1,8.1.1.1] rs(x,x)*x=x.
+
+given clause #28: (wt=7) 322 [para_from,267.1.1,6.1.1.2] rs(rs(x,x),x)=x.
+
+given clause #29: (wt=19) 32 [para_into,17.1.2.2,4.1.1,demod,22] rs(x,y)* ((z*x)*rs(x,y))= (rs(x,y)*z)*y.
+
+given clause #30: (wt=9) 205 [para_from,166.1.1,10.1.1.1] ls(x,rs(x,1))=x*x.
+
+given clause #31: (wt=9) 207 [para_from,166.1.1,6.1.1.2] rs(x*x,x)=rs(x,1).
+
+given clause #32: (wt=11) 64 [para_from,45.1.1,10.1.1.1] ls(x*y,rs(y,x)*y)=y.
+
+given clause #33: (wt=15) 33 [para_from,17.1.1,10.1.1.1] ls((x*y)* (z*x),x)=x* (y*z).
+
+given clause #34: (wt=5) 363 [para_into,64.1.1.1,14.1.1,demod,15,57,260] rs(x,x)=1.
+
+given clause #35: (wt=7) 359 [para_into,64.1.1.1,21.1.1,demod,103,7,260] x*rs(y,y)=x.
+
+given clause #36: (wt=11) 66 [para_from,45.1.1,6.1.1.2] rs(x,y*x)=rs(x,y)*x.
+
+given clause #37: (wt=15) 35 [para_from,17.1.1,6.1.1.2] rs(x* (y*z),(x*y)* (z*x))=x.
+
+given clause #38: (wt=11) 75 [para_into,52.1.1.1.2,8.1.1] ls(x*y,x)=x*ls(y,x).
+417 back subsumes 282.
+
+given clause #39: (wt=11) 79 [para_into,54.1.1.1,45.1.1,demod,30] rs(x*y,x* (y*y))=y.
+
+given clause #40: (wt=11) 91 [para_into,54.1.1.2.2,8.1.1] rs(x*ls(y,x),x*y)=x.
+
+given clause #41: (wt=15) 37 [para_from,17.1.2,10.1.1.1,demod,22] ls(x* ((y*z)*x),z*x)=x*y.
+457 back subsumes 451.
+
+given clause #42: (wt=7) 447 [para_into,91.1.1.2,4.1.1,demod,416] rs(ls(x,y),x)=y.
+
+given clause #43: (wt=11) 134 [para_from,25.1.1,10.1.1.1,demod,103] x*ls(y,rs(z,y))=x*z.
+465 back subsumes 261.
+
+given clause #44: (wt=7) 465 [para_into,134.1.1,267.1.1,demod,364,13] ls(x,rs(y,x))=y.
+
+given clause #45: (wt=15) 39 [para_from,17.1.2,6.1.1.2,demod,22] rs(x*y,x* ((y*z)*x))=z*x.
+
+given clause #46: (wt=11) 146 [para_into,60.1.1.1,8.1.1,flip.1] ls(x,y)* (y*y)=x*y.
+
+given clause #47: (wt=11) 164 [para_from,60.1.1,10.1.1.1] ls(x* (y*y),y)=x*y.
+
+given clause #48: (wt=11) 170 [para_from,142.1.1,52.1.1.1.2,demod,76,167] (x*x)*ls(x,x*x)=x.
+
+given clause #49: (wt=19) 41 [para_into,21.1.1.1,21.1.1] (x* (y*x))* (x*y)= (x*y)* (x* (x*y)).
+
+given clause #50: (wt=11) 197 [para_from,166.1.1,54.1.1.2.2,demod,143,67] rs(x,rs(x,1))*x=rs(x,1).
+
+given clause #51: (wt=11) 199 [para_from,166.1.1,52.1.1.1.2,demod,76,143] rs(x,1)*ls(x,rs(x,1))=x.
+
+given clause #52: (wt=11) 215 [para_into,178.1.2,52.1.2,demod,179,76,76,flip.1] x* (x*ls(x,x))=x*x.
+
+given clause #53: (wt=15) 43 [para_into,21.1.1.1,8.1.1,flip.1] ls(x,y)* (y*ls(x,y))=x*ls(x,y).
+
+given clause #54: (wt=11) 236 [para_from,29.1.2,54.1.1.2,demod,137,67] (rs(x,rs(y,y))*x)*y=y.
+553 back subsumes 166.
+
+given clause #55: (wt=9) 553 [para_into,236.1.1,31.1.2,demod,364,364,111,364,117] (x*y)*rs(y,1)=x.
+583 back subsumes 195.
+597 back subsumes 201.
+609 back subsumes 207.
+
+given clause #56: (wt=9) 581 [para_into,553.1.1.1,4.1.1] x*rs(rs(y,x),1)=y.
+
+given clause #57: (wt=15) 47 [para_into,21.1.1,17.1.1] (x*y)* (z*x)=x* ((y*z)*x).
+
+given clause #58: (wt=9) 583 [para_into,553.1.1.2,447.1.1,demod,564,580,13] (x*rs(y,1))*y=x.
+641 back subsumes 178.
+655 back subsumes 432.
+
+given clause #59: (wt=9) 609 [para_from,553.1.1,6.1.1.2] rs(x*y,x)=rs(y,1).
+
+given clause #60: (wt=9) 628 [para_from,581.1.1,6.1.1.2,flip.1] rs(rs(x,y),1)=rs(y,x).
+
+given clause #61: (wt=19) 49 [para_from,21.1.1,17.1.2.2,demod,22] x* ((y* (x*z))*x)= (x*y)* (x* (z*x)).
+
+given clause #62: (wt=9) 641 [para_into,583.1.1.1,66.1.2,demod,127,113,flip.1] rs(rs(x,1),y)=x*y.
+726 back subsumes 213.
+729 back subsumes 140.
+733 back subsumes 561.
+735 back subsumes 172.
+739 back subsumes 549.
+739 back subsumes 174.
+739 back subsumes 142.
+749 back subsumes 197.
+
+given clause #63: (wt=9) 710 [para_from,628.1.1,89.1.1.1] rs(x,y)*rs(y,x)=1.
+765 back subsumes 453.
+771 back subsumes 706.
+
+given clause #64: (wt=9) 726 [para_into,641.1.1.1,641.1.1,demod,15] rs(x,y)=rs(x,1)*y.
+809 back subsumes 802.
+814 back subsumes 801.
+
+given clause #65: (wt=19) 50 [para_from,21.1.1,17.1.1.1.2,demod,22] x* ((y* (z*y))*x)= (x* (y*z))* (y*x).
+
+given clause #66: (wt=9) 729 [para_into,641.1.1,6.1.1,flip.1] x* (rs(x,1)*y)=y.
+
+given clause #67: (wt=9) 739 [para_from,641.1.1,4.1.1.2] rs(x,1)* (x*y)=y.
+
+given clause #68: (wt=9) 783 [para_from,726.1.2,641.1.2,demod,728,57] rs(x,1)*y=rs(x,y).
+
+given clause #69: (wt=15) 51 [para_from,21.1.1,17.1.1] x* ((y*z)*x)= (x*y)* (z*x).
+869 back subsumes 831.
+
+given clause #70: (wt=11) 238 [para_from,29.1.2,52.1.1.1,demod,76,11] x* (rs(x,x)*y)=x*y.
+
+given clause #71: (wt=11) 242 [para_from,219.1.1,54.1.1.2.2,demod,9,67] rs(x,ls(x,x))*x=ls(x,x).
+
+given clause #72: (wt=11) 244 [para_from,219.1.1,52.1.1.1.2,demod,76,9] ls(x,x)*ls(x,ls(x,x))=x.
+
+given clause #73: (wt=19) 58 [para_from,45.1.1,17.1.1.1.2,demod,22,flip.1] (x*y)* ((rs(y,z)*y)*x)=x* ((z*y)*x).
+
+given clause #74: (wt=11) 275 [para_into,31.1.1.2,21.1.1,demod,9,flip.1] (x*x)*y=x* (x*y).
+917 back subsumes 911.
+919 back subsumes 351.
+921 back subsumes 193.
+927 back subsumes 476.
+
+given clause #75: (wt=11) 317 [para_from,267.1.1,60.1.1.1,flip.1] rs(x,x)* (x*x)=x*x.
+
+given clause #76: (wt=11) 319 [para_from,267.1.1,54.1.1.1,demod,5,67] rs(x,rs(x,x))*x=rs(x,x).
+
+given clause #77: (wt=19) 62 [para_from,45.1.1,17.1.2.1,demod,22] x* (((rs(x,y)*x)*z)*x)= (y*x)* (z*x).
+
+given clause #78: (wt=11) 365 [para_into,64.1.1.1,8.1.1] ls(x,rs(y,ls(x,y))*y)=y.
+
+given clause #79: (wt=11) 379 [para_into,66.1.1.2,8.1.1,flip.1] rs(x,ls(y,x))*x=rs(x,y).
+
+given clause #80: (wt=11) 415 [para_into,75.1.1.1,4.1.1,flip.1] x*ls(rs(x,y),x)=ls(y,x).
+
+given clause #81: (wt=15) 68 [para_into,20.1.1.1.1,45.1.2,demod,46,22] (A* (B*A))*C!=A* (B* (A*C))|$ANS(Moufang_3).
+
+given clause #82: (wt=11) 434 [para_into,79.1.1.2,8.1.1] rs(ls(x,y*y)*y,x)=y.
+
+given clause #83: (wt=11) 517 [para_from,146.1.1,10.1.1.1] ls(x*y,y*y)=ls(x,y).
+
+given clause #84: (wt=11) 519 [para_from,146.1.1,6.1.1.2] rs(ls(x,y),x*y)=y*y.
+
+given clause #85: (wt=15) 69 [para_into,52.1.1.1.2,21.1.1] ls(x* (x* (y*x)),x)=x* (x*y).
+
+given clause #86: (wt=11) 529 [para_into,164.1.1.1,89.1.1,demod,119,flip.1] rs(x*x,1)*x=rs(x,1).
+
+given clause #87: (wt=11) 533 [para_into,164.1.1.1,8.1.1,flip.1] ls(x,y*y)*y=ls(x,y).
+
+given clause #88: (wt=11) 655 [para_from,583.1.1,35.1.1.2,demod,610] rs(rs(x*y,1)*x,1)=y.
+
+given clause #89: (wt=19) 71 [para_into,52.1.1.1.2,17.1.1] ls(x* ((x*y)* (z*x)),x)=x* (x* (y*z)).
+
+given clause #90: (wt=11) 657 [para_from,583.1.1,33.1.1.1,demod,260,364,flip.1] x* (rs(y*x,1)*y)=1.
+1066 back subsumes 203.
+
+given clause #91: (wt=11) 700 [para_from,628.1.1,553.1.1.2] (x*rs(y,z))*rs(z,y)=x.
+
+given clause #92: (wt=11) 727 [para_into,641.1.1.1,628.1.1] rs(rs(x,y),z)=rs(y,x)*z.
+
+given clause #93: (wt=19) 81 [para_into,54.1.1.1,21.1.1] rs(x* (y*x),(x*y)* (x* (x*y)))=x*y.
+
+given clause #94: (wt=11) 733 [para_from,641.1.1,581.1.1.2.1] x*rs(y*x,1)=rs(y,1).
+
+given clause #95: (wt=11) 737 [para_from,641.1.1,628.1.1.1] rs(x*y,1)=rs(y,rs(x,1)).
+1222 back subsumes 942.
+1224 back subsumes 1201.
+
+given clause #96: (wt=11) 743 [para_from,641.1.2,64.1.1.2,demod,564,580,728,15,728,15] (x*y)*rs(y,rs(x,y))=y.
+
+given clause #97: (wt=19) 83 [para_into,54.1.1.2.2,21.1.2,demod,61,22] rs(x* (y*y),(x*y)* (y* (x*y)))=x*y.
+1276 back subsumes 1179.
+
+given clause #98: (wt=11) 749 [para_from,641.1.2,609.1.1.1,demod,728] rs(x,rs(y,1))*y=rs(x,1).
+1298 back subsumes 1213.
+
+given clause #99: (wt=11) 757 [para_into,710.1.1.1,641.1.1] (x*y)*rs(y,rs(x,1))=1.
+
+given clause #100: (wt=11) 761 [para_into,710.1.1.2,641.1.1] rs(x,rs(y,1))* (y*x)=1.
+1350 back subsumes 1338.
+
+given clause #101: (wt=15) 85 [para_into,54.1.1.2.2,21.1.1] rs(x* (x*y),x* (x* (y*x)))=x.
+
+given clause #102: (wt=11) 765 [para_from,710.1.1,29.1.1.2.1,demod,13,flip.1] x* (rs(x,y)*y)=y*y.
+1385 back subsumes 1208.
+
+given clause #103: (wt=11) 771 [para_from,710.1.1,33.1.1.1.1,demod,564,580,13,554,flip.1] rs(x,y)* (rs(y,x)*z)=z.
+1391 back subsumes 1238.
+1393 back subsumes 1226.
+1403 back subsumes 649.
+
+given clause #104: (wt=11) 777 [para_from,726.1.1,710.1.1.2] rs(x,y)* (rs(y,1)*x)=1.
+
+given clause #105: (wt=19) 87 [para_into,54.1.1.2.2,17.1.1] rs(x* (x* (y*z)),x* ((x*y)* (z*x)))=x.
+
+given clause #106: (wt=11) 781 [para_from,726.1.1,710.1.1.1] (rs(x,1)*y)*rs(y,x)=1.
+1453 back subsumes 1298.
+1453 back subsumes 1183.
+1453 back subsumes 1019.
+
+given clause #107: (wt=11) 794 [para_from,726.1.2,25.1.1.2,demod,13] (x*y)*rs(y,x)=x*x.
+1469 back subsumes 1456.
+
+given clause #108: (wt=11) 820 [para_from,726.1.2,609.1.1.1,demod,728] rs(x,y)*rs(y,1)=rs(x,1).
+1514 back subsumes 1284.
+1517 back subsumes 1190.
+1519 back subsumes 1211.
+1524 back subsumes 1212.
+
+given clause #109: (wt=15) 93 [para_into,54.1.1.2.2,4.1.1] rs(rs(x,y)*x,rs(x,y)*y)=rs(x,y).
+
+given clause #110: (wt=11) 889 [para_into,275.1.1,581.1.1,demod,728,15,flip.1] x* (x*rs(x*x,y))=y.
+
+given clause #111: (wt=11) 927 [para_from,275.1.1,6.1.1.2] rs(x*x,x* (x*y))=y.
+1545 back subsumes 1482.
+
+given clause #112: (wt=11) 1040 [para_into,655.1.1.1,164.1.2,demod,564,738,728,57,276,732,738,728,15,57] x*rs(x*x,x*y)=y.
+
+given clause #113: (wt=19) 95 [para_into,23.1.1.1.2,52.1.1] (x* (y*z))* (y*x)=x* ((y* (z*y))*x).
+
+given clause #114: (wt=11) 1064 [para_into,657.1.1.2.1.1,783.1.1,demod,616] x* (rs(x,y)*rs(y,1))=1.
+
+given clause #115: (wt=11) 1210 [para_into,737.1.1.1,581.1.1,demod,728,57] rs(x,1)=rs(x,y)*rs(y,1).
+
+given clause #116: (wt=11) 1342 [para_into,761.1.1.2,581.1.1,demod,728,57] (rs(x,y)*rs(y,1))*x=1.
+1584 back subsumes 1207.
+
+given clause #117: (wt=19) 96 [para_into,23.1.1.2,21.1.1] (x*ls(y,x*z))* (x* (z*x))=x* (y*x).
+
+given clause #118: (wt=11) 1385 [para_from,765.1.1,655.1.1.1.1.1,demod,1147,15,728,15,57] rs(x,y*y)=rs(x,y)*y.
+
+given clause #119: (wt=13) 110 [para_from,89.1.1,23.1.1.2,demod,15] x*ls(y,rs(x,1))=x* (y*x).
+
+given clause #120: (wt=13) 112 [para_from,89.1.1,17.1.2.2,demod,22,15] x* ((y*rs(x,1))*x)=x*y.
+
+given clause #121: (wt=15) 98 [para_into,23.1.1.2,8.1.1] (x*ls(y,ls(z,x)))*z=x* (y*x).
+
+----> UNIT CONFLICT at   0.33 sec ----> 1626 [binary,1624.1,68.1] $ANS(Moufang_3).
+
+Length of proof is 61.  Level of proof is 19.
+
+---------------- PROOF ----------------
+
+5,4 [] x*rs(x,y)=y.
+6 [] rs(x,x*y)=y.
+9,8 [] ls(x,y)*y=x.
+10 [] ls(x*y,y)=x.
+13,12 [] 1*x=x.
+15,14 [] x*1=x.
+16 [] (x*y)* (z*x)= (x* (y*z))*x.
+17 [copy,16,flip.1] (x* (y*z))*x= (x*y)* (z*x).
+19 [] A* (B* (A*C))!= ((A*B)*A)*C|$ANS(Moufang_3).
+20 [copy,19,flip.1] ((A*B)*A)*C!=A* (B* (A*C))|$ANS(Moufang_3).
+22,21 [para_into,17.1.1.1.2,12.1.1,demod,15] (x*y)*x=x* (y*x).
+23 [para_into,17.1.1.1.2,8.1.1,demod,22,flip.1] (x*ls(y,z))* (z*x)=x* (y*x).
+25 [para_into,17.1.1.1.2,4.1.1,demod,22,flip.1] (x*y)* (rs(y,z)*x)=x* (z*x).
+29 [para_into,17.1.2.1,4.1.1,demod,22] x* ((rs(x,y)*z)*x)=y* (z*x).
+31 [para_into,17.1.2.2,8.1.1,demod,22] x* ((y*ls(z,x))*x)= (x*y)*z.
+35 [para_from,17.1.1,6.1.1.2] rs(x* (y*z),(x*y)* (z*x))=x.
+37 [para_from,17.1.2,10.1.1.1,demod,22] ls(x* ((y*z)*x),z*x)=x*y.
+39 [para_from,17.1.2,6.1.1.2,demod,22] rs(x*y,x* ((y*z)*x))=z*x.
+46,45 [para_into,21.1.1.1,4.1.1,flip.1] x* (rs(x,y)*x)=y*x.
+52 [para_from,21.1.1,10.1.1.1] ls(x* (y*x),x)=x*y.
+54 [para_from,21.1.1,6.1.1.2] rs(x*y,x* (y*x))=x.
+57,56 [para_into,45.1.1,12.1.1,demod,15,15] rs(1,x)=x.
+60 [para_from,45.1.1,17.1.1.1,demod,5] (x*y)*y=x* (y*y).
+64 [para_from,45.1.1,10.1.1.1] ls(x*y,rs(y,x)*y)=y.
+67,66 [para_from,45.1.1,6.1.1.2] rs(x,y*x)=rs(x,y)*x.
+68 [para_into,20.1.1.1.1,45.1.2,demod,46,22] (A* (B*A))*C!=A* (B* (A*C))|$ANS(Moufang_3).
+76,75 [para_into,52.1.1.1.2,8.1.1] ls(x*y,x)=x*ls(y,x).
+89 [para_into,54.1.1.2.2,14.1.1,demod,13,67] rs(x,1)*x=1.
+91 [para_into,54.1.1.2.2,8.1.1] rs(x*ls(y,x),x*y)=x.
+98 [para_into,23.1.1.2,8.1.1] (x*ls(y,ls(z,x)))*z=x* (y*x).
+103,102 [para_from,23.1.1,10.1.1.1] ls(x* (y*x),z*x)=x*ls(y,z).
+108 [para_from,89.1.1,52.1.1.1.2,demod,76,5] x*ls(1,x)=1.
+111,110 [para_from,89.1.1,23.1.1.2,demod,15] x*ls(y,rs(x,1))=x* (y*x).
+113,112 [para_from,89.1.1,17.1.2.2,demod,22,15] x* ((y*rs(x,1))*x)=x*y.
+117,116 [para_from,89.1.1,17.1.2.1,demod,22,13] rs(x,1)* ((x*y)*rs(x,1))=y*rs(x,1).
+119,118 [para_from,89.1.1,10.1.1.1] ls(1,x)=rs(x,1).
+127,126 [para_into,25.1.1.1,108.1.1,demod,13,119] rs(rs(x,1),y)*x=x* (y*x).
+134 [para_from,25.1.1,10.1.1.1,demod,103] x*ls(y,rs(z,y))=x*z.
+137,136 [para_from,25.1.1,6.1.1.2] rs(x*y,x* (z*x))=rs(y,z)*x.
+142 [para_into,60.1.1.1,89.1.1,demod,13,flip.1] rs(x,1)* (x*x)=x.
+146 [para_into,60.1.1.1,8.1.1,flip.1] ls(x,y)* (y*y)=x*y.
+179,178 [para_from,142.1.1,6.1.1.2] rs(rs(x,1),x)=x*x.
+219 [para_from,178.1.2,10.1.1.1,demod,179,76] x*ls(x,x)=x.
+236 [para_from,29.1.2,54.1.1.2,demod,137,67] (rs(x,rs(y,y))*x)*y=y.
+260,259 [para_from,219.1.1,6.1.1.2,flip.1] ls(x,x)=rs(x,x).
+276,275 [para_into,31.1.1.2,21.1.1,demod,9,flip.1] (x*x)*y=x* (x*y).
+364,363 [para_into,64.1.1.1,14.1.1,demod,15,57,260] rs(x,x)=1.
+416,415 [para_into,75.1.1.1,4.1.1,flip.1] x*ls(rs(x,y),x)=ls(y,x).
+447 [para_into,91.1.1.2,4.1.1,demod,416] rs(ls(x,y),x)=y.
+553 [para_into,236.1.1,31.1.2,demod,364,364,111,364,117] (x*y)*rs(y,1)=x.
+564,563 [para_into,553.1.1.1,146.1.1,flip.1] ls(x,y)= (x*y)*rs(y*y,1).
+580,579 [para_into,553.1.1.1,8.1.1,demod,564,flip.1] (x*y)*rs(y*y,1)=x*rs(y,1).
+581 [para_into,553.1.1.1,4.1.1] x*rs(rs(y,x),1)=y.
+583 [para_into,553.1.1.2,447.1.1,demod,564,580,13] (x*rs(y,1))*y=x.
+610,609 [para_from,553.1.1,6.1.1.2] rs(x*y,x)=rs(y,1).
+616,615 [para_from,581.1.1,39.1.1.2.2.1,demod,137,flip.1] rs(rs(x,y),1)*z=rs(y,x)*z.
+628 [para_from,581.1.1,6.1.1.2,flip.1] rs(rs(x,y),1)=rs(y,x).
+641 [para_into,583.1.1.1,66.1.2,demod,127,113,flip.1] rs(rs(x,1),y)=x*y.
+655 [para_from,583.1.1,35.1.1.2,demod,610] rs(rs(x*y,1)*x,1)=y.
+673,672 [para_from,583.1.1,37.1.1.1.2.1,demod,564,580] (x* (y*x))*rs(z*x,1)=x* (y*rs(z,1)).
+710 [para_from,628.1.1,89.1.1.1] rs(x,y)*rs(y,x)=1.
+728,727 [para_into,641.1.1.1,628.1.1] rs(rs(x,y),z)=rs(y,x)*z.
+732,731 [para_from,641.1.1,134.1.1.2.2,demod,564,580] x* (y*rs(z*y,1))=x*rs(z,1).
+749 [para_from,641.1.2,609.1.1.1,demod,728] rs(x,rs(y,1))*y=rs(x,1).
+765 [para_from,710.1.1,29.1.1.2.1,demod,13,flip.1] x* (rs(x,y)*y)=y*y.
+1147,1146 [para_into,727.1.1.1,641.1.1] rs(x*y,z)=rs(y,rs(x,1))*z.
+1299,1298 [para_from,749.1.1,37.1.1.1.2.1,demod,564,580,673,flip.1] x*rs(y,rs(z,1))=x* (rs(y,1)*rs(z,1)).
+1386,1385 [para_from,765.1.1,655.1.1.1.1.1,demod,1147,15,728,15,57] rs(x,y*y)=rs(x,y)*y.
+1624 [para_from,98.1.1,583.1.1.1,demod,564,580,564,1147,15,1299,616,1386,57,276,732,728,15,57] (x* (y*x))*z=x* (y* (x*z)).
+1626 [binary,1624.1,68.1] $ANS(Moufang_3).
+
+------------ end of proof -------------
+
+
+----> UNIT CONFLICT at   0.34 sec ----> 1630 [binary,1629.1,3.1] $ANS(Moufang_3).
+
+Length of proof is 62.  Level of proof is 20.
+
+---------------- PROOF ----------------
+
+3 [] x=x.
+5,4 [] x*rs(x,y)=y.
+6 [] rs(x,x*y)=y.
+9,8 [] ls(x,y)*y=x.
+10 [] ls(x*y,y)=x.
+13,12 [] 1*x=x.
+15,14 [] x*1=x.
+16 [] (x*y)* (z*x)= (x* (y*z))*x.
+17 [copy,16,flip.1] (x* (y*z))*x= (x*y)* (z*x).
+19 [] A* (B* (A*C))!= ((A*B)*A)*C|$ANS(Moufang_3).
+20 [copy,19,flip.1] ((A*B)*A)*C!=A* (B* (A*C))|$ANS(Moufang_3).
+22,21 [para_into,17.1.1.1.2,12.1.1,demod,15] (x*y)*x=x* (y*x).
+23 [para_into,17.1.1.1.2,8.1.1,demod,22,flip.1] (x*ls(y,z))* (z*x)=x* (y*x).
+25 [para_into,17.1.1.1.2,4.1.1,demod,22,flip.1] (x*y)* (rs(y,z)*x)=x* (z*x).
+29 [para_into,17.1.2.1,4.1.1,demod,22] x* ((rs(x,y)*z)*x)=y* (z*x).
+31 [para_into,17.1.2.2,8.1.1,demod,22] x* ((y*ls(z,x))*x)= (x*y)*z.
+35 [para_from,17.1.1,6.1.1.2] rs(x* (y*z),(x*y)* (z*x))=x.
+37 [para_from,17.1.2,10.1.1.1,demod,22] ls(x* ((y*z)*x),z*x)=x*y.
+39 [para_from,17.1.2,6.1.1.2,demod,22] rs(x*y,x* ((y*z)*x))=z*x.
+46,45 [para_into,21.1.1.1,4.1.1,flip.1] x* (rs(x,y)*x)=y*x.
+52 [para_from,21.1.1,10.1.1.1] ls(x* (y*x),x)=x*y.
+54 [para_from,21.1.1,6.1.1.2] rs(x*y,x* (y*x))=x.
+57,56 [para_into,45.1.1,12.1.1,demod,15,15] rs(1,x)=x.
+60 [para_from,45.1.1,17.1.1.1,demod,5] (x*y)*y=x* (y*y).
+64 [para_from,45.1.1,10.1.1.1] ls(x*y,rs(y,x)*y)=y.
+67,66 [para_from,45.1.1,6.1.1.2] rs(x,y*x)=rs(x,y)*x.
+68 [para_into,20.1.1.1.1,45.1.2,demod,46,22] (A* (B*A))*C!=A* (B* (A*C))|$ANS(Moufang_3).
+76,75 [para_into,52.1.1.1.2,8.1.1] ls(x*y,x)=x*ls(y,x).
+89 [para_into,54.1.1.2.2,14.1.1,demod,13,67] rs(x,1)*x=1.
+91 [para_into,54.1.1.2.2,8.1.1] rs(x*ls(y,x),x*y)=x.
+99,98 [para_into,23.1.1.2,8.1.1] (x*ls(y,ls(z,x)))*z=x* (y*x).
+103,102 [para_from,23.1.1,10.1.1.1] ls(x* (y*x),z*x)=x*ls(y,z).
+108 [para_from,89.1.1,52.1.1.1.2,demod,76,5] x*ls(1,x)=1.
+111,110 [para_from,89.1.1,23.1.1.2,demod,15] x*ls(y,rs(x,1))=x* (y*x).
+113,112 [para_from,89.1.1,17.1.2.2,demod,22,15] x* ((y*rs(x,1))*x)=x*y.
+117,116 [para_from,89.1.1,17.1.2.1,demod,22,13] rs(x,1)* ((x*y)*rs(x,1))=y*rs(x,1).
+119,118 [para_from,89.1.1,10.1.1.1] ls(1,x)=rs(x,1).
+127,126 [para_into,25.1.1.1,108.1.1,demod,13,119] rs(rs(x,1),y)*x=x* (y*x).
+134 [para_from,25.1.1,10.1.1.1,demod,103] x*ls(y,rs(z,y))=x*z.
+137,136 [para_from,25.1.1,6.1.1.2] rs(x*y,x* (z*x))=rs(y,z)*x.
+142 [para_into,60.1.1.1,89.1.1,demod,13,flip.1] rs(x,1)* (x*x)=x.
+146 [para_into,60.1.1.1,8.1.1,flip.1] ls(x,y)* (y*y)=x*y.
+179,178 [para_from,142.1.1,6.1.1.2] rs(rs(x,1),x)=x*x.
+219 [para_from,178.1.2,10.1.1.1,demod,179,76] x*ls(x,x)=x.
+236 [para_from,29.1.2,54.1.1.2,demod,137,67] (rs(x,rs(y,y))*x)*y=y.
+260,259 [para_from,219.1.1,6.1.1.2,flip.1] ls(x,x)=rs(x,x).
+276,275 [para_into,31.1.1.2,21.1.1,demod,9,flip.1] (x*x)*y=x* (x*y).
+364,363 [para_into,64.1.1.1,14.1.1,demod,15,57,260] rs(x,x)=1.
+416,415 [para_into,75.1.1.1,4.1.1,flip.1] x*ls(rs(x,y),x)=ls(y,x).
+447 [para_into,91.1.1.2,4.1.1,demod,416] rs(ls(x,y),x)=y.
+553 [para_into,236.1.1,31.1.2,demod,364,364,111,364,117] (x*y)*rs(y,1)=x.
+564,563 [para_into,553.1.1.1,146.1.1,flip.1] ls(x,y)= (x*y)*rs(y*y,1).
+580,579 [para_into,553.1.1.1,8.1.1,demod,564,flip.1] (x*y)*rs(y*y,1)=x*rs(y,1).
+581 [para_into,553.1.1.1,4.1.1] x*rs(rs(y,x),1)=y.
+583 [para_into,553.1.1.2,447.1.1,demod,564,580,13] (x*rs(y,1))*y=x.
+610,609 [para_from,553.1.1,6.1.1.2] rs(x*y,x)=rs(y,1).
+616,615 [para_from,581.1.1,39.1.1.2.2.1,demod,137,flip.1] rs(rs(x,y),1)*z=rs(y,x)*z.
+628 [para_from,581.1.1,6.1.1.2,flip.1] rs(rs(x,y),1)=rs(y,x).
+641 [para_into,583.1.1.1,66.1.2,demod,127,113,flip.1] rs(rs(x,1),y)=x*y.
+655 [para_from,583.1.1,35.1.1.2,demod,610] rs(rs(x*y,1)*x,1)=y.
+673,672 [para_from,583.1.1,37.1.1.1.2.1,demod,564,580] (x* (y*x))*rs(z*x,1)=x* (y*rs(z,1)).
+710 [para_from,628.1.1,89.1.1.1] rs(x,y)*rs(y,x)=1.
+728,727 [para_into,641.1.1.1,628.1.1] rs(rs(x,y),z)=rs(y,x)*z.
+732,731 [para_from,641.1.1,134.1.1.2.2,demod,564,580] x* (y*rs(z*y,1))=x*rs(z,1).
+749 [para_from,641.1.2,609.1.1.1,demod,728] rs(x,rs(y,1))*y=rs(x,1).
+765 [para_from,710.1.1,29.1.1.2.1,demod,13,flip.1] x* (rs(x,y)*y)=y*y.
+1147,1146 [para_into,727.1.1.1,641.1.1] rs(x*y,z)=rs(y,rs(x,1))*z.
+1299,1298 [para_from,749.1.1,37.1.1.1.2.1,demod,564,580,673,flip.1] x*rs(y,rs(z,1))=x* (rs(y,1)*rs(z,1)).
+1386,1385 [para_from,765.1.1,655.1.1.1.1.1,demod,1147,15,728,15,57] rs(x,y*y)=rs(x,y)*y.
+1625,1624 [para_from,98.1.1,583.1.1.1,demod,564,580,564,1147,15,1299,616,1386,57,276,732,728,15,57] (x* (y*x))*z=x* (y* (x*z)).
+1629 [para_from,98.1.2,68.1.1.1,demod,99,1625] A* (B* (A*C))!=A* (B* (A*C))|$ANS(Moufang_3).
+1630 [binary,1629.1,3.1] $ANS(Moufang_3).
+
+------------ end of proof -------------
+
+
+Search stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                121
+clauses generated          27742
+  para_from generated      13322
+  para_into generated      14420
+demod & eval rewrites     141455
+clauses wt,lit,sk delete    8348
+tautologies deleted           13
+clauses forward subsumed   18513
+  (subsumed by sos)          638
+unit deletions                 0
+factor simplifications         0
+clauses kept                 877
+new demodulators             747
+empty clauses                  2
+clauses back demodulated       0
+clauses back subsumed         53
+usable size                  122
+sos size                     702
+demodulators size            749
+passive size                   0
+hot size                       0
+Kbytes malloced             7812
+
+----------- times (seconds) -----------
+user CPU time          0.34          (0 hr, 0 min, 0 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+
+That finishes the proof of the theorem.
+
+Process 15390 finished Wed Jan 11 13:16:49 2017

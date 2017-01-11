@@ -1,0 +1,302 @@
+  1: ----- Otter 3.3f, August 2004 -----
+  2: The process was started by root on flare-OptiPlex-3020M,
+  3: Wed Jan 11 13:16:01 2017
+  4: The command was "otter".  The process ID is 14208.
+  5: 
+  6: op(400,xfx,*).
+  7: set(para_into).
+  8: set(para_from).
+  9: set(order_eq).
+ 10: set(dynamic_demod).
+ 11: set(process_input).
+ 12: set(demod_out_in).
+ 13: set(lrpo).
+ 14: 
+ 15: lex([$T,A,B,C,D,E,1,_*_,rs(_,_),ls(_,_),_=_]).
+ 16: assign(max_weight,20).
+ 17: assign(pick_given_ratio,3).
+ 18: assign(max_proofs,2).
+ 19: assign(max_mem,20000).
+ 20: clear(print_kept).
+ 21: clear(print_new_demod).
+ 22: 
+ 23: list(usable).
+ 24: 0 [] x=x.
+ 25: 0 [] x*rs(x,y)=y.
+ 26: 0 [] rs(x,x*y)=y.
+ 27: 0 [] ls(x,y)*y=x.
+ 28: 0 [] ls(x*y,y)=x.
+ 29: 0 [] 1*x=x.
+ 30: 0 [] x*1=x.
+ 31: end_of_list.
+ 32: 
+ 33: list(sos).
+ 34: 0 [] (x*y)* (z*x)= (x* (y*z))*x.
+ 35: 0 [] A* (B* (A*C))!= ((A*B)*A)*C|$ANS(Moufang_3).
+ 36: end_of_list.
+ 37: 
+ 38: list(demodulators).
+ 39: 1 [] EQ(((x*y)*z)*y=x* (y* (z*y)),$T).
+ 40: 2 [] EQ(x* (y* (z*y))= ((x*y)*z)*y,$T).
+ 41: end_of_list.
+ 42: 
+ 43: list(hot).
+ 44: 3 [] (x*y)* (z*x)= (x* (y*z))*x.
+ 45: 4 [] x*rs(x,y)=y.
+ 46: 5 [] rs(x,x*y)=y.
+ 47: 6 [] ls(x,y)*y=x.
+ 48: 7 [] ls(x*y,y)=x.
+ 49: 8 [] 1*x=x.
+ 50: 9 [] x*1=x.
+ 51: end_of_list.
+ 52: 
+ 53: ------------> process usable:
+ 54: ** KEPT (pick-wt=3): 10 [] x=x.
+ 55: ** KEPT (pick-wt=7): 11 [] x*rs(x,y)=y.
+ 56: ---> New Demodulator: 12 [new_demod,11] x*rs(x,y)=y.
+ 57: ** KEPT (pick-wt=7): 13 [] rs(x,x*y)=y.
+ 58: ---> New Demodulator: 14 [new_demod,13] rs(x,x*y)=y.
+ 59: ** KEPT (pick-wt=7): 15 [] ls(x,y)*y=x.
+ 60: ---> New Demodulator: 16 [new_demod,15] ls(x,y)*y=x.
+ 61: ** KEPT (pick-wt=7): 17 [] ls(x*y,y)=x.
+ 62: ---> New Demodulator: 18 [new_demod,17] ls(x*y,y)=x.
+ 63: ** KEPT (pick-wt=5): 19 [] 1*x=x.
+ 64: ---> New Demodulator: 20 [new_demod,19] 1*x=x.
+ 65: ** KEPT (pick-wt=5): 21 [] x*1=x.
+ 66: ---> New Demodulator: 22 [new_demod,21] x*1=x.
+ 67: 
+ 68: ------------> process sos:
+ 69: ** KEPT (pick-wt=15): 24 [copy,23,flip.1] (x* (y*z))*x= (x*y)* (z*x).
+ 70: ---> New Demodulator: 25 [new_demod,24] (x* (y*z))*x= (x*y)* (z*x).
+ 71: ** KEPT (pick-wt=15): 27 [copy,26,flip.1] ((A*B)*A)*C!=A* (B* (A*C))|$ANS(Moufang_3).
+ 72: 
+ 73: ======= end of input processing =======
+ 74: 
+ 75: =========== start of search ===========
+ 76: 
+ 77: given clause #1: (wt=15) 24 [copy,23,flip.1] (x* (y*z))*x= (x*y)* (z*x).
+ 78: 73 back subsumes 52.
+ 79: 83 back subsumes 45.
+ 80: 
+ 81: given clause #2: (wt=7) 128 (heat=1) [para_into,116.1.1.2.1,9.1.1,demod,72,20] rs(x,x)*y=y.
+ 82: 138 back subsumes 126.
+ 83: 
+ 84: given clause #3: (wt=5) 138 [para_into,128.1.1,21.1.1] rs(x,x)=1.
+ 85: 
+ 86: given clause #4: (wt=5) 140 [para_into,128.1.1,11.1.1,demod,139,flip.1] rs(1,x)=x.
+ 87: 
+ 88: given clause #5: (wt=15) 27 [copy,26,flip.1] ((A*B)*A)*C!=A* (B* (A*C))|$ANS(Moufang_3).
+ 89: 
+ 90: given clause #6: (wt=5) 142 [para_from,128.1.1,17.1.1.1,demod,139] ls(x,x)=1.
+ 91: 
+ 92: given clause #7: (wt=9) 81 (heat=1) [para_into,36.1.1.2,9.1.1,demod,20,22] rs(1,x)*y=x*y.
+ 93: 
+ 94: given clause #8: (wt=9) 90 (heat=1) [para_into,38.1.1.2,9.1.1,demod,20,20] x*ls(y,1)=x*y.
+ 95: 145 back subsumes 118.
+ 96: 
+ 97: given clause #9: (wt=11) 28 [para_into,24.1.1.1.2,19.1.1,demod,22] (x*y)*x=x* (y*x).
+ 98: 
+ 99: given clause #10: (wt=5) 145 [para_into,90.1.1,128.1.1,demod,129] ls(x,1)=x.
+100: 
+101: given clause #11: (wt=11) 42 (heat=1) [para_into,28.1.1.1,4.1.1,flip.1] x* (rs(x,y)*x)=y*x.
+102: 178 back subsumes 166.
+103: 188 back subsumes 178.
+104: 
+105: given clause #12: (wt=7) 202 (heat=1) [para_into,176.1.1.2,8.1.1,demod,139,flip.1] rs(x,1)*x=1.
+106: 
+107: given clause #13: (wt=15) 30 [para_into,24.1.1.1.2,15.1.1,demod,29,flip.1] (x*ls(y,z))* (z*x)=x* (y*x).
+108: 
+109: given clause #14: (wt=7) 213 [para_from,202.1.1,17.1.1.1] ls(1,x)=rs(x,1).
+110: 
+111: given clause #15: (wt=7) 215 [para_from,202.1.1,13.1.1.2] rs(rs(x,1),1)=x.
+112: 
+113: given clause #16: (wt=7) 248 (heat=1) [para_into,246.1.1,9.1.1,demod,22] rs(ls(x,y),x)=y.
+114: 
+115: given clause #17: (wt=15) 32 [para_into,24.1.1.1.2,11.1.1,demod,29,flip.1] (x*y)* (rs(y,z)*x)=x* (z*x).
+116: 
+117: given clause #18: (wt=9) 194 (heat=1) [para_into,174.1.1.1,8.1.1] ls(x,rs(x,1)*x)=x.
+118: 
+119: given clause #19: (wt=9) 221 (heat=1) [para_from,207.1.1,5.1.1.2,demod,14,flip.1] (x*rs(y,1))*y=x.
+120: 304 back subsumes 237.
+121: 304 back subsumes 235.
+122: 
+123: given clause #20: (wt=9) 244 (heat=1) [para_from,211.1.2,7.1.1.1,demod,47] rs(x,1)* (x*y)=y.
+124: 
+125: given clause #21: (wt=19) 34 [para_into,24.1.2.1,15.1.1,demod,29] ls(x,y)* ((y*z)*ls(x,y))=x* (z*ls(x,y)).
+126: 
+127: given clause #22: (wt=9) 255 (heat=1) [para_from,250.1.1,7.1.1.1,demod,47] rs(x,1)*y=rs(x,y).
+128: 444 back subsumes 421.
+129: 
+130: given clause #23: (wt=9) 262 [para_into,221.1.1.1.2,248.1.1,demod,214] (x*y)*rs(y,1)=x.
+131: 
+132: given clause #24: (wt=9) 266 [para_into,221.1.1.1,15.1.1,flip.1] ls(x,rs(y,1))=x*y.
+133: 
+134: given clause #25: (wt=15) 36 [para_into,24.1.2.1,11.1.1,demod,29] x* ((rs(x,y)*z)*x)=y* (z*x).
+135: 
+136: given clause #26: (wt=9) 270 (heat=1) [para_into,262.1.1.1,6.1.1,flip.1] ls(x,y)=x*rs(y,1).
+137: 
+138: given clause #27: (wt=9) 272 (heat=1) [para_into,262.1.1.1,4.1.1] x*rs(rs(y,x),1)=y.
+139: 
+140: given clause #28: (wt=9) 278 (heat=1) [para_from,262.1.1,5.1.1.2] rs(x*y,x)=rs(y,1).
+141: 
+142: given clause #29: (wt=15) 38 [para_into,24.1.2.2,15.1.1,demod,29] x* ((y*ls(z,x))*x)= (x*y)*z.
+143: 
+144: ----> UNIT CONFLICT at   0.01 sec ----> 586 [binary,584.1,144.1] $ANS(Moufang_3).
+145: 
+146: Length of proof is 34.  Level of proof is 14.
+147: 
+148: ---------------- PROOF ----------------
+149: 
+150: 4 [] x*rs(x,y)=y.
+151: 5 [] rs(x,x*y)=y.
+152: 6 [] ls(x,y)*y=x.
+153: 7 [] ls(x*y,y)=x.
+154: 8 [] 1*x=x.
+155: 9 [] x*1=x.
+156: 11 [] x*rs(x,y)=y.
+157: 14,13 [] rs(x,x*y)=y.
+158: 15 [] ls(x,y)*y=x.
+159: 17 [] ls(x*y,y)=x.
+160: 20,19 [] 1*x=x.
+161: 22,21 [] x*1=x.
+162: 23 [] (x*y)* (z*x)= (x* (y*z))*x.
+163: 24 [copy,23,flip.1] (x* (y*z))*x= (x*y)* (z*x).
+164: 26 [] A* (B* (A*C))!= ((A*B)*A)*C|$ANS(Moufang_3).
+165: 27 [copy,26,flip.1] ((A*B)*A)*C!=A* (B* (A*C))|$ANS(Moufang_3).
+166: 29,28 [para_into,24.1.1.1.2,19.1.1,demod,22] (x*y)*x=x* (y*x).
+167: 30 [para_into,24.1.1.1.2,15.1.1,demod,29,flip.1] (x*ls(y,z))* (z*x)=x* (y*x).
+168: 32 [para_into,24.1.1.1.2,11.1.1,demod,29,flip.1] (x*y)* (rs(y,z)*x)=x* (z*x).
+169: 36 [para_into,24.1.2.1,11.1.1,demod,29] x* ((rs(x,y)*z)*x)=y* (z*x).
+170: 38 [para_into,24.1.2.2,15.1.1,demod,29] x* ((y*ls(z,x))*x)= (x*y)*z.
+171: 42 (heat=1) [para_into,28.1.1.1,4.1.1,flip.1] x* (rs(x,y)*x)=y*x.
+172: 47,46 (heat=1) [para_from,28.1.1,7.1.1.1] ls(x* (y*x),x)=x*y.
+173: 72,71 (heat=1) [para_from,32.1.1,5.1.1.2] rs(x*y,x* (z*x))=rs(y,z)*x.
+174: 82,81 (heat=1) [para_into,36.1.1.2,9.1.1,demod,20,22] rs(1,x)*y=x*y.
+175: 116 [para_from,24.1.1,13.1.1.2] rs(x* (y*z),(x*y)* (z*x))=x.
+176: 129,128 (heat=1) [para_into,116.1.1.2.1,9.1.1,demod,72,20] rs(x,x)*y=y.
+177: 139,138 [para_into,128.1.1,21.1.1] rs(x,x)=1.
+178: 144 [para_from,81.1.2,27.1.2.2.2,demod,29,82] (A* (B*A))*C!=A* (B* (A*C))|$ANS(Moufang_3).
+179: 176 [para_from,42.1.1,13.1.1.2] rs(x,y*x)=rs(x,y)*x.
+180: 202 (heat=1) [para_into,176.1.1.2,8.1.1,demod,139,flip.1] rs(x,1)*x=1.
+181: 207 [para_from,202.1.1,24.1.2.2,demod,29,22] x* ((y*rs(x,1))*x)=x*y.
+182: 211 [para_from,202.1.1,24.1.2.1,demod,29,20] rs(x,1)* ((x*y)*rs(x,1))=y*rs(x,1).
+183: 214,213 [para_from,202.1.1,17.1.1.1] ls(1,x)=rs(x,1).
+184: 221 (heat=1) [para_from,207.1.1,5.1.1.2,demod,14,flip.1] (x*rs(y,1))*y=x.
+185: 244 (heat=1) [para_from,211.1.2,7.1.1.1,demod,47] rs(x,1)* (x*y)=y.
+186: 246 [para_from,30.1.1,13.1.1.2,demod,72] rs(ls(x,y),x)*z=y*z.
+187: 248 (heat=1) [para_into,246.1.1,9.1.1,demod,22] rs(ls(x,y),x)=y.
+188: 262 [para_into,221.1.1.1.2,248.1.1,demod,214] (x*y)*rs(y,1)=x.
+189: 271,270 (heat=1) [para_into,262.1.1.1,6.1.1,flip.1] ls(x,y)=x*rs(y,1).
+190: 272 (heat=1) [para_into,262.1.1.1,4.1.1] x*rs(rs(y,x),1)=y.
+191: 316 [para_into,244.1.1.1,248.1.1,demod,271,20] x* (rs(x,1)*y)=y.
+192: 331,330 (heat=1) [para_into,316.1.1.2,4.1.1,flip.1] rs(rs(x,1),y)=x*y.
+193: 380 [para_from,244.1.1,17.1.1.1,demod,271] x*rs(y*x,1)=rs(y,1).
+194: 396,395 (heat=1) [para_from,380.1.1,5.1.1.2,flip.1] rs(x*y,1)=rs(y,rs(x,1)).
+195: 526,525 [para_from,272.1.1,244.1.1.2,flip.1] rs(rs(x,y),1)=rs(y,1)*x.
+196: 573 [para_from,38.1.2,221.1.1.1,demod,271] (x* ((y* (rs(z,1)*rs(x,1)))*x))*z=x*y.
+197: 584 (heat=1) [para_into,573.1.1.1.2.1,6.1.1,demod,271,396,331,526,129] (x* (y*x))*z=x* (y* (x*z)).
+198: 586 [binary,584.1,144.1] $ANS(Moufang_3).
+199: 
+200: ------------ end of proof -------------
+201: 
+202: 
+203: given clause #30: (wt=9) 316 [para_into,244.1.1.1,248.1.1,demod,271,20] x* (rs(x,1)*y)=y.
+204: 
+205: given clause #31: (wt=9) 330 (heat=1) [para_into,316.1.1.2,4.1.1,flip.1] rs(rs(x,1),y)=x*y.
+206: 
+207: ----> UNIT CONFLICT at   0.02 sec ----> 615 [binary,614.1,10.1] $ANS(Moufang_3).
+208: 
+209: Length of proof is 32.  Level of proof is 15.
+210: 
+211: ---------------- PROOF ----------------
+212: 
+213: 4 [] x*rs(x,y)=y.
+214: 5 [] rs(x,x*y)=y.
+215: 6 [] ls(x,y)*y=x.
+216: 7 [] ls(x*y,y)=x.
+217: 8 [] 1*x=x.
+218: 9 [] x*1=x.
+219: 10 [] x=x.
+220: 11 [] x*rs(x,y)=y.
+221: 14,13 [] rs(x,x*y)=y.
+222: 15 [] ls(x,y)*y=x.
+223: 17 [] ls(x*y,y)=x.
+224: 20,19 [] 1*x=x.
+225: 22,21 [] x*1=x.
+226: 23 [] (x*y)* (z*x)= (x* (y*z))*x.
+227: 24 [copy,23,flip.1] (x* (y*z))*x= (x*y)* (z*x).
+228: 26 [] A* (B* (A*C))!= ((A*B)*A)*C|$ANS(Moufang_3).
+229: 27 [copy,26,flip.1] ((A*B)*A)*C!=A* (B* (A*C))|$ANS(Moufang_3).
+230: 29,28 [para_into,24.1.1.1.2,19.1.1,demod,22] (x*y)*x=x* (y*x).
+231: 30 [para_into,24.1.1.1.2,15.1.1,demod,29,flip.1] (x*ls(y,z))* (z*x)=x* (y*x).
+232: 32 [para_into,24.1.1.1.2,11.1.1,demod,29,flip.1] (x*y)* (rs(y,z)*x)=x* (z*x).
+233: 38 [para_into,24.1.2.2,15.1.1,demod,29] x* ((y*ls(z,x))*x)= (x*y)*z.
+234: 42 (heat=1) [para_into,28.1.1.1,4.1.1,flip.1] x* (rs(x,y)*x)=y*x.
+235: 47,46 (heat=1) [para_from,28.1.1,7.1.1.1] ls(x* (y*x),x)=x*y.
+236: 72,71 (heat=1) [para_from,32.1.1,5.1.1.2] rs(x*y,x* (z*x))=rs(y,z)*x.
+237: 116 [para_from,24.1.1,13.1.1.2] rs(x* (y*z),(x*y)* (z*x))=x.
+238: 129,128 (heat=1) [para_into,116.1.1.2.1,9.1.1,demod,72,20] rs(x,x)*y=y.
+239: 139,138 [para_into,128.1.1,21.1.1] rs(x,x)=1.
+240: 176 [para_from,42.1.1,13.1.1.2] rs(x,y*x)=rs(x,y)*x.
+241: 202 (heat=1) [para_into,176.1.1.2,8.1.1,demod,139,flip.1] rs(x,1)*x=1.
+242: 207 [para_from,202.1.1,24.1.2.2,demod,29,22] x* ((y*rs(x,1))*x)=x*y.
+243: 211 [para_from,202.1.1,24.1.2.1,demod,29,20] rs(x,1)* ((x*y)*rs(x,1))=y*rs(x,1).
+244: 214,213 [para_from,202.1.1,17.1.1.1] ls(1,x)=rs(x,1).
+245: 221 (heat=1) [para_from,207.1.1,5.1.1.2,demod,14,flip.1] (x*rs(y,1))*y=x.
+246: 244 (heat=1) [para_from,211.1.2,7.1.1.1,demod,47] rs(x,1)* (x*y)=y.
+247: 246 [para_from,30.1.1,13.1.1.2,demod,72] rs(ls(x,y),x)*z=y*z.
+248: 248 (heat=1) [para_into,246.1.1,9.1.1,demod,22] rs(ls(x,y),x)=y.
+249: 262 [para_into,221.1.1.1.2,248.1.1,demod,214] (x*y)*rs(y,1)=x.
+250: 271,270 (heat=1) [para_into,262.1.1.1,6.1.1,flip.1] ls(x,y)=x*rs(y,1).
+251: 272 (heat=1) [para_into,262.1.1.1,4.1.1] x*rs(rs(y,x),1)=y.
+252: 316 [para_into,244.1.1.1,248.1.1,demod,271,20] x* (rs(x,1)*y)=y.
+253: 331,330 (heat=1) [para_into,316.1.1.2,4.1.1,flip.1] rs(rs(x,1),y)=x*y.
+254: 380 [para_from,244.1.1,17.1.1.1,demod,271] x*rs(y*x,1)=rs(y,1).
+255: 396,395 (heat=1) [para_from,380.1.1,5.1.1.2,flip.1] rs(x*y,1)=rs(y,rs(x,1)).
+256: 526,525 [para_from,272.1.1,244.1.1.2,flip.1] rs(rs(x,y),1)=rs(y,1)*x.
+257: 573 [para_from,38.1.2,221.1.1.1,demod,271] (x* ((y* (rs(z,1)*rs(x,1)))*x))*z=x*y.
+258: 585,584 (heat=1) [para_into,573.1.1.1.2.1,6.1.1,demod,271,396,331,526,129] (x* (y*x))*z=x* (y* (x*z)).
+259: 614 [para_from,330.1.2,27.1.2.2.2,demod,29,585,331] A* (B* (A*C))!=A* (B* (A*C))|$ANS(Moufang_3).
+260: 615 [binary,614.1,10.1] $ANS(Moufang_3).
+261: 
+262: ------------ end of proof -------------
+263: 
+264: 
+265: Search stopped by max_proofs option.
+266: 
+267: ============ end of search ============
+268: 
+269: -------------- statistics -------------
+270: clauses given                 31
+271: clauses generated           3887
+272:   (hot clauses generated)   1918
+273:   para_from generated       1809
+274:   para_into generated       2078
+275: demod & eval rewrites       8511
+276: clauses wt,lit,sk delete     885
+277: tautologies deleted            0
+278: clauses forward subsumed    2676
+279:   (subsumed by sos)          348
+280: unit deletions                 0
+281: factor simplifications         0
+282: clauses kept                 335
+283:   (hot clauses kept)         247
+284: new demodulators             267
+285: empty clauses                  2
+286: clauses back demodulated       0
+287: clauses back subsumed          9
+288: usable size                   38
+289: sos size                     288
+290: demodulators size            269
+291: passive size                   0
+292: hot size                       7
+293: Kbytes malloced             4882
+294: 
+295: ----------- times (seconds) -----------
+296: user CPU time          0.02          (0 hr, 0 min, 0 sec)
+297: system CPU time        0.00          (0 hr, 0 min, 0 sec)
+298: wall-clock time        0             (0 hr, 0 min, 0 sec)
+299: 
+300: That finishes the proof of the theorem.
+301: 
+302: Process 14208 finished Wed Jan 11 13:16:01 2017
