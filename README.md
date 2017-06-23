@@ -1,5 +1,3 @@
-<pre>
-
 <https://github.com/RuoAndo/otter-book/blob/master/prg4-1.out.lined>
 
 プログラム０－１：「秤とコインのパズル」
@@ -48,4 +46,3 @@
 プログラム４－８：「１５パズル」
 プログラム４－９：「モーファングループ問題」
 プログラム４－１０：hot listを無効化したプログラム
-</pre>
