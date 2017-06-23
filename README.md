@@ -1,6 +1,6 @@
 <pre>
 
-https://github.com/RuoAndo/otter-book/blob/master/prg4-1.out.lined
+<https://github.com/RuoAndo/otter-book/blob/master/prg4-1.out.lined>
 
 プログラム０－１：「秤とコインのパズル」
 プログラム０－２：「２インバータパズル」
