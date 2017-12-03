@@ -1,0 +1,16 @@
+assign(max_proofs,-1).
+set(hyper_res).
+set(print_lists_at_end).
+assign(stats_level,0).
+
+list(usable).
+-P(T(x)) | -P(Says(x,y)) | P(y).
+-P(L(x)) | -P(Says(x,y)) | -P(y).
+P(T(x)) | P(L(x)).
+-P(T(x)) | -P(L(x)).
+end_of_list.
+
+list(sos).
+P(Says(A, L(A))).
+end_of_list.
+
