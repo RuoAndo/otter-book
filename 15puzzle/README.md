@@ -1,3 +1,14 @@
+
+#board1
+<pre>
+11,2,6,9,4,14,3,5,1,12,7,15,13,10,8,hole
+</pre>
+
+#board2
+<pre>
+1,3,7,4,6,2,hole,8,13,5,11,14,19,15,9,12
+</pre>
+
 <pre>
  # python osage.py board1 > board1-graph
  # ./osage.sh board1-graph 
