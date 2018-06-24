@@ -1,356 +1,62 @@
 ----- Otter 3.3f, August 2004 -----
 The process was started by root on flare-OptiPlex-3020M,
-Sat Dec 31 19:29:24 2016
-The command was "otter".  The process ID is 3659.
+Sat Dec 31 19:32:30 2016
+The command was "otter".  The process ID is 3807.
 
 set(hyper_res).
-assign(max_given,7).
-set(print_lists_at_end).
-op(900,xfx,||).
-op(900,xfx,&&).
-make_evaluable(_&&_,$AND(_,_)).
-make_evaluable(_||_,$OR(_,_)).
 
 list(usable).
 1 [] -P(T(x))| -P(Says(x,y))|P(y).
 2 [] -P(L(x))| -P(Says(x,y))| -P(y).
-3 [] P(T(x))|P(L(x)).
+3 [] P(T(x))|P(L(x))|P(N(x)).
 4 [] -P(T(x))| -P(L(x)).
-5 [] -P(and(y,z))|P(y).
-6 [] -P(and(y,z))|P(z).
-7 [] -P(y)| -P(z)|P(and(y,z)).
+5 [] -P(T(x))| -P(N(x)).
+6 [] -P(L(x))| -P(N(x)).
 end_of_list.
 
 list(sos).
-8 [] P(Says(A,and(L(A),L(B)))).
+7 [] P(Says(A,L(A))).
 end_of_list.
 
 ======= end of input processing =======
 
 =========== start of search ===========
 
-given clause #1: (wt=8) 8 [] P(Says(A,and(L(A),L(B)))).
-** KEPT (pick-wt=16): 9 [hyper,8,7,8] P(and(Says(A,and(L(A),L(B))),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=14): 10 [hyper,8,7,3] P(and(L(x),Says(A,and(L(A),L(B)))))|P(T(x)).
-** KEPT (pick-wt=14): 11 [hyper,8,7,3] P(and(T(x),Says(A,and(L(A),L(B)))))|P(L(x)).
-** KEPT (pick-wt=14): 12 [hyper,8,7,3] P(and(Says(A,and(L(A),L(B))),L(x)))|P(T(x)).
-** KEPT (pick-wt=14): 13 [hyper,8,7,3] P(and(Says(A,and(L(A),L(B))),T(x)))|P(L(x)).
-** KEPT (pick-wt=9): 14 [hyper,8,1,3] P(and(L(A),L(B)))|P(L(A)).
+given clause #1: (wt=5) 7 [] P(Says(A,L(A))).
+** KEPT (pick-wt=6): 8 [hyper,7,2,3,3] P(T(A))|P(N(A)).
+** KEPT (pick-wt=6): 9 [hyper,7,1,3] P(L(A))|P(N(A)).
 
-given clause #2: (wt=9) 14 [hyper,8,1,3] P(and(L(A),L(B)))|P(L(A)).
-** KEPT (pick-wt=15): 15 [hyper,14,7,14] P(L(A))|P(and(and(L(A),L(B)),and(L(A),L(B)))).
-** KEPT (pick-wt=17): 16 [hyper,14,7,8] P(L(A))|P(and(Says(A,and(L(A),L(B))),and(L(A),L(B)))).
-** KEPT (pick-wt=15): 17 [hyper,14,7,3] P(L(A))|P(and(L(x),and(L(A),L(B))))|P(T(x)).
-** KEPT (pick-wt=15): 18 [hyper,14,7,3] P(L(A))|P(and(T(x),and(L(A),L(B))))|P(L(x)).
-** KEPT (pick-wt=17): 19 [hyper,14,7,8] P(L(A))|P(and(and(L(A),L(B)),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=15): 20 [hyper,14,7,3] P(L(A))|P(and(and(L(A),L(B)),L(x)))|P(T(x)).
-** KEPT (pick-wt=15): 21 [hyper,14,7,3] P(L(A))|P(and(and(L(A),L(B)),T(x)))|P(L(x)).
-** KEPT (pick-wt=6): 22 [hyper,14,6] P(L(A))|P(L(B)).
-** KEPT (pick-wt=3): 23 [hyper,14,5] P(L(A)).
-** KEPT (pick-wt=12): 24 [hyper,14,7,14] P(and(L(A),L(B)))|P(and(L(A),L(A))).
-** KEPT (pick-wt=17): 25 [hyper,14,7,8] P(and(L(A),L(B)))|P(and(Says(A,and(L(A),L(B))),L(A))).
-** KEPT (pick-wt=15): 26 [hyper,14,7,3] P(and(L(A),L(B)))|P(and(L(x),L(A)))|P(T(x)).
-** KEPT (pick-wt=15): 27 [hyper,14,7,3] P(and(L(A),L(B)))|P(and(T(x),L(A)))|P(L(x)).
-** KEPT (pick-wt=17): 28 [hyper,14,7,8] P(and(L(A),L(B)))|P(and(L(A),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=15): 29 [hyper,14,7,3] P(and(L(A),L(B)))|P(and(L(A),L(x)))|P(T(x)).
-** KEPT (pick-wt=15): 30 [hyper,14,7,3] P(and(L(A),L(B)))|P(and(L(A),T(x)))|P(L(x)).
-23 back subsumes 22.
-23 back subsumes 21.
-23 back subsumes 20.
-23 back subsumes 19.
-23 back subsumes 18.
-23 back subsumes 17.
-23 back subsumes 16.
-23 back subsumes 15.
-23 back subsumes 14.
+given clause #2: (wt=6) 8 [hyper,7,2,3,3] P(T(A))|P(N(A)).
 
-given clause #3: (wt=3) 23 [hyper,14,5] P(L(A)).
-** KEPT (pick-wt=6): 31 [hyper,23,7,23] P(and(L(A),L(A))).
-** KEPT (pick-wt=11): 32 [hyper,23,7,8] P(and(Says(A,and(L(A),L(B))),L(A))).
-** KEPT (pick-wt=9): 33 [hyper,23,7,3] P(and(L(x),L(A)))|P(T(x)).
-** KEPT (pick-wt=9): 34 [hyper,23,7,3] P(and(T(x),L(A)))|P(L(x)).
-** KEPT (pick-wt=11): 35 [hyper,23,7,8] P(and(L(A),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=9): 36 [hyper,23,7,3] P(and(L(A),L(x)))|P(T(x)).
-** KEPT (pick-wt=9): 37 [hyper,23,7,3] P(and(L(A),T(x)))|P(L(x)).
-31 back subsumes 24.
-32 back subsumes 25.
-33 back subsumes 26.
-34 back subsumes 27.
-35 back subsumes 28.
-36 back subsumes 29.
-37 back subsumes 30.
+given clause #3: (wt=6) 9 [hyper,7,1,3] P(L(A))|P(N(A)).
+** KEPT (pick-wt=3): 10 [hyper,9,4,8] P(N(A)).
+10 back subsumes 9.
+10 back subsumes 8.
 
-given clause #4: (wt=6) 31 [hyper,23,7,23] P(and(L(A),L(A))).
-** KEPT (pick-wt=12): 38 [hyper,31,7,31] P(and(and(L(A),L(A)),and(L(A),L(A)))).
-** KEPT (pick-wt=9): 39 [hyper,31,7,23] P(and(L(A),and(L(A),L(A)))).
-** KEPT (pick-wt=14): 40 [hyper,31,7,8] P(and(Says(A,and(L(A),L(B))),and(L(A),L(A)))).
-** KEPT (pick-wt=12): 41 [hyper,31,7,3] P(and(L(x),and(L(A),L(A))))|P(T(x)).
-** KEPT (pick-wt=12): 42 [hyper,31,7,3] P(and(T(x),and(L(A),L(A))))|P(L(x)).
-** KEPT (pick-wt=9): 43 [hyper,31,7,23] P(and(and(L(A),L(A)),L(A))).
-** KEPT (pick-wt=14): 44 [hyper,31,7,8] P(and(and(L(A),L(A)),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=12): 45 [hyper,31,7,3] P(and(and(L(A),L(A)),L(x)))|P(T(x)).
-** KEPT (pick-wt=12): 46 [hyper,31,7,3] P(and(and(L(A),L(A)),T(x)))|P(L(x)).
+given clause #4: (wt=3) 10 [hyper,9,4,8] P(N(A)).
 
-given clause #5: (wt=9) 33 [hyper,23,7,3] P(and(L(x),L(A)))|P(T(x)).
-** KEPT (pick-wt=18): 47 [hyper,33,7,33] P(T(x))|P(and(T(y),and(L(x),L(A))))|P(and(L(y),L(A))).
-** KEPT (pick-wt=18): 48 [hyper,33,7,33] P(T(x))|P(and(and(L(y),L(A)),and(L(x),L(A))))|P(T(y)).
-** KEPT (pick-wt=15): 49 [hyper,33,7,31] P(T(x))|P(and(and(L(A),L(A)),and(L(x),L(A)))).
-** KEPT (pick-wt=12): 50 [hyper,33,7,23] P(T(x))|P(and(L(A),and(L(x),L(A)))).
-** KEPT (pick-wt=17): 51 [hyper,33,7,8] P(T(x))|P(and(Says(A,and(L(A),L(B))),and(L(x),L(A)))).
-** KEPT (pick-wt=15): 52 [hyper,33,7,3] P(T(x))|P(and(L(y),and(L(x),L(A))))|P(T(y)).
-** KEPT (pick-wt=15): 53 [hyper,33,7,3] P(T(x))|P(and(T(y),and(L(x),L(A))))|P(L(y)).
-** KEPT (pick-wt=18): 54 [hyper,33,7,33] P(T(x))|P(and(and(L(x),L(A)),T(y)))|P(and(L(y),L(A))).
-** KEPT (pick-wt=15): 55 [hyper,33,7,31] P(T(x))|P(and(and(L(x),L(A)),and(L(A),L(A)))).
-** KEPT (pick-wt=12): 56 [hyper,33,7,23] P(T(x))|P(and(and(L(x),L(A)),L(A))).
-** KEPT (pick-wt=17): 57 [hyper,33,7,8] P(T(x))|P(and(and(L(x),L(A)),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=15): 58 [hyper,33,7,3] P(T(x))|P(and(and(L(x),L(A)),L(y)))|P(T(y)).
-** KEPT (pick-wt=15): 59 [hyper,33,7,3] P(T(x))|P(and(and(L(x),L(A)),T(y)))|P(L(y)).
-** KEPT (pick-wt=18): 60 [hyper,33,7,33] P(and(L(x),L(A)))|P(and(T(y),T(x)))|P(and(L(y),L(A))).
-** KEPT (pick-wt=15): 61 [hyper,33,7,31] P(and(L(x),L(A)))|P(and(and(L(A),L(A)),T(x))).
-** KEPT (pick-wt=12): 62 [hyper,33,7,23] P(and(L(x),L(A)))|P(and(L(A),T(x))).
-** KEPT (pick-wt=17): 63 [hyper,33,7,8] P(and(L(x),L(A)))|P(and(Says(A,and(L(A),L(B))),T(x))).
-** KEPT (pick-wt=15): 64 [hyper,33,7,3] P(and(L(x),L(A)))|P(and(L(y),T(x)))|P(T(y)).
-** KEPT (pick-wt=15): 65 [hyper,33,7,3] P(and(L(x),L(A)))|P(and(T(y),T(x)))|P(L(y)).
-** KEPT (pick-wt=15): 66 [hyper,33,7,31] P(and(L(x),L(A)))|P(and(T(x),and(L(A),L(A)))).
-** KEPT (pick-wt=12): 67 [hyper,33,7,23] P(and(L(x),L(A)))|P(and(T(x),L(A))).
-** KEPT (pick-wt=17): 68 [hyper,33,7,8] P(and(L(x),L(A)))|P(and(T(x),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=15): 69 [hyper,33,7,3] P(and(L(x),L(A)))|P(and(T(x),L(y)))|P(T(y)).
-** KEPT (pick-wt=15): 70 [hyper,33,7,3] P(and(L(x),L(A)))|P(and(T(x),T(y)))|P(L(y)).
-
-given clause #6: (wt=9) 34 [hyper,23,7,3] P(and(T(x),L(A)))|P(L(x)).
-** KEPT (pick-wt=18): 71 [hyper,34,7,34] P(L(x))|P(and(L(y),and(T(x),L(A))))|P(and(T(y),L(A))).
-** KEPT (pick-wt=18): 72 [hyper,34,7,34] P(L(x))|P(and(and(T(y),L(A)),and(T(x),L(A))))|P(L(y)).
-** KEPT (pick-wt=18): 73 [hyper,34,7,33] P(L(x))|P(and(T(y),and(T(x),L(A))))|P(and(L(y),L(A))).
-** KEPT (pick-wt=18): 74 [hyper,34,7,33] P(L(x))|P(and(and(L(y),L(A)),and(T(x),L(A))))|P(T(y)).
-** KEPT (pick-wt=15): 75 [hyper,34,7,31] P(L(x))|P(and(and(L(A),L(A)),and(T(x),L(A)))).
-** KEPT (pick-wt=12): 76 [hyper,34,7,23] P(L(x))|P(and(L(A),and(T(x),L(A)))).
-** KEPT (pick-wt=17): 77 [hyper,34,7,8] P(L(x))|P(and(Says(A,and(L(A),L(B))),and(T(x),L(A)))).
-** KEPT (pick-wt=15): 78 [hyper,34,7,3] P(L(x))|P(and(L(y),and(T(x),L(A))))|P(T(y)).
-** KEPT (pick-wt=15): 79 [hyper,34,7,3] P(L(x))|P(and(T(y),and(T(x),L(A))))|P(L(y)).
-** KEPT (pick-wt=18): 80 [hyper,34,7,34] P(L(x))|P(and(and(T(x),L(A)),L(y)))|P(and(T(y),L(A))).
-** KEPT (pick-wt=18): 81 [hyper,34,7,33] P(L(x))|P(and(and(T(x),L(A)),T(y)))|P(and(L(y),L(A))).
-** KEPT (pick-wt=18): 82 [hyper,34,7,33] P(L(x))|P(and(and(T(x),L(A)),and(L(y),L(A))))|P(T(y)).
-** KEPT (pick-wt=15): 83 [hyper,34,7,31] P(L(x))|P(and(and(T(x),L(A)),and(L(A),L(A)))).
-** KEPT (pick-wt=12): 84 [hyper,34,7,23] P(L(x))|P(and(and(T(x),L(A)),L(A))).
-** KEPT (pick-wt=17): 85 [hyper,34,7,8] P(L(x))|P(and(and(T(x),L(A)),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=15): 86 [hyper,34,7,3] P(L(x))|P(and(and(T(x),L(A)),L(y)))|P(T(y)).
-** KEPT (pick-wt=15): 87 [hyper,34,7,3] P(L(x))|P(and(and(T(x),L(A)),T(y)))|P(L(y)).
-** KEPT (pick-wt=18): 88 [hyper,34,7,34] P(and(T(x),L(A)))|P(and(L(y),L(x)))|P(and(T(y),L(A))).
-** KEPT (pick-wt=18): 89 [hyper,34,7,33] P(and(T(x),L(A)))|P(and(T(y),L(x)))|P(and(L(y),L(A))).
-** KEPT (pick-wt=18): 90 [hyper,34,7,33] P(and(T(x),L(A)))|P(and(and(L(y),L(A)),L(x)))|P(T(y)).
-** KEPT (pick-wt=15): 91 [hyper,34,7,31] P(and(T(x),L(A)))|P(and(and(L(A),L(A)),L(x))).
-** KEPT (pick-wt=12): 92 [hyper,34,7,23] P(and(T(x),L(A)))|P(and(L(A),L(x))).
-** KEPT (pick-wt=17): 93 [hyper,34,7,8] P(and(T(x),L(A)))|P(and(Says(A,and(L(A),L(B))),L(x))).
-** KEPT (pick-wt=15): 94 [hyper,34,7,3] P(and(T(x),L(A)))|P(and(L(y),L(x)))|P(T(y)).
-** KEPT (pick-wt=15): 95 [hyper,34,7,3] P(and(T(x),L(A)))|P(and(T(y),L(x)))|P(L(y)).
-** KEPT (pick-wt=18): 96 [hyper,34,7,33] P(and(T(x),L(A)))|P(and(L(x),T(y)))|P(and(L(y),L(A))).
-** KEPT (pick-wt=18): 97 [hyper,34,7,33] P(and(T(x),L(A)))|P(and(L(x),and(L(y),L(A))))|P(T(y)).
-** KEPT (pick-wt=15): 98 [hyper,34,7,31] P(and(T(x),L(A)))|P(and(L(x),and(L(A),L(A)))).
-** KEPT (pick-wt=17): 99 [hyper,34,7,8] P(and(T(x),L(A)))|P(and(L(x),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=15): 100 [hyper,34,7,3] P(and(T(x),L(A)))|P(and(L(x),L(y)))|P(T(y)).
-** KEPT (pick-wt=15): 101 [hyper,34,7,3] P(and(T(x),L(A)))|P(and(L(x),T(y)))|P(L(y)).
-
-given clause #7: (wt=9) 36 [hyper,23,7,3] P(and(L(A),L(x)))|P(T(x)).
-** KEPT (pick-wt=18): 102 [hyper,36,7,36] P(T(x))|P(and(T(y),and(L(A),L(x))))|P(and(L(A),L(y))).
-** KEPT (pick-wt=18): 103 [hyper,36,7,36] P(T(x))|P(and(and(L(A),L(y)),and(L(A),L(x))))|P(T(y)).
-** KEPT (pick-wt=18): 104 [hyper,36,7,34] P(T(x))|P(and(L(y),and(L(A),L(x))))|P(and(T(y),L(A))).
-** KEPT (pick-wt=18): 105 [hyper,36,7,34] P(T(x))|P(and(and(T(y),L(A)),and(L(A),L(x))))|P(L(y)).
-** KEPT (pick-wt=18): 106 [hyper,36,7,33] P(T(x))|P(and(T(y),and(L(A),L(x))))|P(and(L(y),L(A))).
-** KEPT (pick-wt=18): 107 [hyper,36,7,33] P(T(x))|P(and(and(L(y),L(A)),and(L(A),L(x))))|P(T(y)).
-** KEPT (pick-wt=15): 108 [hyper,36,7,31] P(T(x))|P(and(and(L(A),L(A)),and(L(A),L(x)))).
-** KEPT (pick-wt=12): 109 [hyper,36,7,23] P(T(x))|P(and(L(A),and(L(A),L(x)))).
-** KEPT (pick-wt=17): 110 [hyper,36,7,8] P(T(x))|P(and(Says(A,and(L(A),L(B))),and(L(A),L(x)))).
-** KEPT (pick-wt=15): 111 [hyper,36,7,3] P(T(x))|P(and(L(y),and(L(A),L(x))))|P(T(y)).
-** KEPT (pick-wt=15): 112 [hyper,36,7,3] P(T(x))|P(and(T(y),and(L(A),L(x))))|P(L(y)).
-** KEPT (pick-wt=18): 113 [hyper,36,7,36] P(T(x))|P(and(and(L(A),L(x)),T(y)))|P(and(L(A),L(y))).
-** KEPT (pick-wt=18): 114 [hyper,36,7,34] P(T(x))|P(and(and(L(A),L(x)),L(y)))|P(and(T(y),L(A))).
-** KEPT (pick-wt=18): 115 [hyper,36,7,34] P(T(x))|P(and(and(L(A),L(x)),and(T(y),L(A))))|P(L(y)).
-** KEPT (pick-wt=18): 116 [hyper,36,7,33] P(T(x))|P(and(and(L(A),L(x)),T(y)))|P(and(L(y),L(A))).
-** KEPT (pick-wt=18): 117 [hyper,36,7,33] P(T(x))|P(and(and(L(A),L(x)),and(L(y),L(A))))|P(T(y)).
-** KEPT (pick-wt=15): 118 [hyper,36,7,31] P(T(x))|P(and(and(L(A),L(x)),and(L(A),L(A)))).
-** KEPT (pick-wt=12): 119 [hyper,36,7,23] P(T(x))|P(and(and(L(A),L(x)),L(A))).
-** KEPT (pick-wt=17): 120 [hyper,36,7,8] P(T(x))|P(and(and(L(A),L(x)),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=15): 121 [hyper,36,7,3] P(T(x))|P(and(and(L(A),L(x)),L(y)))|P(T(y)).
-** KEPT (pick-wt=15): 122 [hyper,36,7,3] P(T(x))|P(and(and(L(A),L(x)),T(y)))|P(L(y)).
-** KEPT (pick-wt=9): 123 [hyper,36,2,34,8] P(T(B))|P(and(T(A),L(A))).
-** KEPT (pick-wt=3): 124 [hyper,36,2,23,8] P(T(B)).
-** KEPT (pick-wt=18): 125 [hyper,36,7,36] P(and(L(A),L(x)))|P(and(T(y),T(x)))|P(and(L(A),L(y))).
-** KEPT (pick-wt=18): 126 [hyper,36,7,34] P(and(L(A),L(x)))|P(and(L(y),T(x)))|P(and(T(y),L(A))).
-** KEPT (pick-wt=18): 127 [hyper,36,7,34] P(and(L(A),L(x)))|P(and(and(T(y),L(A)),T(x)))|P(L(y)).
-** KEPT (pick-wt=18): 128 [hyper,36,7,33] P(and(L(A),L(x)))|P(and(T(y),T(x)))|P(and(L(y),L(A))).
-** KEPT (pick-wt=18): 129 [hyper,36,7,33] P(and(L(A),L(x)))|P(and(and(L(y),L(A)),T(x)))|P(T(y)).
-** KEPT (pick-wt=15): 130 [hyper,36,7,31] P(and(L(A),L(x)))|P(and(and(L(A),L(A)),T(x))).
-** KEPT (pick-wt=12): 131 [hyper,36,7,23] P(and(L(A),L(x)))|P(and(L(A),T(x))).
-** KEPT (pick-wt=17): 132 [hyper,36,7,8] P(and(L(A),L(x)))|P(and(Says(A,and(L(A),L(B))),T(x))).
-** KEPT (pick-wt=15): 133 [hyper,36,7,3] P(and(L(A),L(x)))|P(and(L(y),T(x)))|P(T(y)).
-** KEPT (pick-wt=15): 134 [hyper,36,7,3] P(and(L(A),L(x)))|P(and(T(y),T(x)))|P(L(y)).
-** KEPT (pick-wt=18): 135 [hyper,36,7,34] P(and(L(A),L(x)))|P(and(T(x),L(y)))|P(and(T(y),L(A))).
-** KEPT (pick-wt=18): 136 [hyper,36,7,34] P(and(L(A),L(x)))|P(and(T(x),and(T(y),L(A))))|P(L(y)).
-** KEPT (pick-wt=18): 137 [hyper,36,7,33] P(and(L(A),L(x)))|P(and(T(x),T(y)))|P(and(L(y),L(A))).
-** KEPT (pick-wt=18): 138 [hyper,36,7,33] P(and(L(A),L(x)))|P(and(T(x),and(L(y),L(A))))|P(T(y)).
-** KEPT (pick-wt=15): 139 [hyper,36,7,31] P(and(L(A),L(x)))|P(and(T(x),and(L(A),L(A)))).
-** KEPT (pick-wt=17): 140 [hyper,36,7,8] P(and(L(A),L(x)))|P(and(T(x),Says(A,and(L(A),L(B))))).
-** KEPT (pick-wt=15): 141 [hyper,36,7,3] P(and(L(A),L(x)))|P(and(T(x),L(y)))|P(T(y)).
-** KEPT (pick-wt=15): 142 [hyper,36,7,3] P(and(L(A),L(x)))|P(and(T(x),T(y)))|P(L(y)).
-124 back subsumes 123.
-
-Search stopped by max_given option.
+Search stopped because sos empty.
 
 ============ end of search ============
 
-list(usable).
-1 [] -P(T(x))| -P(Says(x,y))|P(y).
-2 [] -P(L(x))| -P(Says(x,y))| -P(y).
-3 [] P(T(x))|P(L(x)).
-4 [] -P(T(x))| -P(L(x)).
-5 [] -P(and(y,z))|P(y).
-6 [] -P(and(y,z))|P(z).
-7 [] -P(y)| -P(z)|P(and(y,z)).
-8 [] P(Says(A,and(L(A),L(B)))).
-23 [hyper,14,5] P(L(A)).
-31 [hyper,23,7,23] P(and(L(A),L(A))).
-33 [hyper,23,7,3] P(and(L(x),L(A)))|P(T(x)).
-34 [hyper,23,7,3] P(and(T(x),L(A)))|P(L(x)).
-36 [hyper,23,7,3] P(and(L(A),L(x)))|P(T(x)).
-end_of_list.
-
-list(sos).
-9 [hyper,8,7,8] P(and(Says(A,and(L(A),L(B))),Says(A,and(L(A),L(B))))).
-10 [hyper,8,7,3] P(and(L(x),Says(A,and(L(A),L(B)))))|P(T(x)).
-11 [hyper,8,7,3] P(and(T(x),Says(A,and(L(A),L(B)))))|P(L(x)).
-12 [hyper,8,7,3] P(and(Says(A,and(L(A),L(B))),L(x)))|P(T(x)).
-13 [hyper,8,7,3] P(and(Says(A,and(L(A),L(B))),T(x)))|P(L(x)).
-32 [hyper,23,7,8] P(and(Says(A,and(L(A),L(B))),L(A))).
-35 [hyper,23,7,8] P(and(L(A),Says(A,and(L(A),L(B))))).
-37 [hyper,23,7,3] P(and(L(A),T(x)))|P(L(x)).
-38 [hyper,31,7,31] P(and(and(L(A),L(A)),and(L(A),L(A)))).
-39 [hyper,31,7,23] P(and(L(A),and(L(A),L(A)))).
-40 [hyper,31,7,8] P(and(Says(A,and(L(A),L(B))),and(L(A),L(A)))).
-41 [hyper,31,7,3] P(and(L(x),and(L(A),L(A))))|P(T(x)).
-42 [hyper,31,7,3] P(and(T(x),and(L(A),L(A))))|P(L(x)).
-43 [hyper,31,7,23] P(and(and(L(A),L(A)),L(A))).
-44 [hyper,31,7,8] P(and(and(L(A),L(A)),Says(A,and(L(A),L(B))))).
-45 [hyper,31,7,3] P(and(and(L(A),L(A)),L(x)))|P(T(x)).
-46 [hyper,31,7,3] P(and(and(L(A),L(A)),T(x)))|P(L(x)).
-47 [hyper,33,7,33] P(T(x))|P(and(T(y),and(L(x),L(A))))|P(and(L(y),L(A))).
-48 [hyper,33,7,33] P(T(x))|P(and(and(L(y),L(A)),and(L(x),L(A))))|P(T(y)).
-49 [hyper,33,7,31] P(T(x))|P(and(and(L(A),L(A)),and(L(x),L(A)))).
-50 [hyper,33,7,23] P(T(x))|P(and(L(A),and(L(x),L(A)))).
-51 [hyper,33,7,8] P(T(x))|P(and(Says(A,and(L(A),L(B))),and(L(x),L(A)))).
-52 [hyper,33,7,3] P(T(x))|P(and(L(y),and(L(x),L(A))))|P(T(y)).
-53 [hyper,33,7,3] P(T(x))|P(and(T(y),and(L(x),L(A))))|P(L(y)).
-54 [hyper,33,7,33] P(T(x))|P(and(and(L(x),L(A)),T(y)))|P(and(L(y),L(A))).
-55 [hyper,33,7,31] P(T(x))|P(and(and(L(x),L(A)),and(L(A),L(A)))).
-56 [hyper,33,7,23] P(T(x))|P(and(and(L(x),L(A)),L(A))).
-57 [hyper,33,7,8] P(T(x))|P(and(and(L(x),L(A)),Says(A,and(L(A),L(B))))).
-58 [hyper,33,7,3] P(T(x))|P(and(and(L(x),L(A)),L(y)))|P(T(y)).
-59 [hyper,33,7,3] P(T(x))|P(and(and(L(x),L(A)),T(y)))|P(L(y)).
-60 [hyper,33,7,33] P(and(L(x),L(A)))|P(and(T(y),T(x)))|P(and(L(y),L(A))).
-61 [hyper,33,7,31] P(and(L(x),L(A)))|P(and(and(L(A),L(A)),T(x))).
-62 [hyper,33,7,23] P(and(L(x),L(A)))|P(and(L(A),T(x))).
-63 [hyper,33,7,8] P(and(L(x),L(A)))|P(and(Says(A,and(L(A),L(B))),T(x))).
-64 [hyper,33,7,3] P(and(L(x),L(A)))|P(and(L(y),T(x)))|P(T(y)).
-65 [hyper,33,7,3] P(and(L(x),L(A)))|P(and(T(y),T(x)))|P(L(y)).
-66 [hyper,33,7,31] P(and(L(x),L(A)))|P(and(T(x),and(L(A),L(A)))).
-67 [hyper,33,7,23] P(and(L(x),L(A)))|P(and(T(x),L(A))).
-68 [hyper,33,7,8] P(and(L(x),L(A)))|P(and(T(x),Says(A,and(L(A),L(B))))).
-69 [hyper,33,7,3] P(and(L(x),L(A)))|P(and(T(x),L(y)))|P(T(y)).
-70 [hyper,33,7,3] P(and(L(x),L(A)))|P(and(T(x),T(y)))|P(L(y)).
-71 [hyper,34,7,34] P(L(x))|P(and(L(y),and(T(x),L(A))))|P(and(T(y),L(A))).
-72 [hyper,34,7,34] P(L(x))|P(and(and(T(y),L(A)),and(T(x),L(A))))|P(L(y)).
-73 [hyper,34,7,33] P(L(x))|P(and(T(y),and(T(x),L(A))))|P(and(L(y),L(A))).
-74 [hyper,34,7,33] P(L(x))|P(and(and(L(y),L(A)),and(T(x),L(A))))|P(T(y)).
-75 [hyper,34,7,31] P(L(x))|P(and(and(L(A),L(A)),and(T(x),L(A)))).
-76 [hyper,34,7,23] P(L(x))|P(and(L(A),and(T(x),L(A)))).
-77 [hyper,34,7,8] P(L(x))|P(and(Says(A,and(L(A),L(B))),and(T(x),L(A)))).
-78 [hyper,34,7,3] P(L(x))|P(and(L(y),and(T(x),L(A))))|P(T(y)).
-79 [hyper,34,7,3] P(L(x))|P(and(T(y),and(T(x),L(A))))|P(L(y)).
-80 [hyper,34,7,34] P(L(x))|P(and(and(T(x),L(A)),L(y)))|P(and(T(y),L(A))).
-81 [hyper,34,7,33] P(L(x))|P(and(and(T(x),L(A)),T(y)))|P(and(L(y),L(A))).
-82 [hyper,34,7,33] P(L(x))|P(and(and(T(x),L(A)),and(L(y),L(A))))|P(T(y)).
-83 [hyper,34,7,31] P(L(x))|P(and(and(T(x),L(A)),and(L(A),L(A)))).
-84 [hyper,34,7,23] P(L(x))|P(and(and(T(x),L(A)),L(A))).
-85 [hyper,34,7,8] P(L(x))|P(and(and(T(x),L(A)),Says(A,and(L(A),L(B))))).
-86 [hyper,34,7,3] P(L(x))|P(and(and(T(x),L(A)),L(y)))|P(T(y)).
-87 [hyper,34,7,3] P(L(x))|P(and(and(T(x),L(A)),T(y)))|P(L(y)).
-88 [hyper,34,7,34] P(and(T(x),L(A)))|P(and(L(y),L(x)))|P(and(T(y),L(A))).
-89 [hyper,34,7,33] P(and(T(x),L(A)))|P(and(T(y),L(x)))|P(and(L(y),L(A))).
-90 [hyper,34,7,33] P(and(T(x),L(A)))|P(and(and(L(y),L(A)),L(x)))|P(T(y)).
-91 [hyper,34,7,31] P(and(T(x),L(A)))|P(and(and(L(A),L(A)),L(x))).
-92 [hyper,34,7,23] P(and(T(x),L(A)))|P(and(L(A),L(x))).
-93 [hyper,34,7,8] P(and(T(x),L(A)))|P(and(Says(A,and(L(A),L(B))),L(x))).
-94 [hyper,34,7,3] P(and(T(x),L(A)))|P(and(L(y),L(x)))|P(T(y)).
-95 [hyper,34,7,3] P(and(T(x),L(A)))|P(and(T(y),L(x)))|P(L(y)).
-96 [hyper,34,7,33] P(and(T(x),L(A)))|P(and(L(x),T(y)))|P(and(L(y),L(A))).
-97 [hyper,34,7,33] P(and(T(x),L(A)))|P(and(L(x),and(L(y),L(A))))|P(T(y)).
-98 [hyper,34,7,31] P(and(T(x),L(A)))|P(and(L(x),and(L(A),L(A)))).
-99 [hyper,34,7,8] P(and(T(x),L(A)))|P(and(L(x),Says(A,and(L(A),L(B))))).
-100 [hyper,34,7,3] P(and(T(x),L(A)))|P(and(L(x),L(y)))|P(T(y)).
-101 [hyper,34,7,3] P(and(T(x),L(A)))|P(and(L(x),T(y)))|P(L(y)).
-102 [hyper,36,7,36] P(T(x))|P(and(T(y),and(L(A),L(x))))|P(and(L(A),L(y))).
-103 [hyper,36,7,36] P(T(x))|P(and(and(L(A),L(y)),and(L(A),L(x))))|P(T(y)).
-104 [hyper,36,7,34] P(T(x))|P(and(L(y),and(L(A),L(x))))|P(and(T(y),L(A))).
-105 [hyper,36,7,34] P(T(x))|P(and(and(T(y),L(A)),and(L(A),L(x))))|P(L(y)).
-106 [hyper,36,7,33] P(T(x))|P(and(T(y),and(L(A),L(x))))|P(and(L(y),L(A))).
-107 [hyper,36,7,33] P(T(x))|P(and(and(L(y),L(A)),and(L(A),L(x))))|P(T(y)).
-108 [hyper,36,7,31] P(T(x))|P(and(and(L(A),L(A)),and(L(A),L(x)))).
-109 [hyper,36,7,23] P(T(x))|P(and(L(A),and(L(A),L(x)))).
-110 [hyper,36,7,8] P(T(x))|P(and(Says(A,and(L(A),L(B))),and(L(A),L(x)))).
-111 [hyper,36,7,3] P(T(x))|P(and(L(y),and(L(A),L(x))))|P(T(y)).
-112 [hyper,36,7,3] P(T(x))|P(and(T(y),and(L(A),L(x))))|P(L(y)).
-113 [hyper,36,7,36] P(T(x))|P(and(and(L(A),L(x)),T(y)))|P(and(L(A),L(y))).
-114 [hyper,36,7,34] P(T(x))|P(and(and(L(A),L(x)),L(y)))|P(and(T(y),L(A))).
-115 [hyper,36,7,34] P(T(x))|P(and(and(L(A),L(x)),and(T(y),L(A))))|P(L(y)).
-116 [hyper,36,7,33] P(T(x))|P(and(and(L(A),L(x)),T(y)))|P(and(L(y),L(A))).
-117 [hyper,36,7,33] P(T(x))|P(and(and(L(A),L(x)),and(L(y),L(A))))|P(T(y)).
-118 [hyper,36,7,31] P(T(x))|P(and(and(L(A),L(x)),and(L(A),L(A)))).
-119 [hyper,36,7,23] P(T(x))|P(and(and(L(A),L(x)),L(A))).
-120 [hyper,36,7,8] P(T(x))|P(and(and(L(A),L(x)),Says(A,and(L(A),L(B))))).
-121 [hyper,36,7,3] P(T(x))|P(and(and(L(A),L(x)),L(y)))|P(T(y)).
-122 [hyper,36,7,3] P(T(x))|P(and(and(L(A),L(x)),T(y)))|P(L(y)).
-124 [hyper,36,2,23,8] P(T(B)).
-125 [hyper,36,7,36] P(and(L(A),L(x)))|P(and(T(y),T(x)))|P(and(L(A),L(y))).
-126 [hyper,36,7,34] P(and(L(A),L(x)))|P(and(L(y),T(x)))|P(and(T(y),L(A))).
-127 [hyper,36,7,34] P(and(L(A),L(x)))|P(and(and(T(y),L(A)),T(x)))|P(L(y)).
-128 [hyper,36,7,33] P(and(L(A),L(x)))|P(and(T(y),T(x)))|P(and(L(y),L(A))).
-129 [hyper,36,7,33] P(and(L(A),L(x)))|P(and(and(L(y),L(A)),T(x)))|P(T(y)).
-130 [hyper,36,7,31] P(and(L(A),L(x)))|P(and(and(L(A),L(A)),T(x))).
-131 [hyper,36,7,23] P(and(L(A),L(x)))|P(and(L(A),T(x))).
-132 [hyper,36,7,8] P(and(L(A),L(x)))|P(and(Says(A,and(L(A),L(B))),T(x))).
-133 [hyper,36,7,3] P(and(L(A),L(x)))|P(and(L(y),T(x)))|P(T(y)).
-134 [hyper,36,7,3] P(and(L(A),L(x)))|P(and(T(y),T(x)))|P(L(y)).
-135 [hyper,36,7,34] P(and(L(A),L(x)))|P(and(T(x),L(y)))|P(and(T(y),L(A))).
-136 [hyper,36,7,34] P(and(L(A),L(x)))|P(and(T(x),and(T(y),L(A))))|P(L(y)).
-137 [hyper,36,7,33] P(and(L(A),L(x)))|P(and(T(x),T(y)))|P(and(L(y),L(A))).
-138 [hyper,36,7,33] P(and(L(A),L(x)))|P(and(T(x),and(L(y),L(A))))|P(T(y)).
-139 [hyper,36,7,31] P(and(L(A),L(x)))|P(and(T(x),and(L(A),L(A)))).
-140 [hyper,36,7,8] P(and(L(A),L(x)))|P(and(T(x),Says(A,and(L(A),L(B))))).
-141 [hyper,36,7,3] P(and(L(A),L(x)))|P(and(T(x),L(y)))|P(T(y)).
-142 [hyper,36,7,3] P(and(L(A),L(x)))|P(and(T(x),T(y)))|P(L(y)).
-end_of_list.
-
-list(demodulators).
-end_of_list.
-
-
 -------------- statistics -------------
-clauses given                  7
-clauses generated            180
-  hyper_res generated        180
+clauses given                  4
+clauses generated             24
+  hyper_res generated         24
 demod & eval rewrites          0
 clauses wt,lit,sk delete       0
 tautologies deleted            0
-clauses forward subsumed      46
-  (subsumed by sos)           24
+clauses forward subsumed      21
+  (subsumed by sos)            6
 unit deletions                 0
 factor simplifications         0
-clauses kept                 134
+clauses kept                   3
 new demodulators               0
 empty clauses                  0
 clauses back demodulated       0
-clauses back subsumed         17
-usable size                   13
-sos size                     112
+clauses back subsumed          2
+usable size                    8
+sos size                       0
 demodulators size              0
 passive size                   0
 hot size                       0
@@ -361,4 +67,4 @@ user CPU time          0.00          (0 hr, 0 min, 0 sec)
 system CPU time        0.00          (0 hr, 0 min, 0 sec)
 wall-clock time        0             (0 hr, 0 min, 0 sec)
 
-Process 3659 finished Sat Dec 31 19:29:24 2016
+Process 3807 finished Sat Dec 31 19:32:30 2016

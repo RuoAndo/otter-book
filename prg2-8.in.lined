@@ -1,29 +1,14 @@
-  1: set(hyper_res). 
-  2: assign(max_given,7).
-  3: set(print_lists_at_end).
-  4: 
-  5: op(900,xfx,||).                                                                               
-  6: op(900,xfx,&&).                                                                              
-  7: 
-  8: make_evaluable(_&&_,$AND(_,_)).                                                               
-  9: make_evaluable(_||_,$OR(_,_)).                                                                
- 10: 
- 11: list(usable).
- 12: %グループA:
- 13:        -P(T(x)) | -P(Says(x,y)) | P(y).
- 14:        -P(L(x)) | -P(Says(x,y)) | -P(y).
- 15: 
- 16: %グループB:
- 17:        P(T(x)) | P(L(x)).
- 18:        -P(T(x)) | -P(L(x)).
- 19:        
- 20: %グループC:
- 21:        -P(and(y,z)) | P(y).
- 22:        -P(and(y,z)) | P(z).
- 23:        -P(y) | -P(z) | P(and(y,z)).
- 24: 
- 25: end_of_list.
- 26: 
- 27: list(sos).
- 28:         P(Says(A,and(L(A),L(B)))).
- 29: end_of_list.
+  1:  set(hyper_res). 
+  2:  
+  3:  list(usable).
+  4:          -P(T(x)) | -P(Says(x,y)) | P(y).
+  5:          -P(L(x)) | -P(Says(x,y)) | -P(y).
+  6:          P(T(x)) | P(L(x)) | P(N(x)).
+  7:          -P(T(x)) | -P(L(x)).
+  8:          -P(T(x)) | -P(N(x)).
+  9:          -P(L(x)) | -P(N(x)).
+ 10:  end_of_list.
+ 11:  
+ 12:  list(sos).
+ 13:          P(Says(A,L(A))).
+ 14:  end_of_list.
