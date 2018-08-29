@@ -70,4 +70,5 @@
 <pre>
 天秤とコインのパズルのためのパッチ当て
 https://sites.google.com/site/ottershujinopeji/home
+上記のページを参考にしてください。
 </pre>
