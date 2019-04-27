@@ -2,6 +2,8 @@
 
 <img src="E1435ECD-D6D8-4338-A9EF-E4951135F55D.png">
 
+https://www.kindaikagaku.co.jp/news/20180831.html
+
 <pre>
 拡張子が.inのファイルは入力ファイルです。このファイルを実行してください。
 # otter < prg0-1.in
