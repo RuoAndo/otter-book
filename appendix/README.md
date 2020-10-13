@@ -71,3 +71,8 @@ That finishes the proof of the theorem.
 </pre>
 
 <img src="plot-decimal-counter-2-inv-hyper.png">
+
+# 3入力3出力反転回路の生成(Two inverterパズル）
+
+<img src="2-inverter-puzzle.png">
+
