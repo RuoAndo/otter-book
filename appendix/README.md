@@ -67,3 +67,5 @@ wall-clock time    25962             (7 hr, 12 min, 42 sec)
 
 That finishes the proof of the theorem.
 </pre>
+
+<img src="plot-decimal-counter-2-inv-hyper.png">
