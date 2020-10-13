@@ -1,0 +1,36 @@
+earch stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  0
+clauses generated        2069334
+  hyper_res generated    2069334
+demod & eval rewrites    2103338
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed 2049117
+  (subsumed by sos)       314773
+unit deletions                 0
+factor simplifications         0
+clauses kept               28858
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                 8646
+sos size                   11577
+demodulators size              2
+passive size                   1
+hot size                       0
+Kbytes malloced            12695
+
+----------- times (seconds) -----------
+user CPU time         25.31          (0 hr, 0 min, 25 sec)
+system CPU time        0.01          (0 hr, 0 min, 0 sec)
+wall-clock time       26             (0 hr, 0 min, 26 sec)
+
+That finishes the proof of the theorem.
+
+Process 25586 finished Tue Oct 13 20:55:36 2020
+
