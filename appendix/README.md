@@ -34,6 +34,8 @@ system CPU time        0.13          (0 hr, 0 min, 0 sec)
 wall-clock time      229             (0 hr, 3 min, 49 sec)
 </pre>
 
+<img src="plot-decimal-counter-2-inv-ur.png">
+
 # hyper resolution
 
 <pre>
