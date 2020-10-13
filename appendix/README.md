@@ -76,3 +76,43 @@ That finishes the proof of the theorem.
 
 <img src="2-inverter-puzzle.png">
 
+# UR resolution
+
+<img src="plot-2-inverter-puzzle-ur.png">
+
+<pre>
+Search stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  0
+clauses generated         342935
+  ur_res generated        342935
+demod & eval rewrites     349903
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed  332937
+  (subsumed by sos)        77452
+unit deletions                 0
+factor simplifications         0
+clauses kept               11881
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                 1887
+sos size                    8118
+demodulators size              2
+passive size                   1
+hot size                       0
+Kbytes malloced             7812
+
+----------- times (seconds) -----------
+user CPU time          3.99          (0 hr, 0 min, 3 sec)
+system CPU time        0.00          (0 hr, 0 min, 0 sec)
+wall-clock time        4             (0 hr, 0 min, 4 sec)
+
+That finishes the proof of the theorem.
+
+</pre>
