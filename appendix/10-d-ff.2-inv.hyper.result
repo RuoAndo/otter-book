@@ -1,0 +1,80 @@
+---------------- PROOF ----------------
+
+1 [] -P(x,v)| -P(y,v)|P($BIT_AND(x,y),v).
+2 [] -P(x,v)| -P(y,v)|P($BIT_OR(x,y),v).
+3 [] -P(x,v)|P($BIT_AND(1111111111,$BIT_NOT(x)),append_inversion(v,x)).
+4 [] P(0000000011,v).
+5 [] P(0000111100,v).
+6 [] P(0011001100,v).
+7 [] P(0101010101,v).
+8 [] -P(0000000110,v)| -P(0001111000,v)| -P(0110011000,v)| -P(1010101010,v).
+15 [hyper,5,2,4,demod] P(0000111111,x).
+18 [hyper,6,2,5,demod] P(0011111100,x).
+19 [hyper,6,2,4,demod] P(0011001111,x).
+20 [hyper,6,1,5,demod] P(0000001100,x).
+22 [hyper,7,2,6,demod] P(0111011101,x).
+24 [hyper,7,2,4,demod] P(0101010111,x).
+25 [hyper,7,1,6,demod] P(0001000100,x).
+27 [hyper,7,1,4,demod] P(0000000001,x).
+35 [hyper,18,1,7,demod] P(0001010100,x).
+38 [hyper,19,1,15,demod] P(0000001111,x).
+39 [hyper,19,1,7,demod] P(0001000101,x).
+48 [hyper,22,1,5,demod] P(0000011100,x).
+55 [hyper,24,2,20,demod] P(0101011111,x).
+59 [hyper,25,2,15,demod] P(0001111111,x).
+76 [hyper,35,2,20,demod] P(0001011100,x).
+81 [hyper,38,1,24,demod] P(0000000111,x).
+82 [hyper,39,3,demod] P(1110111010,[0001000101|x]).
+655 [hyper,82,2,81,demod] P(1110111111,[0001000101|x]).
+656 [hyper,82,2,76,demod] P(1111111110,[0001000101|x]).
+657 [hyper,82,2,48,demod] P(1110111110,[0001000101|x]).
+658 [hyper,82,2,27,demod] P(1110111011,[0001000101|x]).
+681 [hyper,82,1,22,demod] P(0110011000,[0001000101|x]).
+2632 [hyper,655,1,55,demod] P(0100011111,[0001000101|x]).
+2648 [hyper,656,1,81,demod] P(0000000110,[0001000101|x]).
+2654 [hyper,656,1,59,demod] P(0001111110,[0001000101|x]).
+2706 [hyper,658,1,22,demod] P(0110011001,[0001000101|x]).
+2707 [hyper,658,1,19,demod] P(0010001011,[0001000101|x]).
+6471 [hyper,2632,3,demod] P(1011100000,[0001000101,0100011111|x]).
+73379 [hyper,6471,2,2707,demod] P(1011101011,[0001000101,0100011111|x]).
+73380 [hyper,6471,2,2706,demod] P(1111111001,[0001000101,0100011111|x]).
+335627 [hyper,73379,1,657,demod] P(1010101010,[0001000101,0100011111|x]).
+335642 [hyper,73380,1,2654,demod] P(0001111000,[0001000101,0100011111|x]).
+680543 [hyper,335642,8,2648,681,335627] $F.
+
+------------ end of proof -------------
+
+Search stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  0
+clauses generated        287084274
+  hyper_res generated    287084274
+demod & eval rewrites    288422196
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed 286403743
+  (subsumed by sos)      44200930
+unit deletions                 0
+factor simplifications         0
+clauses kept             1016164
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed          0
+usable size               335638
+sos size                  344900
+demodulators size              2
+passive size                   2
+hot size                       0
+Kbytes malloced           311523
+
+----------- times (seconds) -----------
+user CPU time      25959.87          (7 hr, 12 min, 39 sec)
+system CPU time        2.00          (0 hr, 0 min, 2 sec)
+wall-clock time    25962             (7 hr, 12 min, 42 sec)
+
+That finishes the proof of the theorem.
+

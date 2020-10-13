@@ -1,0 +1,83 @@
+=========== start of search ===========
+
+----> UNIT CONFLICT at 229.45 sec ----> 170072 [binary,170071.1,11.1] $F.
+
+
+-- HEY root, WE HAVE A PROOF!! -- 
+Length of proof is 22.  Level of proof is 7.
+
+---------------- PROOF ----------------
+
+1 [] -P(x,v)| -P(y,v)|P($BIT_AND(x,y),v).
+2 [] -P(x,v)| -P(y,v)|P($BIT_OR(x,y),v).
+3 [] -P(x,v)|P($BIT_AND(1111111111,$BIT_NOT(x)),append_inversion(v,x)).
+4 [] P(0000000011,v).
+5 [] P(0000111100,v).
+6 [] P(0011001100,v).
+7 [] P(0101010101,v).
+8 [] -P(0000000110,v)| -P(0001111000,v)| -P(0110011000,v)| -P(1010101010,v).
+11 [] P(x,[y1,y2,y3|y4]).
+15 [ur,5,2,4,demod] P(0000111111,x).
+18 [ur,6,2,5,demod] P(0011111100,x).
+19 [ur,6,2,4,demod] P(0011001111,x).
+20 [ur,6,1,5,demod] P(0000001100,x).
+21 [ur,7,3,demod] P(1010101010,[0101010101|x]).
+22 [ur,7,2,6,demod] P(0111011101,x).
+24 [ur,7,2,4,demod] P(0101010111,x).
+29 [ur,15,2,7,demod] P(0101111111,x).
+30 [ur,15,2,6,demod] P(0011111111,x).
+35 [ur,18,1,7,demod] P(0001010100,x).
+38 [ur,19,1,15,demod] P(0000001111,x).
+66 [ur,29,1,19,demod] P(0001001111,x).
+70 [ur,30,1,22,demod] P(0011011101,x).
+76 [ur,35,2,20,demod] P(0001011100,x).
+81 [ur,38,1,24,demod] P(0000000111,x).
+153 [ur,21,2,76,demod] P(1011111110,[0101010101|x]).
+154 [ur,21,2,66,demod] P(1011101111,[0101010101|x]).
+163 [ur,21,1,70,demod] P(0010001000,[0101010101|x]).
+1583 [ur,153,1,81,demod] P(0000000110,[0101010101|x]).
+1596 [ur,154,3,demod] P(0100010000,[0101010101,1011101111|x]).
+10069 [ur,1596,2,163,demod] P(0110011000,[0101010101,1011101111|x]).
+170071 [ur,10069,8,1583,21] -P(0001111000,[0101010101,1011101111|x]).
+170072 [binary,170071.1,11.1] $F.
+
+------------ end of proof -------------
+
+
+Search stopped by max_proofs option.
+
+
+Search stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  0
+clauses generated        5347949
+  ur_res generated       5347949
+demod & eval rewrites    5383579
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed 5177890
+  (subsumed by sos)      1842716
+unit deletions                 0
+factor simplifications         0
+clauses kept              180120
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                10065
+sos size                  160002
+demodulators size              2
+passive size                   2
+hot size                       0
+Kbytes malloced            79101
+
+----------- times (seconds) -----------
+user CPU time        229.45          (0 hr, 3 min, 49 sec)
+system CPU time        0.13          (0 hr, 0 min, 0 sec)
+wall-clock time      229             (0 hr, 3 min, 49 sec)
+
+That finishes the proof of the theorem.
+
