@@ -1,8 +1,8 @@
 # 10カウンタ回路の生成
 
-<img src="Decimal counter.png">
+<img src="Decimal counter.png"> 
 
-# UR resolution (BCD)
+# UR resolution (BCD) - sos size
 
 <pre>
 -------------- statistics -------------
@@ -36,7 +36,7 @@ wall-clock time      229             (0 hr, 3 min, 49 sec)
 
 <img src="plot-decimal-counter-2-inv-ur.png">
 
-# hyper resolution (BCD)
+# hyper resolution (BCD) - sos size
 
 <pre>
 -------------- statistics -------------
@@ -76,7 +76,7 @@ That finishes the proof of the theorem.
 
 <img src="2-inverter-puzzle.png">
 
-# UR resolution (two-inv)
+# UR resolution (two-inv) - sos size
 
 <img src="plot-2-inverter-puzzle-ur.png">
 
@@ -117,7 +117,7 @@ That finishes the proof of the theorem.
 
 </pre>
 
-# Hyper resolution (two-inv)
+# Hyper resolution (two-inv) - sos size
 
 <img src="plot-2-inverter-puzzle-hyper.png">
 
