@@ -82,7 +82,7 @@ sos size
 <img src="plot-2-inverter-puzzle-ur.png">
 
 forward subsumption
-<img src="for-sub-two-inv-ur.png.png">
+<img src="for-sub-two-inv-ur.png">
 
 <pre>
 Search stopped by max_proofs option.
@@ -127,7 +127,7 @@ sos size
 <img src="plot-2-inverter-puzzle-hyper.png">
 
 forward subsumption
-<img src="for-sub-two-inv-hyper.png.png">
+<img src="for-sub-two-inv-hyper.png">
 
 <pre>
 earch stopped by max_proofs option.
