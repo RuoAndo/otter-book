@@ -78,10 +78,10 @@ That finishes the proof of the theorem.
 
 # UR resolution (two-inv) 
 
-sos size
+sos size<br>
 <img src="plot-2-inverter-puzzle-ur.png">
 
-forward subsumption
+forward subsumption<br>
 <img src="for-sub-two-inv-ur.png">
 
 <pre>
