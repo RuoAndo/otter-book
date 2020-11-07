@@ -2,7 +2,7 @@
 
 <img src="Decimal counter.png">
 
-# UR resolution
+# UR resolution (BCD)
 
 <pre>
 -------------- statistics -------------
@@ -36,7 +36,7 @@ wall-clock time      229             (0 hr, 3 min, 49 sec)
 
 <img src="plot-decimal-counter-2-inv-ur.png">
 
-# hyper resolution
+# hyper resolution (BCD)
 
 <pre>
 -------------- statistics -------------
@@ -76,7 +76,7 @@ That finishes the proof of the theorem.
 
 <img src="2-inverter-puzzle.png">
 
-# UR resolution
+# UR resolution (two-inv)
 
 <img src="plot-2-inverter-puzzle-ur.png">
 
@@ -117,7 +117,7 @@ That finishes the proof of the theorem.
 
 </pre>
 
-# Hyper resolution
+# Hyper resolution (two-inv)
 
 <img src="plot-2-inverter-puzzle-hyper.png">
 
