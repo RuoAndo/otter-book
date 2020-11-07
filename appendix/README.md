@@ -34,7 +34,11 @@ system CPU time        0.13          (0 hr, 0 min, 0 sec)
 wall-clock time      229             (0 hr, 3 min, 49 sec)
 </pre>
 
+sos size<br>
 <img src="plot-decimal-counter-2-inv-ur.png">
+
+forward subsumption<br>
+<img src="for-sub-bcd-ur.png">
 
 # hyper resolution (BCD) - sos size and forward subsumption
 
@@ -70,6 +74,7 @@ wall-clock time    25962             (7 hr, 12 min, 42 sec)
 That finishes the proof of the theorem.
 </pre>
 
+sos size<br>
 <img src="plot-decimal-counter-2-inv-hyper.png">
 
 # 3入力3出力反転回路の生成(Two inverterパズル）
