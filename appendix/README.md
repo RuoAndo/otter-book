@@ -2,7 +2,7 @@
 
 <img src="Decimal counter.png"> 
 
-# UR resolution (BCD) - sos size
+# UR resolution (BCD) - sos size and forward subsumption
 
 <pre>
 -------------- statistics -------------
@@ -36,7 +36,7 @@ wall-clock time      229             (0 hr, 3 min, 49 sec)
 
 <img src="plot-decimal-counter-2-inv-ur.png">
 
-# hyper resolution (BCD) - sos size
+# hyper resolution (BCD) - sos size and forward subsumption
 
 <pre>
 -------------- statistics -------------
@@ -76,7 +76,7 @@ That finishes the proof of the theorem.
 
 <img src="2-inverter-puzzle.png">
 
-# UR resolution (two-inv) 
+# UR resolution (two-inv) - sos size and forward subsumption
 
 sos size<br>
 <img src="plot-2-inverter-puzzle-ur.png">
@@ -121,12 +121,12 @@ That finishes the proof of the theorem.
 
 </pre>
 
-# Hyper resolution (two-inv) 
+# Hyper resolution (two-inv) - sos size and forward subsumption
 
-sos size
+sos size <br>
 <img src="plot-2-inverter-puzzle-hyper.png">
 
-forward subsumption
+forward subsumption <br>
 <img src="for-sub-two-inv-hyper.png">
 
 <pre>
