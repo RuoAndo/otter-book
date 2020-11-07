@@ -76,9 +76,13 @@ That finishes the proof of the theorem.
 
 <img src="2-inverter-puzzle.png">
 
-# UR resolution (two-inv) - sos size
+# UR resolution (two-inv) 
 
+sos size
 <img src="plot-2-inverter-puzzle-ur.png">
+
+forward subsumption
+<img src="for-sub-two-inv-ur.png.png">
 
 <pre>
 Search stopped by max_proofs option.
@@ -117,9 +121,13 @@ That finishes the proof of the theorem.
 
 </pre>
 
-# Hyper resolution (two-inv) - sos size
+# Hyper resolution (two-inv) 
 
+sos size
 <img src="plot-2-inverter-puzzle-hyper.png">
+
+forward subsumption
+<img src="for-sub-two-inv-hyper.png.png">
 
 <pre>
 earch stopped by max_proofs option.
