@@ -77,6 +77,9 @@ That finishes the proof of the theorem.
 sos size<br>
 <img src="plot-decimal-counter-2-inv-hyper.png">
 
+forward subsumption<br>
+<img src="for-sub-bcd-hyper-scaled.png">
+
 # 3入力3出力反転回路の生成(Two inverterパズル）
 
 <img src="2-inverter-puzzle.png">
