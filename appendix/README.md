@@ -78,7 +78,7 @@ sos size<br>
 <img src="plot-decimal-counter-2-inv-hyper.png">
 
 forward subsumption<br>
-<img src="for-sub-bcd-hyper-scaled.png">
+<img src="for-sub-bcd-hyper.png">
 
 # 3入力3出力反転回路の生成(Two inverterパズル）
 
