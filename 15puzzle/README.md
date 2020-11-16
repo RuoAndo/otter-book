@@ -57,3 +57,25 @@ list(sos).
 STATE(l(n(1),l(n(3),l(n(7),l(n(4),l(end,l(n(6),l(n(2),l(hole,l(n(8),l(end,l(n(13),l(n(5),l(n(11),l(n(14),l(end,l(n(19),l(n(15),l(n(9),l(n(12),l(end))))))))))))))))))))).
 end_of_list.
 </pre>
+
+<hr>
+# for python 3.*
+
+<pre>
+$ python --version
+Python 3.6.4
+$ python rand.py 
+15,8,9,2,13,6,10,7,14,12,3,11,1,5,4,hole
+$ python rand.py > tmp
+$ python trans2.py tmp
+set(para_into).
+set(para_from).
+list(usable).
+EQUAL(l(hole,l(n(x),y)),l(n(x),l(hole,y))).
+EQUAL(l(hole,l(x,l(y,l(z,l(u,l(n(w),v)))))),l(n(w),l(x,l(y,l(z,l(u,l(hole,v))))))).
+-STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+end_of_list.
+list(sos).
+STATE(l(n(3),l(n(4),l(n(5),l(n(7),l(end,l(n(10),l(n(13),l(n(9),l(n(1),l(end,l(n(2),l(n(11),l(n(8),l(n(12),l(end,l(n(6),l(n(15),l(n(14),l(hole,l(end))))))))))))))))))))).
+end_of_list.
+</pre>
