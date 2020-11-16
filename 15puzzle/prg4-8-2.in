@@ -1,5 +1,5 @@
 set(para_into).
-set(para_from).
+#set(para_from).
 
 list(usable).
 EQUAL(l(hole,l(n(x),y)),l(n(x),l(hole,y))).
