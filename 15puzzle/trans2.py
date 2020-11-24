@@ -10,7 +10,7 @@ argc = len(argvs)
 f = open(argvs[1]) 
 
 print("set(para_into).")
-print("set(para_from).")
+#print("set(para_from).")
 
 print("list(usable).")
 print("EQUAL(l(hole,l(n(x),y)),l(n(x),l(hole,y))).")
@@ -49,15 +49,19 @@ while line:
         #    constr = constr + "l(n(" + tmp[15].strip() + "),end"
         #    break
 
-        if counter > 1 and counter % 4 == 0:
-            constr = constr + "l(end," 
-
+        if counter > 1 and counter % 4 == 0 and counter != 16:
+            constr = constr + "l(end,"
+            
+        if counter == 16:
+            constr = constr + "end,"
+    
+        
         #label .END    
             
         counter = counter + 1
 
     #constr = constr.replace("l(n(hole", "l(hole")
-    print(constr.rstrip(",") + "))))))))))))))))))))).")
+    print(constr.rstrip(",") + ")))))))))))))))))))).")
 
     line = f.readline()
 
