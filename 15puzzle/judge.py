@@ -26,21 +26,22 @@ for row in f:
 
 counter = 1
 for i in line:
-    print(i)
+    print(str(i) + ":" + str(counter))
     if i == "hole":
-        if counter < 5:
+        print("hole->" + str(counter))
+        #print(int((counter%4)+1))
+        if counter > 1 and counter < 5:
             holeplace = 1
-        if 4 < counter < 8:
+        if counter > 4 and counter < 9:
             holeplace = 2
-        if 9 < counter < 12:
+        if counter > 9 and counter < 13:
             holeplace = 3
-        if 13 < counter < 16:
+        if counter > 13 and counter < 17:
             holeplace = 4
             
-        print("hole at line: "+str(holeplace))
     counter = counter + 1
 
-
+print("hole at line: "+str(holeplace))
 print("###")
     
 line.remove("hole")
