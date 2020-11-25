@@ -28,25 +28,41 @@ counter = 1
 for i in line:
     print(i)
     if i == "hole":
-        holeplace = counter %4
-        print("hole at line: "+str(counter%4))
+        if counter < 5:
+            holeplace = 1
+        if 4 < counter < 8:
+            holeplace = 2
+        if 9 < counter < 12:
+            holeplace = 3
+        if 13 < counter < 16:
+            holeplace = 4
+            
+        print("hole at line: "+str(holeplace))
     counter = counter + 1
 
+
+print("###")
     
 line.remove("hole")
 print(line)
 
+print("###")
+
 counter = 0
 for i in line:
-    print(i)                
+    #print(i)                
     nw = line[counter:]
-    print(nw)
+    print(i + "->" + "[" + ','.join(nw) + "]")
         
     counter2 = 0
     for j in nw:
-        if i > j:
+        print("compare:" + str(i) + ":" + str(j))
+        if int(i) > int(j):
             counter2 = counter2 + 1
+            print("smaller! ->" + str(j))
 
+    print("result:" + str(counter2))
+            
     judge.append(counter2)            
     counter = counter + 1
 
@@ -55,6 +71,6 @@ print(judge)
 sum = 0
 for i in judge:
     sum = sum + i
-
+    
 print(sum)
 print(holeplace)
