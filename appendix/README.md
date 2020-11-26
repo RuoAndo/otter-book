@@ -179,11 +179,86 @@ Process 25586 finished Tue Oct 13 20:55:36 2020
 
 <img src="Decimal counter.png">
 
+# UR resolution (hex counter) - sos size and forward subsumption
+
+sos size <br>
 <img src="sos-size-hex-ur.png">
 
+forward subsumption <br>
 <img src="for-sub-hex-ur.png">
 
+<pre>
+Search stopped by max_proofs option.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  0
+clauses generated           2253
+  ur_res generated          2253
+demod & eval rewrites       2400
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed    2196
+  (subsumed by sos)          200
+unit deletions                 0
+factor simplifications         0
+clauses kept                 110
+new demodulators               0
+empty clauses                  1
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                   57
+sos size                       8
+demodulators size              2
+passive size                   1
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.01          (0 hr, 0 min, 0 sec)
+system CPU time        0.01          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+</pre>
+
+# Hyper resolution (hex counter) - sos size and forward subsumption
+
+sos size <br>
 <img src="sos-size-hex-hyper.png">
 
+forward subsumption <br>
 <img src="for-sub-hex-hyper.png">
 
+<pre>
+Search stopped because sos empty.
+
+============ end of search ============
+
+-------------- statistics -------------
+clauses given                  0
+clauses generated           2824
+  hyper_res generated       2824
+demod & eval rewrites       2996
+clauses wt,lit,sk delete       0
+tautologies deleted            0
+clauses forward subsumed    2768
+  (subsumed by sos)          208
+unit deletions                 0
+factor simplifications         0
+clauses kept                 116
+new demodulators               0
+empty clauses                  0
+clauses back demodulated       0
+clauses back subsumed          0
+usable size                   64
+sos size                       0
+demodulators size              2
+passive size                   1
+hot size                       0
+Kbytes malloced              976
+
+----------- times (seconds) -----------
+user CPU time          0.02          (0 hr, 0 min, 0 sec)
+system CPU time        0.01          (0 hr, 0 min, 0 sec)
+wall-clock time        0             (0 hr, 0 min, 0 sec)
+</pre>
