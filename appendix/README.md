@@ -177,4 +177,4 @@ Process 25586 finished Tue Oct 13 20:55:36 2020
 
 # ６進カウンター
 
-
+<img src="Decimal counter.png">
