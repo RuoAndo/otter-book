@@ -178,3 +178,12 @@ Process 25586 finished Tue Oct 13 20:55:36 2020
 # ６進カウンター
 
 <img src="Decimal counter.png">
+
+<img src="sos-size-hex-ur.png">
+
+<img src="for-sub-hex-ur.png">
+
+<img src="sos-size-hex-hyper.png">
+
+<img src="for-sub-hex-hyper.png">
+
