@@ -1,0 +1,16 @@
+set(para_into).
+clear(print_kept).
+clear(print_given).
+list(usable).
+EQUAL(l(hole,l(n(x),y)),l(n(x),l(hole,y))).
+EQUAL(l(hole,l(x,l(y,l(z,l(u,l(n(w),v)))))),l(n(w),l(x,l(y,l(z,l(u,l(hole,v))))))).
+-STATE(l(n(1),l(n(2),l(n(3),l(n(4),l(end,l(n(5),l(n(6),l(n(7),l(n(8),l(end,l(n(9),l(n(10),l(n(11),l(n(12),l(end,l(n(13),l(n(14),l(n(15),l(hole,end)))))))))))))))))))).
+end_of_list.
+list(sos).
+STATE(l(n(1),l(n(13),l(n(6),l(n(9),l(end,l(n(12),l(n(2),l(n(15),l(n(11),l(end,l(n(10),l(n(14),l(n(4),l(n(7),l(end,l(n(3),l(n(5),l(n(8),l(hole,end)))))))))))))))))))).
+end_of_list.
+
+weight_list(pick_given).
+weight(STATE(l(n(1),l(n($(1)),l(n($(1)),l(n($(1)),l(end,l(n($(1)),l(n($(1)),l(n($(1)),l(n($(1)),l(end,l(n($(1)),l(n($(1)),l(n($(1)),l(n($(1)),l(end,l(n($(1)),l(n($(1)),l(n($(1)),l(hole,end)))))))))))))))))))),0).
+weight(STATE(l(n($(1)),l(n($(1)),l(n($(1)),l(n($(1)),l(end,l(n($(1)),l(n($(1)),l(n($(1)),l(n($(1)),l(end,l(n($(1)),l(n($(1)),l(n($(1)),l(n($(1)),l(end,l(n($(1)),l(n($(1)),l(n(15),l(hole,end)))))))))))))))))))),0).
+end_of_list.
