@@ -174,3 +174,7 @@ That finishes the proof of the theorem.
 
 Process 25586 finished Tue Oct 13 20:55:36 2020
 </pre>
+
+# ６進カウンター
+
+
