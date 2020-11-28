@@ -3,7 +3,6 @@ import re
 #import goto, label
 #from goto import goto, label
 
-
 argvs = sys.argv
 argc = len(argvs)
 
@@ -12,12 +11,14 @@ f = open(argvs[1])
 print("set(para_into).")
 #print("set(para_from).")
 
-#print("clear(print_kept).")
-#print("clear(print_given).")
+print("clear(print_kept).")
+print("clear(print_given).")
 
 print("list(usable).")
 print("EQUAL(l(hole,l(n(x),y)),l(n(x),l(hole,y))).")
-print("EQUAL(l(hole,l(x,l(z,l(u,l(n(w),v))))),l(n(w),l(x,l(z,l(u,l(hole,v)))))).")
+
+#print("EQUAL(l(hole,l(x,l(z,l(u,l(n(w),v))))),l(n(w),l(x,l(z,l(u,l(hole,v)))))).")
+print("EQUAL(l(hole,l(y,l(z,l(u,l(n(w),v))))),l(n(w),l(y,l(z,l(u,l(hole,v)))))).")
 
 print("-STATE(l(n(1),l(n(2),l(n(3),l(end,l(n(4),l(n(5),l(n(6),l(end,l(n(7),l(n(8),l(hole,end)))))))))))).")
 print("end_of_list.")
