@@ -1,12 +1,21 @@
-python rand_8puzzle.py > tmp
-python judge_8puzzle.py tmp > tmp2
-result=`tail -n 1 tmp2`
-echo $result
+COUNT=0
+while [ $COUNT -lt 5 ]; do
 
-if [ $((${result} % 2)) = 1 ]; then
-    echo "奇数だよ"
-else
-    echo "偶数だよ"
-    python trans_8puzzle.py tmp > tmp3
-    otter < tmp3
-fi    
+    python rand_8puzzle.py > tmp
+    python judge_8puzzle.py tmp > tmp2
+    result=`tail -n 1 tmp2`
+    echo $result
+    
+    if [ $((${result} % 2)) = 1 ]; then
+	echo "奇数だよ"
+	
+    else
+	echo "偶数だよ"
+	brd=`cat tmp`
+	echo "BOARD:"${brd}
+	python trans_8puzzle.py tmp > tmp3
+	otter < tmp3
+	COUNT=`expr $COUNT + 1` # COUNT をインクリメント
+    fi
+
+done
