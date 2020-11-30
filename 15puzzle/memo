@@ -1,3 +1,10 @@
+ 
+
+Agrep generated log | grep clauses |sed 's/[\t ]\+/\t/g' | cut -f3
+A
+2167  python rand5.py  > tmp
+ 2188  python trans3.py tmp > tmp2
+
 $ python rand.py | tee tmp
 13,15,10,14,3,5,2,9,4,8,hole,11,7,1,6,12
 
