@@ -1,5 +1,5 @@
 COUNT=0
-while [ $COUNT -lt 5 ]; do
+while [ $COUNT -lt 10 ]; do
 
     python rand_8puzzle.py > tmp
     python judge_8puzzle.py tmp > tmp2
@@ -8,6 +8,8 @@ while [ $COUNT -lt 5 ]; do
     
     if [ $((${result} % 2)) = 1 ]; then
 	echo "奇数だよ"
+
+    # cl_generated.txt  cl_kept.txt  for_sub.txt  sos_size.txt
 	
     else
 	echo "偶数だよ"
@@ -15,6 +17,12 @@ while [ $COUNT -lt 5 ]; do
 	echo "BOARD:"${brd}
 	python trans_8puzzle.py tmp > tmp3
 	otter < tmp3
+	
+	cp cl_generated.txt cl_generated.txt.${COUNTER}
+	cp cl_kept.txt cl_kept.txt.${COUNTER}
+	cp for_sub.txt for_sub.txt.${COUNTER}
+	cp cl_kept.txt cl_size.txt.${COUNTER}
+	
 	COUNT=`expr $COUNT + 1` # COUNT をインクリメント
     fi
 
