@@ -22,6 +22,7 @@ while [ $COUNT -lt 10 ]; do
 	cp cl_kept.txt cl_kept.txt.${COUNT}
 	cp for_sub.txt for_sub.txt.${COUNT}
 	cp cl_kept.txt cl_size.txt.${COUNT}
+	cp sos_size.txt sos_size.txt.${COUNT}
 	
 	COUNT=`expr $COUNT + 1` # COUNT をインクリメント
     fi
