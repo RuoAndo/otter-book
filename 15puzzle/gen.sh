@@ -18,10 +18,10 @@ while [ $COUNT -lt 10 ]; do
 	python trans_8puzzle.py tmp > tmp3
 	otter < tmp3
 	
-	cp cl_generated.txt cl_generated.txt.${COUNTER}
-	cp cl_kept.txt cl_kept.txt.${COUNTER}
-	cp for_sub.txt for_sub.txt.${COUNTER}
-	cp cl_kept.txt cl_size.txt.${COUNTER}
+	cp cl_generated.txt cl_generated.txt.${COUNT}
+	cp cl_kept.txt cl_kept.txt.${COUNT}
+	cp for_sub.txt for_sub.txt.${COUNT}
+	cp cl_kept.txt cl_size.txt.${COUNT}
 	
 	COUNT=`expr $COUNT + 1` # COUNT をインクリメント
     fi
