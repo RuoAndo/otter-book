@@ -1,4 +1,26 @@
- 
+
+
+Apaste board plot |sed 's/[\t ]\+/,/g' | sort -t, -k10 -n | cut -d ":" -f 2 > result2
+
+2117  grep generated log | grep clauses |sed 's/[\t ]\+/\t/g' | cut -f3
+ 2118  grep generated log | grep clauses |sed 's/[\t ]\+/\t/g' | cut -f3 > plot
+ 2119  sort plot
+ 2120  sort -n log
+ 2121  sort -n plot
+ 2122  more log
+ 2123  grep BOARD log
+ 2124  grep BOARD log > board
+ 2125  history
+ 2126  paste board plot
+ 2127  more memo
+ 2128  paste board plot | |sed 's/[\t ]\+/,/g'
+ 2129  paste board plot |sed 's/[\t ]\+/,/g'
+ 2130  paste board plot |sed 's/[\t ]\+/,/g' | sort -t, -k10
+ 2131  paste board plot |sed 's/[\t ]\+/,/g' | sort -t, -k11
+ 2132  paste board plot |sed 's/[\t ]\+/,/g' | sort -t, -k9
+ 2133  paste board plot |sed 's/[\t ]\+/,/g' | sort -t, -k8
+ 2134  paste board plot |sed 's/[\t ]\+/,/g' | sort -t, -k10
+ 2135  paste board plot |sed 's/[\t ]\+/,/g' | sort -t, -k10 -n 
 
 Agrep generated log | grep clauses |sed 's/[\t ]\+/\t/g' | cut -f3
 A
