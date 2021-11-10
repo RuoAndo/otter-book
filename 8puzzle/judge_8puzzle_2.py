@@ -73,3 +73,6 @@ for i in judge:
     
 print(sum)
 print(holeplace)
+
+#print(int(sum) + int(holeplace))
+print(int(sum))
