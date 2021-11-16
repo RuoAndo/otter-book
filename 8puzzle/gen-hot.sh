@@ -16,7 +16,7 @@ while [ $COUNT -lt 10 ]; do
 	brd=`cat tmp`
 	echo "BOARD:"${brd}
 	python trans_8puzzle_hot.py tmp > tmp3
-	./otter < tmp3
+	./otter-hot < tmp3
 	
 	cp cl_generated.txt cl_generated.txt.${COUNT}
 	cp hot_gen.txt hot_gen.txt.${COUNT}
