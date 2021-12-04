@@ -22,5 +22,6 @@ do
   #echo $r4,$r,$r3 > hot.$r
 done < tmp 
 
-sort -k 1 -t "," tmp2 -n
-sort -k 1 -t "," tmp2 -n > result
+sort -n -k1,1 -t "," tmp2
+sort -n -k1,1 -t "," tmp2 > result
+
