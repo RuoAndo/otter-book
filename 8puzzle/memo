@@ -1,0 +1,5 @@
+./do.sh
+head -n 10 result > result10
+./do2.sh result10
+python plot.py result-do2-plot
+python plot32.py result-do2-plot3
