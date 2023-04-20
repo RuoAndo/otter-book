@@ -1,0 +1,12 @@
+op(600,xfx,#).
+set(knuth_bendix).
+assign(stats_level,0).
+
+list(usable).
+	P((a#b)# (c#d)).
+end_of_list.
+
+list(sos).
+	x = x.
+	(x#y)#z=x# (y#z).
+end_of_list.
