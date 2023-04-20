@@ -1,0 +1,82 @@
+set(hyper_res).
+list(usable).
+
+%U
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(U$,x) | -$LNE(U,x) | -$LNE(U2,x) | P([U,x|y],[x3,x1,x4,x2,x9,x10,x7,x8,x13,x14,x11,x12,x17,x18,x15,x16,x5,x6,x19,x20,x21,x22,x23,x24]).
+
+%U'
+P([U$,x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(U$,x) | -$LNE(U,x) | -$LNE(U2,x) | -P([x|y],[x3,x1,x4,x2,x9,x10,x7,x8,x13,x14,x11,x12,x17,x18,x15,x16,x5,x6,x19,x20,x21,x22,x23,x24]).
+
+%U2
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(U$,x) | -$LNE(U,x) | -$LNE(U2,x) | P([U2,x|y],[x4,x3,x2,x1,x13,x14,x7,x8,x17,x18,x11,x12,x5,x6,x15,x16,x9,x10,x19,x20,x21,x22,x23,x24]).
+
+%R
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(R$,x) | -$LNE(R,x) | -$LNE(R2,x) | P([R,x|y],[x1,x10,x3,x12,x5,x6,x7,x8,x9,x22,x11,x24,x15,x13,x16,x14,x4,x18,x2,x20,x21,x19,x23,x17]).
+
+%R'
+P([R$,x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(R$,x) | -$LNE(R,x) | -$LNE(R2,x) | -P([x|y],[x1,x10,x3,x12,x5,x6,x7,x8,x9,x22,x11,x24,x15,x13,x16,x14,x4,x18,x2,x20,x21,x19,x23,x17]).
+
+%R2
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(R$,x) | -$LNE(R,x) | -$LNE(R2,x) | P([R2,x|y],[x1,x22,x3,x24,x5,x6,x7,x8,x9,x19,x11,x17,x16,x15,x14,x13,x12,x18,x10,x20,x21,x2,x23,x4]).
+
+%L
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(L$,x) | -$LNE(L,x) | -$LNE(L2,x) | P([L,x|y],[x20,x2,x18,x4,x7,x5,x8,x6,x1,x10,x3,x12,x13,x14,x15,x16,x17,x23,x19,x21,x9,x22,x11,x24]).
+
+%L'
+P([L$,x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(L$,x) | -$LNE(L,x) | -$LNE(L2,x) | -P([x|y],[x20,x2,x18,x4,x7,x5,x8,x6,x1,x10,x3,x12,x13,x14,x15,x16,x17,x23,x19,x21,x9,x22,x11,x24]).
+
+%L2
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(L$,x) | -$LNE(L,x) | -$LNE(L2,x) | P([L2,x|y],[x21,x2,x23,x4,x8,x7,x6,x5,x20,x10,x18,x12,x13,x14,x15,x16,x17,x11,x19,x9,x1,x22,x3,x24]).
+
+%D
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(D$,x) | -$LNE(D,x) | -$LNE(D2,x) | P([D,x|y],[x1,x2,x3,x4,x5,x6,x19,x20,x9,x10,x7,x8,x13,x14,x11,x12,x17,x18,x15,x16,x23,x21,x24,x22]).
+
+%D'
+P([D$,x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(D$,x) | -$LNE(D,x) | -$LNE(D2,x) | -P([x|y],[x1,x2,x3,x4,x5,x6,x19,x20,x9,x10,x7,x8,x13,x14,x11,x12,x17,x18,x15,x16,x23,x21,x24,x22]).
+
+%D2
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(D$,x) | -$LNE(D,x) | -$LNE(D2,x) | P([D2,x|y],[x1,x2,x3,x4,x5,x6,x15,x16,x9,x10,x19,x20,x13,x14,x7,x8,x17,x18,x11,x12,x24,x23,x22,x21]).
+
+%F
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(F$,x) | -$LNE(F,x) | -$LNE(F2,x) | P([F,x|y],[x1,x2,x8,x6,x5,x21,x7,x22,x11,x9,x12,x10,x3,x14,x4,x16,x17,x18,x19,x20,x15,x13,x23,x24]).
+
+%F'
+P([F$,x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(F$,x) | -$LNE(F,x) | -$LNE(F2,x) | -P([x|y],[x1,x2,x8,x6,x5,x21,x7,x22,x11,x9,x12,x10,x3,x14,x4,x16,x17,x18,x19,x20,x15,x13,x23,x24]).
+
+%F2
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(F$,x) | -$LNE(F,x) | -$LNE(F2,x) | P([F2,x|y],[x1,x2,x22,x21,x5,x15,x7,x13,x12,x11,x10,x9,x8,x14,x6,x16,x17,x18,x19,x20,x4,x3,x23,x24]).
+
+%B
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(B$,x) | -$LNE(B,x) | -$LNE(B2,x) | P([B,x|y],[x14,x16,x3,x4,x2,x6,x1,x8,x9,x10,x11,x12,x13,x24,x15,x23,x19,x17,x20,x18,x21,x22,x5,x7]).
+
+%B'
+-P([x|y],[x14,x16,x3,x4,x2,x6,x1,x8,x9,x10,x11,x12,x13,x24,x15,x23,x19,x17,x20,x18,x21,x22,x5,x7]) | -$LNE(B$,x) | -$LNE(B,x) | -$LNE(B2,x) | P([B$,x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]).
+
+%B2
+-P([x|y],[x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24]) | -$LNE(B$,x) | -$LNE(B,x) | -$LNE(B2,x) | P([B2,x|y],[x24,x23,x3,x4,x16,x6,x14,x8,x9,x10,x11,x12,x13,x7,x15,x5,x20,x19,x18,x17,x21,x22,x2,x1]).
+
+end_of_list.
+
+
+
+list(sos).
+% 1手
+%P([Z],[O,O,G,G,G,R,G,R,W,W,W,W,O,B,O,B,Y,Y,Y,Y,B,B,R,R]).
+
+% 2手
+%P([Z],[G,O,W,O,W,B,W,B,O,Y,O,B,G,G,Y,Y,W,R,G,R,Y,R,B,R]).
+
+% 3手
+%P([Z],[G,W,B,O,R,O,Y,Y,W,G,R,G,W,R,W,O,B,Y,G,O,B,R,B,Y]).
+
+% 4手 15秒くらいかかった
+P([Z],[Y,B,R,R,O,Y,W,W,B,W,G,R,G,W,Y,Y,R,G,B,B,O,G,O,O]).
+
+% 5手 17分くらいかかった
+%P([Z],[R,W,Y,R,B,O,Y,G,B,G,O,O,Y,R,B,W,B,Y,R,G,W,W,O,G]).
+end_of_list.
+
+list(passive).
+-P([xx|yy],[xG,xG,xG,xG,xR,xR,xR,xR,xW,xW,xW,xW,xO,xO,xO,xO,xY,xY,xY,xY,xB,xB,xB,xB]).
+end_of_list.
+
