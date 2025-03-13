@@ -1,0 +1,1 @@
+cmd /c "..\otter < puzzle_2.txt"
