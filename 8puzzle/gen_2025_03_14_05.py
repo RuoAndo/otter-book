@@ -81,7 +81,7 @@ def main():
         puzzle = tuple(generate_solvable_puzzle())  # タプル化して重複防止
         if puzzle not in generated_puzzles:
             generated_puzzles.add(puzzle)
-            file_path = os.path.join(output_dir, f"puzzle_{len(generated_puzzles)}.txt")
+            file_path = os.path.join(output_dir, f"puzzle_{len(generated_puzzles)}.in")
             convert_to_logic_format(puzzle, file_path)
             print(f"Generated and saved: {file_path}")
 
