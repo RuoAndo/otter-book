@@ -1,0 +1,3 @@
+list(passive).
+-P([xxx|yyy],[xG,xG,xG,xG,xG,xG,xG,xG,xR,xR,xR,xR,xR,xR,xR,xR,xW,xW,xW,xW,xW,xW,xW,xW,xO,xO,xO,xO,xO,xO,xO,xO,xY,xY,xY,xY,xY,xY,xY,xY,xB,xB,xB,xB,xB,xB,xB,xB]).
+end_of_list.
