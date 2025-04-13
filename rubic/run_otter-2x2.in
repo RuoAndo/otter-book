@@ -12,10 +12,12 @@ while true; do
 	#cat head.txt tmp tail.txt > ${counter}.in
 
     # 30秒以内に ./otter が終了しなければ強制終了（終了コード 124）
-    timeout 30 ../otter < ${counter}.in
+    # timeout 60 ../otter < ${counter}.in
+    timeout 60 ../otter < ${counter}.in > ${counter}.log 2> /dev/null
+    # otter < input.in > output.txt 2> /dev/null
 
     if [ $? -eq 124 ]; then
-        echo "10秒経過したため強制終了しました。"
+        echo "60秒経過したため強制終了しました。"
     else
         echo "正常に終了したため、ループを抜けます。"
         break
