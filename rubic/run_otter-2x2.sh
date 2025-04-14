@@ -1,0 +1,31 @@
+#!/bin/bash
+
+counter=1
+
+while true; do
+    echo "[$counter 回目の実行]"
+
+        #python3 genrand2x2.py > tmp
+        #python3 genrand-2x2-2.py > tmp
+        python3 test2.py | tee tmp
+	cat head2 tmp tail2 > ${counter}.in
+
+	#python3 genrand2.py > tmp
+	#cat head.txt tmp tail.txt > ${counter}.in
+
+    # 30秒以内に ./otter が終了しなければ強制終了（終了コード 124）
+    # timeout 60 ../otter < ${counter}.in
+    timeout 300 ./otter < ${counter}.in > ${counter}.log 2> /dev/null
+    # otter < input.in > output.txt 2> /dev/null
+
+    if [ $? -eq 124 ]; then
+        echo "60秒経過したため強制終了しました。"
+    else
+        echo "正常に終了したため、ループを抜けます。"
+        break
+    fi
+
+    echo "-----------------------------"
+    counter=$((counter + 1))
+    sleep 4
+done
