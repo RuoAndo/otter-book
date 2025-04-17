@@ -17,11 +17,13 @@ while true; do
 	exit_code=$?
 
 	if [ $exit_code -eq 124 ]; then
-	    echo "60秒経過したため強制終了しました。"
+	    # echo "60秒経過したため強制終了しました。"
+	    echo "[$(date '+%Y-%m-%d %H:%M:%S')] 60 seconds passed"
 	elif [ $exit_code -ne 0 ]; then
-	    echo "OTTERが異常終了しました（終了コード: $exit_code）"
+	    echo "[$(date '+%Y-%m-%d %H:%M:%S')] anomaly"
+	    # echo "OTTERが異常終了しました（終了コード: $exit_code）"
 	else
-	    echo "正常に終了したため、ループを抜けます。"
+	    echo "[$(date '+%Y-%m-%d %H:%M:%S')] exited normally"
 	    break
 	fi
 
