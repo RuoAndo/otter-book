@@ -8,20 +8,22 @@ while true; do
 	python genrand2x2.py > tmp
 	cat head2 tmp tail2 > ${counter}.in
 
-	#python3 genrand2.py > tmp
-	#cat head.txt tmp tail.txt > ${counter}.in
 
-    # 30秒以内に ./otter が終了しなければ強制終了（終了コード 124）
-    # timeout 60 ../otter < ${counter}.in
-    timeout 60 ../otter < ${counter}.in > ${counter}.log 2> /dev/null
-    # otter < input.in > output.txt 2> /dev/null
+	exit_code=$?
 
-    if [ $? -eq 124 ]; then
-        echo "60秒経過したため強制終了しました。"
-    else
-        echo "正常に終了したため、ループを抜けます。"
-        break
-    fi
+	# timeout 60 ../otter < ${counter}.in > ${counter}.log 2> /dev/null
+	timeout 60 ../otter < ${counter}.in > ${counter}.log 2>&1
+
+	exit_code=$?
+
+	if [ $exit_code -eq 124 ]; then
+	    echo "60秒経過したため強制終了しました。"
+	elif [ $exit_code -ne 0 ]; then
+	    echo "OTTERが異常終了しました（終了コード: $exit_code）"
+	else
+	    echo "正常に終了したため、ループを抜けます。"
+	    break
+	fi
 
     echo "-----------------------------"
     counter=$((counter + 1))
