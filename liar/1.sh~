@@ -1,0 +1,11 @@
+/root/otter-3.3f/bin/otter < liar.in | grep hyper | grep A | grep G
+/root/otter-3.3f/bin/otter < liar.in | grep hyper | grep A | grep I
+
+/root/otter-3.3f/bin/otter < liar.in | grep hyper | grep B | grep G
+/root/otter-3.3f/bin/otter < liar.in | grep hyper | grep B | grep I
+
+/root/otter-3.3f/bin/otter < liar.in | grep hyper | grep C | grep G
+/root/otter-3.3f/bin/otter < liar.in | grep hyper | grep C | grep I
+
+/root/otter-3.3f/bin/otter < liar.in | grep hyper | grep D | grep G
+/root/otter-3.3f/bin/otter < liar.in | grep hyper | grep D | grep I
