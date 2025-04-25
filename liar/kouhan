@@ -1,0 +1,11 @@
+P(G(B)) | P(G(C)) | P(I(D)) | P(I(C)).
+
+-P(G(B)) | -P(G(C)).
+-P(G(B)) | -P(I(D)).
+-P(G(B)) | -P(I(C)).
+
+-P(G(C)) | -P(I(D)).
+-P(G(C)) | -P(I(C)).
+-P(I(D)) | -P(I(C)).
+
+end_of_list.
