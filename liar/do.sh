@@ -17,3 +17,5 @@ while read line; do
 
     count=$((count + 1))
 done < list-sos-3
+
+cat result | sed -E 's/(clauses generated)[[:space:]]+([0-9]+)/\1, \2/' 
