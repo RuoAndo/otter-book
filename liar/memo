@@ -1,0 +1,2 @@
+grep hyper log.1 | grep -E '^[0-9]+ \[.*?\] P\((I|G)\([A-Z]\)\)\.'
+
