@@ -1,0 +1,19 @@
+set(hyper_res).
+assign(max_weight,5000).
+
+list(sos).
+x <= x.
+-(x <= y) | -(y <= x) | (x=y).
+-(x <= 7) | -(y <= z) | (x <= z).
+
+(x*y) <= x.
+(x*y) <= y.
+
+(-u <= x) | -(u <= y) | (u <= x*y). 
+
+x <= (x+y).
+y <= (x+y).
+
+-(x <= u) | -(y <= u) | (x+y <= u).
+-(a+ (b*c) <= (a+b)* (a+c)).
+end_of_list.
