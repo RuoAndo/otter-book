@@ -1,0 +1,23 @@
+set(prolog_style_variables).
+set(auto).
+set(lrpo).                % 書き換えの向きを安定させる
+set(order_eq).
+set(dynamic_demod).
+
+lex([0,s,+,*]).           % 記号の優先順
+
+list(usable).
+% --- ペアノ算術の基本 ---
+s(X) != 0.
+s(X) = s(Y) -> X = Y.
+
+X + 0 = X.
+X + s(Y) = s(X + Y).
+
+X * 0 = 0.
+X * s(Y) = (X * Y) + X.
+
+% 自然数を示す述語（帰納法用の番兵）
+N(0).
+N(X) -> N(s(X)).
+end_of_list.
