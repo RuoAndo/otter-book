@@ -1,0 +1,46 @@
+% pa_core.in ?? PAの骨格（再利用前提）
+
+%set(prolog_style_variables).
+set(auto).
+
+%set(lrpo).            % 等式簡約を安定
+%set(order_eq).
+%set(dynamic_demod).
+%assign(pick_given_ratio,2).
+%assign(max_weight,40).
+% 記号順（等式の向きを安定）
+%lex([0,s,+,*,n,iP,p]).
+
+list(usable).
+% ============ PA 基本 ============
+% 0 は後者でない、後者は単射
+s(x) != 0.
+-s(x) | -s(x) | x = x.
+
+% 加法（第2引数で再帰）
+x + 0 = x.
+x + s(y) = s(x + y).
+
+% 乗法（第2引数で再帰）
+x * 0 = 0.
+x * s(y) = (x * y) + x.
+
+% 帰納到達の番兵（自然数の鎖 0, s(0), s(s(0)), ...）
+n(0).
+-n(x) | n(s(x)).
+
+end_of_list.
+
+list(sos).
+-((x+ y) = (y+ x)) | O.
+-((x* y) = (y* x)) | K.
+-(x * (y + z) = (x * y) + (x * z)) | P.
+-(x + (y * z) = (x + y) * (x + z)) | Q.
+-((x + y) + z = x + y + z) | M.
+-((x * y) * z = x * y * z) | N.
+-((x + (x * y)) = x) | J.
+-((x * (x + y)) = x) | I.
+-(((y + z) * x) = (y * x) + (z * x)) | W.
+-K | -I | -J | -M | -O | -P | -Q | -W |R.
+-R.
+end_of_list.
