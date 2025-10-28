@@ -1,7 +1,10 @@
 #!/bin/bash
+# 1296 list-sos
+
+LIMIT=1296
 
 python generator.py > list-sos
-shuf -n5 list-sos > list-sos-tmp
+shuf -n$LIMIT list-sos > list-sos-tmp
 
 count=1
 rm result
@@ -16,7 +19,7 @@ while read line; do
     echo $line > sos.${count} 
     cat kouhan >> tmp2
 
-    /root/otter-3.3f/bin/otter < tmp2 | tee log.${count}
+    /home/user/otter-3.3f-track/bin/otter < tmp2 | tee log.${count}
 
     grep "clauses generated" log.${count} >> result
 
@@ -32,7 +35,7 @@ done < list-sos-tmp
 
 #cat result | sed -E 's/(clauses generated)[[:space:]]+([0-9]+)/\1, \2/' 
 
-count=6
+count=$LIMIT
 
 #touch liar-log
 #for ((i=1; i<=count-1; i++)); do
@@ -57,3 +60,4 @@ for ((i=1; i<=count-1; i++)); do
 done
 
 echo "出力ファイル: $outfile"
+cat $outfile
