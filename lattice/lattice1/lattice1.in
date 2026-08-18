@@ -1,0 +1,25 @@
+set(knuth_bendix).
+%set(para_into).
+%set(para_from).
+set(lrpo).
+
+assign(pick_given_ratio, 1).
+
+list(usable).
+  x=x.
+  x+y=y+x.
+  x*y=y*x.
+  (x+y)+z=x+y+z.
+  (x*y)*z=x*y*z.
+  x+ (x*y)=x.
+  x* (x+y)=x.
+end_of_list.
+
+list(sos).
+  x+ (y*z) = (x+y)* (x+z).
+  a* (b+c) != (a*b)+ (a*c).
+end_of_list.
+
+list(passive).
+-(a* (b+c) != (a*b)+ (a*c)).
+end_of_list.
